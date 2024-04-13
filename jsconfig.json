@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "src/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "public",
+    "node_modules",
+    "dist",
+    ".idea",
+    ".vscode",
+    "**/*.spec.ts"
+  ]
+}

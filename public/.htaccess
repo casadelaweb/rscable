@@ -1,0 +1,44 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+# Отображение ошибок php
+php_value display_errors 1
+php_value display_startup_errors 1
+
+<IfModule mod_php5.c>
+
+	# Устанавливаем кодировку UTF-8
+	AddDefaultCharset	UTF-8
+
+</IfModule>
+
+<IfModule mod_php7.c>
+
+	# Устанавливаем кодировку UTF-8
+	AddDefaultCharset	UTF-8
+
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+	# Редирект домена с WWW на домен без WWW
+	RewriteCond %{HTTP_HOST} ^www\.(.*)$
+	RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+	# Добавлять слэш на конец URL
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} !\..{1,10}$
+	RewriteCond %{REQUEST_URI} !(.*)/$
+	RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1/ [L,R=301]
+
+	# Убираем лишние слеши на конце URL
+	RewriteCond %{THE_REQUEST} //
+	RewriteRule ^(.*)$ index.php [R=301,L]
+
+  # Направляем все запросы на index.php
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^.*$ index.php [L,QSA]
+
+</IfModule>
+

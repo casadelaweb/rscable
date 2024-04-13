@@ -1,0 +1,56 @@
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# VisualStudioCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+*.vsix
+
+# JetBrains' IDE's
+.idea
+.fleet
+
+# Node and Enviroment
+.github
+.env
+.yarn/cache
+.yarn/install-state.gz
+_config.yml
+package-lock.json
+/dist
+node_modules
+public/assets/css/*.map
+public/assets/js/*.map
+.parcel-cache
+*.log
+*.todo
+.todo
+test.txt
+
+# Prepros
+prepros.cfg
+prepros-6.config
+prepros.config
