@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1.25,
     spaceBetween: 16,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '[data-section-partners=slider] .swiper-button-next',
+      prevEl: '[data-section-partners=slider] .swiper-button-prev',
       enabled: true,
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: '[data-section-partners=slider] .swiper-pagination',
       clickable: true,
     },
     mousewheel: false,

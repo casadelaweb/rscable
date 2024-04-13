@@ -3,7 +3,7 @@ import { CSSSelector, SwiperOptions } from 'swiper/types'
 import { A11y, Mousewheel, Navigation, Pagination } from 'swiper/modules'
 
 document.addEventListener('DOMContentLoaded', () => {
-  new Swiper('[data-product-card=slider]' as CSSSelector, {
+  new Swiper('[data-product-card=slider] ' as CSSSelector, {
     modules: [
       Navigation,
       A11y,
@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 1,
     spaceBetween: 16,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '[data-product-card=slider] .swiper-button-next',
+      prevEl: '[data-product-card=slider] .swiper-button-prev',
       enabled: false,
     },
     pagination: {
-      el: '.swiper-pagination',
+      el: '[data-product-card=slider] .swiper-pagination',
       clickable: true,
     },
     mousewheel: false,

@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer class="footer" style="display: none">
   <div class="footer-top">
     <div class="footer-info">
       <a class="footer-logo" href="/" title="Главная страница">
