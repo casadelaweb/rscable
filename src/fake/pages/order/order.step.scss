@@ -1,0 +1,48 @@
+@use 'src/styles/shared' as *;
+
+
+.order-step {
+  padding: 32px 0;
+  border-bottom: 1px solid #dadada;
+  @include mediaLaptopS {
+    display: grid;
+    grid-template-columns: 1fr 1.85fr;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+    @include mediaOnlyTablet {
+      padding-bottom: 50px;
+    }
+  }
+
+  &-header {
+    @include flex(center);
+    margin-bottom: 32px;
+    @include mediaLaptopS {
+      height: fit-content;
+      margin-bottom: auto;
+    }
+  }
+
+  &-number {
+    @include flex(center, center);
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: $colorGreyMild;
+  }
+
+  &-title {
+    font-size: 16px;
+    @include mediaTabletM {
+      font-size: 18px;
+    }
+  }
+}

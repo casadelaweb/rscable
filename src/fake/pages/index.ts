@@ -1,0 +1,7 @@
+// import 'src/components/pages/cart'
+// import 'src/components/pages/catalog'
+// import 'src/components/pages/product'
+// import 'src/components/pages/info'
+// import 'src/components/pages/order'
+// import 'src/components/pages/page404'
+// import 'src/components/pages/lk'

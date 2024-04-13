@@ -1,0 +1,30 @@
+[type=checkbox], [type=radio] {
+  overflow: hidden;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-right: 0.5em;
+  transition: background-color 0.25s;
+  border: 1px solid black;
+  border-radius: 6px;
+
+  &:checked {
+    background: black;
+
+    &::before {
+      transform: scale(1);
+    }
+  }
+
+  &::before {
+    content: ' ';
+    transition: transform 0.33s;
+    transform: scale(0);
+    opacity: 1;
+    background: black;
+  }
+}
+
+[type=radio] {
+  border-radius: 50%;
+}

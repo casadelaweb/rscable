@@ -1,0 +1,68 @@
+//:root, .fancybox__container, .fancybox__toolbar {
+//  --f-progress-color: $colorGreyMild;
+//  --f-button-width: 48px;
+//  --f-button-height: 48px;
+//  --f-button-color: var(--fancybox-color);
+//  --f-button-hover-color: var(--fancybox-hover-color);
+//  --f-button-bg: $colorDarkMild;
+//  --f-button-hover-bg: #4b4e52;
+//  --f-button-active-bg: black;
+//  --f-button-border-radius: 0;
+//  --fancybox-color: $colorGreyMild;
+//  --fancybox-hover-color: white;
+//  --fancybox-bg: $colorDark;
+//  --fancybox-slide-gap: 8px;
+//  --f-spinner-width: 48px;
+//  --f-spinner-height: 48px;
+//  --f-spinner-color-1: $colorGreyMild;
+//  --f-spinner-color-2: #e0e0e0;
+//  --f-spinner-stroke: 3.65;
+//}
+//
+//.f-button[disabled] {
+//  // background: #e0e0e0;
+//  opacity: 0.25;
+//}
+//
+//.f-thumbs__slide.for-image {
+//  border: 2px solid #e0e0e0;
+//  border-radius: 6px;
+//}
+//
+//.f-thumbs__slide__button {
+//  img {
+//    object-fit: contain;
+//  }
+//}
+
+.f-thumbs.is-horizontal .f-thumbs__track {
+  padding-bottom: 40px;
+}
+
+.f-thumbs__slide {
+  &.for-image {
+    transition: 0.33s;
+    border: 2px solid rgba($colorGreyMild, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+
+    &.is-nav-selected {
+      border-color: $colorGreyMild;
+    }
+  }
+
+  &__button {
+    opacity: 1;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__img {
+    border-radius: 8px;
+    display: block;
+    object-fit: contain;
+    padding: 8px;
+  }
+}

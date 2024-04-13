@@ -1,0 +1,281 @@
+@use 'src/styles/shared' as *;
+
+.search {
+  @include scrollbar;
+  position: fixed;
+  z-index: 95;
+  top: var(--headerHeight);
+  left: 0;
+  overflow-y: auto;
+  width: 320px;
+  height: 100%;
+  transition: transform 0.33s;
+  transform: translate(calc(-100% - 100px), 0);
+  pointer-events: none;
+  background: white;
+  @include mediaTabletM {
+    width: 100%;
+    height: 440px;
+    transform: translate(0, calc(-100% - 100px));
+  }
+  @include mediaTabletL {
+    @include hoverableDevice {
+      overflow: hidden;
+    }
+  }
+  @include mediaLaptopS {
+    //z-index: 130;
+    overflow: hidden;
+    height: auto;
+    box-shadow: 12px 12px 24px 0 $colorGreyMild;
+  }
+  max-height: 540px;
+
+  &.active {
+    transform: translate3d(0, 0, 0);
+    pointer-events: auto;
+  }
+
+  &-overlay {
+    z-index: 99;
+  }
+
+  &-container {
+    @include container;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 40px;
+  }
+
+
+  &-body {
+    @include container;
+    @include scrollbar;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 40px;
+
+    &-aside {
+      @include mediaTabletM {
+        @include flex($w: wrap);
+      }
+      @include mediaLaptopS {
+        position: sticky;
+        z-index: 1;
+        top: 0;
+        display: block;
+        height: fit-content;
+      }
+    }
+  }
+
+  &-footer {
+    padding: 0 14px;
+    @include mediaTabletM {
+      padding-bottom: 46px;
+    }
+    @include mediaLaptopS {
+      display: none;
+    }
+  }
+
+  &-recommended, &-categories {
+    @include flex($d: column);
+    margin-bottom: 14px;
+    @include mediaTabletM {
+      flex: 0 0 auto;
+      width: 25%;
+      margin-bottom: 0;
+    }
+    @include mediaLaptopS {
+      width: auto;
+      margin-bottom: (46px - 14px);
+    }
+  }
+}
+
+.searchModal {
+  @include scrollbar;
+  position: fixed;
+  z-index: 95;
+  top: var(--headerHeight);
+  left: 0;
+  overflow-y: auto;
+  width: 100%;
+  transition: transform 0.33s;
+  transform: translate(0, -125%);
+  pointer-events: none;
+  background: white;
+  max-height: 540px;
+  padding-bottom: 80px;
+
+  &.active {
+    transform: translate3d(0, 0, 0);
+    pointer-events: auto;
+  }
+
+  &Container {
+    @include container;
+    @include flex($d: column);
+    @include mediaLaptopS {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      column-gap: 40px;
+    }
+    @include mediaDesktop {
+      grid-template-columns: 7fr 2fr;
+    }
+  }
+
+  &Main {
+    position: relative;
+    z-index: 0;
+    min-width: 0;
+    min-height: 0;
+
+    &Loader {
+      @include loadingPlaceholder;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+
+      &._active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &Header, &Hints {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 80px;
+  }
+
+  &Header {
+    @include flex(center, space-between);
+    // min-height: 80px;
+
+    &Button {
+      @include addBottomLineOnHover($bg: $colorDarkMild);
+      font-size: 14px;
+      color: $colorDarkMild;
+    }
+
+    &Title {
+      @include h6;
+      color: $colorDarkMild;
+    }
+
+    .searchModalHeaderButton {
+      display: none;
+      @include mediaLaptopS {
+        display: flex
+      }
+    }
+  }
+
+  &Results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8px;
+    row-gap: 8px;
+    @include mediaTabletM {
+      column-gap: 12px;
+      row-gap: 12px;
+    }
+    @include mediaLaptopS {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include mediaLaptopM {
+      column-gap: 16px;
+      row-gap: 16px;
+    }
+    @include mediaDesktop {
+      column-gap: 20px;
+      row-gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &Mobile {
+    @include flex($d: column);
+    column-gap: 8px;
+    row-gap: 8px;
+    padding-top: 20px;
+    @include mediaLaptopS {
+      display: none;
+    }
+
+    .searchModalHeaderButton {
+      margin-left: auto;
+    }
+
+    .header-search-input {
+      width: 100%;
+    }
+  }
+
+  &Aside {
+    order: -1;
+    min-height: 0;
+    min-width: 0;
+    font-size: 14px;
+    @include mediaLaptopS {
+      position: sticky;
+      z-index: 1;
+      height: fit-content;
+      top: 0;
+      order: 0;
+    }
+    @include mediaDesktop {
+      font-size: 16px;
+    }
+  }
+
+  &Hints {
+    min-width: 0;
+    @include flex($w: wrap);
+    column-gap: 8px;
+    row-gap: 8px;
+    border-bottom: $colorGreyMild;
+  }
+
+  &Hint {
+    @include buttonMinor;
+    width: fit-content;
+  }
+
+  &QuickLinks {
+    min-height: 0;
+    min-width: 0;
+
+    &List {
+      //display: grid;
+      //grid-template-columns: 1fr;
+      //row-gap: 8px;
+    }
+
+    &Title {
+      color: $colorDarkMild;
+      letter-spacing: 0.02em;
+      margin-bottom: 16px;
+    }
+  }
+
+  &QuickLink {
+    @include flex(center, space-between);
+    padding: 8px 0;
+    border-bottom: 1px solid $colorGreyMild;
+    transition: border-color 0.33s;
+
+    &:hover {
+      border-color: $colorDarkMild;
+    }
+  }
+}

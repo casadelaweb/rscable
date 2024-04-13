@@ -1,0 +1,120 @@
+@use 'src/styles/shared/mixins/media' as *;
+
+@mixin h1 {
+  line-height: 1.1;
+  font-size: 36px;
+  font-weight: 600;
+  @include mediaTabletM {
+    font-size: 40px;
+  }
+  @include mediaLaptopM {
+    font-size: 48px;
+  }
+}
+
+@mixin h2 {
+  line-height: 1.1;
+  font-size: 18px;
+  font-weight: 600;
+  @include mediaTabletS {
+    font-size: 24px;
+  }
+  @include mediaTabletM {
+    font-size: 32px;
+  }
+  @include mediaLaptopM {
+    font-size: 36px;
+  }
+}
+
+@mixin h3 {
+  line-height: 1.1;
+  font-size: 20px;
+  font-weight: 500;
+  @include mediaTabletM {
+    font-size: 24px;
+  }
+  @include mediaLaptopM {
+    font-size: 32px;
+  }
+}
+
+@mixin h4 {
+  line-height: 1.1;
+  font-size: 18px;
+  font-weight: 500;
+  @include mediaTabletM {
+    font-size: 20px;
+  }
+  @include mediaLaptopM {
+    font-size: 24px;
+  }
+}
+
+@mixin h5 {
+  line-height: 1.1;
+  font-size: 16px;
+  font-weight: 500;
+  @include mediaTabletM {
+    font-size: 18px;
+  }
+  @include mediaLaptopM {
+    font-size: 20px;
+  }
+}
+
+@mixin h6 {
+  line-height: 1.1;
+  font-size: 14px;
+  font-weight: 500;
+  @include mediaTabletM {
+    font-size: 16px;
+  }
+  @include mediaLaptopM {
+    font-size: 18px;
+  }
+}
+
+@mixin h7 {
+  line-height: 1.25;
+  font-size: 12px;
+  font-weight: 500;
+  @include mediaMobileS {
+    font-size: 13px;
+  }
+  @include mediaMobileM {
+    font-size: 14px;
+  }
+  @include mediaTabletM {
+    font-size: 15px;
+  }
+  @include mediaLaptopM {
+    font-size: 16px;
+  }
+}
+
+@mixin textLabel {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+  @include mediaMobileM {
+    font-size: 14px;
+  }
+  @include mediaLaptopM {
+    font-size: 16px;
+  }
+}
+
+@mixin textS {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+  @include mediaMobileM {
+    font-size: 13px;
+  }
+  @include mediaLaptopM {
+    font-size: 14px;
+  }
+}

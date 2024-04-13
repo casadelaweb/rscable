@@ -1,0 +1,154 @@
+@use 'src/styles/shared' as *;
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  transition: transform 0.33s;
+  pointer-events: none;
+  background: white;
+  @include mediaOnlyMobileAndAllTablets {
+    @include scrollbar;
+    z-index: 105;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    // width: 320px;
+    min-width: 0;
+    height: 100%;
+    // min-height: 100%;
+    transform: translate(calc(-100% - 100px), 0);
+  }
+  @include mediaLaptopS {
+    z-index: 99;
+    top: var(--headerHeight);
+    overflow: unset;
+    width: 100%;
+    padding: 56px 0;
+    transform: translate(0, calc(-100% - 200px));
+    box-shadow: 12px 12px 24px 0 $colorGreyMild;
+  }
+
+  &.active {
+    transform: translate3d(0, 0, 0);
+    pointer-events: auto;
+  }
+
+  &-container {
+    @include container;
+    @include mediaOnlyMobileAndAllTablets {
+      min-width: 0;
+      height: 100%;
+      // height: auto;
+      min-height: 0;
+      padding: 0;
+    }
+  }
+
+  &-desktop {
+    display: none;
+    @include mediaLaptopS {
+      @include flex($j: space-between);
+    }
+  }
+
+  &-columns {
+    @include flex;
+    column-gap: 20px;
+    @include mediaLaptopS {
+      column-gap: 150px;
+      margin-right: 100px;
+      margin-bottom: 150px;
+    }
+  }
+
+  &-column {
+    @include flex($d: column);
+    //margin-right: 150px;
+    //
+    //&:last-child {
+    //  @include mediaLaptopS {
+    //    margin-right: 100px;
+    //  }
+    //}
+  }
+
+  &-link {
+    display: inline-block;
+    margin-bottom: 1em;
+  }
+
+  &-left {
+    @include flex($d: column);
+    color: black;
+  }
+
+  &-form {
+    max-width: none;
+    margin-top: auto;
+
+    &-layout {
+      @include mediaLaptopS {
+        @include flex(center);
+      }
+    }
+
+    .form-label {
+      margin-bottom: 18px;
+      @include mediaLaptopS {
+        margin-bottom: 20px;
+      }
+    }
+
+    .form-main {
+      margin-bottom: 10px;
+
+      @include mediaLaptopS {
+        margin: 0 22px 0 0;
+      }
+    }
+  }
+
+  &-categories {
+    @include flex;
+  }
+
+  &-category {
+    position: relative;
+    z-index: 0;
+    flex: 0 0 auto;
+    width: fit-content;
+    height: fit-content;
+    margin-right: 12px;
+
+    a {
+      display: inline-block;
+    }
+
+    &-img {
+      border-radius: 6px;
+      @include mediaLaptopS {
+        width: 286px;
+        height: 286px;
+      }
+      @include mediaDesktop {
+        width: 408px;
+        height: 408px;
+      }
+    }
+
+    &-title {
+      font-size: 20px;
+      font-style: normal;
+      letter-spacing: 1px;
+      text-align: center;
+      position: absolute;
+      z-index: 1;
+      bottom: 40px;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, 0);
+      color: white;
+    }
+  }
+}

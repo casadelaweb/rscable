@@ -1,0 +1,111 @@
+@use 'src/styles/shared/mixins/helpers' as *;
+@use 'src/styles/shared/mixins/media' as *;
+@use 'src/styles/shared/mixins/typography' as *;
+
+@mixin container {
+  margin: 0 auto;
+  max-width: 100%;
+  padding-left: 14px;
+  padding-right: 14px;
+  @include mediaMobileM {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  @include mediaMobileL {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  @include mediaTabletS {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @include mediaTabletM {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @include mediaLaptopM {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1280px;
+  }
+  @include mediaDesktop {
+    // max-width: 1560px;
+    max-width: 1600px;
+  }
+}
+
+@mixin scrollbar($orientation:'vertical') {
+  $width: 10px;
+  $height: 5px;
+  $thumbColor: black;
+  $backgroundColor: white;
+  $backgroundColorVertical: $colorGreyMild;
+
+  @include hoverableDevice {
+    &::-webkit-scrollbar {
+      width: $width;
+      height: $height;
+    }
+    @if ($orientation == 'vertical') {
+      &::-webkit-scrollbar-track {
+        background: $backgroundColor;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $thumbColor;
+        border: ($width * 0.3) solid $backgroundColor;
+      }
+    } @else if ($orientation == 'horizontal') {
+      &::-webkit-scrollbar-track {
+        background: $backgroundColorVertical;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $thumbColor;
+        border: 0;
+      }
+
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin-right: -10px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+@mixin overlay {
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(black, 0.5);
+
+  &.active {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+@mixin sectionHeader {
+  &-header, &Header {
+    @include flex(center, space-between);
+    margin-bottom: 40px;
+  }
+
+  &-button, &Button {
+    @include addBottomLineOnHover($bg: $colorDarkMild);
+    font-size: 14px;
+    color: $colorDarkMild;
+    font-weight: 500;
+    @include mediaLaptopM {
+      font-size: 16px;
+    }
+  }
+
+  &-title, &Title {
+    @include h2;
+  }
+}

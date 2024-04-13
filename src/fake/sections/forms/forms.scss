@@ -1,0 +1,41 @@
+@use 'src/styles/shared' as *;
+
+
+.form {
+  &-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    @include mediaTabletM {
+      font-size: 18px;
+    }
+    @include mediaLaptopS {
+      font-size: 20px;
+      margin-bottom: 36px;
+    }
+  }
+
+  &-main {
+    @include flex(center);
+  }
+
+  &-input {
+    @include inputGrey;
+    flex: 1 0 auto;
+  }
+
+  &-button {
+    @include buttonSquare;
+  }
+
+  &-submit {
+    @include buttonMain;
+  }
+
+  &-warning {
+    font-size: 13px;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}

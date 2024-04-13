@@ -1,0 +1,99 @@
+@use 'src/styles/shared' as *;
+
+.appointment {
+  &-title {
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin: 20px 0;
+    color: black;
+    @include mediaTabletM {
+      font-size: 24px;
+      margin: 32px 0;
+    }
+    @include mediaTabletL {
+      font-size: 28px;
+      margin: 40px 0;
+    }
+  }
+
+  &-description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 56px;
+    @include mediaTabletM {
+      font-size: 16px;
+    }
+    @include mediaTabletL {
+      font-size: 18px;
+    }
+
+    p {
+      margin-bottom: 1em;
+      @include mediaTabletM {
+        margin-bottom: 1.5em;
+      }
+    }
+  }
+
+  &-img {
+    display: block;
+    width: 100%;
+    margin-bottom: 56px;
+    border-radius: 6px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &-hero {
+    @include mediaTabletM {
+      margin-bottom: 64px;
+    }
+  }
+
+  &-free {
+    position: relative;
+    z-index: 0;
+    @include mediaTabletM {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 24px;
+    }
+    @include mediaTabletL {
+      grid-template-columns: 2fr 1fr;
+      column-gap: 52px;
+    }
+
+    &-images {
+      position: relative;
+      z-index: 0;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 0;
+      border-radius: 6px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &-discount {
+      position: absolute;
+      z-index: 1;
+      top: -52px;
+      right: 12px;
+      width: 74px;
+      height: 74px;
+      @include mediaTabletL {
+        top: auto;
+        right: auto;
+        bottom: 10px;
+        left: (60px + 92px) * -1;
+        width: 92px;
+        height: 92px;
+      }
+    }
+  }
+}

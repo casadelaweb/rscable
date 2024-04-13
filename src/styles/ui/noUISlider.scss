@@ -1,0 +1,47 @@
+#app .noUi {
+  &-horizontal {
+    width: calc(100% - 20px);
+    height: 4px;
+    margin: 0 auto 1em;
+    border: 0;
+    background: $colorGreyMild;
+  }
+
+  &-target {
+    border: 0;
+    box-shadow: none;
+  }
+
+  &-connect {
+    border: 0;
+    background: black;
+  }
+
+  &-handle {
+    top: -8px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    cursor: grab;
+    border: 1px solid black;
+    border-radius: 50%;
+    background: white;
+
+    &::before, &::after {
+      display: none;
+    }
+
+    &-lower {
+      right: 0
+    }
+
+    &-upper {
+      right: -16px
+    }
+  }
+
+  &-touch-area {
+    border-radius: 50%;
+    background: white;
+  }
+}

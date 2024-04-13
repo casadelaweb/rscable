@@ -1,0 +1,97 @@
+@use 'src/styles/shared' as *;
+
+.appointment-advantages {
+  @include mediaTabletM {
+    margin-bottom: 56px;
+  }
+
+  &-layout {
+    @include mediaTabletL {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 14px;
+    }
+  }
+}
+
+.appointment-advantage {
+  @include flex(center, $d: column);
+  min-height: 290px;
+  margin: 14px 0;
+  padding: 36px;
+  color: white;
+  border-radius: 6px;
+  background: black;
+
+  @include mediaTabletM {
+    min-height: 220px;
+    padding: 50px 60px 60px;
+  }
+  @include mediaTabletL {
+    min-height: 406px;
+    padding: 92px 36px 36px;
+  }
+  @include mediaLaptopS {
+  }
+  @include mediaDesktop {
+  }
+
+  &-title {
+    @include flex(center);
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid white;
+    @include mediaTabletM {
+      font-size: 20px;
+    }
+    @include mediaTabletL {
+      font-size: 22px;
+    }
+    @include mediaLaptopS {
+    }
+    @include mediaDesktop {
+    }
+  }
+
+  &-number {
+    @include flex(center, center);
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    color: $colorDark;
+    border-radius: 50%;
+    background: $colorGreyMild;
+    @include mediaTabletM {
+      width: 44px;
+      height: 44px;
+      margin-right: 16px;
+    }
+    @include mediaTabletL {
+      font-size: 26px;
+    }
+    @include mediaLaptopS {
+    }
+    @include mediaDesktop {
+    }
+  }
+
+  &-description {
+    font-size: 14px;
+    line-height: 1.4;
+    @include mediaTabletM {
+      font-size: 16px;
+    }
+    @include mediaTabletL {
+      font-size: 18px;
+    }
+    @include mediaLaptopS {
+    }
+    @include mediaDesktop {
+    }
+  }
+}

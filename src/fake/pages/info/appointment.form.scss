@@ -1,0 +1,152 @@
+@use 'src/styles/shared' as *;
+
+.appointment {
+  &-form {
+    position: relative;
+    z-index: 0;
+    margin-bottom: 56px;
+    @include mediaTabletL {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-title {
+      @include mediaTabletL {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+    }
+
+    &-layout {
+      flex: 0 0 auto;
+      width: 100%;
+      @include mediaOnlyMobile {
+        @include flex(center, $d: column);
+      }
+      @include mediaTabletM {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 14px;
+        row-gap: 14px;
+        // grid-template-rows: repeat(4,1fr);
+        grid-template-areas:
+          'name textarea'
+          'email textarea'
+          'tel textarea'
+          'submit policy';
+      }
+      @include mediaTabletL {
+        width: 66%;
+      }
+    }
+
+    &-message {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      color: black;
+      @include mediaTabletM {
+        font-size: 16px;
+      }
+      @include mediaTabletL {
+        font-size: 18px;
+        flex: 0 0 auto;
+        width: 33%;
+        margin-bottom: 0;
+        padding-right: 14px;
+      }
+    }
+
+    &-policy {
+      font-size: 13px;
+      line-height: 1.4;
+      grid-area: policy;
+      @include mediaOnlyMobile {
+        text-align: center;
+        width: 272px;
+      }
+      @include mediaTabletL {
+        font-size: 14px;
+        margin-top: 38px - 18px;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-social {
+    @include flex(center, center);
+    font-size: 32px;
+    flex: 0 0 auto;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 24px 0;
+    color: white;
+    border-radius: 6px;
+    background: $colorDark;
+
+    @include mediaTabletL {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+    }
+  }
+
+  &-label {
+    @include flex($d: column);
+
+    @include mediaOnlyMobile {
+      flex: 0 0 auto;
+      width: 100%;
+      margin-bottom: 18px;
+    }
+
+    &._name {
+      grid-area: name
+    }
+
+    &._email {
+      grid-area: email
+    }
+
+    &._tel {
+      grid-area: tel
+    }
+
+    &._textarea {
+      grid-area: textarea;
+    }
+
+    &-text {
+      font-size: 14px;
+      display: inline-block;
+      margin-bottom: 4px;
+      color: black;
+    }
+  }
+
+  &-input {
+    @include inputGrey;
+    padding: 0 12px;
+  }
+
+  &-textarea {
+    @include inputGrey;
+    height: 200px;
+    padding: 12px;
+  }
+
+  &-submit {
+    @include buttonMain;
+    align-self: start;
+    margin: (36px - 18px) 0 18px;
+    grid-area: submit;
+    @include mediaTabletL {
+      margin-bottom: 0;
+    }
+  }
+}

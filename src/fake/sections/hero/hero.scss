@@ -1,0 +1,53 @@
+@use 'src/styles/shared' as *;
+
+.hero {
+  overflow: hidden;
+  margin-top: calc(var(--headerHeight) * -1);
+
+  &-slide {
+    position: relative;
+    z-index: 0;
+
+    &-img, &-video {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      @include mediaOnlyMobile {
+        min-height: 100vh;
+      }
+    }
+  }
+}
+
+.swiper-pagination {
+  @include flex(center, center);
+  position: absolute;
+  z-index: 1;
+  bottom: 16px;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  @include mediaLaptopS {
+    bottom: 30px;
+  }
+
+  &-bullet {
+    display: inline-block;
+    width: 46px;
+    height: 2px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.5s, opacity 0.5s;
+    opacity: 0.8;
+    background: white;
+
+    @include mediaLaptopS {
+      width: 80px;
+    }
+
+    &-active {
+      opacity: 1;
+      background: black;
+    }
+  }
+}

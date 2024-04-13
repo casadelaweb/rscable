@@ -1,0 +1,27 @@
+// @use 'src/styles/shared' as *;
+
+.flatpickr {
+  &-months {
+    // @include flex(center);
+    // padding: 10px 0;
+    background: black;
+  }
+
+  &-prev-month, &-next-month {
+    &:hover svg {
+      fill: black !important;
+    }
+  }
+
+  &-day {
+    &.selected {
+      border-color: black;
+      background: black;
+
+      &:hover {
+        border-color: black;
+        background: black;
+      }
+    }
+  }
+}

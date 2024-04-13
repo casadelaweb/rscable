@@ -1,0 +1,188 @@
+@use 'src/styles/shared' as *;
+
+.header-mobile {
+  @include flex(center, space-between);
+  @include mediaLaptopS {
+    display: none;
+  }
+
+  &-left, &-right {
+    @include flex(center);
+  }
+}
+
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  padding: 12px 0;
+  transition: background-color 0.25s, backdrop-filter 0.25s, border-color 0.25s;
+  color: white;
+  border-bottom: 1px solid transparent;
+  @include mediaMobileM {
+    padding: 16px 0;
+  }
+  @include mediaTabletM {
+    padding: 18px 0 17px;
+  }
+
+  &.hovered, &.scrolled, &.active {
+    color: black;
+    border-color: $colorGreyMild;
+    background: white;
+  }
+
+  &-container {
+    padding: 0 (14px - 6px);
+    @include mediaTabletM {
+      padding: 0 (40px - 11px);
+    }
+    @include mediaLaptopS {
+      @include container;
+    }
+
+    // @include mediaDesktop {
+    //   max-width: 1920px;
+    //   margin: 0 auto;
+    //   padding: 0 $containerPaddingDesktop;
+    // }
+  }
+
+  &-desktop {
+    display: none;
+
+    @include mediaLaptopS {
+      @include flex(center);
+      // margin: 0 auto;
+      // padding: 0 48px;
+    }
+  }
+
+  &-links {
+    font-size: 17px;
+    letter-spacing: 0.34px;
+    margin-right: auto;
+  }
+
+  &-link {
+    display: inline-block;
+    margin-right: 1em;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  &-logo {
+    font-size: 20px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    margin: 0 auto;
+    transform: translate(-50%, -50%);
+    //color: black;
+    @include mediaMobileM {
+      font-size: 22px;
+    }
+    @include mediaTabletM {
+      font-size: 32px;
+    }
+    //@include mediaLaptopS {
+    //  font-size: 32px;
+    //}
+
+    ._scrolled &, ._active &, ._hovered & {
+      color: black;
+    }
+  }
+
+  &-buttons {
+    @include flex(center);
+    margin-left: auto;
+  }
+}
+
+.header {
+  background: white;
+  color: black;
+  // box-shadow: 4px 4px 16px 0 $colorGreyMild;
+
+  &-search {
+    @include flex(center);
+    column-gap: 4px;
+    position: relative;
+    z-index: 0;
+
+    &-input {
+      @include inputMain;
+      width: 320px;
+      padding-left: calc(20px + 8px + 8px) !important;
+    }
+
+    &-icon {
+      @include flex(center, center);
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: calc(20px + 8px + 8px);
+      height: 100%;
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+}
+
+.header {
+  &-button-purple {
+    @include buttonMain;
+    margin: 0 auto 22px;
+    @include mediaLaptopS {
+      width: 228px;
+      margin: 0 (36px - 20px) 0 auto;
+    }
+  }
+
+  &-button {
+    font-size: 20px;
+    position: relative;
+    z-index: 0;
+    margin-left: 20px;
+  }
+
+  &-mobile {
+    &-button {
+      @include flex(center, center);
+      font-size: 18px;
+      position: relative;
+      z-index: 0;
+      flex: 0 0 auto;
+      margin: 0 0.4em;
+      @include mediaMobileM {
+        font-size: 20px;
+      }
+      @include mediaTabletM {
+        font-size: 26px;
+        margin: 0 0.5em;
+      }
+    }
+  }
+
+  &-quantity {
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    transform: translate(100%, -66.667%);
+    @include mediaTabletL {
+      font-size: 14px;
+    }
+  }
+}

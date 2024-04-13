@@ -1,0 +1,76 @@
+@use 'src/styles/shared' as *;
+
+.advantages {
+  padding: 80px 0;
+  background: linear-gradient(45deg, $colorGreyMild 0%, white 75%);
+
+  &-container {
+    @include container;
+  }
+
+  @include sectionHeader;
+
+  &-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 32px;
+    row-gap: 32px;
+    @include mediaTabletM {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mediaLaptopS {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &-card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+
+    &-img {
+      object-fit: contain;
+      flex: 0 0 auto;
+      width: 48px;
+      height: 48px;
+      @include mediaLaptopS {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+      max-width: calc(100% - 48px - 20px);
+      @include mediaLaptopS {
+        max-width: calc(100% - 64px - 20px);
+      }
+    }
+
+    &-description {
+      width: 100%;
+    }
+  }
+
+  &-img {
+    margin-top: 40px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  &-note {
+    letter-spacing: 0.02em;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 40px;
+
+    a, button {
+      @include addBottomLineOnHover($colorGreen);
+      color: $colorGreen;
+    }
+  }
+}

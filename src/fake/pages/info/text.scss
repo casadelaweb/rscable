@@ -1,0 +1,112 @@
+@use 'src/styles/shared' as *;
+
+.text {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 42px;
+  color: black;
+  @include mediaTabletM {
+    font-size: 15px;
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-size: 16px;
+    line-height: 1.0;
+    letter-spacing: 0.02em;
+    margin: 2em 0;
+    color: black;
+    @include mediaLaptopS {
+      font-size: 18px;
+      margin: 1.5em 0;
+    }
+  }
+
+  p {
+    margin-bottom: 1.5em;
+  }
+
+  li {
+    margin-bottom: 1em;
+  }
+
+  a {
+    color: black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.payment {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 56px;
+  padding: 30px 30px (50px - 15px);
+  border-radius: 6px;
+  background: $colorGreyMild;
+  @include mediaTabletM {
+    margin-bottom: 72px;
+    padding: 50px 60px (50px - 24px);
+  }
+  @include mediaLaptopS {
+    font-size: 18px;
+  }
+  @include mediaDesktop {
+    padding: 48px 64px (60px - 30px);
+  }
+
+  p {
+    margin-bottom: 2em
+  }
+
+  li {
+    margin-bottom: 1em;
+    @include mediaLaptopS {
+      margin-bottom: 1.5em;
+    }
+  }
+
+  img {
+    margin: 0 14px 14px 0;
+    @include mediaTabletM {
+      margin: 0 24px 24px 0;
+    }
+    @include mediaDesktop {
+      margin: 0 30px 30px 0;
+    }
+  }
+
+  ol {
+    margin-bottom: 48px;
+    @include mediaLaptopS {
+      max-width: 600px;
+      margin-bottom: 60px;
+    }
+
+    & > li {
+      padding-left: 20px + 10px;
+      @include mediaTabletL {
+        padding-left: 24px + 8px;
+      }
+
+      &::before {
+        text-align: center;
+        content: counter(ol-list-counter);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white;
+        @include mediaTabletL {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  &-bold {
+    display: block;
+    color: black;
+  }
+}

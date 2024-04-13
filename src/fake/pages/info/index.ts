@@ -1,0 +1,8 @@
+import './info'
+import './info.scss'
+import './appointment.scss'
+import './appointment.advantage.scss'
+import './appointment.form.scss'
+import './text.scss'
+import './reviews.scss'
+import './info-nav.scss'

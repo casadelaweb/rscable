@@ -1,0 +1,393 @@
+@use 'src/styles/shared' as *;
+
+.color-error {
+  color: $colorRed;
+}
+
+// карточка для страницы все заказы
+.lk-orders-card {
+  @include flex($d: column);
+  line-height: 1;
+  margin-bottom: 52px;
+  color: black;
+  @include mediaOnlyMobile {
+    position: relative;
+    z-index: 0;
+    padding-bottom: 44px;
+  }
+  @include mediaTabletM {
+    margin-bottom: 88px;
+  }
+  @include mediaDesktop {
+    max-width: 828px;
+  }
+
+  &-top {
+    @include mediaTabletM {
+      @include flex(center);
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $colorGreyMild;
+    }
+  }
+
+  &-title {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    display: inline-block;
+    @include mediaOnlyMobile {
+      margin-bottom: 14px;
+    }
+    @include mediaTabletM {
+      font-size: 18px;
+      margin-right: auto;
+    }
+  }
+
+  &-description {
+    @include mediaOnlyMobile {
+      font-size: 15px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $colorGreyMild;
+    }
+    @include mediaTabletM {
+      font-size: 18px;
+    }
+
+    span {
+      color: black;
+    }
+  }
+
+  &-cancel {
+    @include mediaOnlyMobile {
+      @include buttonBrown;
+      position: absolute;
+      z-index: 0;
+      bottom: 0;
+    }
+    @include mediaTabletM {
+      font-size: 15px;
+      margin-left: 30px;
+      color: black;
+    }
+
+    span {
+      @include mediaOnlyMobile {
+        margin: 0 0.25em;
+      }
+    }
+  }
+
+  &-main {
+    @include mediaTabletM {
+      @include flex;
+    }
+  }
+
+  &-dates {
+    @include mediaTabletM {
+      @include flex;
+      margin-right: auto;
+    }
+  }
+
+  &-date {
+    font-size: 15px;
+    margin-bottom: 14px;
+    color: black;
+    @include mediaTabletM {
+      font-size: 18px;
+      margin: 0 40px 0 0;
+    }
+
+    span {
+      color: black;
+      @include mediaTabletM {
+        display: block;
+        margin-top: 0.5em;
+      }
+    }
+  }
+
+  &-status {
+    @include buttonGrey;
+    margin-bottom: 14px;
+    @include mediaTabletM {
+      width: 266px;
+    }
+
+    span {
+      margin: 0 0.25em;
+    }
+  }
+
+  &-track {
+    @include mediaOnlyMobile {
+      @include buttonMain;
+      margin-bottom: 14px;
+    }
+    @include mediaTabletM {
+      @include buttonAppointment;
+      text-align: center;
+      width: 266px;
+    }
+
+
+    span {
+      margin: 0 0.25em;
+    }
+  }
+}
+
+// карточка одного заказа
+.lk-order {
+  max-width: 826px;
+
+  &-title {
+  }
+
+  &-description {
+    font-size: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $colorGreyMild;
+    @include mediaTabletM {
+      font-size: 16px;
+      padding-bottom: 52px;
+    }
+    @include mediaLaptopS {
+      font-size: 18px;
+      margin-bottom: 20px;
+      padding-bottom: 40px;
+    }
+
+    &-bottom {
+      @include mediaTabletM {
+        @include flex(center);
+        margin-bottom: 64px;
+      }
+    }
+  }
+
+  &-dates {
+    margin-bottom: 24px;
+    @include mediaTabletM {
+      @include flex(center);
+    }
+  }
+
+  &-date {
+    font-size: 15px;
+    margin-bottom: 14px;
+    color: black;
+    @include mediaTabletM {
+      font-size: 18px;
+      margin: 0 30px 0 0;
+    }
+
+    span {
+      color: black;
+      @include mediaTabletM {
+        display: block;
+      }
+    }
+  }
+
+  &-status {
+    @include buttonGrey;
+    margin-bottom: 56px;
+    @include mediaTabletM {
+      width: 266px;
+      margin-bottom: 0;
+      margin-left: auto;
+    }
+
+    span {
+      text-transform: uppercase;
+      display: inline-block;
+      margin: 0 4px;
+    }
+  }
+
+  &-products {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+    margin-bottom: 48px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid $colorGreyMild;
+    @include mediaTabletM {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 32px;
+      row-gap: 48px;
+    }
+    @include mediaTabletL {
+      column-gap: 80px;
+    }
+  }
+
+  &-product {
+    display: grid;
+    grid-template-columns: 126px 1fr;
+    column-gap: 24px;
+    @include mediaTabletM {
+      column-gap: 14px;
+    }
+
+    &-main {
+      @include flex($d: column);
+    }
+
+    &-title {
+      @include lineClamp(3);
+      font-size: 14px;
+      margin-bottom: 14px;
+      @include mediaTabletM {
+        font-size: 16px;
+      }
+    }
+
+    &-article {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: black;
+      @include mediaTabletM {
+        font-size: 15px;
+      }
+
+      span {
+        color: black;
+      }
+    }
+
+    &-colors {
+      font-size: 14px;
+      margin-bottom: 10px;
+      @include mediaTabletM {
+        font-size: 15px;
+      }
+    }
+
+    &-color {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      margin-top: 4px;
+      border-radius: 50%;
+    }
+
+    &-size {
+    }
+
+    &-prices {
+      @include flex(center);
+      margin-top: auto;
+    }
+
+    &-price {
+      font-size: 17px;
+      color: black;
+
+      &._old {
+        text-decoration: line-through;
+        margin-right: 4px;
+      }
+
+      &._current {
+        // font-weight: 500;
+        color: $colorRed;
+      }
+    }
+  }
+
+  &-details {
+    margin-bottom: 48px;
+  }
+
+  &-sections {
+    margin-bottom: 48px;
+    @include mediaTabletM {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 32px;
+      margin-bottom: 64px;
+    }
+    @include mediaTabletL {
+      column-gap: 78px;
+      max-width: 324px + 78px + 385px;
+    }
+    @include mediaLaptopS {
+      column-gap: 36px;
+    }
+  }
+
+  &-delivery, &-payment {
+    font-size: 15px;
+    @include mediaTabletM {
+      font-size: 16px;
+    }
+    @include mediaLaptopS {
+      font-size: 18px;
+    }
+
+    &-title {
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 36px;
+      color: black;
+      @include mediaLaptopS {
+        font-size: 18px;
+      }
+    }
+
+    &-item {
+      @include flex(center, space-between);
+      margin-bottom: 0.5em;
+    }
+
+    &-key, &-value {
+      display: block;
+      width: fit-content;
+    }
+
+    &-value {
+      color: black;
+    }
+
+    &-summary {
+      @include flex(center, space-between);
+      margin-top: 42px;
+    }
+  }
+
+  &-delivery {
+    margin-bottom: 48px;
+    @include mediaTabletM {
+      @include flex($d: column);
+      margin-bottom: 0;
+    }
+
+    &-key, &-value {
+      margin-bottom: 0.5em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-type {
+      margin-bottom: 0.5em;
+      // margin-bottom: auto;
+    }
+  }
+
+  &-cancel {
+    @include buttonBrown;
+    @include mediaTabletM {
+      width: 266px;
+      margin: 0 auto 0 0;
+    }
+  }
+}

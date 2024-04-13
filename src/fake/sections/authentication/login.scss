@@ -1,0 +1,50 @@
+@use 'src/styles/shared' as *;
+
+.login {
+  &-header {
+    @include flex(center);
+    margin: 0 auto 18px;
+
+    &-divider {
+      width: 2px;
+      height: 20px;
+      margin: 0 10px;
+      background: black;
+    }
+
+    &-button {
+      font-size: 17px;
+      color: black;
+
+      &.active {
+        color: black;
+      }
+    }
+  }
+
+  &-body {
+    @include flex($d: column);
+  }
+
+  &-tel, &-email {
+    display: none;
+
+    &.active {
+      @include flex($d: column);
+      flex: 1 0 auto;
+    }
+  }
+
+  &-tel {
+
+  }
+
+  &-email {
+  }
+
+  .auth-message {
+    font-size: 17px;
+    line-height: 1.75;
+    text-align: center;
+  }
+}

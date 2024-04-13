@@ -1,0 +1,27 @@
+@use 'src/styles/shared' as *;
+
+.menu-info {
+  position: fixed;
+  z-index: 99;
+  top: var(--headerHeight);
+  left: 0;
+  width: 100%;
+  transform: translate(0, calc(-100% - 200px));
+  pointer-events: none;
+  background: white;
+  box-shadow: 12px 12px 24px 0 $colorGreyMild;
+
+  &.active {
+    transform: none;
+    pointer-events: auto;
+  }
+
+  &-container {
+    @include container;
+    padding: 56px 0;
+  }
+
+  &-link {
+    display: block;
+  }
+}

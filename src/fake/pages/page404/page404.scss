@@ -1,0 +1,99 @@
+@use 'src/styles/shared' as *;
+
+.page404 {
+  position: relative;
+  z-index: 0;
+  padding: 120px 0;
+  @include mediaTabletM {
+    padding: 230px 0 335px;
+  }
+  @include mediaTabletL {
+    padding: 120px 0;
+  }
+  @include mediaLaptopS {
+    padding: 152px 0 110px;
+  }
+  @include mediaDesktop {
+    padding-bottom: 132px;
+  }
+
+  &-container {
+    @include container;
+    @include flex(center, $d: column);
+    position: relative;
+    z-index: 1;
+  }
+
+  &-img {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &-title {
+    font-size: 54px * 1.1;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 32px;
+    color: white;
+    @include mediaTabletM {
+      font-size: 64px * 1.1;
+      margin-bottom: 40px;
+    }
+  }
+
+  &-subtitle {
+    font-size: 16px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    text-align: center;
+    width: 220px;
+    margin-bottom: 24px;
+    color: white;
+    @include mediaTabletM {
+      font-size: 20px;
+      line-height: 1;
+      width: auto;
+      margin-bottom: 20px;
+    }
+    @include mediaTabletL {
+      font-size: 26px;
+    }
+    @include mediaLaptopS {
+      font-size: 28px;
+    }
+  }
+
+  &-message {
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    width: 250px;
+    margin-bottom: 48px;
+    color: white;
+    @include mediaTabletM {
+      font-size: 16px;
+      line-height: 1;
+      width: auto;
+      margin-bottom: 120px;
+    }
+    @include mediaLaptopS {
+      font-size: 18px;
+      margin-bottom: 142px;
+    }
+  }
+
+  &-button {
+    @include buttonWhite;
+    width: 290px;
+    @include mediaTabletM {
+      width: 232px;
+    }
+  }
+}

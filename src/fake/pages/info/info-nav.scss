@@ -1,0 +1,114 @@
+@use 'src/styles/shared' as *;
+
+.info-nav {
+  position: sticky;
+  z-index: 100;
+  top: var(--headerHeight);
+  margin: 0 calc(14px * -1);
+  padding: 14px;
+  background: white;
+  @include mediaTabletM {
+    margin: 0 calc(40px * -1);
+    padding: 14px 40px;
+  }
+  @include mediaLaptopS {
+    z-index: 1;
+    top: calc(var(--headerHeight) + 20px);
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-header {
+    @include flex(center);
+    width: fit-content;
+  }
+
+  &-title {
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    @include mediaTabletM {
+      font-size: 16px;
+    }
+    @include mediaLaptopS {
+      font-size: 17px;
+      margin-bottom: 22px;
+    }
+  }
+
+  &-button {
+    @include flex(center, center);
+    font-size: 14px;
+    margin: 0 0.5em;
+    transition: transform 0.33s;
+    transform-origin: center;
+    color: black;
+    @include mediaLaptopS {
+      display: none;
+    }
+
+    &.active {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &-list {
+    @include flex($d: column);
+    width: 100%;
+    background: white;
+    @include mediaOnlyMobileAndAllTablets {
+      position: absolute;
+      z-index: -1;
+      top: 100%;
+      left: 0;
+      overflow: hidden;
+      transition: transform 0.25s, opacity 0.25s;
+      transition-timing-function: ease-in-out;
+      transform: translate3d(-20px, 0, 0);
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    &.active {
+      z-index: 2;
+      transform: none;
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+
+  &-item {
+    font-size: 17px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    flex: 0 0 auto;
+    padding: 10px 14px;
+    transition: background-color 0.5s, color 0.5s;
+    @include mediaTabletM {
+      padding: 14px 40px;
+    }
+    @include mediaLaptopS {
+      font-size: 15px;
+      margin: 0 0 0.75em;
+      padding: 0;
+    }
+
+    &.active, &:hover {
+      color: black;
+      @include mediaOnlyMobileAndAllTablets {
+        background: $colorGreyMild;
+      }
+    }
+  }
+
+  &-link {
+    &-color {
+      color: $colorDarkMild;
+    }
+  }
+
+  &-overlay {
+    @include overlay;
+    z-index: 98;
+  }
+}

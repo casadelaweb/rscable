@@ -1,0 +1,37 @@
+@use 'src/styles/shared' as *;
+
+.tooltip {
+  font-size: 14px;
+  line-height: 1;
+  position: fixed;
+  z-index: 20;
+  top: 400px;
+  left: 0;
+  width: 290px;
+  padding: 12px 16px;
+  transition: transform 0.25s, opacity 0.25s;
+  transform: translate(0, 20px);
+  pointer-events: none;
+  opacity: 0;
+  color: white;
+  border-radius: 6px;
+  background: $colorRed;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    top: -12px;
+    left: 12px;
+    width: 12px * 1.5;
+    height: 12px;
+    background: $colorRed;
+    clip-path: polygon(50% 0%, 0 100%, 100% 100%);;
+  }
+
+  &.active {
+    transform: translate3d(0, 0, 0);
+    pointer-events: auto;
+    opacity: 1;
+  }
+}

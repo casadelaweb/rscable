@@ -1,0 +1,39 @@
+@use 'src/styles/shared' as *;
+
+
+.order {
+  font-size: 14px;
+  color: black;
+
+  &-note {
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  &-warning {
+    color: $colorRed;
+  }
+
+  &-container {
+    @include container;
+  }
+
+  &-layout {
+    @include mediaTabletL {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      column-gap: 56px;
+    }
+  }
+
+  &-title {
+    @include pageTitle;
+  }
+
+  &-steps {
+    margin-bottom: 32px;
+    @include mediaLaptopS {
+      margin-bottom: 120px;
+    }
+  }
+}

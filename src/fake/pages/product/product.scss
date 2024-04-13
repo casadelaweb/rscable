@@ -1,0 +1,181 @@
+@use 'src/styles/shared' as *;
+
+.product {
+  margin-bottom: 100px;
+
+  &-container {
+    @include container;
+
+    @include mediaOnlyMobile {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    @include mediaTabletM {
+      display: grid;
+      grid-template-columns: 337px auto;
+      column-gap: 48px;
+    }
+    @include mediaTabletL {
+      grid-template-columns: 626px auto;
+    }
+    @include mediaLaptopS {
+      grid-template-columns: 787px auto;
+      column-gap: 56px;
+    }
+    @include mediaDesktop {
+      grid-template-columns: 1106px auto;
+      column-gap: 76px;
+    }
+  }
+
+  &-left {
+    min-width: 0;
+    flex: 0 0 auto;
+    overflow: hidden;
+  }
+
+  &-right {
+    min-width: 0;
+    @include mediaOnlyMobile {
+      padding: 0 14px;
+    }
+
+    &-sticky {
+      transition: all 0.1s linear 0s;
+      @include mediaTabletM {
+        position: sticky;
+        z-index: 0;
+        top: calc(var(--headerHeight) * -1);
+      }
+
+      &.sticky {
+        position: fixed;
+        right: auto;
+        bottom: 20px;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 17px;
+    margin-bottom: 17px;
+  }
+
+  &-back {
+    @include flex(center);
+    font-size: 12px;
+    line-height: 100%;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 14px;
+    @include mediaTabletM {
+      font-size: 16px;
+      margin: 23px 0;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 13px;
+      margin-right: 7px;
+      background: url('src/assets/img/product/product-back.png');
+      background-size: cover;
+      @include mediaTabletM {
+        width: 8px;
+        height: 14px;
+
+        margin-right: 14px;
+      }
+    }
+  }
+
+  &-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 14px * 1.5;
+    @include detailsMobile;
+
+    .details {
+      &-summary {
+        font-size: 17px;
+        padding-left: 14px * 2;
+      }
+
+      &-button {
+        left: 0
+      }
+
+      &-body {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &-prices {
+    @include mediaLaptopS {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-instalment {
+    @include flex(center);
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 36px;
+    padding: 12px;
+    color: black;
+    border-radius: 6px;
+    background: $colorGreyMild;
+
+    &-logo {
+      width: 68px;
+      height: 20px;
+      margin-right: 10px;
+      border-radius: 6px;
+    }
+
+    .icon-arrow-right {
+      font-size: 13px;
+      margin-left: auto;
+      color: black;
+    }
+  }
+
+  // todo: исправить костыль
+  &-products {
+    padding: 30px 0;
+
+    &:last-child {
+      margin-bottom: 100px;
+    }
+
+    .section-product {
+      @include flex($d: column);
+
+      &-title, &-price, &-colors {
+        font-size: 14px;
+        display: block;
+        order: 1;
+        margin-top: 8px;
+      }
+
+      &-colors {
+        @include flex(center);
+      }
+
+      &-color {
+        width: 14px;
+        height: 14px;
+        margin-right: 0.5em;
+        border-radius: 50%;
+      }
+
+      &-img {
+        height: auto;
+      }
+    }
+  }
+}
+
+

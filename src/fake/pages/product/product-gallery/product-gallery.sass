@@ -1,0 +1,43 @@
+@use 'src/styles/shared' as *
+
+.product-gallery
+  &-item
+    width: 100%
+    overflow: hidden
+    height: 150vw
+    border-radius: 10px
+    cursor: pointer
+    @include mediaTablet
+      width: 337px
+      height: 505.5px
+    @include mediaTabletL
+      width: 306px
+      height: 459px
+    @include mediaLaptop
+      width: 387px
+      height: 580px
+    @include mediaDesktop
+      width: 546px
+      height: 819px
+
+    img
+      width: 100%
+      object-fit: cover
+      object-position: center
+      display: block
+      height: 100%
+
+  .swiper-pagination-bullet
+    width: 32px
+    margin: 0 5px
+    @include mediaTabletL
+      display: none
+
+
+  .swiper-wrapper
+    @include mediaTabletL
+      display: grid
+      gap: 14px
+      grid-template-columns: 1fr 1fr
+      .swiper-slide
+        width: max-content !important

@@ -1,0 +1,43 @@
+@use 'src/styles/shared' as *;
+
+.menu-mobile {
+  @include flex($d: column);
+  min-height: 100%;
+  @include mediaLaptopS {
+    display: none;
+  }
+
+  &-header, &-body {
+    border-bottom: 1px solid $colorGreyMild;
+  }
+
+  &-header, &-body, &-footer {
+    padding: 14px;
+  }
+
+  &-footer {
+    margin-top: auto;
+  }
+
+  &-close {
+    font-size: 19px;
+    width: 19px;
+    height: 18px;
+  }
+
+  &-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 14px * 1.5;
+    padding: 0 (14px * 2);
+  }
+
+  @include detailsMobile;
+
+  .form {
+    @include mediaOnlyTablets {
+      padding: 28px 0;
+    }
+  }
+}
+

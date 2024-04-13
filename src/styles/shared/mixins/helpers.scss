@@ -1,0 +1,89 @@
+@mixin flex($a:'unset', $j:'unset', $d:'unset', $w:'unset') {
+  display: flex;
+  @if ($a != 'unset') {
+    align-items: $a;
+  }
+  @if ($j != 'unset') {
+    justify-content: $j;
+  }
+  @if ($d != 'unset') {
+    flex-direction: $d;
+  }
+  @if ($w!='unset') {
+    flex-wrap: $w;
+  }
+}
+
+@mixin notLastChild {
+  & > :not(:last-child) {
+    @content;
+  }
+}
+
+@mixin lineClamp($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin lineThrough($color:black) {
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $color;
+    pointer-events: none;
+    transform: translate(0, -50%);
+  }
+}
+
+@mixin hoverableDevice {
+  @media screen and (any-hover: hover) {
+    @content;
+  }
+}
+
+@mixin addBottomLineOnHover($bg:$colorDarkMild) {
+  position: relative;
+  z-index: 0;
+
+  &:hover {
+    &:before {
+      transform: none;
+    }
+  }
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 2px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $bg;
+    transition: transform 0.334s;
+    transform-origin: center left;
+    transform: scale(0)
+  }
+}
+
+@mixin loadingPlaceholder {
+  @keyframes shine {
+    to {
+      background-position-x: -200%;
+    }
+  }
+  background: $colorGreyMild;
+  background: linear-gradient(90deg, $colorGreyMild 10%, white 20%, $colorGreyMild 40%);
+  background-size: 200% 100%;
+  animation: 1s shine linear infinite;
+}

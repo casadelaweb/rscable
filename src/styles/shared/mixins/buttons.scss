@@ -1,0 +1,121 @@
+@use 'src/styles/shared/mixins/media' as *;
+@use 'src/styles/shared/mixins/helpers' as *;
+// @use 'src/styles/shared/variables/colors' as *;
+
+@mixin inputMain {
+  font-weight: 400;
+  flex: 0 0 auto;
+  height: 40px;
+  width: 100%;
+  transition: background-color 0.3s;
+  border-radius: 6px;
+  border: 1px solid $colorDarkMild;
+  padding: 6px 12px;
+  font-size: 13px;
+  @include mediaMobileM {
+    font-size: 14px;
+  }
+  @include mediaLaptopM {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  @include hoverableDevice {
+    &:hover {
+      border-color: $colorDark;
+    }
+  }
+
+  &:focus {
+    background: $colorGreyMild;
+  }
+
+  &._error {
+    color: $colorRed;
+    border-color: $colorRed;
+  }
+
+  &._success {
+    color: $colorGreen;
+    border-color: $colorGreen;
+  }
+}
+
+@mixin buttonTemplate {
+  @include flex(center, center);
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  column-gap: 4px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1;
+  border-radius: 6px;
+  @include mediaMobileM {
+    font-size: 14px;
+  }
+  @include mediaTabletL {
+    column-gap: 8px;
+  }
+  @include mediaLaptopM {
+    font-size: 16px;
+  }
+}
+
+@mixin buttonMain {
+  @include buttonTemplate;
+  padding: 4px 12px;
+  height: 40px;
+  width: 100%;
+  border: 1px solid $colorDark;
+  background-color: transparent;
+  color: black;
+  @include hoverableDevice {
+    &:hover {
+      background: $colorDark;
+      color: white;
+    }
+  }
+  &:active {
+    background: black;
+    border-color: black;
+    color: white;
+  }
+}
+
+@mixin buttonMinor {
+  @include buttonTemplate;
+  transition: background-color 0.33s, color 0.33s;
+  color: $colorDarkMild;
+  padding: 4px 8px;
+  border: 1px solid $colorDarkMild;
+  @include hoverableDevice {
+    &:hover {
+      background: $colorDarkMild;
+      color: white;
+    }
+  }
+
+  &:active {
+    background: $colorDark;
+    color: white;
+  }
+}
+
+@mixin buttonPrimary {
+  @include buttonMain;
+  border-color: #257de3;
+  background-color: #257de3;
+  color: white;
+  @include hoverableDevice {
+    &:hover {
+      background: $colorPurple;
+      border-color: $colorPurple;
+      color: white;
+    }
+  }
+  &:active {
+    background: $colorPurple;
+    border-color: $colorPurple;
+    color: white;
+  }
+}

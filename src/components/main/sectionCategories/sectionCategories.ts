@@ -1,0 +1,6 @@
+import 'src/assets/img/cables/cable-1.png'
+import 'src/assets/img/cables/cable-2.png'
+import 'src/assets/img/cables/cable-3.png'
+import 'src/assets/img/cables/cable-4.png'
+import 'src/assets/img/cables/cable-5.png'
+import 'src/assets/img/cables/cable-6.png'
