@@ -1,30 +1,89 @@
-[type=checkbox], [type=radio] {
-  overflow: hidden;
-  flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
-  margin-right: 0.5em;
-  transition: background-color 0.25s;
-  border: 1px solid black;
-  border-radius: 6px;
+$size: 16px;
 
-  &:checked {
-    background: black;
-
-    &::before {
-      transform: scale(1);
-    }
-  }
+[type='checkbox'], [type='radio'] {
+  appearance: none;
+  position: relative;
+  z-index: 0;
+  width: $size;
+  height: $size;
+  border: 1px solid $colorBlue;
+  background: white;
 
   &::before {
     content: ' ';
-    transition: transform 0.33s;
-    transform: scale(0);
-    opacity: 1;
-    background: black;
+    position: absolute;
+    z-index: 1;
+    background: $colorBlue;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  &:checked {
+    &::before {
+      opacity: 1;
+    }
   }
 }
 
-[type=radio] {
+[type='checkbox'] {
+  &::before {
+    content: '\2714';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+[type='radio'] {
   border-radius: 50%;
+
+  &::before {
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 66.6667%;
+    height: 66.6667%;
+  }
+}
+
+[type='checkbox'],
+[type='radio'] {
+  background: $colorGreyDarker;
+  appearance: none;
+  position: relative;
+  z-index: 0;
+  width: $size * 2.2;
+  height: $size;
+  border-radius: $size;
+  border: 0;
+  transition: background-color 0.25s;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: $size * 0.2;
+    transform: translateY(-50%);
+    width: $size * 0.8;
+    height: $size * 0.8;
+    border-radius: 50%;
+    background: white;
+    opacity: 1;
+    transition: left 0.25s;
+  }
+
+  &:checked {
+    background: $colorBlue;
+
+    &::before {
+      left: calc(100% - $size * 0.8 - $size * 0.2);
+    }
+  }
 }

@@ -1,3 +1,5 @@
+$icon-metro: unquote('"\\e900"');
+$icon-pencil: unquote('"\\e905"');
 $icon-arrow-down: unquote('"\\e909"');
 $icon-arrow-left: unquote('"\\e90a"');
 $icon-arrow-right: unquote('"\\e90b"');
@@ -7,29 +9,28 @@ $icon-filters: unquote('"\\e90e"');
 $icon-heart: unquote('"\\e90f"');
 $icon-heart-fill: unquote('"\\e910"');
 $icon-location: unquote('"\\e911"');
+$icon-image: unquote('"\\e912"');
 $icon-menu: unquote('"\\e913"');
 $icon-person: unquote('"\\e915"');
 $icon-search: unquote('"\\e916"');
 $icon-suitcase: unquote('"\\e917"');
-$icon-pencil: unquote('"\\e905"');
-$icon-image: unquote('"\\e912"');
 $icon-images: unquote('"\\e918"');
-$icon-camera: unquote('"\\e919"');
+$icon-camera: unquote('"\\e91a"');
 $icon-folder-open: unquote('"\\e930"');
 $icon-price-tag: unquote('"\\e935"');
 $icon-price-tags: unquote('"\\e936"');
 $icon-cart: unquote('"\\e93a"');
 $icon-credit-card: unquote('"\\e93f"');
-$icon-phone: unquote('"\\e942"');
-$icon-envelop: unquote('"\\e945"');
-$icon-device-pc: unquote('"\\e956"');
-$icon-device-laptop: unquote('"\\e957"');
-$icon-device-mobile: unquote('"\\e959"');
-$icon-chat: unquote('"\\e96b"');
+$icon-tel: unquote('"\\e942"');
+$icon-email: unquote('"\\e945"');
+$icon-display: unquote('"\\e956"');
+$icon-laptop: unquote('"\\e957"');
+$icon-mobile: unquote('"\\e959"');
+$icon-bubble: unquote('"\\e96b"');
 $icon-spinner: unquote('"\\e97b"');
 $icon-zoom-in: unquote('"\\e987"');
 $icon-zoom-out: unquote('"\\e988"');
-$icon-cog: unquote('"\\e994"');
+$icon-settings: unquote('"\\e994"');
 $icon-stats-bars: unquote('"\\e99c"');
 $icon-bin: unquote('"\\e9ad"');
 $icon-briefcase: unquote('"\\e9ae"');
@@ -52,14 +53,15 @@ $icon-whatsapp: unquote('"\\ea93"');
 $icon-telegram: unquote('"\\ea95"');
 $icon-vk: unquote('"\\ea98"');
 $icon-youtube: unquote('"\\ea9d"');
+$icon-bell: unquote('"\\e919"');
 
 @font-face {
   font-family: 'iconfont';
-  src: url('src/assets/iconfonts/iconfont.eot?yy18uw');
-  src: url('src/assets/iconfonts/iconfont.eot?yy18uw#iefix') format('embedded-opentype'),
-  url('src/assets/iconfonts/iconfont.ttf?yy18uw') format('truetype'),
-  url('src/assets/iconfonts/iconfont.woff?yy18uw') format('woff'),
-  url('src/assets/iconfonts/iconfont.svg?yy18uw#iconfont') format('svg');
+  src: url('src/assets/iconfonts/iconfont.eot?v7cgix');
+  src: url('src/assets/iconfonts/iconfont.eot?v7cgix#iefix') format('embedded-opentype'),
+  url('src/assets/iconfonts/iconfont.ttf?v7cgix') format('truetype'),
+  url('src/assets/iconfonts/iconfont.woff?v7cgix') format('woff'),
+  url('src/assets/iconfonts/iconfont.svg?v7cgix#iconfont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -75,6 +77,18 @@ $icon-youtube: unquote('"\\ea9d"');
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-metro {
+  &:before {
+    content: $icon-metro;
+  }
+}
+
+.icon-pencil {
+  &:before {
+    content: $icon-pencil;
+  }
 }
 
 .icon-arrow-down {
@@ -131,6 +145,12 @@ $icon-youtube: unquote('"\\ea9d"');
   }
 }
 
+.icon-image {
+  &:before {
+    content: $icon-image;
+  }
+}
+
 .icon-menu {
   &:before {
     content: $icon-menu;
@@ -152,18 +172,6 @@ $icon-youtube: unquote('"\\ea9d"');
 .icon-suitcase {
   &:before {
     content: $icon-suitcase;
-  }
-}
-
-.icon-pencil {
-  &:before {
-    content: $icon-pencil;
-  }
-}
-
-.icon-image {
-  &:before {
-    content: $icon-image;
   }
 }
 
@@ -209,39 +217,39 @@ $icon-youtube: unquote('"\\ea9d"');
   }
 }
 
-.icon-phone {
+.icon-tel {
   &:before {
-    content: $icon-phone;
+    content: $icon-tel;
   }
 }
 
-.icon-envelop {
+.icon-email {
   &:before {
-    content: $icon-envelop;
+    content: $icon-email;
   }
 }
 
-.icon-device-pc {
+.icon-display {
   &:before {
-    content: $icon-device-pc;
+    content: $icon-display;
   }
 }
 
-.icon-device-laptop {
+.icon-laptop {
   &:before {
-    content: $icon-device-laptop;
+    content: $icon-laptop;
   }
 }
 
-.icon-device-mobile {
+.icon-mobile {
   &:before {
-    content: $icon-device-mobile;
+    content: $icon-mobile;
   }
 }
 
-.icon-chat {
+.icon-bubble {
   &:before {
-    content: $icon-chat;
+    content: $icon-bubble;
   }
 }
 
@@ -263,9 +271,9 @@ $icon-youtube: unquote('"\\ea9d"');
   }
 }
 
-.icon-cog {
+.icon-settings {
   &:before {
-    content: $icon-cog;
+    content: $icon-settings;
   }
 }
 
@@ -398,6 +406,12 @@ $icon-youtube: unquote('"\\ea9d"');
 .icon-youtube {
   &:before {
     content: $icon-youtube;
+  }
+}
+
+.icon-bell {
+  &:before {
+    content: $icon-bell;
   }
 }
 

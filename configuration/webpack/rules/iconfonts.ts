@@ -5,8 +5,8 @@ function ruleIconfonts(): RuleSetRule {
     test: /(.*?iconfont.*?)\.(svg|woff|woff2|eot|ttf|otf)$/i,
     type: 'asset/resource',
     include: /iconfont|iconfonts/,
-    exclude: /fonts|img|images/,
-    generator: { filename: 'iconfont/[name].[contenthash:4][ext]', },
+    // exclude: /fonts|img|images/,
+    generator: { filename: 'iconfonts/[name].[contenthash:4][ext]', },
   }
 }
 

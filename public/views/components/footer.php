@@ -1,8 +1,8 @@
-<footer class="footer" style="display: none">
+<footer class="footer">
   <div class="footer-top">
     <div class="footer-info">
       <a class="footer-logo" href="/" title="Главная страница">
-        <svg width="128" height="32" viewBox="0 0 175 35" fill="none"
+        <svg class="footer-logo-img" viewBox="0 0 175 35" fill="none"
              xmlns="http://www.w3.org/2000/svg">
           <path
             d="M58.149 16.4238L49.4739 16.4149L49.9598 12.4619L58.1774 12.5414C58.1774 12.5414 59.3877 12.5846 59.3277 14.3592C59.2677 16.1338 58.149 16.4238 58.149 16.4238ZM59.3277 7.68291H44.3727L42.2622 28.2097H48.1246L48.9153 21.4229C48.9153 21.4229 52.3382 21.5934 57.8558 21.5934C60.6738 21.5934 63.4965 19.0776 63.9845 16.8761C66.1224 7.27229 59.3277 7.68291 59.3277 7.68291"
@@ -35,23 +35,97 @@
             fill="#FE291F"></path>
         </svg>
       </a>
-      <div>
-        <span class="iconfont icon-location"></span>
-        <span>Москва, ул Долгоруковская, 15с4-5, кабинет 331</span>
-        <span>Станция метро НОВОСЛОБОДСКАЯ</span>
+      <div class="footer-info-address">
+        <div>
+          <span class="iconfont icon-location"></span>
+          Москва, ул Долгоруковская, 15с4-5, кабинет 331
+        </div>
+        <div>
+          <span class="iconfont icon-metro"></span>
+          Станция метро Новослободская
+        </div>
+        <div>Режим работы: с 8:00 до 18:00</div>
       </div>
-      <div>Режим работы: с 8 до 18</div>
-      <div>Прием звонков: 24 / 7</div>
-      <a href="mailto:4350metrov@rscable.shop">
-        <span class="iconfont icon-email"></span>
-        4350metrov@rscable.shop
-      </a>
-      <a href="tel:+7 (812) 443-54-79">
-        <span class="iconfont icon-tel"></span>
-        +7 (812) 443-54-79
+      <div class="footer-info-contacts">
+        <a href="mailto:4180metrov@rscable.shop">
+          <span class="iconfont icon-email"></span>
+          4180metrov@rscable.shop
+        </a>
+        <a href="tel:+7 (812) 443-54-79">
+          <span class="iconfont icon-tel"></span>
+          +7 (812) 443-54-79
+        </a>
+        <div>Прием звонков: 24 / 7</div>
+        <div class="footer-socials">
+          <a href="#" class="footer-social">
+            <span class="iconfont icon-youtube"></span>
+          </a>
+          <a href="#" class="footer-social">
+            <span class="iconfont icon-telegram"></span>
+          </a>
+          <a href="#" class="footer-social">
+            <span class="iconfont icon-whatsapp"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-payment">
+      <div class="footer-payment-title">
+        Мы принимаем:
+      </div>
+      <div class="footer-payment-layout">
+        <img src="/assets/img/payment/cash.svg" alt="sber" loading="lazy"
+             class="footer-payment-icon">
+        <img src="/assets/img/payment/sber.svg" alt="sber" loading="lazy"
+             class="footer-payment-icon">
+        <img src="/assets/img/payment/maestro.svg" alt="sber" loading="lazy"
+             class="footer-payment-icon">
+        <img src="/assets/img/payment/visa.svg" alt="sber" loading="lazy"
+             class="footer-payment-icon">
+        <img src="/assets/img/payment/mastercard.svg" alt="sber" loading="lazy"
+             class="footer-payment-icon">
+        <img src="/assets/img/payment/mir.svg" alt="sber" loading="lazy"
+             class="footer-payment-icon">
+      </div>
+      <div class="footer-payment-description">
+        Оптовая компания "РОСКАБ" специализируется на поставках с минимальным заказом в 100 000
+        рублей.
+      </div>
+      <a class="footer-rating" target="_blank"
+         href="//yandex.ru/maps/org/229251892786/reviews?utm_source=badge&amp;utm_medium=rating&amp;utm_campaign=v1">
+        <img src="https://avatars.mds.yandex.net/get-altay/474904/badge_rating_light_4.8/orig"
+             alt="rating" loading="lazy">
       </a>
     </div>
-    <div></div>
+    <form class="footer-form" data-form="form">
+      <div class="footer-form-row">
+        <label class="footer-field" data-form="field">
+          <span class="footer-field-label">
+            Подпишитесь на новости
+          </span>
+          <span class="footer-form-note">
+            Получайте информацию об акциях и обновлениях позиций каталога раньше всех
+          </span>
+          <input required type="text" class="footer-field-input" data-validate="email"
+                 placeholder="example@mysite.com">
+          <span class="footer-field-error" data-form="error">
+            Введите вашу электронную почту в формате xxx@xxx.xx
+          </span>
+        </label>
+        <button class="footer-form-submit" type="submit">
+          <span class="iconfont icon-arrow-right"></span>
+        </button>
+      </div>
+      <label class="footer-form-note">
+        <input type="checkbox" required class="footer-form-checkbox">
+        Подписываясь на рассылку, вы соглашаетесь с условиями
+        <a href="/privacy-policy/">политики конфиденциальности</a>
+        и
+        <a href="/user-agreement/">пользовательским соглашением</a>
+      </label>
+    </form>
+  </div>
+  <div class="footer-middle">
     <div class="details" data-details="details">
       <div class="details-summary" data-details="summary">
         <a href="#">Основые категории</a>
@@ -68,26 +142,6 @@
         <a class="details-link" href="#">Судовые кабели</a>
       </div>
     </div>
-    <form class="footer-form" data-form="form">
-      <label class="footer-field" data-form="field">
-        <span class="footer-field-label">
-          Подпишитесь на новости
-        </span>
-        <input required type="text" class="footer-field-input" data-validate="email"
-               placeholder="example@mysite.com">
-        <span class="footer-field-note">
-          Получайте информацию об акциях и обновлениях позиций каталога раньше всех
-        </span>
-        <span class="footer-field-error" data-form="error">
-          Введите вашу электронную почту в формате xxx@xxx.xx
-        </span>
-      </label>
-      <button class="footer-form-submit" type="submit">
-        Отправить
-      </button>
-    </form>
-  </div>
-  <div class="footer-middle">
     <div class="details" data-details="details">
       <div class="details-summary" data-details="summary">
         <a href="#">Будет полезно</a>
@@ -131,9 +185,8 @@
         </button>
       </div>
       <div class="details-body" data-details="body">
+        <a class="details-link" href="#">Контакты</a>
         <a class="details-link" href="#">Филиалы</a>
-        <a class="details-link" href="#">Условия доставки</a>
-        <a class="details-link" href="#">Условия оплаты</a>
         <a class="details-link" href="#">Политика</a>
       </div>
     </div>
@@ -146,6 +199,8 @@
       </div>
       <div class="details-body" data-details="body">
         <a class="details-link" href="#">Вопросы и ответы</a>
+        <a class="details-link" href="#">Условия доставки</a>
+        <a class="details-link" href="#">Условия оплаты</a>
       </div>
     </div>
   </div>

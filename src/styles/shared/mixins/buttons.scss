@@ -104,8 +104,8 @@
 
 @mixin buttonPrimary {
   @include buttonMain;
-  border-color: #257de3;
-  background-color: #257de3;
+  border-color: $colorBlue;
+  background-color: $colorBlue;
   color: white;
   @include hoverableDevice {
     &:hover {
@@ -119,4 +119,10 @@
     border-color: $colorPurple;
     color: white;
   }
+}
+
+@mixin buttonSquare {
+  @include buttonPrimary;
+  width: 40px;
+  height: 40px;
 }

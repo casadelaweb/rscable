@@ -1,0 +1,6 @@
+import 'src/assets/img/payment/cash.svg'
+import 'src/assets/img/payment/mir.svg'
+import 'src/assets/img/payment/maestro.svg'
+import 'src/assets/img/payment/mastercard.svg'
+import 'src/assets/img/payment/visa.svg'
+import 'src/assets/img/payment/sber.svg'
