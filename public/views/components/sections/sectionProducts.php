@@ -15,12 +15,15 @@ global $fakeProducts
         <!--<div class="iconfont icon-spinner"></div>-->
       </div>
       <?php foreach ($fakeProducts as $product):
-        Render::component('catalogCard', $product);
+        Render::component('productCard', $product);
       endforeach; ?>
     </div>
     <div class="productsNote">
-      Это все популярные товары. Не нашли то что искали? Посетите наш <a
-        href="/catalog/">каталог</a> или воспользуйтесь
+      Это все популярные товары. Не нашли то что искали? Посетите наш
+      <a
+        href="/catalog/">каталог
+      </a>
+      или воспользуйтесь
       <button data-modal-open="search">поиском на сайте</button>
     </div>
     <button class="productsLoadMore" type="button" title="Загрузить еще">

@@ -2,30 +2,30 @@
 global $fakeProducts
 ?>
 
-<div class="searchModal" data-modal="search">
+<div class="modalSearch" data-modal="search">
   <input type="text" hidden data-search-modal="input">
 
-  <div class="searchModalContainer">
-    <div class="searchModalMain">
-      <div class="searchModalMainLoader"></div>
-      <div class="searchModalHeader">
-        <h2 class="searchModalHeaderTitle"> Вам могут понравится </h2>
+  <div class="modalSearchContainer">
+    <div class="modalSearchMain">
+      <div class="modalSearchMainLoader"></div>
+      <div class="modalSearchHeader">
+        <h2 class="modalSearchHeaderTitle"> Вам могут понравится </h2>
         <button type="button" data-modal-close title="Закрыть" aria-label="Закрыть"
-                class="searchModalHeaderButton">
+                class="modalSearchHeaderButton">
           Закрыть
         </button>
       </div>
-      <div class="searchModalResults">
+      <div class="modalSearchResults">
         <?php
         foreach ($fakeProducts as $product):
-          Render::component('catalogCard', $product);
+          Render::component('productCard', $product);
         endforeach; ?>
       </div>
     </div>
-    <div class="searchModalAside">
-      <div class="searchModalMobile">
+    <div class="modalSearchAside">
+      <div class="modalSearchMobile">
         <button type="button" data-modal-close title="Закрыть" aria-label="Закрыть"
-                class="searchModalHeaderButton">
+                class="modalSearchHeaderButton">
           Закрыть
         </button>
         <div class="header-search">
@@ -37,33 +37,33 @@ global $fakeProducts
                  placeholder="Категория, модель или артикул">
         </div>
       </div>
-      <div class="searchModalHints">
+      <div class="modalSearchHints">
         <?php $hints = [
           'Гибкий', 'Для подводной прокладки', 'Огнестойкий', 'Экранирован',
           'Герметичный', 'Для наружной прокладки',
         ];
         foreach ($hints as $hint): ?>
-          <button type="button" class="searchModalHint" data-hint="<?= $hint ?>">
+          <button type="button" class="modalSearchHint" data-hint="<?= $hint ?>">
             <?= $hint ?>
           </button>
         <?php endforeach; ?>
       </div>
-      <div class="searchModalQuickLinks">
-        <div class="searchModalQuickLinksTitle">Часто ищут</div>
-        <div class="searchModalQuickLinksList">
-          <a class="searchModalQuickLink" href="/catalog/test/" title="Перейти в каталог">
+      <div class="modalSearchQuickLinks">
+        <div class="modalSearchQuickLinksTitle">Часто ищут</div>
+        <div class="modalSearchQuickLinksList">
+          <a class="modalSearchQuickLink" href="/catalog/test/" title="Перейти в каталог">
             <span>Кабели силовые</span>
             <span class="iconfont icon-search"></span>
           </a>
-          <a class="searchModalQuickLink" href="/catalog/test/" title="Перейти в каталог">
+          <a class="modalSearchQuickLink" href="/catalog/test/" title="Перейти в каталог">
             <span>Кабели с изоляцией из ПВХ</span>
             <span class="iconfont icon-search"></span>
           </a>
-          <a class="searchModalQuickLink" href="/catalog/test/" title="Перейти в каталог">
+          <a class="modalSearchQuickLink" href="/catalog/test/" title="Перейти в каталог">
             <span>Кабели универсальные</span>
             <span class="iconfont icon-search"></span>
           </a>
-          <a class="searchModalQuickLink" href="/catalog/test/" title="Перейти в каталог">
+          <a class="modalSearchQuickLink" href="/catalog/test/" title="Перейти в каталог">
             <span>Кабели автомобильные</span>
             <span class="iconfont icon-search"></span>
           </a>
