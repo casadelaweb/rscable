@@ -34,6 +34,12 @@
   }
 }
 
+@mixin mediaOnlyBeforeLaptop {
+  @media screen and (max-width: 1179px) {
+    @content
+  }
+}
+
 @mixin mediaLaptopS {
   @media screen and (min-width: 1180px) {
     @content

@@ -72,3 +72,4 @@ global $fakeProducts
     </div>
   </div>
 </div>
+<div class="modalSearchOverlay" data-modal-overlay="search"></div>

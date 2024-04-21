@@ -1,0 +1,173 @@
+@use 'src/styles/shared' as *;
+
+.modalRegion {
+  @include scrollbar;
+  position: fixed;
+  z-index: 160;
+  // top: 50%;
+  left: 50%;
+  // transform: translate(-50%, -50%);
+  top: calc(var(--headerHeight) + 40px);
+  transform: translate(-50%, 0);
+  padding: 16px;
+  background: white;
+  border: 1px solid $colorGreyMild;
+  border-radius: $brM;
+  opacity: 0;
+  transition: opacity 0.333s;
+  pointer-events: none;
+  width: calc(100% - 16px - 16px);
+  max-height: 620px;
+  overflow-y: auto;
+  @include mediaMobileL {
+    width: calc(100% - 20px - 20px);
+  }
+  @include mediaTabletM {
+    padding: 24px;
+    width: 640px;
+  }
+  @include mediaTabletL {
+    width: 768px;
+  }
+
+  &._active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &Overlay {
+    @include overlay;
+    z-index: 150;
+  }
+
+  &Close {
+    position: absolute;
+    z-index: 2;
+    top: 12px;
+    right: 12px;
+    color: $colorGreyDarker;
+    font-size: 14px;
+  }
+
+  &Field {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 16px;
+
+    &Input {
+      @include inputMain;
+      border: 1px solid $colorGreyMild;
+      border-radius: $brM;
+      padding-right: 40px !important;
+
+      &:focus {
+        border-radius: $brM $brM 0 0;
+      }
+    }
+
+    &Button {
+      @include flex(center, center);
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 40px;
+      flex: 0 0 auto;
+      color: $colorGreyDarker;
+    }
+
+    &Results {
+      @include scrollbar;
+      @include flex($d: column);
+      position: absolute;
+      z-index: 2;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      max-height: 160px;
+      overflow-y: auto;
+      box-shadow: $bsM;
+      border: 1px solid $colorGreyMild;
+      border-top: 0;
+      border-radius: 0 0 $brM $brM;
+      opacity: 0;
+      transform: translate(0, 40px);
+      pointer-events: none;
+      transition: transform 0.333s, opacity 0.333s;
+
+      &._active {
+        opacity: 1;
+        transform: translate(0, 0);
+        pointer-events: auto;
+      }
+    }
+
+    &Result {
+      @include textS;
+      text-align: left;
+      padding: 8px 12px;
+      border-bottom: 1px solid $colorGreyMild;
+      display: none;
+      @include onHover {
+        background: $colorGreyLight;
+      }
+
+      &._active {
+        display: flex;
+      }
+    }
+  }
+
+  &Title {
+    @include h4;
+    margin-bottom: 16px;
+  }
+
+  &Body {
+    @include scrollbar;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+
+  &Cities {
+    @include flex($w: wrap);
+    column-gap: 8px;
+    row-gap: 8px;
+    margin-bottom: 16px;
+
+    &._column {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      @include mediaLaptopS {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  &City, &Suggestion {
+    @include textS;
+    @include onHover {
+      color: $colorGreen;
+    }
+
+    &:active {
+      color: $colorGreen;
+    }
+
+    &._current {
+      // color: $colorRed;
+      font-weight: 700;
+    }
+  }
+
+  &City {
+    text-align: left;
+  }
+
+  &Suggestion {
+    color: $colorBlue;
+    border-bottom: 1px dashed;
+  }
+}

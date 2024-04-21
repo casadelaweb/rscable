@@ -64,13 +64,13 @@ $images = [
             Отправить заявку
           </button>
         </div>
-        <div class="formFeedbackNote">
+        <label class="formFeedbackNote">
           <input type="checkbox" required>
           Отправляя данную форму вы соглашаетесь с обработкой персональных данных и
           <a href="/privacy-policy/">
             политикой конфиденциальности
           </a>
-        </div>
+        </label>
       </form>
     </div>
   </div>

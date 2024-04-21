@@ -9,7 +9,7 @@
   flex: 0 0 auto;
   height: 40px;
   width: 100%;
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  transition: background-color 0.333s, border-color 0.333s, color 0.333s;
   border-radius: $brM;
   border: 1px solid $colorGreyDarker;
   padding: 6px 12px;
@@ -41,7 +41,7 @@
   line-height: 1;
   @include flex(center, center);
   column-gap: 4px;
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  transition: background-color 0.333s, border-color 0.333s, color 0.333s;
   border-radius: $brM;
   @include mediaTabletL {
     column-gap: 8px;
@@ -72,7 +72,7 @@
 @mixin buttonMinor {
   @include buttonTemplate;
   font-weight: 400;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.333s, color 0.333s;
   color: $colorDarkMild;
   padding: 4px 8px;
   border: 1px solid $colorDarkMild;

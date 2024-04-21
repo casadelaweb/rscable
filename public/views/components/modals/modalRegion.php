@@ -46,4 +46,4 @@ global $citiesPopular;
     </div>
   </div>
 </div>
-<div class="modalRegionOverlay"></div>
+<div class="modalRegionOverlay" data-modal-overlay="region"></div>

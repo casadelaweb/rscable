@@ -1,0 +1,5 @@
+import 'src/components/sections/sectionProducts'
+import 'src/components/sections/sectionAdvantages'
+import 'src/components/sections/sectionPartners'
+import 'src/components/sections/sectionCategories'
+import 'src/components/sections/sectionHero'

@@ -8,12 +8,12 @@ import 'swiper/scss/scrollbar'
 
 import 'src/styles/main.scss'
 import 'src/components'
-import { modals } from 'src/scripts/modals-instance'
-import { globalScrollController } from 'src/scripts/global-scroll-controller'
-import { Details } from 'src/components/global/details/details'
-import { Masks } from 'src/components/global/masks/masks'
-import 'src/assets/img/loading.svg'
-import { fakeProducts } from 'src/fake'
+import { modals } from 'src/scripts/globalModals'
+import { globalScrollController } from 'src/scripts/globalScrollController'
+import { Details } from 'src/modules/details/details'
+import { Masks } from 'src/modules/masks/masks'
+import 'src/modules/images'
+import 'src/modules/dropdown'
 
 document.addEventListener('DOMContentLoaded', () => {
   globalScrollController.init()

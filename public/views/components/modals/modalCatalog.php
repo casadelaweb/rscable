@@ -40,10 +40,10 @@ $categories = [
     'title' => 'Кабели высоковольтные',
     'url' => '#',
   ],
-  [
-    'title' => 'Провода',
-    'url' => '#',
-  ],
+//  [
+//    'title' => 'Провода',
+//    'url' => '#',
+//  ],
 ];
 
 $products = [
@@ -507,3 +507,4 @@ $products = [
     </div>
   </div>
 </div>
+<div class="modalCatalogOverlay" data-modal-overlay="catalog"></div>
