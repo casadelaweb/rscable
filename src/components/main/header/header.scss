@@ -51,9 +51,8 @@
     color: $colorBlue;
   }
 
-
   &Link {
-    @include textM;
+    @include textS;
     display: inline-block;
 
     @include onHover {
@@ -87,6 +86,24 @@
     @include buttonPrimary;
     font-size: 14px;
     width: 140px;
+
+    &._active {
+      .icon-menu {
+        display: none;
+      }
+
+      .icon-close {
+        display: inline-block;
+      }
+    }
+
+    .icon-menu {
+      display: inline-block;
+    }
+
+    .icon-close {
+      display: none;
+    }
   }
 
   &-buttons {

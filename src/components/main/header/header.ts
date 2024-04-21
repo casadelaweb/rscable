@@ -55,6 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
       target.closest('.headerLocationModalChoose')) {
       target.closest('.headerLocationModal').classList.remove('_active')
     }
+
+    if (target.closest('.header-catalog')) {
+      const button: HTMLElement = target.closest('.header-catalog')
+      button.classList.toggle('_active')
+    }
   })
 }, {
   passive: true,

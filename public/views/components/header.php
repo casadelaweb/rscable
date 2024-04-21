@@ -54,6 +54,7 @@ global $cityCurrent;
     </a>
     <button type="button" class="header-catalog" data-modal-toggle="catalog">
       <span class="iconfont icon-menu"></span>
+      <span class="iconfont icon-close"></span>
       Каталог
     </button>
     <div class="dropdown">

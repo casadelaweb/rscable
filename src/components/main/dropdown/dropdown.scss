@@ -4,6 +4,10 @@
   position: relative;
   z-index: 0;
 
+  //.header & {
+  //  z-index: 101;
+  //}
+
   &-head {
     @include textM;
     @include flex(center);
