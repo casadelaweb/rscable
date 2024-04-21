@@ -9,7 +9,7 @@
   background: white;
   color: black;
   border-bottom: 1px solid $colorGreyMild;
-  box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
+  box-shadow: $bsM;
 
   &-desktop {
     &-top {
@@ -184,8 +184,8 @@
       left: 16px;
       padding: 16px;
       border: 1px solid $colorGreyMild;
-      border-radius: 6px;
-      box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
+      border-radius: $brM;
+      box-shadow: $bsM;
       background: white;
       pointer-events: none;
       opacity: 0;

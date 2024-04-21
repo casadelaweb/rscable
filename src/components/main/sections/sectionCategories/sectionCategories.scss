@@ -29,11 +29,11 @@
     padding: 10px 0 0 10px;
     overflow: hidden;
     background: $colorGreyMild;
-    border-radius: 6px;
+    border-radius: $brM;
     @include mediaMobileM {
       padding: 16px 0 0 16px;
     }
-    // box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
+    // box-shadow: $bsM;
 
     &Title {
       @include h7;

@@ -12,7 +12,7 @@
   padding: 16px;
   background: white;
   border: 1px solid $colorGreyMild;
-  border-radius: 6px;
+  border-radius: $brM;
   opacity: 0;
   transition: opacity 0.3s;
   pointer-events: none;
@@ -52,11 +52,11 @@
     &Input {
       @include inputMain;
       border: 1px solid $colorGreyMild;
-      border-radius: 6px;
+      border-radius: $brM;
       padding-right: 40px !important;
 
       &:focus {
-        border-radius: 6px 6px 0 0;
+        border-radius: $brM $brM 0 0;
       }
     }
 
@@ -83,10 +83,10 @@
       background: white;
       max-height: 160px;
       overflow-y: auto;
-      box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
+      box-shadow: $bsM;
       border: 1px solid $colorGreyMild;
       border-top: 0;
-      border-radius: 0 0 4px 4px;
+      border-radius: 0 0 $brM $brM;
       opacity: 0;
       transform: translate(0, 40px);
       pointer-events: none;

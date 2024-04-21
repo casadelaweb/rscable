@@ -7,18 +7,21 @@ import {
 } from 'src/scripts/swiper-settings'
 
 document.addEventListener('DOMContentLoaded', () => {
-  new Swiper('.hero-slider' as CSSSelector, {
+
+  new Swiper('.sectionHeroSlider' as CSSSelector, {
     ...autoplaySetting,
     ...accessibilitySettings,
     modules: [Pagination, Autoplay, A11y,],
     grabCursor: true,
     slidesPerView: 1,
+    spaceBetween: 16,
     speed: 500,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
   } as SwiperOptions)
+
 }, {
   passive: true,
   once: true,

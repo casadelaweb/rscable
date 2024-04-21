@@ -14,9 +14,9 @@
   overflow: hidden;
   position: relative;
   z-index: 0;
-  border-radius: 6px;
-  border: 1px solid $colorGreyLight;
-  box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
+  border-radius: $brM;
+  border: 1px solid $colorGreyMild;
+  box-shadow: $bsM;
 
   &-body {
     @include flex($d: column);
@@ -59,7 +59,7 @@
     font-size: 13px;
     font-weight: 500;
     padding: 2px 8px;
-    border-radius: 6px;
+    border-radius: $brM;
     letter-spacing: 0.02em;
 
     &._stock {
@@ -204,7 +204,7 @@
       line-height: 1;
       padding: 4px 8px;
       background: $colorGreyMild;
-      border-radius: 6px;
+      border-radius: $brM;
       width: fit-content;
       @include mediaTabletM {
         font-size: 13px;
@@ -304,7 +304,7 @@
     overflow: hidden;
     flex: 0 0 auto;
     margin: auto auto 0;
-    border-radius: 6px;
+    border-radius: $brM;
     background: $colorGreyMild;
     width: 100%;
     height: 32px;

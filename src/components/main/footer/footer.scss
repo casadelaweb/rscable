@@ -130,7 +130,7 @@
 
     &-submit {
       @include buttonSquare;
-      border-radius: 0 4px 4px 0;
+      border-radius: 0 $brM $brM 0;
     }
   }
 
@@ -152,7 +152,7 @@
 
     &-input {
       @include inputMain;
-      border-radius: 6px 0 0 6px;
+      border-radius: $brM 0 0 $brM;
       border-right: 0;
     }
 

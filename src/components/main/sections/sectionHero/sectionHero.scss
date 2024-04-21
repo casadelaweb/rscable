@@ -1,49 +1,75 @@
 @use 'src/styles/shared' as *;
 
-.hero {
-  overflow: hidden;
+.sectionHero {
+  padding: 80px 0;
 
-  &-slide {
-    position: relative;
-    z-index: 0;
+  &Container {
+    @include container;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    @include mediaLaptopM {
+      grid-template-columns: 3fr minmax(320px, 1fr);
+    }
+  }
 
-    &-img, &-video {
-      display: block;
-      width: 100%;
+  &Slider {
+  }
+
+  &Slide {
+    height: auto;
+
+    &Img {
       object-fit: cover;
+      height: 100%;
+      width: 100%;
+      border-radius: $brM;
+    }
+  }
+
+  &Form {
+    height: 100%;
+
+    .formFeedback {
+      height: 100%;
+
+      &Body {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 16px;
+        row-gap: 16px;
+
+        @include mediaTabletM {
+          grid-template-columns: repeat(3, 1fr);
+          align-items: flex-end;
+        }
+
+        @include mediaLaptopM {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+
+  .swiper {
+    &-pagination {
+      $size: 12px;
+      border-radius: $size * 0.5;
+
+      &-bullet {
+        width: $size;
+        height: $size;
+        border: 2px solid white;
+        background: none;
+        border-radius: 50%;
+
+        &-active {
+          width: $size * 2.5;
+          background: white;
+          border-radius: $size;
+        }
+      }
     }
   }
 }
-
-//.swiper-pagination {
-//  @include flex(center, center);
-//  position: absolute;
-//  z-index: 1;
-//  bottom: 16px;
-//  left: 50%;
-//  transform: translate(-50%, 0);
-//
-//  @include mediaLaptopS {
-//    bottom: 30px;
-//  }
-//
-//  &-bullet {
-//    display: inline-block;
-//    width: 46px;
-//    height: 2px;
-//    margin: 0 10px;
-//    cursor: pointer;
-//    transition: background-color 0.5s, opacity 0.5s;
-//    opacity: 0.8;
-//    background: white;
-//
-//    @include mediaLaptopS {
-//      width: 80px;
-//    }
-//
-//    &-active {
-//      opacity: 1;
-//      background: black;
-//    }
-//  }
-//}

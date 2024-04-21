@@ -3,7 +3,6 @@ import { CSSSelector, SwiperOptions } from 'swiper/types'
 import { A11y, Navigation, Pagination } from 'swiper/modules'
 import { Fancybox } from '@fancyapps/ui'
 
-
 document.addEventListener('DOMContentLoaded', () => {
   Fancybox.bind('[data-fancybox]', {
     Thumbs: {

@@ -110,7 +110,7 @@
     width: 480px;
     height: 800px;
     transition: transform 0.3s;
-    border-radius: 6px;
+    border-radius: $brM;
 
     &.swiper-slide-visible {
       transform: scale(0.8, 0.8);
@@ -142,7 +142,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 6px;
+      border-radius: $brM;
       background-color: rgba(black, 0.5);
     }
 

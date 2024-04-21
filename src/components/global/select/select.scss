@@ -19,7 +19,7 @@
     font-size: 15px;
     width: 100px;
     padding: 0.75em 1em;
-    border-radius: 6px;
+    border-radius: $brM;
     background: $colorGreyMild;
   }
 
@@ -67,9 +67,9 @@
     transform: translate(0, 40px);
     pointer-events: none;
     opacity: 0;
-    border-radius: 6px;
+    border-radius: $brM;
     background: white;
-    box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
+    box-shadow: $bsM;
 
     &._active {
       transform: none;

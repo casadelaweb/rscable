@@ -14,7 +14,7 @@
   pointer-events: none;
   opacity: 0;
   color: white;
-  border-radius: 6px;
+  border-radius: $brM;
   background: $colorRed;
 
   &::before {

@@ -7,7 +7,7 @@
   left: 0;
   height: calc(100% - var(--headerHeight));
   width: 100%;
-  background: linear-gradient(90deg, $colorGreyLight 25%, white 25%);
+  background: linear-gradient(90deg, $colorGreyMild 25%, white 25%);
   transform: translate(-100%, 0);
   transition: transform 0.3s;
   pointer-events: none;
@@ -26,17 +26,45 @@
 
   &Aside {
     padding: 16px 0;
-    background: $colorGreyLight;
+    background: $colorGreyMild;
   }
 
   &Category {
+    @include flex(center);
+    column-gap: 8px;
     @include textM;
-    transition: background 0.3s;
+    font-weight: 500;
+    line-height: 1;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
     padding: 12px 16px;
+    border-radius: $brM 0 0 $brM;
+    border-bottom: 1px solid white;
 
-    @include onHover {
-      background: white;
+    &:last-child {
+      border-bottom: 0;
     }
+
+    &._active {
+      background: white;
+      color: $colorBlue;
+      box-shadow: $bsM;
+
+      .iconfont {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    }
+
+    .iconfont {
+      @include textS;
+      display: inline-block;
+      opacity: 0;
+      transform: translate(20px, 0);
+      transform-origin: center;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+
   }
 
   &Body {
