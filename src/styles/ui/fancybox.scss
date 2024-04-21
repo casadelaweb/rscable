@@ -26,7 +26,7 @@
 //
 //.f-thumbs__slide.for-image {
 //  border: 1px solid #e0e0e0;
-//  border-radius: 6px;
+//  border-radius: $brM;
 //}
 //
 //.f-thumbs__slide__button {
@@ -43,7 +43,7 @@
   &.for-image {
     transition: 0.3s;
     border: 1px solid rgba($colorGreyMild, 0.5);
-    border-radius: 6px;
+    border-radius: $brM;
     overflow: hidden;
 
     &.is-nav-selected {
@@ -60,7 +60,7 @@
   }
 
   &__img {
-    border-radius: 6px;
+    border-radius: $brM;
     display: block;
     object-fit: contain;
     padding: 8px;

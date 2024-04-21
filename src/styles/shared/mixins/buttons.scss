@@ -9,20 +9,21 @@
   flex: 0 0 auto;
   height: 40px;
   width: 100%;
-  transition: background-color 0.3s, border-color 0.3s;
-  border-radius: 6px;
-  border: 1px solid $colorGreyMild;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  border-radius: $brM;
+  border: 1px solid $colorGreyDarker;
   padding: 6px 12px;
   @include mediaLaptopM {
     padding: 8px 16px;
   }
   @include onHover {
-    border-color: $colorGreyDarker;
+    border-color: $colorGrey;
   }
   &:focus {
     background: $colorGreyLight;
-    border-color: $colorGreyDarker;
+    // border-color: $colorGreyDarker;
   }
+
   &._error {
     color: $colorRed;
     border-color: $colorRed;
@@ -41,7 +42,7 @@
   @include flex(center, center);
   column-gap: 4px;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-  border-radius: 6px;
+  border-radius: $brM;
   @include mediaTabletL {
     column-gap: 8px;
   }

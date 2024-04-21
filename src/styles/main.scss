@@ -50,12 +50,12 @@ a, button {
     padding: 4px 16px;
     background: rgba(black, 0.2);
     margin: 0 auto;
-    border-radius: 6px;
+    border-radius: $brM;
     //backdrop-filter: blur(1px);
 
     &-bullet {
       background-color: white;
-      border-radius: 6px;
+      border-radius: $brM;
       width: 8px;
       height: 8px;
       transition: width 0.3s, opacity 0.3s, background-color 0.3s;

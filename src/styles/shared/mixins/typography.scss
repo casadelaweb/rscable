@@ -111,7 +111,7 @@
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
-  @include mediaMobileM {
+  @include mediaLaptopM {
     font-size: 13px;
   }
   @include mediaDesktop {
