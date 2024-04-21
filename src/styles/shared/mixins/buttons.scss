@@ -1,40 +1,32 @@
 @use 'src/styles/shared/mixins/media' as *;
 @use 'src/styles/shared/mixins/helpers' as *;
+@use 'src/styles/shared/mixins/typography' as *;
 // @use 'src/styles/shared/variables/colors' as *;
 
 @mixin inputMain {
-  font-weight: 400;
+  @include textM;
+  line-height: 1;
   flex: 0 0 auto;
   height: 40px;
   width: 100%;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s;
   border-radius: 6px;
-  border: 1px solid $colorDarkMild;
+  border: 1px solid $colorGreyMild;
   padding: 6px 12px;
-  font-size: 13px;
-  @include mediaMobileM {
-    font-size: 14px;
-  }
   @include mediaLaptopM {
-    font-size: 16px;
     padding: 8px 16px;
   }
-
-  @include hoverableDevice {
-    &:hover {
-      border-color: $colorDark;
-    }
+  @include onHover {
+    border-color: $colorGreyDarker;
   }
-
   &:focus {
-    background: $colorGreyMild;
+    background: $colorGreyLight;
+    border-color: $colorGreyDarker;
   }
-
   &._error {
     color: $colorRed;
     border-color: $colorRed;
   }
-
   &._success {
     color: $colorGreen;
     border-color: $colorGreen;
@@ -42,22 +34,16 @@
 }
 
 @mixin buttonTemplate {
-  @include flex(center, center);
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-  column-gap: 4px;
+  @include textM;
   text-align: center;
   font-weight: 500;
-  font-size: 13px;
   line-height: 1;
+  @include flex(center, center);
+  column-gap: 4px;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
   border-radius: 6px;
-  @include mediaMobileM {
-    font-size: 14px;
-  }
   @include mediaTabletL {
     column-gap: 8px;
-  }
-  @include mediaLaptopM {
-    font-size: 16px;
   }
 }
 
@@ -69,12 +55,11 @@
   border: 1px solid $colorDark;
   background-color: transparent;
   color: black;
-  @include hoverableDevice {
-    &:hover {
-      background: $colorDark;
-      color: white;
-    }
+  @include onHover {
+    background: $colorDark;
+    color: white;
   }
+
   &:active {
     background: black;
     border-color: black;
@@ -82,20 +67,18 @@
   }
 }
 
+
 @mixin buttonMinor {
   @include buttonTemplate;
   font-weight: 400;
-  transition: background-color 0.33s, color 0.33s;
+  transition: background-color 0.3s, color 0.3s;
   color: $colorDarkMild;
   padding: 4px 8px;
   border: 1px solid $colorDarkMild;
-  @include hoverableDevice {
-    &:hover {
-      background: $colorDarkMild;
-      color: white;
-    }
+  @include onHover {
+    background: $colorDarkMild;
+    color: white;
   }
-
   &:active {
     background: $colorDark;
     color: white;
@@ -107,16 +90,14 @@
   border-color: $colorBlue;
   background-color: $colorBlue;
   color: white;
-  @include hoverableDevice {
-    &:hover {
-      background: $colorPurple;
-      border-color: $colorPurple;
-      color: white;
-    }
+  @include onHover {
+    background: $colorBlueLight;
+    border-color: $colorBlueLight;
+    color: white;
   }
   &:active {
-    background: $colorPurple;
-    border-color: $colorPurple;
+    background: $colorBlueDarker;
+    border-color: $colorBlueDarker;
     color: white;
   }
 }

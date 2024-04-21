@@ -87,3 +87,11 @@
   background-size: 200% 100%;
   animation: 1s shine linear infinite;
 }
+
+@mixin onHover {
+  @include hoverableDevice {
+    &:hover {
+      @content;
+    }
+  }
+}

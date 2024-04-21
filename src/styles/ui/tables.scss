@@ -18,7 +18,7 @@ table {
   margin: 1em 0;
   border-collapse: collapse;
   color: black;
-  border: 1px solid $colorGreyMild;
+  border: 1px solid $colorGreyLight;
   @include mediaTabletL {
     font-size: 14px;
   }

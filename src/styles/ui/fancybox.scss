@@ -25,7 +25,7 @@
 //}
 //
 //.f-thumbs__slide.for-image {
-//  border: 2px solid #e0e0e0;
+//  border: 1px solid #e0e0e0;
 //  border-radius: 6px;
 //}
 //
@@ -41,9 +41,9 @@
 
 .f-thumbs__slide {
   &.for-image {
-    transition: 0.33s;
-    border: 2px solid rgba($colorGreyMild, 0.5);
-    border-radius: 8px;
+    transition: 0.3s;
+    border: 1px solid rgba($colorGreyMild, 0.5);
+    border-radius: 6px;
     overflow: hidden;
 
     &.is-nav-selected {
@@ -60,7 +60,7 @@
   }
 
   &__img {
-    border-radius: 8px;
+    border-radius: 6px;
     display: block;
     object-fit: contain;
     padding: 8px;

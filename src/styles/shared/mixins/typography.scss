@@ -93,15 +93,15 @@
   }
 }
 
-@mixin textLabel {
+@mixin textM {
   font-size: 13px;
   font-weight: 400;
   line-height: 1.25;
   letter-spacing: 0;
-  @include mediaMobileM {
+  @include mediaLaptopM {
     font-size: 14px;
   }
-  @include mediaLaptopM {
+  @include mediaDesktop {
     font-size: 16px;
   }
 }
@@ -114,7 +114,7 @@
   @include mediaMobileM {
     font-size: 13px;
   }
-  @include mediaLaptopM {
+  @include mediaDesktop {
     font-size: 14px;
   }
 }
