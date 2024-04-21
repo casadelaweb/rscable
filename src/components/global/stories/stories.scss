@@ -33,7 +33,7 @@
     background: none;
   }
 
-  &.active {
+  &._active {
     transform: translate3d(0, 0, 0);
     opacity: 1;
   }
@@ -48,7 +48,7 @@
     flex: 0 0 auto;
     width: 24px;
     height: 24px;
-    transition: color 0.5s;
+    transition: color 0.3s;
     color: $colorGreyMild;
 
     &:hover {
@@ -109,7 +109,7 @@
     overflow: hidden;
     width: 480px;
     height: 800px;
-    transition: transform 0.33s;
+    transition: transform 0.3s;
     border-radius: 6px;
 
     &.swiper-slide-visible {

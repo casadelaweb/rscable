@@ -33,7 +33,7 @@
     @include mediaMobileM {
       padding: 16px 0 0 16px;
     }
-    // box-shadow: 2px 2px 8px 0 $colorGreyMild;
+    // box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
 
     &Title {
       @include h7;

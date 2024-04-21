@@ -16,7 +16,7 @@
   z-index: 0;
   border-radius: 6px;
   border: 1px solid $colorGreyLight;
-  box-shadow: 4px 4px 16px 0 $colorGreyLight;
+  box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
 
   &-body {
     @include flex($d: column);
@@ -329,11 +329,9 @@
       @include flex(center, center);
       width: 33%;
       padding: 0 10px;
-      transition: background-color 0.2s;
-      @include hoverableDevice {
-        &:hover {
-          background: #e0e0e0;
-        }
+      transition: background-color 0.3s;
+      @include onHover {
+        background: #e0e0e0;
       }
 
       &:active {

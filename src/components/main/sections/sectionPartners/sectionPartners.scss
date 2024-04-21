@@ -23,10 +23,10 @@
   &Slide {
     @include flex($d: column);
     height: auto;
-    border: 1px solid $colorGreyMild;
+    border: 1px solid $colorGreyLight;
     padding: 16px;
-    border-radius: 8px;
-    box-shadow: 4px 4px 16px 0 $colorGreyLight;
+    border-radius: 6px;
+    box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
 
     &Img {
       object-fit: contain;
@@ -39,8 +39,8 @@
     }
 
     &Title {
-      @include addBottomLineOnHover;
-      @include textLabel;
+      // @include addBottomLineOnHover;
+      @include textM;
       width: fit-content;
       margin-top: auto;
     }
@@ -60,22 +60,21 @@
         width: 54px;
         height: 36px;
         background: white;
-        border: 2px solid $colorGrey;
-        border-radius: 8px;
-        color: $colorGrey;
+        border: 1px solid $colorDarkMild;
+        border-radius: 6px;
+        color: $colorDarkMild;
         // border-radius: 50%;
         cursor: pointer;
-        transition: border-color 0.33s, background-color 0.33s, color 0.33s;
-        // box-shadow: 2px 2px 8px 0 $colorGreyMild;
+        transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+        // box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
 
-        @include hoverableDevice {
-          &:hover {
-            border-color: $colorGrey;
-          }
+        @include onHover {
+          border-color: $colorDarkMild;
         }
 
         &:active {
-          background: $colorGrey;
+          background: $colorDarkMild;
+          color: white;
         }
 
         &-disabled {
@@ -102,7 +101,7 @@
 
       &-bullet {
         background: none;
-        border: 2px solid $colorGrey;
+        border: 1px solid $colorDarkMild;
         width: 12px;
         height: 12px;
         border-radius: 50%;
@@ -117,7 +116,7 @@
         }
 
         &-active {
-          background: $colorGrey;
+          background: $colorDarkMild;
           width: 12px * 2.5;
           height: 12px;
           border-radius: 12px;

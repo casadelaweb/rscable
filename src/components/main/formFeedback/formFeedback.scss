@@ -6,7 +6,7 @@
   row-gap: 16px;
   padding: 16px;
   border: 1px solid $colorGreyLight;
-  box-shadow: 4px 4px 16px 0 $colorGreyLight;
+  box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
   border-radius: 6px;
   margin: 40px 0;
   max-width: 360px;
@@ -47,11 +47,11 @@
       color: $colorRed;
       font-size: 13px;
       font-weight: 500;
-      transition: opacity 0.33s, transform 0.33s;
+      transition: opacity 0.3s, transform 0.3s;
       background: white;
       border-radius: 6px;
       padding: 4px 8px;
-      box-shadow: 4px 4px 16px 0 $colorGreyLight;
+      box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
 
       &._error {
         opacity: 1;
@@ -89,7 +89,7 @@
     background: rgba(black, 0.5);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.33s;
+    transition: opacity 0.3s;
 
     &._active {
       opacity: 1;
@@ -112,7 +112,7 @@
     grid-template-columns: 1fr;
     row-gap: 12px;
     padding: 16px;
-    box-shadow: 4px 4px 16px 0 $colorGreyMild;
+    box-shadow: 4px 4px 16px 0 rgba(black, 0.05);
     border-radius: 6px;
     background: white;
     pointer-events: none;

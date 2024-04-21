@@ -9,7 +9,7 @@
   overflow-y: auto;
   width: 320px;
   height: 100%;
-  transition: transform 0.33s;
+  transition: transform 0.3s;
   transform: translate(calc(-100% - 100px), 0);
   pointer-events: none;
   background: white;
@@ -27,11 +27,11 @@
     //z-index: 130;
     overflow: hidden;
     height: auto;
-    box-shadow: 12px 12px 24px 0 $colorGreyMild;
+    box-shadow: 12px 12px 24px 0 $colorGreyLight;
   }
   max-height: 540px;
 
-  &.active {
+  &._active {
     transform: translate3d(0, 0, 0);
     pointer-events: auto;
   }
@@ -94,7 +94,7 @@
   }
 }
 
-.searchModal {
+.modalSearch {
   @include scrollbar;
   position: fixed;
   z-index: 95;
@@ -102,14 +102,14 @@
   left: 0;
   overflow-y: auto;
   width: 100%;
-  transition: transform 0.33s;
+  transition: transform 0.3s;
   transform: translate(0, -125%);
   pointer-events: none;
   background: white;
   max-height: 540px;
   padding-bottom: 80px;
 
-  &.active {
+  &._active {
     transform: translate3d(0, 0, 0);
     pointer-events: auto;
   }
@@ -172,7 +172,7 @@
       color: $colorDarkMild;
     }
 
-    .searchModalHeaderButton {
+    .modalSearchHeaderButton {
       display: none;
       @include mediaLaptopS {
         display: flex
@@ -189,7 +189,7 @@
       column-gap: 12px;
       row-gap: 12px;
     }
-    @include mediaLaptopS {
+    @include mediaTabletL {
       grid-template-columns: repeat(3, 1fr);
     }
     @include mediaLaptopM {
@@ -212,7 +212,7 @@
       display: none;
     }
 
-    .searchModalHeaderButton {
+    .modalSearchHeaderButton {
       margin-left: auto;
     }
 
@@ -272,7 +272,7 @@
     @include flex(center, space-between);
     padding: 8px 0;
     border-bottom: 1px solid $colorGreyMild;
-    transition: border-color 0.33s;
+    transition: border-color 0.3s;
 
     &:hover {
       border-color: $colorDarkMild;

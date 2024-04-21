@@ -1,7 +1,7 @@
 @use 'src/styles/shared' as *;
 
 :root {
-  --modal-transition: transform 0.5s, opacity 0.5s;
+  --modal-transition: transform 0.3s, opacity 0.3s;
 }
 
 .modal {
@@ -19,7 +19,7 @@
   opacity: 0;
   background: rgba(black, 0.5);
 
-  &.active {
+  &._active {
     transform: translate3d(0, 0, 0);
     pointer-events: auto;
     opacity: 1;

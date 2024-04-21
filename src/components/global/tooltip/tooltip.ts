@@ -35,15 +35,15 @@ export class Tooltip {
   }
 
   public show(): void {
-    this.tooltip.classList.add('active')
+    this.tooltip.classList.add('_active')
   }
 
   public hide(): void {
-    this.tooltip.classList.remove('active')
+    this.tooltip.classList.remove('_active')
   }
 
   public toggle(): void {
-    this.tooltip.classList.toggle('active')
+    this.tooltip.classList.toggle('_active')
   }
 
   public init(): void {

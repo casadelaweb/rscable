@@ -79,7 +79,7 @@ class Modals {
     throwEvent(modal, Modals.events.beforeOpen, { trigger: trigger, })
     this.onBeforeOpen()
 
-    modal.classList.add('active')
+    modal.classList.add('_active')
 
     if (!this.parameters.all.includes(modal)) {
       this.parameters.all.push(modal)
@@ -91,7 +91,7 @@ class Modals {
     this.parameters.current.classList.add('current')
 
     if (this.parameters.current === modal) {
-      this.overlay.classList.add('active')
+      this.overlay.classList.add('_active')
     }
     this.onOpen()
 
@@ -101,12 +101,12 @@ class Modals {
   public deactivateModal(modal: HTMLElement, trigger?: any): void {
     // если модальное окно не активно
     // выходим из метода
-    if (!modal.classList.contains('active')) return
+    if (!modal.classList.contains('_active')) return
 
     throwEvent(modal, Modals.events.beforeClose, { trigger: trigger, })
     this.onBeforeClose()
 
-    modal.classList.remove('active')
+    modal.classList.remove('_active')
 
     new Promise<void>((resolve) => {
 
@@ -126,7 +126,7 @@ class Modals {
 
     }).then(() => {
       if (this.parameters.counter === 0) {
-        this.overlay.classList.remove('active')
+        this.overlay.classList.remove('_active')
       }
       this.onClose()
       return throwEvent(modal, Modals.events.close, { trigger: trigger, })
@@ -147,7 +147,7 @@ class Modals {
     const { body, } = document
     const { selectors, } = this.options
 
-    const activeModals = body.querySelectorAll(selectors.modal + '.active')
+    const activeModals = body.querySelectorAll(selectors.modal + '._active')
     if (activeModals.length > 0) {
       activeModals.forEach((modal: HTMLElement) => {
         this.activateModal(modal)

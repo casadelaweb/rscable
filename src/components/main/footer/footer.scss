@@ -1,7 +1,7 @@
 @use 'src/styles/shared' as *;
 
 .footer {
-  box-shadow: 20px 0 20px 0 $colorGreyMild;
+  box-shadow: 20px 0 20px 0 $colorGreyLight;
   margin-top: 80px;
   overflow: hidden;
 
@@ -35,7 +35,7 @@
   }
 
   &-bottom {
-    @include textLabel;
+    @include textM;
   }
 
   &-logo {
@@ -54,7 +54,7 @@
   }
 
   &-info {
-    @include textLabel;
+    @include textM;
 
     &-address, &-contacts {
       @include flex($d: column);
@@ -83,7 +83,7 @@
     }
 
     &-description {
-      @include textLabel;
+      @include textM;
       // margin-bottom: 16px;
     }
 
@@ -130,7 +130,7 @@
 
     &-submit {
       @include buttonSquare;
-      border-radius: 0 6px 6px 0;
+      border-radius: 0 4px 4px 0;
     }
   }
 
@@ -146,7 +146,7 @@
     // margin-bottom: 16px;
 
     &-label {
-      // @include textLabel;
+      // @include textM;
       @include h6;
     }
 
@@ -212,7 +212,7 @@
     }
 
     &-body {
-      @include textLabel;
+      @include textM;
       flex-direction: column;
       row-gap: 8px;
       padding-top: 0;
@@ -220,6 +220,12 @@
       @include mediaLaptopS {
         display: flex !important;
         padding-top: 0;
+      }
+
+      a {
+        @include onHover {
+          color: $colorBlue;
+        }
       }
     }
   }

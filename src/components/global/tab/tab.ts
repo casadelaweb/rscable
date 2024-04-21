@@ -38,9 +38,9 @@ export class Tab {
       })
 
 
-      elements.forEach((element: HTMLElement) => element.classList.remove('active'))
-      button.classList.add('active')
-      tabContent.classList.add('active')
+      elements.forEach((element: HTMLElement) => element.classList.remove('_active'))
+      button.classList.add('_active')
+      tabContent.classList.add('_active')
     }
   }
 }

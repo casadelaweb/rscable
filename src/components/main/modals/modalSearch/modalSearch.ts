@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalSearchInput: HTMLInputElement = body.querySelector('[data-search-modal=input]')
   const inputMobile: HTMLInputElement = body.querySelector('[data-search-modal=input-mobile]')
   const inputDesktop: HTMLInputElement = body.querySelector('[data-search-modal=input-desktop]')
-  const loader: HTMLElement = body.querySelector('.searchModalMainLoader')
+  const loader: HTMLElement = body.querySelector('.modalSearchMainLoader')
 
   inputMobile.addEventListener('input', (event: InputEvent) => {
     const target = event.target as HTMLInputElement

@@ -61,9 +61,9 @@ export class Select {
     const options: HTMLElement = select.querySelector(this.selectors.options)
     const button: HTMLElement = select.querySelector(this.selectors.button)
 
-    select.classList.remove('active')
-    options.classList.remove('active')
-    button.classList.remove('active')
+    select.classList.remove('_active')
+    options.classList.remove('_active')
+    button.classList.remove('_active')
   }
 
   private handleClick(event: MouseEvent): void {
@@ -78,9 +78,9 @@ export class Select {
         this.deactivate(this.parameters.current)
       }
       this.parameters.current = select
-      select.classList.toggle('active')
-      options.classList.toggle('active')
-      button.classList.toggle('active')
+      select.classList.toggle('_active')
+      options.classList.toggle('_active')
+      button.classList.toggle('_active')
     }
 
     if (target.closest(this.selectors.option)) {

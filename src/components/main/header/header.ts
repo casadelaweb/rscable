@@ -46,6 +46,16 @@ class Header {
 
 document.addEventListener('DOMContentLoaded', () => {
   new Header().init()
+
+  document.addEventListener('click', (event: MouseEvent) => {
+    const target = event.target as HTMLElement
+
+    if (target.closest('.headerLocationModalClose') ||
+      target.closest('.headerLocationModalAccept') ||
+      target.closest('.headerLocationModalChoose')) {
+      target.closest('.headerLocationModal').classList.remove('_active')
+    }
+  })
 }, {
   passive: true,
   once: true,
