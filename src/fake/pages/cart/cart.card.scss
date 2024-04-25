@@ -216,7 +216,7 @@
       margin-bottom: 13px;
     }
     @include mediaLaptopS {
-      font-size: 17px;
+      font-size: 16px;
       width: 70px;
       height: 45px;
     }
@@ -224,7 +224,7 @@
 
   &-price {
     &, &-old, &-current {
-      font-size: 17px;
+      font-size: 16px;
     }
 
     &-old {
@@ -261,7 +261,7 @@
     @include flex(center);
     font-size: 16px;
     @include mediaLaptopS {
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .iconfont {

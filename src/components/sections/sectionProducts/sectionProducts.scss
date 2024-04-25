@@ -73,6 +73,7 @@
   }
 
   &Note {
+    @include textM;
     margin-bottom: 40px;
     text-align: center;
     display: none;
@@ -82,9 +83,9 @@
     }
 
     a, button {
-      @include addBottomLineOnHover($colorGreen);
+      @include addBottomLineOnHover($colorBlue);
       letter-spacing: 0.02em;
-      color: $colorGreen;
+      color: $colorBlue;
     }
   }
 

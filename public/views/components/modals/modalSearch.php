@@ -28,11 +28,11 @@ global $fakeProducts
                 class="modalSearchHeaderButton">
           Закрыть
         </button>
-        <div class="header-search">
-          <div class="header-search-icon">
+        <div class="modalSearchField">
+          <div class="modalSearchFieldIcon">
             <span class="iconfont icon-search"></span>
           </div>
-          <input type="text" class="header-search-input" data-modal-open="search"
+          <input type="text" class="modalSearchFieldInput" data-modal-open="search"
                  data-search-modal="input-mobile"
                  placeholder="Категория, модель или артикул">
         </div>

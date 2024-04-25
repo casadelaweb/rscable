@@ -61,8 +61,11 @@
     color: $colorDarkMild;
 
     a {
-      color: $colorGreen;
+      color: $colorBlue;
       font-weight: 500;
+      @include onHover {
+        text-decoration: underline;
+      }
     }
   }
 

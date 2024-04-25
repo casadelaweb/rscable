@@ -1,7 +1,8 @@
 @use 'src/styles/shared' as *;
 
 .advantages {
-  padding: 80px 0;
+  margin: 80px 0;
+  padding: 40px 0;
   background: linear-gradient(45deg, $colorGreyMild 0%, white 75%);
 
   &-container {
@@ -63,14 +64,13 @@
   }
 
   &-note {
-    letter-spacing: 0.02em;
-    font-size: 16px;
+    @include textM;
     text-align: center;
     margin-top: 40px;
 
     a, button {
-      @include addBottomLineOnHover($colorGreen);
-      color: $colorGreen;
+      @include addBottomLineOnHover($colorBlue);
+      color: $colorBlue
     }
   }
 }

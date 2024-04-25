@@ -3,7 +3,8 @@
 
 .sectionPartners {
   overflow: hidden;
-  padding: 80px 0;
+  margin: 80px 0;
+  padding: 0 0 40px;
 
   &Container {
     @include container;

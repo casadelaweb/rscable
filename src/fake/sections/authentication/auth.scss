@@ -52,7 +52,7 @@
 
   &-success {
     @include flex($d: column);
-    font-size: 17px;
+    font-size: 16px;
     text-align: center;
     flex: 1 0 auto;
 
@@ -93,7 +93,7 @@
   }
 
   &-link {
-    font-size: 17px;
+    font-size: 16px;
     text-decoration: underline;
     display: inline-block;
     margin: 0 auto;

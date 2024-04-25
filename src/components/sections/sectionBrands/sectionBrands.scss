@@ -1,0 +1,115 @@
+@use 'src/styles/shared' as *;
+
+.sectionBrands {
+  margin: 80px 0;
+  // overflow: hidden;
+
+  &Container {
+    @include container;
+  }
+
+  @include sectionHeader;
+
+  &Layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 16px;
+    row-gap: 16px;
+    @include mediaLaptopS {
+      grid-template-columns:repeat(5, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-auto-flow: row;
+      grid-template-areas:
+      'popular popular popular private private'
+      'popular popular popular private private'
+      'exclusive exclusive exclusive private private';
+      column-gap: 32px;
+      row-gap: 32px;
+    }
+  }
+
+  &Popular, &Exclusive, &Private {
+    min-width: 0;
+    min-height: 0;
+
+    &Layout {
+      display: grid;
+      column-gap: 16px;
+      row-gap: 16px;
+      //@include mediaLaptopS {
+      //  column-gap: 20px;
+      //  row-gap: 20px;
+      //}
+    }
+  }
+
+  &Popular {
+    @include mediaLaptopS {
+      grid-area: popular;
+    }
+
+    &Layout {
+      @include mediaOnlyMobile {
+        @include flex(center);
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+      }
+      @include mediaTabletS {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+  }
+
+  &Exclusive {
+    @include mediaLaptopS {
+      grid-area: exclusive;
+    }
+
+    &Layout {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &Private {
+    @include mediaLaptopS {
+      grid-area: private;
+    }
+
+    &Layout {
+      grid-template-columns: 1fr;
+    }
+
+    .sectionBrandsBrand {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &SubTitle {
+    @include h6;
+    margin-bottom: 16px;
+    //@include mediaLaptopS {
+    //  margin-bottom: 20px;
+    //}
+  }
+
+  &Brand {
+    @include flex(center, center);
+    min-width: 0;
+    min-height: 0;
+    flex: 0 0 auto;
+    @include mediaOnlyMobile {
+      width: 160px;
+    }
+    @include mediaTabletS {
+      height: 40px;
+    }
+
+    &Img {
+      width: 100%;
+      height: 100%;
+      border-radius: $brM;
+      object-fit: contain;
+    }
+  }
+}

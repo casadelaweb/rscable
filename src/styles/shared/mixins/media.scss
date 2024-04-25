@@ -16,6 +16,12 @@
   }
 }
 
+@mixin mediaOnlyMobile {
+  @media screen and (max-width: 539px) {
+    @content
+  }
+}
+
 @mixin mediaTabletS {
   @media screen and (min-width: 540px) {
     @content
