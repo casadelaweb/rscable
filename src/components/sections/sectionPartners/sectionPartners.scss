@@ -53,10 +53,10 @@
     &-button {
       &-prev, &-next {
         @include flex(center, center);
-        position: absolute;
-        z-index: 2;
-        top: 100%;
-        transform: translate(0, -50%);
+        // position: absolute;
+        //z-index: 2;
+        //top: 100%;
+        //transform: translate(0, -50%);
         flex: 0 0 auto;
         width: 54px;
         height: 36px;
@@ -68,6 +68,7 @@
         cursor: pointer;
         transition: border-color 0.333s, background-color 0.333s, color 0.333s;
         // box-shadow: $bsM;
+        position: static;
 
         @include onHover {
           border-color: $colorDarkMild;
@@ -85,12 +86,17 @@
       }
 
       &-prev {
-        left: 0;
+        // left: 0;
       }
 
       &-next {
-        right: 0;
+        // right: 0;
       }
+    }
+
+    &-footer {
+      @include flex(center);
+      margin-top: 40px;
     }
 
     &-pagination {
@@ -98,7 +104,7 @@
       position: static;
       background: none;
       width: 100%;
-      margin: 40px auto 0;
+      margin: 0 auto;
       transform: none;
       border-radius: $size * 0.5;
 

@@ -56,12 +56,14 @@ $partners = [
           </article>
         <?php endforeach; ?>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev">
-        <div class="iconfont icon-arrow-left"></div>
-      </div>
-      <div class="swiper-button-next">
-        <div class="iconfont icon-arrow-right"></div>
+      <div class="swiper-footer">
+        <button type="button" class="swiper-button-prev">
+          <span class="iconfont icon-arrow-left"></span>
+        </button>
+        <div class="swiper-pagination"></div>
+        <button type="button" class="swiper-button-next">
+          <span class="iconfont icon-arrow-right"></span>
+        </button>
       </div>
     </div>
   </div>
