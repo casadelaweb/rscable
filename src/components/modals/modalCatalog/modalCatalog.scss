@@ -24,6 +24,7 @@
 
   &Overlay {
     @include overlay;
+    z-index: 90;
   }
 
   &Container {

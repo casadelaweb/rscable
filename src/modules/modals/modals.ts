@@ -19,7 +19,8 @@ class Modals {
   private readonly onBeforeClose: any
   private readonly onClick: (event: MouseEvent) => any
   private readonly onKeyUp: (event: KeyboardEvent) => any
-  private readonly onScroll: (event: Event) => any
+
+  //private readonly onScroll: (event: Event) => any
 
   constructor({ hooks, }) {
     this.options = {
@@ -29,7 +30,7 @@ class Modals {
         buttonClose: '[data-modal-close]',
         buttonToggle: '[data-modal-toggle]',
         header: 'header',
-        overlay: '[data-modal-overlay]',
+        overlay: '[data-modal-overlay=default]',
       },
       transition: {
         duration: 333,
@@ -169,11 +170,11 @@ class Modals {
   private listen(): void {
     document.removeEventListener('click', this.onClick)
     document.removeEventListener('keyup', this.onKeyUp)
-    window.removeEventListener('scroll', this.onScroll)
+    //window.removeEventListener('scroll', this.onScroll)
 
     document.addEventListener('click', this.onClick, { passive: true, })
     document.addEventListener('keyup', this.onKeyUp, { passive: true, })
-    window.addEventListener('scroll', this.onScroll, { passive: true, })
+    //window.addEventListener('scroll', this.onScroll, { passive: true, })
   }
 
   private handleClick(event: MouseEvent): void {
@@ -213,7 +214,7 @@ class Modals {
       if (modal) this.toggleModal(modal, button)
     }
 
-    if (target.closest(selectors.overlay) && this.parameters.current) {
+    if (target.closest('[data-modal-overlay]') && this.parameters.current) {
       const isElement = this.parameters.current instanceof HTMLElement
       if (isElement && this.parameters.current.matches(selectors.modal)) {
         this.deactivateModal(this.parameters.current)

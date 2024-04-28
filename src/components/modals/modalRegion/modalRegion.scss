@@ -58,7 +58,7 @@
       @include inputMain;
       border: 1px solid $colorGreyMild;
       border-radius: $brM;
-      padding-right: 40px !important;
+      padding-left: 40px !important;
 
       &:focus {
         border-radius: $brM $brM 0 0;
@@ -70,7 +70,7 @@
       position: absolute;
       z-index: 2;
       top: 0;
-      right: 0;
+      left: 0;
       height: 100%;
       width: 40px;
       flex: 0 0 auto;

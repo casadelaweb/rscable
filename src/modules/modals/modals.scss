@@ -7,7 +7,7 @@
 .modal {
   @include flex(center, center, column);
   position: fixed;
-  z-index: 90;
+  z-index: 115;
   top: 0;
   left: 0;
   overflow-y: auto;

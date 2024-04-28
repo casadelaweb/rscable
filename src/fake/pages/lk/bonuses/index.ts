@@ -1,1 +1,0 @@
-import './bonuses.scss'

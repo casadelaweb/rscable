@@ -11,11 +11,11 @@ global $citiesPopular;
   <div class="modalRegionTop">
     <h2 class="modalRegionTitle">Выберите город</h2>
     <div class="modalRegionField">
-      <input class="modalRegionFieldInput" type="text" placeholder="Введите название города"
-             autocomplete="off">
       <button class="modalRegionFieldButton" type="button">
         <span class="iconfont icon-search"></span>
       </button>
+      <input class="modalRegionFieldInput" type="text" placeholder="Введите название города"
+             autocomplete="off">
       <div class="modalRegionFieldResults">
         <?php foreach ($citiesAll as $city) : ?>
           <button class="modalRegionFieldResult" type="button">

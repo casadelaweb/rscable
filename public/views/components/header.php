@@ -31,7 +31,7 @@ global $cityCurrent;
         <span class="iconfont icon-tel"></span>
         +7 (812) 561-96-12
       </a>
-      <button class="headerFeedback" data-modal-open="modal-feedback" type="button">
+      <button class="headerFeedback" data-modal-open="feedback" type="button">
         Заказать звонок
       </button>
       <a class="headerEmail" href="mailto:1820metrov@rscable.shop">

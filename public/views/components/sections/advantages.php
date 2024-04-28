@@ -61,7 +61,9 @@
     <img src="https://rscable.ru/upload/iblock/8a2/8a2192486aade25538ff57a858097084.png" alt=""
          class="advantages-img" loading="lazy">
     <div class="advantages-note">
-      Посетите наш <a href="/catalog/">каталог</a> и выберите продукт под Ваши нужды.
+      Посетите наш
+      <a href="/catalog/">каталог</a>
+      и выберите продукт под Ваши нужды.
     </div>
   </div>
 </section>

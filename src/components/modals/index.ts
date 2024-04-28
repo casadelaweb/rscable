@@ -1,3 +1,5 @@
 import 'src/components/modals/modalSearch'
 import 'src/components/modals/modalRegion'
 import 'src/components/modals/modalCatalog'
+import 'src/components/modals/modalFeedback'
+import 'src/components/modals/modalCookie'

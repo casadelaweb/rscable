@@ -1,0 +1,48 @@
+@use 'src/styles/shared' as *;
+
+.modalCookie {
+  position: fixed;
+  z-index: 20;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  width: 290px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+  transition: transform 0.333s;
+  pointer-events: none;
+  background: $colorDark;
+  color: white;
+  border-radius: $brM;
+  box-shadow: $bsM;
+  @include mediaTabletS {
+    width: 540px;
+    bottom: 40px;
+  }
+  //@include mediaLaptopS {
+  //}
+
+  //.locked & {
+  //  left: calc(50% + var(--scrollbarWidth));
+  //}
+
+  &._active {
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+  }
+
+  &Body {
+    @include textS;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &Button {
+    @include buttonMain;
+    background: white;
+  }
+}

@@ -8,9 +8,25 @@ $home = new Page([
   'view' => 'home',
   'parent' => null,
 ]);
+$catalog = new Page([
+  'title' => 'Каталог',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/catalog/',
+  'view' => 'catalog',
+  'parent' => null,
+]);
+$product = new Page([
+  'title' => 'Страница продукта',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/product/',
+  'view' => 'product',
+  'parent' => null,
+]);
 
 $pages = [
-  $home,
+  $home, $catalog, $product,
 ];
 
 $pageNotFound = new Page([

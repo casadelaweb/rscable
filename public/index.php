@@ -34,10 +34,12 @@ $isHomepage = $page->view == 'home'
       </main>
       <?php Render::component('footer') ?>
       <div id="modals">
+        <?php Render::component('modals/modalCookie') ?>
         <?php Render::component('modals/modalCatalog') ?>
         <?php Render::component('modals/modalSearch') ?>
         <?php Render::component('modals/modalRegion') ?>
-        <div class="modal-overlay" data-modal-overlay></div>
+        <?php Render::component('modals/modalFeedback') ?>
+        <div class="modal-overlay" data-modal-overlay="default"></div>
       </div>
     </div>
     <script src="<?= getFilePathWithHash('/assets/js/main.js'); ?>"></script>
