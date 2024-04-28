@@ -14,7 +14,7 @@ $catalog = new Page([
   'metaKeywords' => 'Заполните ключевые поля мета',
   'url' => '/catalog/',
   'view' => 'catalog',
-  'parent' => null,
+  'parent' => $home,
 ]);
 $product = new Page([
   'title' => 'Страница продукта',
@@ -22,7 +22,7 @@ $product = new Page([
   'metaKeywords' => 'Заполните ключевые поля мета',
   'url' => '/product/',
   'view' => 'product',
-  'parent' => null,
+  'parent' => $catalog,
 ]);
 
 $pages = [
