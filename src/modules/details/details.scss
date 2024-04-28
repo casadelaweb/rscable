@@ -11,6 +11,7 @@
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: unset;
+    // cursor: pointer;
 
     &::before {
       display: none;
@@ -19,14 +20,23 @@
 
   &-button {
     @include flex(center, center);
-    color: $colorDarkMild;
     font-size: 16px;
     line-height: 1;
-    width: 20px;
-    height: 20px;
-    flex: 0 0 auto;
-    transition: transform 0.333s;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.333s, background-color 0.333s, color 0.333s;
     transform-origin: center;
+    //border: 1px solid $colorGreyMild;
+    border-radius: 50%;
+    color: $colorDarkMild;
+
+    @include onHover {
+      background: $colorGreyLight;
+    }
+
+    &:active {
+      background: $colorGreyMild;
+    }
 
     .is-opening > &, .open > & {
       transform: rotate(180deg);
@@ -55,4 +65,24 @@
       display: flex;
     }
   }
+}
+
+[data-details] {
+  @include dropFlex;
+}
+
+[data-details=details] {
+  @extend .details !optional;
+}
+
+[data-details=summary] {
+  @extend .details-summary !optional;
+}
+
+[data-details=button] {
+  @extend .details-button !optional;
+}
+
+[data-details=body] {
+  @extend .details-body !optional;
 }

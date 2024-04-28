@@ -118,3 +118,13 @@
     font-size: 14px;
   }
 }
+
+@mixin textXs {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  @include mediaLaptopM {
+    font-size: 13px;
+  }
+}

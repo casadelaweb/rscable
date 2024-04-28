@@ -45,8 +45,8 @@ $icon-bookmarks: unquote('"\\e9d3"');
 $icon-star-full: unquote('"\\e9d9"');
 $icon-notification: unquote('"\\ea08"');
 $icon-info: unquote('"\\ea0c"');
-$icon-sort-amount-asc: unquote('"\\ea4c"');
-$icon-sort-amount-desc: unquote('"\\ea4d"');
+$icon-ascending: unquote('"\\ea4c"');
+$icon-descending: unquote('"\\ea4d"');
 $icon-indent-increase: unquote('"\\ea7b"');
 $icon-instagram: unquote('"\\ea92"');
 $icon-whatsapp: unquote('"\\ea93"');
@@ -361,15 +361,15 @@ $icon-bell: unquote('"\\e919"');
   }
 }
 
-.icon-sort-amount-asc {
+.icon-ascending {
   &:before {
-    content: $icon-sort-amount-asc;
+    content: $icon-ascending;
   }
 }
 
-.icon-sort-amount-desc {
+.icon-descending {
   &:before {
-    content: $icon-sort-amount-desc;
+    content: $icon-descending;
   }
 }
 

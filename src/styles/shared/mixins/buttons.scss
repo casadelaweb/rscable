@@ -4,9 +4,9 @@
 // @use 'src/styles/shared/variables/colors' as *;
 
 @mixin inputMain {
+  @include dropFlex;
   @include textM;
   line-height: 1;
-  flex: 0 0 auto;
   height: 40px;
   width: 100%;
   transition: background-color 0.333s, border-color 0.333s, color 0.333s;
@@ -35,6 +35,7 @@
 }
 
 @mixin buttonTemplate {
+  // @include dropFlex;
   @include textM;
   text-align: center;
   font-weight: 500;
@@ -71,18 +72,23 @@
 
 @mixin buttonMinor {
   @include buttonTemplate;
-  font-weight: 400;
+  @include textS;
   transition: background-color 0.333s, color 0.333s;
-  color: $colorDarkMild;
+  color: black;
   padding: 4px 8px;
-  border: 1px solid $colorDarkMild;
+  background: $colorGreyLight;
+  border: 0;
+  // border: 1px solid $colorGrey;
   @include onHover {
-    background: $colorDarkMild;
-    color: white;
+    background: $colorGreyMild;
+    // color: white;
   }
   &:active {
-    background: $colorDark;
-    color: white;
+    background: $colorGreyDarker;
+    // color: white;
+  }
+  @include mediaDesktop {
+    padding: 6px 12px;
   }
 }
 

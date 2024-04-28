@@ -1,6 +1,9 @@
+@use 'src/styles/shared' as *;
+
 $size: 16px;
 
 [type='checkbox'], [type='radio'] {
+  @include dropFlex;
   appearance: none;
   position: relative;
   z-index: 0;
@@ -52,8 +55,7 @@ $size: 16px;
   }
 }
 
-[type='checkbox'],
-[type='radio'] {
+[type='checkbox'] {
   background: $colorGreyDarker;
   appearance: none;
   position: relative;

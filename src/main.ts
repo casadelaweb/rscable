@@ -6,14 +6,15 @@ import 'swiper/scss'
 import 'swiper/scss/a11y'
 // import 'swiper/scss/scrollbar'
 
-import 'src/styles/main.scss'
-import 'src/components'
 import { modals } from 'src/scripts/globalModals'
 import { globalScrollController } from 'src/scripts/globalScrollController'
 import { Details } from 'src/modules/details/details'
 import { Masks } from 'src/modules/masks/masks'
 import 'src/modules/images'
 import 'src/modules/dropdown'
+
+import 'src/styles/main.scss'
+import 'src/components'
 
 document.addEventListener('DOMContentLoaded', () => {
   globalScrollController.init()
