@@ -2,26 +2,22 @@
 global $page;
 
 function renderParent(Page $p): void {
+  global $page;
+  $active = $page->url === $p->url ? '_active' : '';
   $parent = $p->parent;
-  echo "<a class='breadcrumb' href='$p->url' title='$p->title'>
+  if ($parent) {
+    renderParent($parent);
+  }
+
+  echo "<a class='breadcrumb $active' href='$p->url' title='$p->title'>
         $p->title
       </a>";
-  if ($parent) renderParent($parent);
 }
 
 ?>
 
 <div class="breadcrumbs">
-  <div class="breadcrumbs-container">
+  <div class="breadcrumbsContainer">
     <?php renderParent($page) ?>
-    <!--<a class="breadcrumb" href="/">Главная</a>
-    <?php if ($page->parent) : ?>
-      <a class="breadcrumb" href="<?= $page->parent->url ?>" title="<?= $page->title ?>">
-        <?= $page->parent->title ?>
-      </a>
-    <?php endif; ?>
-    <a class="breadcrumb active" href="<?= $page->url ?>" title="<?= $page->title ?>">
-      <?= $page->title ?>
-    </a>-->
   </div>
 </div>

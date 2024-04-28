@@ -72,6 +72,8 @@
     color: $colorBlue;
     position: relative;
     z-index: 1;
+    
+    display: none !important;
 
     &Modal {
       position: absolute;

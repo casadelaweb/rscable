@@ -1,5 +1,6 @@
 import 'src/components/sections/header'
 import 'src/components/sections/footer'
+import 'src/components/sections/breadcrumbs'
 import 'src/components/sections/sectionProducts'
 import 'src/components/sections/sectionAdvantages'
 import 'src/components/sections/sectionPartners'

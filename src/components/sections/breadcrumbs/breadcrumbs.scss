@@ -1,0 +1,34 @@
+@use 'src/styles/shared' as *;
+
+.breadcrumbs {
+  margin: 40px 0;
+
+
+  &Container {
+    @include container;
+  }
+
+  &Divider {
+
+  }
+}
+
+.breadcrumb {
+  @include addBottomLineOnHover($colorDarkMild);
+  @include textS;
+  color: $colorGrey;
+
+  &._active {
+    font-weight: 500;
+    color: $colorDarkMild;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: ' / ';
+    position: static;
+  }
+}
