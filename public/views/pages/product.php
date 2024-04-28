@@ -1,4 +1,4 @@
 <?php namespace App; ?>
 
-product page
+<?php Render::component('breadcrumbs') ?>
 
