@@ -72,7 +72,7 @@
     color: $colorBlue;
     position: relative;
     z-index: 1;
-    
+
     display: none !important;
 
     &Modal {
@@ -88,7 +88,7 @@
       pointer-events: none;
       opacity: 0;
       transform: translate(-100%, 0);
-      transition: opacity 0.333s, transform 0.333s;
+      transition: opacity 0.33s, transform 0.33s;
       @include mediaDesktop {
         padding: 24px;
       }
@@ -303,7 +303,7 @@
   background: white;
   transform: translate(-125%, 0);
   pointer-events: none;
-  transition: transform 0.333s;
+  transition: transform 0.33s;
   overflow-y: auto;
   padding-bottom: 80px;
   @include mediaMobileL {
@@ -404,7 +404,7 @@
       @include textM;
       font-weight: 600;
       padding: 16px;
-      transition: background 0.333s;
+      transition: background 0.33s;
       border-bottom: 1px solid $colorGreyLight;
 
       &:active {

@@ -1,7 +1,7 @@
 <?php namespace App;
 
 class Render {
-  public static function component(string $name, array $props = [],): void {
+  public static function component(string $name, array $props = []): void {
     extract($props);
     ob_start();
     include "views/components/$name.php";

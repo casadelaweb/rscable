@@ -18,7 +18,7 @@ $size: 16px;
     z-index: 1;
     background: $colorBlue;
     opacity: 0;
-    transition: opacity 0.333s;
+    transition: opacity 0.33s;
   }
 
   &:checked {
@@ -64,7 +64,7 @@ $size: 16px;
   height: $size;
   border-radius: $size;
   border: 0;
-  transition: background-color 0.333s;
+  transition: background-color 0.33s;
 
   &::before {
     content: ' ';
@@ -78,7 +78,7 @@ $size: 16px;
     border-radius: 50%;
     background: white;
     opacity: 1;
-    transition: left 0.333s;
+    transition: left 0.33s;
   }
 
   &:checked {

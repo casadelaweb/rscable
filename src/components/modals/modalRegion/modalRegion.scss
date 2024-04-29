@@ -14,7 +14,7 @@
   border: 1px solid $colorGreyMild;
   border-radius: $brM;
   opacity: 0;
-  transition: opacity 0.333s;
+  transition: opacity 0.33s;
   pointer-events: none;
   width: calc(100% - 16px - 16px);
   max-height: 620px;
@@ -95,7 +95,7 @@
       opacity: 0;
       transform: translate(0, 40px);
       pointer-events: none;
-      transition: transform 0.333s, opacity 0.333s;
+      transition: transform 0.33s, opacity 0.33s;
 
       &._active {
         opacity: 1;

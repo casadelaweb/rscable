@@ -1,0 +1,175 @@
+@use 'src/styles/shared' as *;
+
+.sectionAdvisable {
+  @include sectionHeader;
+  margin: 40px 0;
+  overflow: hidden;
+
+  &Container {
+    @include container
+  }
+
+  &Header {
+  }
+
+  &Title {
+  }
+
+  &Button {
+  }
+
+  &Wrapper {
+    position: relative;
+    z-index: 0;
+  }
+
+  &Slider {
+    &Prev, &Next {
+      @include dropFlex;
+      @include flex(center, center);
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      border: 1px solid $colorGreyDarker;
+      border-radius: 50%;
+      box-shadow: $bsM;
+      background: white;
+      opacity: 1;
+      color: $colorDarkMild;
+      transition: background-color 0.33s, color 0.33s, transform 0.33s, opacity 0.33s;
+      @include mediaTabletS {
+        width: 48px;
+        height: 48px;
+      }
+      @include onHover {
+        background: $colorGreyMild;
+      }
+
+      &:active {
+        background: $colorGreyDarker;
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0) translate(0, -50%);
+      }
+    }
+
+    &Prev {
+      left: 0;
+      transform: translate(-25%, -50%);
+      @include mediaTabletS {
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &Next {
+      right: 0;
+      transform: translate(25%, -50%);
+      @include mediaTabletS {
+        transform: translate(50%, -50%);
+      }
+    }
+  }
+
+  .productCard {
+    height: 100%;
+  }
+}
+
+.section {
+  overflow: hidden;
+  padding: 30px 0 60px;
+  @include mediaTabletM {
+    padding: 50px 0 80px
+  }
+  @include mediaLaptopS {
+    padding: 80px 0 110px;
+  }
+
+  &-container {
+    @include container;
+  }
+
+  &-header {
+    @include flex(center, space-between);
+    margin-bottom: 14px;
+    @include mediaLaptopS {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-title, &-button {
+    font-size: 16px;
+    line-height: 54 / 18;
+    color: #80756e;
+
+    @include mediaTabletM {
+      font-size: 18px;
+    }
+  }
+
+  &-button {
+    .icon-arrow-right {
+      font-size: 12px;
+    }
+  }
+
+  &-layout {
+    margin-bottom: 30px;
+    @include mediaTabletM {
+      margin-bottom: 50px;
+    }
+    @include mediaLaptopS {
+      margin-bottom: 80px;
+    }
+  }
+
+  &-product {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+
+    &-favourite {
+      @include buttonPrimary;
+      position: absolute;
+      z-index: 1;
+    }
+
+    &-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-title,
+    &-price,
+    &-colors {
+      display: none;
+    }
+  }
+}
+
+.swiper {
+  overflow: unset;
+  @include mediaTabletM {
+    overflow: hidden;
+  }
+
+  &-slide {
+    @include dropFlex;
+    height: auto;
+  }
+
+  &-button {
+    // @include swiperNavigationButtons;
+  }
+}
+

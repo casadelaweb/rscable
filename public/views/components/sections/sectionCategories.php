@@ -8,34 +8,52 @@
     </div>
     <div class="sectionCategoriesLayout">
       <article class="sectionCategoriesCard">
-        <h3 class="sectionCategoriesCardTitle">Автомобильные кабели</h3>
-        <img src="/assets/img/cables/cable-1.png" alt="offer"
-             class="sectionCategoriesCardImg">
+        <h3 class="sectionCategoriesCardTitle">
+          <a href="/catalog/">Автомобильные кабели</a>
+        </h3>
+        <a href="/catalog/" class="sectionCategoriesCardImg">
+          <img loading="lazy" src="/assets/img/cables/cable-1.png" alt="offer">
+        </a>
       </article>
       <article class="sectionCategoriesCard">
-        <h3 class="sectionCategoriesCardTitle">Информационные кабели</h3>
-        <img src="/assets/img/cables/cable-2.png" alt="offer"
-             class="sectionCategoriesCardImg">
+        <h3 class="sectionCategoriesCardTitle">
+          <a href="/catalog/">Информационные кабели</a>
+        </h3>
+        <a href="/catalog/" class="sectionCategoriesCardImg">
+          <img loading="lazy" src="/assets/img/cables/cable-2.png" alt="offer">
+        </a>
       </article>
       <article class="sectionCategoriesCard">
-        <h3 class="sectionCategoriesCardTitle">Сварочные кабели</h3>
-        <img src="/assets/img/cables/cable-3.png" alt="offer"
-             class="sectionCategoriesCardImg">
+        <h3 class="sectionCategoriesCardTitle">
+          <a href="/catalog/">Сварочные кабели</a>
+        </h3>
+        <a href="/catalog/" class="sectionCategoriesCardImg">
+          <img loading="lazy" src="/assets/img/cables/cable-3.png" alt="offer">
+        </a>
       </article>
       <article class="sectionCategoriesCard">
-        <h3 class="sectionCategoriesCardTitle">Монтажные кабели</h3>
-        <img src="/assets/img/cables/cable-4.png" alt="offer"
-             class="sectionCategoriesCardImg">
+        <h3 class="sectionCategoriesCardTitle">
+          <a href="/catalog/">Монтажные кабели</a>
+        </h3>
+        <a href="/catalog/" class="sectionCategoriesCardImg">
+          <img loading="lazy" src="/assets/img/cables/cable-4.png" alt="offer">
+        </a>
       </article>
       <article class="sectionCategoriesCard">
-        <h3 class="sectionCategoriesCardTitle">Силовые кабели</h3>
-        <img src="/assets/img/cables/cable-5.png" alt="offer"
-             class="sectionCategoriesCardImg">
+        <h3 class="sectionCategoriesCardTitle">
+          <a href="/catalog/">Силовые кабели</a>
+        </h3>
+        <a href="/catalog/" class="sectionCategoriesCardImg">
+          <img loading="lazy" src="/assets/img/cables/cable-5.png" alt="offer">
+        </a>
       </article>
       <article class="sectionCategoriesCard">
-        <h3 class="sectionCategoriesCardTitle">Судовые кабели</h3>
-        <img src="/assets/img/cables/cable-6.png" alt="offer"
-             class="sectionCategoriesCardImg">
+        <h3 class="sectionCategoriesCardTitle">
+          <a href="/catalog/">Судовые кабели</a>
+        </h3>
+        <a href="/catalog/" class="sectionCategoriesCardImg">
+          <img loading="lazy" src="/assets/img/cables/cable-6.png" alt="offer">
+        </a>
       </article>
     </div>
   </div>

@@ -1,0 +1,85 @@
+@use 'src/styles/shared' as *;
+
+.product {
+  &Container {
+    @include container;
+  }
+
+  &Title {
+    @include h1;
+    margin-bottom: 20px;
+  }
+
+  &Header {
+    @include textS;
+    @include flex(center);
+    column-gap: 16px;
+
+    &Reviews {
+    }
+
+    &Buttons {
+      @include flex(center);
+      column-gap: 16px;
+      margin-left: auto;
+    }
+  }
+
+  &Info {
+    &Button {
+      @include buttonMinor;
+      width: fit-content;
+    }
+  }
+
+  &Reviews {
+  }
+
+  &Review {
+    &Author {
+    }
+
+    &Positives {
+    }
+
+    &Negatives {
+    }
+  }
+
+  &Body {
+    @include dropFlex;
+    width: 50%;
+  }
+
+  &Subtitle {
+    @include h3;
+    margin-bottom: 20px;
+  }
+
+  &Description {
+    @include textBody;
+  }
+
+  &Technical {
+    @include textM;
+
+    &Row {
+      @include flex(center, space-between);
+      // column-gap: 16px;
+    }
+
+    &Key {
+      //position: relative;
+      //z-index: 0;
+    }
+
+    &Divider {
+      margin: auto 2px 5px;
+      flex-grow: 1;
+      border-bottom: 1px dotted $colorGrey;
+    }
+
+    &Value {
+    }
+  }
+}

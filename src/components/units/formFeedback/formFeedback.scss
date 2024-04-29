@@ -38,7 +38,7 @@
       opacity: 0;
       color: $colorRed;
       font-weight: 500;
-      transition: opacity 0.333s, transform 0.333s;
+      transition: opacity 0.33s, transform 0.33s;
       background: white;
       border-radius: $brM;
       padding: 4px 8px;
@@ -83,7 +83,7 @@
     background: rgba(black, 0.5);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.333s;
+    transition: opacity 0.33s;
 
     &._active {
       opacity: 1;

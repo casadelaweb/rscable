@@ -12,7 +12,7 @@
   background: linear-gradient(90deg, $colorGreyMild 25%, white 25%);
   transform: translate(0, -125%);
   // opacity: 0;
-  transition: transform 0.333s, opacity 0.333s;
+  transition: transform 0.33s, opacity 0.33s;
   pointer-events: none;
   overflow-y: auto;
 
@@ -61,7 +61,7 @@
     column-gap: 8px;
     @include textS;
     font-weight: 500;
-    transition: background 0.333s, color 0.333s, box-shadow 0.333s;
+    transition: background 0.33s, color 0.33s, box-shadow 0.33s;
     padding: 12px 16px;
     border-radius: $brM 0 0 $brM;
     border-bottom: 1px solid white;
@@ -87,7 +87,7 @@
       opacity: 0;
       transform: translate(20px, 0);
       transform-origin: center;
-      transition: transform 0.333s, opacity 0.333s;
+      transition: transform 0.33s, opacity 0.33s;
       margin-left: auto;
     }
   }

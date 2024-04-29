@@ -1,4 +1,6 @@
 @use 'src/styles/shared/mixins/media' as *;
+@use 'src/styles/shared/mixins/helpers' as *;
+@use 'src/styles/shared/variables/colors' as Colors;
 
 @mixin h1 {
   line-height: 1.1;
@@ -19,7 +21,7 @@
   @include mediaTabletS {
     font-size: 24px;
   }
-  @include mediaTabletM {
+  @include mediaTabletL {
     font-size: 32px;
   }
   @include mediaLaptopM {
@@ -126,5 +128,82 @@
   letter-spacing: 0.03em;
   @include mediaLaptopM {
     font-size: 13px;
+  }
+}
+
+@mixin textBody {
+  $fontSize: 16px;
+  $lineHeight: 1.4;
+
+  position: relative;
+  z-index: 0;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  white-space: normal;
+
+  br {
+    display: none;
+  }
+
+  p, h1, h2, h3, h4, h5, h6, ul, ol {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  ul {
+    padding-left: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    li {
+      position: relative;
+      z-index: 0;
+
+      &::before {
+        @include dropFlex;
+        content: ' ';
+        position: absolute;
+        z-index: 0;
+        top: $fontSize * $lineHeight * 0.5;
+        left: $fontSize * -1;
+        height: 0.5em;
+        width: 0.5em;
+        border-radius: 50%;
+        background: Colors.$colorBlue;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  h1, h2 {
+    font-size: $fontSize * 1.25;
+  }
+
+  h3 {
+    font-size: $fontSize * 1.125;
+  }
+
+  h4, h5, h6 {
+    font-size: $fontSize;
+  }
+
+  h1, h2, h3, h4, h5, h6, hr {
+    font-weight: 600;
+    margin: 1em 0 0.5em
+  }
+
+  ul, ol, li, img, p, details, details[open] > summary, select {
+    margin: 0.5em 0;
+  }
+
+  a {
+    color: Colors.$colorBlue;
+
+    @include onHover {
+      text-decoration: underline;
+    }
   }
 }

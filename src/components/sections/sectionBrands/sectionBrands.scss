@@ -29,8 +29,7 @@
   }
 
   &Popular, &Exclusive, &Private {
-    min-width: 0;
-    min-height: 0;
+    @include dropFlex;
 
     &Layout {
       display: grid;
@@ -95,9 +94,7 @@
 
   &Brand {
     @include flex(center, center);
-    min-width: 0;
-    min-height: 0;
-    flex: 0 0 auto;
+    @include dropFlex;
     @include mediaOnlyMobile {
       width: 160px;
     }

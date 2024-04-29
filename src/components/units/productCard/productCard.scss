@@ -10,6 +10,7 @@
 }
 
 .productCard {
+  @include dropFlex;
   @include flex($d: column);
   overflow: hidden;
   position: relative;
@@ -134,8 +135,7 @@
   }
 
   &-slider {
-    min-width: 0;
-    min-height: 0;
+    @include dropFlex;
 
     a {
       display: flex;
@@ -145,13 +145,11 @@
   }
 
   &Img {
-    flex: 0 0 auto;
+    @include dropFlex;
     min-height: 140px;
     aspect-ratio: 16 / 9;
     width: 100%;
     object-fit: contain;
-    min-width: 0;
-    // min-height: 0;
   }
 
   &-title {
@@ -329,7 +327,7 @@
       @include flex(center, center);
       width: 33%;
       padding: 0 10px;
-      transition: background-color 0.333s;
+      transition: background-color 0.33s;
       @include onHover {
         background: #e0e0e0;
       }

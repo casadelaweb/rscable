@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     grabCursor: false,
     slidesPerView: 1,
     spaceBetween: 16,
+    nested: true,
     navigation: {
       nextEl: '[data-product-card=slider] .swiper-button-next',
       prevEl: '[data-product-card=slider] .swiper-button-prev',

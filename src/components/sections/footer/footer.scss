@@ -9,8 +9,8 @@
   //}
 
   &-top, &-middle, &-bottom {
+    @include dropFlex;
     @include container;
-    min-width: 0;
     border-top: 1px solid $colorGreyMild;
     padding-top: 16px;
     padding-bottom: 16px;

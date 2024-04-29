@@ -48,7 +48,7 @@
     opacity: 0;
     transform: translate(0, 40px);
     pointer-events: none;
-    transition: opacity 0.333s, transform 0.333s;
+    transition: opacity 0.33s, transform 0.33s;
     @include mediaDesktop {
       min-width: 200px;
     }

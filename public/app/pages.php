@@ -47,7 +47,7 @@ foreach ($pages as $p) {
 $fakeProducts = [
   [
     'title' => 'Кабель СШВ 3х150+1х120, 1 кВ',
-    'url' => '/product/test3/',
+    'url' => '/product/',
     'price' => '120 000',
     'priceOld' => 0,
     'images' => [
@@ -67,7 +67,7 @@ $fakeProducts = [
   ],
   [
     'title' => 'Кабель NYM-J 3х1,5, 1 кВ',
-    'url' => '/product/test/',
+    'url' => '/product/',
     'price' => '5 000',
     'priceOld' => '6 400',
     'images' => [
@@ -83,7 +83,7 @@ $fakeProducts = [
   ],
   [
     'title' => 'Кабель NYM-J 3х1,5, 1 кВ',
-    'url' => '/product/test/',
+    'url' => '/product/',
     'price' => '5 000',
     'priceOld' => 0,
     'images' => [
@@ -111,7 +111,7 @@ $fakeProducts = [
   ],
   [
     'title' => 'Кабель КШВЭББШВ-6 3х95+1х10+1х16, 1 кВ',
-    'url' => '/product/test2/',
+    'url' => '/product/',
     'price' => 0,
     'priceOld' => 0,
     'images' => [
@@ -131,7 +131,7 @@ $fakeProducts = [
   ],
   [
     'title' => 'Кабель СШВ 3х150+1х120, 1 кВ',
-    'url' => '/product/test3/',
+    'url' => '/product/',
     'price' => '120 000',
     'priceOld' => '133 000',
     'images' => [
@@ -151,7 +151,7 @@ $fakeProducts = [
   ],
   [
     'title' => 'Кабель СШВ 3х150+1х120, 1 кВ',
-    'url' => '/product/test3/',
+    'url' => '/product/',
     'price' => '120 000',
     'priceOld' => '133 000',
     'images' => [
@@ -171,7 +171,7 @@ $fakeProducts = [
   ],
   [
     'title' => 'Кабель NYM-J 3х1,5, 1 кВ',
-    'url' => '/product/test/',
+    'url' => '/product/',
     'price' => 0,
     'priceOld' => 0,
     'images' => [
@@ -187,7 +187,7 @@ $fakeProducts = [
   ],
   [
     'title' => 'Кабель NYM-J 3х1,5, 1 кВ',
-    'url' => '/product/test/',
+    'url' => '/product/',
     'price' => '5 000',
     'priceOld' => '6 400',
     'images' => [
@@ -203,7 +203,7 @@ $fakeProducts = [
   ],
   [
     'title' => 'Кабель NYM-J 3х1,5, 1 кВ',
-    'url' => '/product/test/',
+    'url' => '/product/',
     'price' => '5 000',
     'priceOld' => '6 400',
     'images' => [
@@ -231,7 +231,7 @@ $fakeProducts = [
   ],
   [
     'title' => 'Кабель КШВЭББШВ-6 3х95+1х10+1х16, 1 кВ',
-    'url' => '/product/test2/',
+    'url' => '/product/',
     'price' => '51 000',
     'priceOld' => '62 400',
     'images' => [

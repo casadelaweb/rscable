@@ -1,8 +1,7 @@
 @use 'src/styles/shared' as *;
 
 .details {
-  min-width: 0;
-  min-height: 0;
+  @include dropFlex;
 
   &-summary {
     @include h6;
@@ -24,7 +23,7 @@
     line-height: 1;
     width: 32px;
     height: 32px;
-    transition: transform 0.333s, background-color 0.333s, color 0.333s;
+    transition: transform 0.33s, background-color 0.33s, color 0.33s;
     transform-origin: center;
     //border: 1px solid $colorGreyMild;
     border-radius: 50%;

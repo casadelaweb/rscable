@@ -1,7 +1,8 @@
 @use 'src/styles/shared/mixins/media' as *;
 @use 'src/styles/shared/mixins/helpers' as *;
 @use 'src/styles/shared/mixins/typography' as *;
-// @use 'src/styles/shared/variables/colors' as *;
+@use 'src/styles/shared/variables/colors' as Colors;
+@use 'src/styles/shared/variables/ui' as UI;
 
 @mixin inputMain {
   @include dropFlex;
@@ -9,28 +10,28 @@
   line-height: 1;
   height: 40px;
   width: 100%;
-  transition: background-color 0.333s, border-color 0.333s, color 0.333s;
-  border-radius: $brM;
-  border: 1px solid $colorGreyDarker;
+  transition: background-color 0.33s, border-color 0.33s, color 0.33s;
+  border-radius: UI.$brM;
+  border: 1px solid Colors.$colorGreyDarker;
   padding: 6px 12px;
   @include mediaLaptopM {
     padding: 8px 16px;
   }
   @include onHover {
-    border-color: $colorGrey;
+    border-color: Colors.$colorGrey;
   }
   &:focus {
-    background: $colorGreyLight;
-    // border-color: $colorGreyDarker;
+    background: Colors.$colorGreyLight;
+    // border-color: Colors.$colorGreyDarker;
   }
 
   &._error {
-    color: $colorRed;
-    border-color: $colorRed;
+    color: Colors.$colorRed;
+    border-color: Colors.$colorRed;
   }
   &._success {
-    color: $colorGreen;
-    border-color: $colorGreen;
+    color: Colors.$colorGreen;
+    border-color: Colors.$colorGreen;
   }
 }
 
@@ -42,8 +43,8 @@
   line-height: 1;
   @include flex(center, center);
   column-gap: 4px;
-  transition: background-color 0.333s, border-color 0.333s, color 0.333s;
-  border-radius: $brM;
+  transition: background-color 0.33s, border-color 0.33s, color 0.33s;
+  border-radius: UI.$brM;
   @include mediaTabletL {
     column-gap: 8px;
   }
@@ -54,11 +55,11 @@
   padding: 4px 12px;
   height: 40px;
   width: 100%;
-  border: 1px solid $colorDark;
+  border: 1px solid Colors.$colorDark;
   background-color: transparent;
   color: black;
   @include onHover {
-    background: $colorDark;
+    background: Colors.$colorDark;
     color: white;
   }
 
@@ -73,18 +74,18 @@
 @mixin buttonMinor {
   @include buttonTemplate;
   @include textS;
-  transition: background-color 0.333s, color 0.333s;
+  transition: background-color 0.33s, color 0.33s;
   color: black;
   padding: 4px 8px;
-  background: $colorGreyLight;
+  background: Colors.$colorGreyLight;
   border: 0;
-  // border: 1px solid $colorGrey;
+  // border: 1px solid Colors.$colorGrey;
   @include onHover {
-    background: $colorGreyMild;
+    background: Colors.$colorGreyMild;
     // color: white;
   }
   &:active {
-    background: $colorGreyDarker;
+    background: Colors.$colorGreyDarker;
     // color: white;
   }
   @include mediaDesktop {
@@ -94,17 +95,17 @@
 
 @mixin buttonPrimary {
   @include buttonMain;
-  border-color: $colorBlue;
-  background-color: $colorBlue;
+  border-color: Colors.$colorBlue;
+  background-color: Colors.$colorBlue;
   color: white;
   @include onHover {
-    background: $colorBlueLight;
-    border-color: $colorBlueLight;
+    background: Colors.$colorBlueLight;
+    border-color: Colors.$colorBlueLight;
     color: white;
   }
   &:active {
-    background: $colorBlueDarker;
-    border-color: $colorBlueDarker;
+    background: Colors.$colorBlueDarker;
+    border-color: Colors.$colorBlueDarker;
     color: white;
   }
 }

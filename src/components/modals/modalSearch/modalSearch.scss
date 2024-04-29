@@ -9,7 +9,7 @@
   overflow-y: auto;
   width: 320px;
   height: 100%;
-  transition: transform 0.333s;
+  transition: transform 0.33s;
   transform: translate(calc(-100% - 100px), 0);
   pointer-events: none;
   background: white;
@@ -102,7 +102,7 @@
   left: 0;
   overflow-y: auto;
   width: 100%;
-  transition: transform 0.333s;
+  transition: transform 0.33s;
   transform: translate(0, -125%);
   pointer-events: none;
   background: white;
@@ -132,10 +132,9 @@
   }
 
   &Main {
+    @include dropFlex;
     position: relative;
     z-index: 0;
-    min-width: 0;
-    min-height: 0;
 
     &Loader {
       @include loadingPlaceholder;
@@ -163,7 +162,6 @@
 
   &Header {
     @include flex(center, space-between);
-    // min-height: 80px;
 
     &Button {
       @include addBottomLineOnHover($bg: $colorDarkMild);
@@ -226,9 +224,8 @@
   }
 
   &Aside {
+    @include dropFlex;
     order: -1;
-    min-height: 0;
-    min-width: 0;
     font-size: 14px;
     @include mediaLaptopS {
       position: sticky;
@@ -243,7 +240,7 @@
   }
 
   &Hints {
-    min-width: 0;
+    @include dropFlex;
     @include flex($w: wrap);
     column-gap: 8px;
     row-gap: 8px;
@@ -256,8 +253,7 @@
   }
 
   &QuickLinks {
-    min-height: 0;
-    min-width: 0;
+    @include dropFlex;
 
     &List {
       //display: grid;
@@ -276,7 +272,7 @@
     @include flex(center, space-between);
     padding: 8px 0;
     border-bottom: 1px solid $colorGreyMild;
-    transition: border-color 0.333s;
+    transition: border-color 0.33s;
 
     &:hover {
       border-color: $colorDarkMild;
