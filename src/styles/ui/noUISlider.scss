@@ -1,10 +1,12 @@
+@use 'src/styles/shared/variables/colors' as Colors;
+
 #app .noUi {
   &-horizontal {
-    width: calc(100% - 20px);
+    width: calc(100% - 32px);
     height: 4px;
     margin: 0 auto 1em;
     border: 0;
-    background: $colorGreyMild;
+    background: Colors.$colorGreyMild;
   }
 
   &-target {

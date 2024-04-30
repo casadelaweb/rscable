@@ -76,7 +76,7 @@
   @include textS;
   transition: background-color 0.33s, color 0.33s;
   color: black;
-  padding: 4px 8px;
+  padding: 3px 6px;
   background: Colors.$colorGreyLight;
   border: 0;
   // border: 1px solid Colors.$colorGrey;
@@ -89,7 +89,7 @@
     // color: white;
   }
   @include mediaDesktop {
-    padding: 6px 12px;
+    padding: 5px 10px;
   }
 }
 

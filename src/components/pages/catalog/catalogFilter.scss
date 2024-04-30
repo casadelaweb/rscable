@@ -1,0 +1,67 @@
+@use 'src/styles/shared' as *;
+
+.catalogFilter {
+  border-bottom: 1px solid $colorGreyMild;
+
+  &Summary {
+    @include flex(flex-start, flex-start, column);
+    @include textM;
+    padding: 8px 16px;
+    // border-bottom: 1px solid $colorGreyMild;
+    cursor: pointer;
+    @include mediaTabletL {
+      padding: 16px 0;
+    }
+
+    &Content {
+      @include textM;
+      @include flex(center, space-between);
+      width: 100%;
+    }
+  }
+
+  &Selected {
+    @include textXs;
+    @include lineClamp(1);
+    font-weight: 500;
+    line-height: 1;
+    color: $colorBlue;
+    width: 100%;
+  }
+
+  &Button {
+    @include textM;
+  }
+
+  &Body {
+    padding: 0 8px 16px;
+    // border-bottom: 1px solid $colorGreyMild;
+    @include mediaTabletL {
+      padding: 0 0 16px;
+    }
+  }
+
+  &Label {
+    @include flex(center);
+    column-gap: 8px;
+  }
+
+  &Row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  &Input {
+    display: inline-block;
+    margin: 0;
+
+    &._range {
+      @include inputMain;
+    }
+  }
+
+  &Title {
+  }
+}

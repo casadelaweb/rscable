@@ -92,7 +92,7 @@ class Modals {
       if (modalCustomOverlay) {
         modalCustomOverlay.classList.add('_active')
       } else {
-        this.overlay.classList.add('_active')
+        this.overlay?.classList.add('_active')
       }
     }
     this.onOpen()
@@ -134,7 +134,7 @@ class Modals {
         if (modalCustomOverlay) {
           modalCustomOverlay.classList.remove('_active')
         } else {
-          this.overlay.classList.remove('_active')
+          this.overlay?.classList.remove('_active')
         }
 
       }

@@ -1,0 +1,116 @@
+@use 'src/styles/shared' as *;
+
+.catalogFilters {
+  flex-grow: 1;
+  @include flex($d: column);
+
+  &Header, &Buttons, &Feedback {
+    padding: 16px;
+    border-bottom: 1px solid $colorGreyMild;
+    margin-bottom: 16px;
+    @include mediaTabletL {
+      padding: 0;
+      border-bottom: 0;
+      margin: 0;
+    }
+  }
+
+  &Header {
+    @include flex(center, space-between);
+    @include textS;
+    margin: 0;
+    @include mediaTabletL {
+      display: none;
+    }
+  }
+
+  &Close {
+    @include textM;
+    color: $colorDarkMild;
+  }
+
+  &Buttons {
+    @include flex(center);
+    column-gap: 16px;
+    position: sticky;
+    z-index: 1;
+    bottom: 0;
+    margin: 0;
+    border-top: 1px solid $colorGreyMild;
+    @include mediaTabletL {
+      margin-top: 40px;
+      border: 0;
+    }
+  }
+
+  &Submit {
+    @include buttonPrimary;
+  }
+
+  &Reset {
+    @include buttonMain;
+  }
+
+  &Feedback {
+    display: none;
+    margin: 0;
+    @include mediaTabletL {
+      display: block;
+      margin: 40px 0 0;
+    }
+
+    &Title {
+      @include textXs;
+      color: $colorDark;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    &Button {
+      @include textXs;
+      @include flex(center);
+      column-gap: 8px;
+      color: $colorDarkMild;
+      font-weight: 500;
+      @include onHover {
+        color: $colorBlue;
+      }
+    }
+  }
+
+  &Body {
+    flex: 1 0 auto;
+    margin-bottom: 40px;
+  }
+
+  &Footer {
+    @include flex(center);
+    position: sticky;
+    z-index: 1;
+    bottom: 0;
+    margin-top: auto;
+    padding: (14px * 2) 14px;
+    background: white;
+    box-shadow: 0 -2px 4px rgba(81, 80, 79, 0.25);
+  }
+
+  &Title {
+    font-size: 17px;
+    margin-bottom: 1.25em;
+    letter-spacing: 0.02em;
+    color: #80756e;
+  }
+
+  &Link {
+    font-size: 15px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 0.75em;
+    letter-spacing: 0.02em;
+
+    &:hover,
+    &._active {
+      color: #505050;
+    }
+  }
+}

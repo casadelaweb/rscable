@@ -31,7 +31,7 @@ export class Details {
       ...optionsCustom?.selectors,
     }
     this.elements = []
-    this.durationMin = 333
+    this.durationMin = 250
     this.durationMax = 500
     this.durationPerHeight = 0.5
     this.easing = 'ease-in-out'

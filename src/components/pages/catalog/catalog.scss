@@ -1,7 +1,10 @@
 @use 'src/styles/shared' as *;
 
+.test {
+
+}
+
 .catalog {
-  // padding: 40px 0;
   margin: 40px 0;
 
   &Container {
@@ -14,17 +17,23 @@
   }
 
   &Suggestions {
-    @include flex($w: wrap);
-    column-gap: 12px;
-    row-gap: 12px;
-    margin-bottom: 20px;
+    @include flex(center);
+    column-gap: 8px;
+    row-gap: 8px;
+    overflow-y: auto;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    @include mediaTabletM {
+      @include flex(flex-start, $w: wrap);
+      column-gap: 12px;
+      row-gap: 12px;
+    }
   }
 
   &Suggestion {
     @include buttonMinor;
-  }
-
-  &Filters {
+    @include dropFlex;
+    width: fit-content;
   }
 
   &Header {
@@ -32,11 +41,22 @@
   }
 
   &SortButtons {
-    @include flex(center);
-    column-gap: 16px;
+    display: none;
+    @include mediaTabletL {
+      @include flex(center);
+      column-gap: 16px;
+    }
   }
 
   &SortButton {
+    @include onHover {
+      color: $colorBlue;
+    }
+
+    &:active {
+      color: $colorBlueDarker;
+    }
+
     .iconfont {
       display: none;
     }
@@ -54,91 +74,13 @@
 
   &Layout {
     @include dropFlex;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    column-gap: 20px;
-    @include mediaLaptopS {
+    @include mediaTabletL {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      column-gap: 20px;
+    }
+    @include mediaLaptopM {
       column-gap: 40px;
-    }
-  }
-
-  &Aside {
-    @include dropFlex;
-    position: sticky;
-    z-index: 1;
-    top: calc(var(--headerHeight) + 20px);
-    height: fit-content;
-  }
-
-  &Filters {
-    //@include flex($d: column);
-    //row-gap: 16px;
-
-    &Buttons {
-      @include flex(center);
-      column-gap: 16px;
-      margin-top: 40px;
-    }
-
-    &Submit {
-      @include buttonPrimary;
-    }
-
-    &Reset {
-      @include buttonMain;
-    }
-
-    &Feedback {
-
-      margin: 40px 0 0;
-
-      &Title {
-        @include textXs;
-        color: $colorDark;
-        font-weight: 600;
-        margin-bottom: 8px;
-      }
-
-      &Button {
-        @include textXs;
-        @include flex(center);
-        column-gap: 8px;
-        color: $colorDarkMild;
-        font-weight: 500;
-        @include onHover {
-          color: $colorBlue;
-        }
-      }
-    }
-  }
-
-  &Filter {
-    &Summary {
-      @include textM;
-      padding: 8px;
-      border-bottom: 1px solid $colorGreyMild;
-    }
-
-    &Button {
-      @include textS;
-    }
-
-    &Body {
-      padding: 8px;
-      border-bottom: 1px solid $colorGreyMild;
-    }
-
-    &Label {
-      @include flex(center);
-      column-gap: 8px;
-    }
-
-    &Input {
-      display: inline-block;
-      margin: 0;
-    }
-
-    &Title {
     }
   }
 
@@ -159,353 +101,36 @@
     @include mediaTabletM {
       column-gap: 20px;
     }
+    @include mediaTabletL {
+      //position: sticky;
+      //z-index: 120;
+      //top: calc(var(--headerHeight) + 20px);
+      //background: white;
+      //padding: 16px;
+      //border: 1px solid $colorGreyMild;
+      //border-radius: $brM;
+      //box-shadow: $bsM;
+    }
   }
 
   &Products {
     @include dropFlex;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 16px;
-    row-gap: 16px;
-    @include mediaTabletM {
-      column-gap: 20px;
-      row-gap: 20px;
+    column-gap: 12px;
+    row-gap: 12px;
+    @include mediaMobileL {
+      column-gap: 16px;
+      row-gap: 16px;
+    }
+    @include mediaLaptopS {
       grid-template-columns: repeat(3, 1fr);
     }
-    @include mediaLaptopM {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-}
-
-.catalog-filters {
-  @include mediaOnlyBeforeLaptop {
-    position: fixed;
-    z-index: 105;
-    top: 0;
-    left: 0;
-    // display: block;
-    @include flex($d: column);
-    overflow-y: auto;
-    width: 320px;
-    height: 100%;
-    transition: transform 0.5s;
-    transform: translate(-100%, 0);
-    pointer-events: none;
-    background: white;
-
-    &._active {
-      transform: none;
-      pointer-events: auto;
-    }
-
-    @include scrollbar;
-  }
-  @include mediaLaptopS {
-    flex: 1 0 auto;
-    @include flex($a: center, $d: row);
-  }
-
-  &-header {
-    @include flex(center, space-between);
-    font-size: 12px;
-    padding: 14px;
-    letter-spacing: 0.02px;
-    text-transform: uppercase;
-    @include mediaLaptopS {
-      display: none;
-      padding-left: 0;
-    }
-  }
-
-  &-close {
-    font-size: 19px;
-    width: 19px;
-    height: 19px;
-    @include mediaLaptopS {
-      display: none;
-    }
-  }
-
-  &-body {
-    flex: 1 0 auto;
-    margin-bottom: 40px;
-    @include mediaLaptopS {
-      @include flex(center);
-      margin: 0;
-    }
-  }
-
-  &-footer {
-    @include flex(center);
-    position: sticky;
-    z-index: 1;
-    bottom: 0;
-    margin-top: auto;
-    padding: (14px * 2) 14px;
-    background: white;
-    box-shadow: 0 -2px 4px rgba(81, 80, 79, 0.25);
-    @include mediaLaptopS {
-      display: none;
-    }
-  }
-
-  &-reset, &-submit {
-    width: 142px;
-    height: 44px;;
-    border-radius: 4px;
-  }
-
-  &-reset {
-    @include buttonMain;
-    margin-right: 10px;
-    color: #c7b29c;
-    border: 2px solid #c7b29c;
-    background: white;
-    @include mediaLaptopS {
-      margin-right: 20px;
-    }
-  }
-
-  &-submit {
-    @include buttonPrimary;
-    color: white;
-    background: #c7b29c;
-  }
-
-  &-title {
-    font-size: 17px;
-    margin-bottom: 1.25em;
-    letter-spacing: 0.02em;
-    color: #80756e;
-  }
-
-  &-link {
-    font-size: 15px;
-    display: inline-block;
-    width: fit-content;
-    margin-bottom: 0.75em;
-    letter-spacing: 0.02em;
-
-    &:hover,
-    &._active {
-      color: #505050;
-    }
-  }
-}
-
-.catalog-filter {
-  @include mediaOnlyBeforeLaptop {
-    @include flex($d: column);
-    position: relative;
-    z-index: 0;
-
-    &.open, &.is-opening {
-      .catalog-filter-body {
-        @include flex;
-      }
-    }
-
-    &-summary {
-      @include flex($j: center, $d: column);
-      font-size: 17px;
-      flex: 1 0 auto;
-      width: auto;
-      height: 70px;
-      padding: 0 14px;
-      cursor: pointer;
-      transition: background-color 0.25s;
-      border-top: 1px solid #e9e9e9;
-      @include mediaLaptopS {
-        font-size: 18px;
-        padding-left: 0;
-      }
-
-      &:hover {
-        @include hoverableDevice {
-          background: #f1f1f1;
-        }
-      }
-
-      &:active {
-        background: #f1f1f1;
-      }
-
-      &-content {
-        @include flex(center);
-        // flex: 1 0 auto;
-        // width: auto;
-      }
-    }
-
-    &-button {
-      order: 1;
-      margin-left: auto;
-      cursor: pointer;
-      transition: transform 0.5s;
-      transform-origin: center;
-
-      &._active {
-        transform: rotate(180deg);
-      }
-    }
-
-    &-selected {
-      @include lineClamp(1);
-      font-size: 13px;
-      letter-spacing: 0.02em;
-      color: #c7b29c;
-      @include mediaLaptopS {
-        font-size: 14px;
-      }
-    }
-
-    &-body {
-      @include flex($d: column);
-      font-size: 14px;
-      display: none;
-      padding: 14px;
-      letter-spacing: 0.02em;
-      @include mediaTabletS {
-        font-size: 16px;
-      }
-    }
-  }
-  @include mediaLaptopS {
-    font-size: 17px;
-    position: relative;
-    z-index: 2;
-    display: inline-block;
-    width: fit-content;
-    margin-right: 1.5em;
-    letter-spacing: 0.02em;
-    &-summary {
-      display: block;
-      padding: (14px + 7px) 0 7px;
-      cursor: pointer;
-
-      &-content {
-        @include flex(center);
-      }
-
-      &-text, &-value {
-        display: inline-block;
-      }
-
-      &-value {
-        margin: 0 0.25em;
-      }
-    }
-    &-selected {
-      font-size: 14px;
-      display: inline-block;
-      color: #a69d97;
-    }
-    &-button {
-      @include flex(center, center);
-      font-size: 13px;
-      margin-left: 1em;
-      transition: transform 0.5s;
-      transform-origin: center;
-
-      &._active {
-        transform: rotate(180deg);
-      }
-    }
-
-    &-body {
-      position: absolute;
-      z-index: 1;
-      top: calc(100% + 10px);
-      left: -20px;
-      overflow-x: hidden;
-      overflow-y: auto;
-      min-width: 160px;
-      padding: 16px 12px 12px;
-      transition: opacity 0.25s, transform 0.25s;
-      transform: translate(0, 40px);
-      pointer-events: none;
-      opacity: 0;
-      border-radius: 12px;
-      background: white;
-      box-shadow: 4px 4px 16px 0 rgba(black, 0.15);
-
-      &._active {
-        transform: none;
-        pointer-events: auto;
-        opacity: 1;
-      }
-    }
-
-    &-label {
-      @include flex(center);
-      font-size: 14px;
-      padding: 0.75em 1em;
-      cursor: pointer;
-      transition: background 0.5s, color 0.5s;
-      white-space: nowrap;
-
-      &._active {
-        color: #505050;
-      }
-    }
-
-    &-submit {
-      @include flex(center, center);
-      font-size: 17px;
-      width: 100%;
-      height: 44px;;
-      margin: 20px auto 0;
-      color: white;
-      background: #c7b29c;
-    }
-  }
-
-  &._category {
-    @include mediaLaptopS {
-      display: none;
-    }
-  }
-
-  &._sorting {
-    @include mediaLaptopS {
-      order: 1;
-      margin-left: auto;
-    }
-  }
-
-  &-summary {
-    max-width: 320px;
-    @include mediaLaptopS {
-      max-width: 200px;
-    }
     @include mediaDesktop {
-      max-width: 240px;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 20px;
+      row-gap: 20px;
     }
-  }
-
-  &-selected {
-    @include lineClamp(1);
-    line-height: 1;
-    @include mediaLaptopS {
-      height: 1em;
-    }
-  }
-
-  &-body {
-    .catalog-filters {
-      &-reset, &-submit {
-        @include mediaOnlyBeforeLaptop {
-          display: none;
-        }
-      }
-    }
-  }
-
-  &-label {
-    @include flex(center);
-    width: fit-content;
-    margin-bottom: 1em;
   }
 }
 

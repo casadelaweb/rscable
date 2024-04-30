@@ -1,7 +1,7 @@
 import * as noUiSlider from 'nouislider'
 import { API } from 'nouislider/dist/nouislider'
-import { Select } from 'src/modules/select/select'
-import { Details } from 'src/modules/details/details'
+// import { Select } from 'src/modules/select/select'
+// import { Details } from 'src/modules/details/details'
 
 interface sliderElement extends HTMLElement {
   noUiSlider: API
@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const pricesSlider: sliderElement = body.querySelector('[data-catalog-prices]')
 
   if (pricesSlider) {
-    const priceMin = preparePrice(pricesSlider.getAttribute('data-min'))
-    const priceMax = preparePrice(pricesSlider.getAttribute('data-max'))
+    const priceMin: number = preparePrice(pricesSlider.getAttribute('data-min'))
+    const priceMax: number = preparePrice(pricesSlider.getAttribute('data-max'))
     const inputMin: HTMLInputElement = body.querySelector(pricesSlider.getAttribute('data-input-min'))
     const inputMax: HTMLInputElement = body.querySelector(pricesSlider.getAttribute('data-input-max'))
     const spanMin: HTMLElement = body.querySelector(pricesSlider.getAttribute('data-span-min'))
@@ -62,35 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       spanMin.textContent = parseInt(values[0]).toLocaleString()
       spanMax.textContent = parseInt(values[1]).toLocaleString()
-    })
-  }
-
-  new Details({
-    preferButtonIfExist: true,
-    selectors: {
-      details: '.catalog-filter',
-      summary: '.catalog-filter-summary',
-      button: '.catalog-filter-button',
-      content: '.catalog-filter-body',
-      scrollbars: { vertical: 'has-vertical-scrollbar', },
-    },
-    onlyUnderLaptop: true,
-  }).init()
-  const catalogSelects = new Select({
-    selectors: {
-      select: '.catalog-filter',
-      current: '.catalog-filter-summary',
-      value: '.catalog-filter-selected',
-      button: '.catalog-filter-button',
-      options: '.catalog-filter-body',
-      option: '.catalog-filter-label',
-    },
-  })
-  catalogSelects.init()
-  const formFilters: HTMLElement = document.body.querySelector('[data-catalog=filters]')
-  if (formFilters) {
-    formFilters.addEventListener('reset', () => {
-      catalogSelects.updateSelects()
     })
   }
 }, {
