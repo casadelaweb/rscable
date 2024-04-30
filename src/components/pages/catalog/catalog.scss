@@ -114,23 +114,7 @@
   }
 
   &Products {
-    @include dropFlex;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 12px;
-    row-gap: 12px;
-    @include mediaMobileL {
-      column-gap: 16px;
-      row-gap: 16px;
-    }
-    @include mediaLaptopS {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    @include mediaDesktop {
-      grid-template-columns: repeat(4, 1fr);
-      column-gap: 20px;
-      row-gap: 20px;
-    }
+    @include productsLayout;
   }
 }
 

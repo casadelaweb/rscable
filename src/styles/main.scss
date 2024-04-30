@@ -6,6 +6,15 @@
   --scrollbarWidth: 17px;
 }
 
+.icon-dot {
+  @include flex(center, center);
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 50%;
+}
+
 html {
   @include scrollbar;
   scroll-padding-top: calc(var(--headerHeight) + 20px);

@@ -2,6 +2,7 @@
 @use 'src/styles/shared/mixins/media' as *;
 @use 'src/styles/shared/mixins/typography' as *;
 @use 'src/styles/shared/variables/colors' as Colors;
+@use 'sass:math' as Math;
 
 @mixin container {
   margin: 0 auto;
@@ -105,5 +106,49 @@
 
   &-title, &Title {
     @include h2;
+  }
+}
+
+@mixin productsLayout {
+  @include dropFlex;
+  @include flex($w: wrap);
+  column-gap: 10px;
+  row-gap: 10px;
+  @include mediaMobileM {
+    column-gap: 12px;
+    row-gap: 12px;
+  }
+  @include mediaMobileL {
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+  @include mediaDesktop {
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  & > .productCard {
+    $cols: 2;
+    $gap: 10px;
+    $coef: Math.ceil((100 - (100 / $cols))) / 100;
+    width: calc(100% / $cols - $gap * $coef);
+    @include mediaMobileM {
+      $cols: 2;
+      $gap: 12px;
+      $coef: Math.ceil((100 - (100 / $cols))) / 100;
+      width: calc(100% / $cols - $gap * $coef);
+    }
+    @include mediaTabletL {
+      $cols: 3;
+      $gap: 16px;
+      $coef: Math.ceil((100 - (100 / $cols))) / 100;
+      width: calc(100% / $cols - $gap * $coef);
+    }
+    @include mediaDesktop {
+      $cols: 4;
+      $gap: 20px;
+      $coef: Math.ceil((100 - (100 / $cols))) / 100;
+      width: calc(100% / $cols - $gap * $coef);
+    }
   }
 }

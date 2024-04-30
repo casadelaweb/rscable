@@ -1,14 +1,5 @@
 @use 'src/styles/shared' as *;
 
-.icon-dot {
-  @include flex(center, center);
-  flex: 0 0 auto;
-  width: 6px;
-  height: 6px;
-  background: currentColor;
-  border-radius: 50%;
-}
-
 .productCard {
   @include dropFlex;
   @include flex($d: column);
@@ -19,7 +10,8 @@
   border: 1px solid $colorGreyMild;
   box-shadow: $bsM;
 
-  &-body {
+  &Body {
+    @include dropFlex;
     @include flex($d: column);
     flex-grow: 1;
     padding: 8px;
@@ -33,20 +25,20 @@
     }
   }
 
-  &-tags, &-buttons {
+  &Tags, &Buttons {
     position: absolute;
     z-index: 10;
     top: 12px;
   }
 
-  &-buttons {
+  &Buttons {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 8px;
     right: 12px;
   }
 
-  &-tags {
+  &Tags {
     @include flex($w: wrap);
     row-gap: 8px;
     column-gap: 8px;
@@ -54,14 +46,13 @@
     max-width: calc(100% - 12px - 20px - 8px);
   }
 
-  &-tag {
+  &Tag {
+    @include textS;
     @include flex(center);
     column-gap: 4px;
-    font-size: 13px;
     font-weight: 500;
     padding: 2px 8px;
     border-radius: $brM;
-    letter-spacing: 0.02em;
 
     &._stock {
       background: $colorGreen;
@@ -84,16 +75,13 @@
     }
   }
 
-  &Tag {
+  &Status {
+    @include textS;
     @include flex(center);
     column-gap: 8px;
-    font-size: 12px;
     color: $colorGreen;
     margin-bottom: 8px;
     width: fit-content;
-    @include mediaMobileL {
-      font-size: 13px;
-    }
 
     &._stock {
 
@@ -110,20 +98,13 @@
 
   &Parameters {
     @include flex($d: column);
-    //row-gap: 4px;
   }
 
   &Parameter {
+    @include textS;
     @include flex(center);
     column-gap: 4px;
-    font-size: 12px;
     color: $colorDarkMild;
-    @include mediaTabletS {
-      font-size: 13px;
-    }
-    @include mediaLaptopS {
-      font-size: 14px;
-    }
 
     &-key {
       font-weight: 400;
@@ -134,7 +115,7 @@
     }
   }
 
-  &-slider {
+  &Slider {
     @include dropFlex;
 
     a {
@@ -146,103 +127,68 @@
 
   &Img {
     @include dropFlex;
+    display: block;
     min-height: 140px;
     aspect-ratio: 16 / 9;
     width: 100%;
     object-fit: contain;
   }
 
-  &-title {
+  &Title {
+    @include textM;
     @include lineClamp(2);
-    height: 40px;
-    font-size: 13px;
-    line-height: 1.4;
-    letter-spacing: 0.02em;
-    font-weight: 400;
-    @include mediaTabletM {
-      font-size: 14px;
-    }
-    @include mediaLaptopS {
-      font-size: 16px;
-      height: 48px;
-    }
-
-    a {
-    }
+    //height: 40px;
+    //@include mediaLaptopS {
+    //  height: 48px;
+    //}
   }
 
   &Delivery {
+    @include textXxs;
     color: $colorDarkMild;
-    font-size: 12px;
-    @include mediaMobileL {
-      font-size: 13px;
-    }
-    @include mediaTabletM {
-      font-size: 14px;
-    }
 
     .iconfont {
       display: inline-block;
       color: $colorDarkMild;
-      font-size: 20px;
+      font-size: 16px;
       margin-right: 4px;
+      @include mediaMobileL {
+        font-size: 20px;
+      }
     }
   }
 
-  &-prices {
+  &Prices {
+    @include textXxs;
     @include mediaLaptopS {
       @include flex(center);
       column-gap: 8px;
       row-gap: 4px;
     }
 
-    &-tax {
-      display: inline-block;
-      font-size: 12px;
+    &Tax {
+      @include textXxs;
       line-height: 1;
-      padding: 4px 8px;
+      display: inline-block;
+      padding: 3px 6px;
       background: $colorGreyMild;
       border-radius: $brM;
       width: fit-content;
-      @include mediaTabletM {
-        font-size: 13px;
-      }
     }
   }
 
-  &-price {
+  &Price {
+    @include textXs;
+    font-weight: 500;
     display: inline-block;
     width: fit-content;
-    font-weight: 500;
-    font-size: 12px;
-    @include mediaMobileL {
-      font-size: 13px;
-    }
-    @include mediaTabletM {
-      font-size: 14px;
-    }
-    @include mediaTabletL {
-      font-size: 16px;
-    }
-    @include mediaLaptopM {
-      font-size: 18px;
-    }
 
     &._prev {
+      @include textXxs;
       font-weight: 400;
       color: $colorRed;
       position: relative;
       z-index: 0;
-      font-size: 11px;
-      @include mediaMobileL {
-        font-size: 12px;
-      }
-      @include mediaTabletM {
-        font-size: 13px;
-      }
-      @include mediaLaptopM {
-        font-size: 16px;
-      }
 
       &::before {
         content: ' ';
@@ -261,7 +207,7 @@
     }
   }
 
-  &-fav, &-compare, &-view, &-buy {
+  &Fav, &Compare, &View, &Buy {
     @include flex(center, center);
     flex: 0 0 auto;
     width: 24px;
@@ -273,10 +219,10 @@
     font-size: 16px;
   }
 
-  &-compare {
+  &Compare {
   }
 
-  &-view {
+  &View {
   }
 
   &Footer {
@@ -287,9 +233,6 @@
     margin: auto 0 0 0;
     @include mediaTabletS {
       @include flex($a: center, $d: row);
-    }
-    @include mediaLaptopS {
-
     }
   }
 
@@ -311,7 +254,6 @@
       height: 40px;
     }
     @include mediaTabletM {
-      // width: 96px;
       margin: 0 0 auto;
     }
 
@@ -339,8 +281,6 @@
 
     &Input {
       width: 34%;
-      //border-left: 1px solid #e0e0e0;
-      //border-right: 1px solid #e0e0e0;
     }
 
     &-wrapper {

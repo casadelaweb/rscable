@@ -12,34 +12,34 @@
 ?>
 
 <article class="productCard">
-  <div class="productCard-tags">
+  <div class="productCardTags">
     <?php if ($isRecommended) : ?>
-      <div class="productCard-tag _recommended">
-        <div class="icon-dot"></div>
-        Советуем
+      <div class="productCardTag _recommended">
+        <span class="icon-dot"></span>
+        <span>Советуем</span>
       </div>
     <?php endif; ?>
     <?php if ($isHit) : ?>
-      <div class="productCard-tag _hit">
-        <div class="icon-dot"></div>
-        Хит
+      <div class="productCardTag _hit">
+        <span class="icon-dot"></span>
+        <span>Хит</span>
       </div>
     <?php endif; ?>
   </div>
-  <div class="productCard-buttons">
-    <button class="productCard-fav" type="button" title="Добавить в избранное"
+  <div class="productCardButtons">
+    <button class="productCardFav" type="button" title="Добавить в избранное"
             aria-label="Добавить в избранное">
       <span class="iconfont icon-heart"></span>
     </button>
-    <button class="productCard-compare" type="button" title="Сравнить"
+    <button class="productCardCompare" type="button" title="Сравнить"
             aria-label="Сравнить">
       <span class="iconfont icon-stats-bars"></span>
     </button>
-    <button class="productCard-view" type="button" title="Быстрый просмотр"
+    <button class="productCardView" type="button" title="Быстрый просмотр"
             aria-label="Быстрый просмотр">
       <span class="iconfont icon-eye"></span>
     </button>
-    <button class="productCard-buy" type="button" title="Купить в один клик"
+    <button class="productCardBuy" type="button" title="Купить в один клик"
             aria-label="Купить в один клик">
       <span class="iconfont icon-credit-card"></span>
     </button>
@@ -47,15 +47,14 @@
 
   <?php // если картинок несколько рендерим слайдер
   if (count($images) > 1) : ?>
-    <div class="productCard-slider swiper" data-product-card="slider">
+    <div class="productCardSlider swiper" data-product-card="slider">
       <div class="swiper-wrapper">
         <?php foreach ($images as $img):
           $imgUrl = $img['url'];
           $imgAlt = $img['alt']; ?>
           <div class="swiper-slide">
             <a href="<?= $url ?>" title="<?= $title ?>">
-              <img src="<?= $imgUrl ?>" alt="<?= $imgAlt ?>" class="productCardImg"
-                   loading="lazy">
+              <img src="<?= $imgUrl ?>" alt="<?= $imgAlt ?>" class="productCardImg" loading="lazy">
             </a>
             <div class="swiper-lazy-preloader"></div>
           </div>
@@ -72,22 +71,22 @@
     </a>
   <?php endif; ?>
 
-  <div class="productCard-body">
-    <h3 class="productCard-title">
+  <div class="productCardBody">
+    <h3 class="productCardTitle">
       <a href="<?= $url ?>" title="<?= $title ?>">
         <?= $title ?>
       </a>
     </h3>
     <div class="productCardParameters">
       <?php if ($isInStock) : ?>
-        <div class="productCardTag _stock">
+        <div class="productCardStatus _stock">
           <span class="iconfont icon-dot"></span>
-          <span class="productCardTagText">В наличии: 3 450 шт.</span>
+          <span class="productCardStatusText">В наличии: 3 450 шт.</span>
         </div>
       <?php else : ?>
-        <div class="productCardTag _order">
+        <div class="productCardStatus _order">
           <span class="iconfont icon-dot"></span>
-          <span class="productCardTagText">Нет в наличии</span>
+          <span class="productCardStatusText">Нет в наличии</span>
         </div>
       <?php endif; ?>
       <div class="productCardParameter">
@@ -99,16 +98,16 @@
       <span class="iconfont icon-truck"></span>
       Доставка от 2 дней
     </div>
-    <div class="productCard-prices">
+    <div class="productCardPrices">
       <?php if ($priceOld === 0 && $price !== 0) : ?>
-        <div class="productCard-price"> <?= $price ?> ₽</div>
-        <div class="productCard-prices-tax"> c НДС</div>
+        <div class="productCardPrice"> <?= $price ?> ₽</div>
+        <div class="productCardPricesTax"> c НДС</div>
       <?php elseif ($price === 0): ?>
         Цена по запросу
       <?php else: ?>
-        <div class="productCard-price _prev"><?= $priceOld ?> ₽</div>
-        <div class="productCard-price _current"><?= $price ?> ₽</div>
-        <div class="productCard-prices-tax"> c НДС</div>
+        <div class="productCardPrice _prev"><?= $priceOld ?> ₽</div>
+        <div class="productCardPrice _current"><?= $price ?> ₽</div>
+        <div class="productCardPricesTax"> c НДС</div>
       <?php endif; ?>
     </div>
     <div class="productCardFooter">

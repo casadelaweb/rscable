@@ -131,6 +131,19 @@
   }
 }
 
+@mixin textXxs {
+  font-size: 10px;
+  @include mediaMobileM {
+    font-size: 11px;
+  }
+  @include mediaMobileL {
+    font-size: 12px;
+  }
+  @include mediaTabletS {
+    font-size: 13px;
+  }
+}
+
 @mixin textBody {
   $fontSize: 16px;
   $lineHeight: 1.4;
