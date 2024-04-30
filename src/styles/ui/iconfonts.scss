@@ -1,28 +1,44 @@
-$icon-metro: unquote('"\\e900"');
-$icon-pencil: unquote('"\\e905"');
-$icon-arrow-down: unquote('"\\e909"');
-$icon-arrow-left: unquote('"\\e90a"');
-$icon-arrow-right: unquote('"\\e90b"');
-$icon-arrow-up: unquote('"\\e90c"');
-$icon-close: unquote('"\\e90d"');
-$icon-filters: unquote('"\\e90e"');
-$icon-heart: unquote('"\\e90f"');
-$icon-heart-fill: unquote('"\\e910"');
-$icon-location: unquote('"\\e911"');
-$icon-image: unquote('"\\e912"');
-$icon-menu: unquote('"\\e913"');
-$icon-person: unquote('"\\e915"');
-$icon-search: unquote('"\\e916"');
-$icon-suitcase: unquote('"\\e917"');
-$icon-images: unquote('"\\e918"');
-$icon-camera: unquote('"\\e91a"');
-$icon-folder-open: unquote('"\\e930"');
-$icon-price-tag: unquote('"\\e935"');
-$icon-price-tags: unquote('"\\e936"');
-$icon-cart: unquote('"\\e93a"');
+$icon-eye-hide: unquote('"\\e900"');
+$icon-grid: unquote('"\\e901"');
+$icon-row: unquote('"\\e902"');
+$icon-calendar: unquote('"\\e903"');
+$icon-download: unquote('"\\e904"');
+$icon-eye: unquote('"\\e905"');
+$icon-location: unquote('"\\e906"');
+$icon-mail: unquote('"\\e909"');
+$icon-heart: unquote('"\\e907"');
+$icon-heart-fill: unquote('"\\e908"');
+$icon-start: unquote('"\\e90e"');
+$icon-clock: unquote('"\\e912"');
+$icon-logout: unquote('"\\e916"');
+$icon-bin: unquote('"\\e90b"');
+$icon-calculator: unquote('"\\e90c"');
+$icon-cart: unquote('"\\e90d"');
+$icon-cart-fill: unquote('"\\e90f"');
+$icon-catalog: unquote('"\\e910"');
+$icon-warning: unquote('"\\e913"');
+$icon-vk: unquote('"\\e914"');
+$icon-mute: unquote('"\\e917"');
+$icon-metro: unquote('"\\e918"');
+$icon-pencil: unquote('"\\e919"');
+$icon-arrow-down: unquote('"\\e91a"');
+$icon-arrow-left: unquote('"\\e91b"');
+$icon-arrow-right: unquote('"\\e91c"');
+$icon-arrow-up: unquote('"\\e91d"');
+$icon-filters: unquote('"\\e91e"');
+$icon-image: unquote('"\\e920"');
+$icon-menu: unquote('"\\e921"');
+$icon-person: unquote('"\\e922"');
+$icon-search: unquote('"\\e923"');
+$icon-suitcase: unquote('"\\e924"');
+$icon-images: unquote('"\\e925"');
+$icon-bell: unquote('"\\e926"');
+$icon-camera: unquote('"\\e927"');
+$icon-folder: unquote('"\\e930"');
+$icon-tag: unquote('"\\e935"');
+$icon-tags: unquote('"\\e936"');
 $icon-credit-card: unquote('"\\e93f"');
 $icon-tel: unquote('"\\e942"');
-$icon-email: unquote('"\\e945"');
 $icon-display: unquote('"\\e956"');
 $icon-laptop: unquote('"\\e957"');
 $icon-mobile: unquote('"\\e959"');
@@ -32,36 +48,31 @@ $icon-zoom-in: unquote('"\\e987"');
 $icon-zoom-out: unquote('"\\e988"');
 $icon-settings: unquote('"\\e994"');
 $icon-stats-bars: unquote('"\\e99c"');
-$icon-bin: unquote('"\\e9ad"');
 $icon-briefcase: unquote('"\\e9ae"');
 $icon-airplane: unquote('"\\e9af"');
 $icon-truck: unquote('"\\e9b0"');
 $icon-link: unquote('"\\e9cb"');
 $icon-attachment: unquote('"\\e9cd"');
-$icon-eye: unquote('"\\e9ce"');
-$icon-eye-blocked: unquote('"\\e9d1"');
 $icon-bookmark: unquote('"\\e9d2"');
 $icon-bookmarks: unquote('"\\e9d3"');
-$icon-star-full: unquote('"\\e9d9"');
-$icon-notification: unquote('"\\ea08"');
 $icon-info: unquote('"\\ea0c"');
-$icon-ascending: unquote('"\\ea4c"');
-$icon-descending: unquote('"\\ea4d"');
+$icon-sort-amount-asc: unquote('"\\ea4c"');
+$icon-sort-amount-desc: unquote('"\\ea4d"');
 $icon-indent-increase: unquote('"\\ea7b"');
 $icon-instagram: unquote('"\\ea92"');
 $icon-whatsapp: unquote('"\\ea93"');
 $icon-telegram: unquote('"\\ea95"');
-$icon-vk: unquote('"\\ea98"');
 $icon-youtube: unquote('"\\ea9d"');
-$icon-bell: unquote('"\\e919"');
+$icon-close: unquote('"\\e911"');
+$icon-mic: unquote('"\\e928"');
 
 @font-face {
   font-family: 'iconfont';
-  src: url('src/assets/iconfonts/iconfont.eot?v7cgix');
-  src: url('src/assets/iconfonts/iconfont.eot?v7cgix#iefix') format('embedded-opentype'),
-  url('src/assets/iconfonts/iconfont.ttf?v7cgix') format('truetype'),
-  url('src/assets/iconfonts/iconfont.woff?v7cgix') format('woff'),
-  url('src/assets/iconfonts/iconfont.svg?v7cgix#iconfont') format('svg');
+  src: url('src/assets/iconfonts/iconfont.eot?cy64q2');
+  src: url('src/assets/iconfonts/iconfont.eot?cy64q2#iefix') format('embedded-opentype'),
+  url('src/assets/iconfonts/iconfont.ttf?cy64q2') format('truetype'),
+  url('src/assets/iconfonts/iconfont.woff?cy64q2') format('woff'),
+  url('src/assets/iconfonts/iconfont.svg?cy64q2#iconfont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -77,6 +88,132 @@ $icon-bell: unquote('"\\e919"');
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-eye-hide {
+  &:before {
+    content: $icon-eye-hide;
+  }
+}
+
+.icon-grid {
+  &:before {
+    content: $icon-grid;
+  }
+}
+
+.icon-row {
+  &:before {
+    content: $icon-row;
+  }
+}
+
+.icon-calendar {
+  &:before {
+    content: $icon-calendar;
+  }
+}
+
+.icon-download {
+  &:before {
+    content: $icon-download;
+  }
+}
+
+.icon-eye {
+  &:before {
+    content: $icon-eye;
+  }
+}
+
+.icon-location {
+  &:before {
+    content: $icon-location;
+  }
+}
+
+.icon-mail, .icon-email {
+  &:before {
+    content: $icon-mail;
+  }
+}
+
+.icon-heart {
+  &:before {
+    content: $icon-heart;
+  }
+}
+
+.icon-heart-fill {
+  &:before {
+    content: $icon-heart-fill;
+  }
+}
+
+.icon-start {
+  &:before {
+    content: $icon-start;
+  }
+}
+
+.icon-clock {
+  &:before {
+    content: $icon-clock;
+  }
+}
+
+.icon-logout {
+  &:before {
+    content: $icon-logout;
+  }
+}
+
+.icon-bin {
+  &:before {
+    content: $icon-bin;
+  }
+}
+
+.icon-calculator {
+  &:before {
+    content: $icon-calculator;
+  }
+}
+
+.icon-cart {
+  &:before {
+    content: $icon-cart;
+  }
+}
+
+.icon-cart-fill {
+  &:before {
+    content: $icon-cart-fill;
+  }
+}
+
+.icon-catalog {
+  &:before {
+    content: $icon-catalog;
+  }
+}
+
+.icon-warning {
+  &:before {
+    content: $icon-warning;
+  }
+}
+
+.icon-vk {
+  &:before {
+    content: $icon-vk;
+  }
+}
+
+.icon-mute {
+  &:before {
+    content: $icon-mute;
+  }
 }
 
 .icon-metro {
@@ -115,33 +252,9 @@ $icon-bell: unquote('"\\e919"');
   }
 }
 
-.icon-close {
-  &:before {
-    content: $icon-close;
-  }
-}
-
 .icon-filters {
   &:before {
     content: $icon-filters;
-  }
-}
-
-.icon-heart {
-  &:before {
-    content: $icon-heart;
-  }
-}
-
-.icon-heart-fill {
-  &:before {
-    content: $icon-heart-fill;
-  }
-}
-
-.icon-location {
-  &:before {
-    content: $icon-location;
   }
 }
 
@@ -181,33 +294,33 @@ $icon-bell: unquote('"\\e919"');
   }
 }
 
+.icon-bell {
+  &:before {
+    content: $icon-bell;
+  }
+}
+
 .icon-camera {
   &:before {
     content: $icon-camera;
   }
 }
 
-.icon-folder-open {
+.icon-folder {
   &:before {
-    content: $icon-folder-open;
+    content: $icon-folder;
   }
 }
 
-.icon-price-tag {
+.icon-tag {
   &:before {
-    content: $icon-price-tag;
+    content: $icon-tag;
   }
 }
 
-.icon-price-tags {
+.icon-tags {
   &:before {
-    content: $icon-price-tags;
-  }
-}
-
-.icon-cart {
-  &:before {
-    content: $icon-cart;
+    content: $icon-tags;
   }
 }
 
@@ -220,12 +333,6 @@ $icon-bell: unquote('"\\e919"');
 .icon-tel {
   &:before {
     content: $icon-tel;
-  }
-}
-
-.icon-email {
-  &:before {
-    content: $icon-email;
   }
 }
 
@@ -283,12 +390,6 @@ $icon-bell: unquote('"\\e919"');
   }
 }
 
-.icon-bin {
-  &:before {
-    content: $icon-bin;
-  }
-}
-
 .icon-briefcase {
   &:before {
     content: $icon-briefcase;
@@ -319,18 +420,6 @@ $icon-bell: unquote('"\\e919"');
   }
 }
 
-.icon-eye {
-  &:before {
-    content: $icon-eye;
-  }
-}
-
-.icon-eye-blocked {
-  &:before {
-    content: $icon-eye-blocked;
-  }
-}
-
 .icon-bookmark {
   &:before {
     content: $icon-bookmark;
@@ -343,33 +432,21 @@ $icon-bell: unquote('"\\e919"');
   }
 }
 
-.icon-star-full {
-  &:before {
-    content: $icon-star-full;
-  }
-}
-
-.icon-notification {
-  &:before {
-    content: $icon-notification;
-  }
-}
-
 .icon-info {
   &:before {
     content: $icon-info;
   }
 }
 
-.icon-ascending {
+.icon-sort-amount-asc {
   &:before {
-    content: $icon-ascending;
+    content: $icon-sort-amount-asc;
   }
 }
 
-.icon-descending {
+.icon-sort-amount-desc {
   &:before {
-    content: $icon-descending;
+    content: $icon-sort-amount-desc;
   }
 }
 
@@ -397,21 +474,21 @@ $icon-bell: unquote('"\\e919"');
   }
 }
 
-.icon-vk {
-  &:before {
-    content: $icon-vk;
-  }
-}
-
 .icon-youtube {
   &:before {
     content: $icon-youtube;
   }
 }
 
-.icon-bell {
+.icon-close {
   &:before {
-    content: $icon-bell;
+    content: $icon-close;
+  }
+}
+
+.icon-mic {
+  &:before {
+    content: $icon-mic;
   }
 }
 
