@@ -4,7 +4,9 @@ import 'restyle.css/dist/checkboxes.css'
 import '@fancyapps/ui/dist/fancybox/fancybox.css'
 import 'swiper/scss'
 import 'swiper/scss/a11y'
-// import 'swiper/scss/scrollbar'
+
+import 'nouislider/dist/nouislider.css'
+import 'src/styles/ui/noUISlider.scss'
 
 import { modals } from 'src/scripts/globalModals'
 import { globalScrollController } from 'src/scripts/globalScrollController'
@@ -15,6 +17,7 @@ import 'src/modules/dropdown'
 
 import 'src/styles/main.scss'
 import 'src/components'
+import LazyLoad from 'vanilla-lazyload'
 
 document.addEventListener('DOMContentLoaded', () => {
   globalScrollController.init()
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const details = new Details()
   details.init()
   new Masks().init()
+  new LazyLoad()
 
   function handleError(input: HTMLInputElement, errorTooltip: HTMLElement, errorText?: string) {
     input.classList.remove('_success')
