@@ -83,8 +83,8 @@ class Modals {
     }
 
     this.parameters.current = modal
-    this.parameters.all.forEach((modal) => modal.classList.remove('current'))
-    this.parameters.current.classList.add('current')
+    this.parameters.all.forEach((modal) => modal.classList.remove('_current'))
+    this.parameters.current.classList.add('_current')
 
     if (this.parameters.current === modal) {
       const modalName = modal.getAttribute('data-modal')
@@ -113,14 +113,14 @@ class Modals {
     new Promise<void>((resolve) => {
 
       setTimeout(() => {
-        this.parameters.all.forEach((modal) => modal.classList.remove('current'))
+        this.parameters.all.forEach((modal) => modal.classList.remove('_current'))
         this.parameters.all = this.parameters.all.slice(0, -1)
         const lastModal = this.parameters.all[this.parameters.all.length - 1]
         this.parameters.current = lastModal ? lastModal : false
         if (this.parameters.current instanceof HTMLElement) {
-          this.parameters.current.classList.add('current')
+          this.parameters.current.classList.add('_current')
         } else {
-          this.parameters.all.forEach((modal) => modal.classList.remove('current'))
+          this.parameters.all.forEach((modal) => modal.classList.remove('_current'))
         }
         this.parameters.counter--
         resolve()

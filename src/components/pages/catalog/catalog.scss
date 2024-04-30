@@ -194,7 +194,7 @@
     pointer-events: none;
     background: white;
 
-    &.active {
+    &._active {
       transform: none;
       pointer-events: auto;
     }
@@ -288,7 +288,7 @@
     letter-spacing: 0.02em;
 
     &:hover,
-    &.active {
+    &._active {
       color: #505050;
     }
   }
@@ -345,7 +345,7 @@
       transition: transform 0.5s;
       transform-origin: center;
 
-      &.active {
+      &._active {
         transform: rotate(180deg);
       }
     }
@@ -408,7 +408,7 @@
       transition: transform 0.5s;
       transform-origin: center;
 
-      &.active {
+      &._active {
         transform: rotate(180deg);
       }
     }
@@ -430,7 +430,7 @@
       background: white;
       box-shadow: 4px 4px 16px 0 rgba(black, 0.15);
 
-      &.active {
+      &._active {
         transform: none;
         pointer-events: auto;
         opacity: 1;
@@ -445,7 +445,7 @@
       transition: background 0.5s, color 0.5s;
       white-space: nowrap;
 
-      &.active {
+      &._active {
         color: #505050;
       }
     }

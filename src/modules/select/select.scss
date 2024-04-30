@@ -48,7 +48,7 @@
       transition: transform 0.5s;
       transform-origin: center;
 
-      &.active {
+      &._active {
         transform: rotate(180deg);
       }
     }
@@ -71,7 +71,7 @@
     background: white;
     box-shadow: 4px 4px 16px 0 rgba(black, 0.15);
 
-    &.active {
+    &._active {
       transform: none;
       pointer-events: auto;
       opacity: 1;
@@ -90,7 +90,7 @@
       font-size: 14px;
     }
 
-    &.active {
+    &._active {
       color: #505050;
     }
   }
