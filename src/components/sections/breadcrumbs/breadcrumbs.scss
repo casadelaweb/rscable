@@ -1,8 +1,7 @@
 @use 'src/styles/shared' as *;
 
 .breadcrumbs {
-  margin: 40px 0;
-
+  margin: 20px 0;
 
   &Container {
     @include container;
