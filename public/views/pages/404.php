@@ -9,13 +9,11 @@
   <div class="page404-container">
     <h1 class="page404-title">404</h1>
     <h2 class="page404-subtitle">
-      К СОЖАЛЕНИЮ,
-      СТРАНИЦА НЕ НАЙДЕНА
+      404
     </h2>
     <div class="page404-message">
-      Но у нас есть много других товаров для вашего идеального образа
     </div>
-    <a class="page404-button" href="/catalog">
+    <a class="page404-button" href="/catalog/">
       <span>Перейти в каталог</span>
     </a>
   </div>
