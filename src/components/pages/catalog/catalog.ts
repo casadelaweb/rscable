@@ -8,22 +8,23 @@ interface sliderElement extends HTMLElement {
   noUiSlider: API
 }
 
-function preparePrice(value: string): number {
-  return parseInt(value)
+function prepareValue(value: string): number {
+  return parseInt(value.trim())
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const { body, } = document
 
-  const pricesSlider: sliderElement = body.querySelector('[data-catalog-prices]')
+  const sliders = Array.from(body.querySelectorAll('[data-catalog-filter=range]'))
+  sliders.forEach((slider: sliderElement) => {
+    const filter: HTMLElement = slider.closest('.catalogFilter')
 
-  if (pricesSlider) {
-    const priceMin: number = preparePrice(pricesSlider.getAttribute('data-min'))
-    const priceMax: number = preparePrice(pricesSlider.getAttribute('data-max'))
-    const inputMin: HTMLInputElement = body.querySelector(pricesSlider.getAttribute('data-input-min'))
-    const inputMax: HTMLInputElement = body.querySelector(pricesSlider.getAttribute('data-input-max'))
-    const spanMin: HTMLElement = body.querySelector(pricesSlider.getAttribute('data-span-min'))
-    const spanMax: HTMLElement = body.querySelector(pricesSlider.getAttribute('data-span-max'))
+    const priceMin: number = prepareValue(slider.getAttribute('data-min'))
+    const priceMax: number = prepareValue(slider.getAttribute('data-max'))
+    const inputMin: HTMLInputElement = filter.querySelector('[data-catalog-filter=input-min]')
+    const inputMax: HTMLInputElement = filter.querySelector('[data-catalog-filter=input-max]')
+    // const spanMin: HTMLElement = filter.querySelector(slider.getAttribute('data-span-min'))
+    // const spanMax: HTMLElement = filter.querySelector(slider.getAttribute('data-span-max'))
 
     let typingTimerMin: ReturnType<typeof setTimeout>
     let typingTimerMax: ReturnType<typeof setTimeout>
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearTimeout(typingTimerMin)
       if (inputMin.value) {
         typingTimerMin = setTimeout(() => {
-          pricesSlider.noUiSlider.set([inputMin.value, null,])
+          slider.noUiSlider.set([inputMin.value, null,])
         }, doneTypingInterval)
       }
     })
@@ -40,12 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
       clearTimeout(typingTimerMax)
       if (inputMax.value) {
         typingTimerMax = setTimeout(() => {
-          pricesSlider.noUiSlider.set([null, inputMax.value,])
+          slider.noUiSlider.set([null, inputMax.value,])
         }, doneTypingInterval)
       }
     })
 
-    noUiSlider.create(pricesSlider, {
+    noUiSlider.create(slider, {
       start: [priceMin, priceMax,],
       step: 1,
       connect: true,
@@ -61,10 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
         inputMax.value = parseInt(value).toLocaleString()
       }
 
-      spanMin.textContent = parseInt(values[0])?.toLocaleString()
-      spanMax.textContent = parseInt(values[1])?.toLocaleString()
+      // spanMin.textContent = parseInt(values[0])?.toLocaleString()
+      // spanMax.textContent = parseInt(values[1])?.toLocaleString()
     })
-  }
+  })
 }, {
   passive: true,
   once: true,

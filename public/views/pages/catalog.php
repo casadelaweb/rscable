@@ -59,20 +59,50 @@ $suggestions = [
               <span class="iconfont icon-close"></span>
             </button>
           </div>
-
           <div class="catalogFiltersBody">
             <?php Render::component('catalog/catalogFilter', [
               'filterTitle' => 'Холодостойкий',
               'inputType' => 'radio',
-              'inputName' => 'is_cold_resisted',
+              'inputName' => 'is_cold_proof',
               'options' => ['Да', 'Нет',],
             ]) ?>
-
+            <?php Render::component('catalog/catalogFilterRange', [
+              'filterTitle' => 'Максимальная температура',
+              'min' => -50,
+              'max' => 50,
+            ]) ?>
+            <?php Render::component('catalog/catalogFilter', [
+              'filterTitle' => 'Материал оболочки',
+              'inputType' => 'checkbox',
+              'inputName' => 'material_outside',
+              'options' => [
+                'ПВХ',
+                'ПВХ пластикат пониженной горючести',
+                'ПВХ пластикат пониженной пожарной опасности',
+                'ПВХ с пониженным давлением',
+                'ПВХ с низким дымо- и газовыделением и низкой токсичностью горения',
+                'Огнестойкая кремнийорганическая резина',
+                'ПВХ-пластикат не поддерживающий горение с пониженным дымо- и газовыделением',
+                'ПВХ-пластикат',
+              ],
+            ]) ?>
+            <?php Render::component('catalog/catalogFilterRange', [
+              'filterTitle' => 'Минимальная температура',
+              'min' => -50,
+              'max' => 50,
+            ]) ?>
+            <?php Render::component('catalog/catalogFilter', [
+              'filterTitle' => 'Огнестойкий',
+              'inputType' => 'radio',
+              'inputName' => 'is_fire_proof',
+              'options' => ['Да', 'Нет',],
+            ]) ?>
             <?php Render::component('catalog/catalogFilterRange', [
               'filterTitle' => 'Стоимость',
+              'min' => 1000,
+              'max' => 1000000,
             ]) ?>
           </div>
-
           <div class="catalogFiltersButtons">
             <button class="catalogFiltersSubmit" type="submit">
               Применить

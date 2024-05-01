@@ -1,5 +1,7 @@
 <?php namespace App;
 /** @var string $filterTitle */
+/** @var number $min */
+/** @var number $max */
 ?>
 
 <fieldset data-details="details" class="catalogFilter">
@@ -14,15 +16,11 @@
   </div>
   <div data-details="body" class="catalogFilterBody">
     <div class="catalogFilterRow">
-      <input id="input-price-min" class="catalogFilterInput _range" name="price_min" type="text">
-      <input id="input-price-max" class="catalogFilterInput _range" name="price_max" type="text">
+      <input data-catalog-filter="input-min" class="catalogFilterInput _range" name="price_min"
+             type="text">
+      <input data-catalog-filter="input-max" class="catalogFilterInput _range" name="price_max"
+             type="text">
     </div>
-    <div data-catalog-prices
-         data-input-max="#input-price-max"
-         data-input-min="#input-price-min"
-         data-max="12999"
-         data-min="199"
-         data-span-max="#span-price-max"
-         data-span-min="#span-price-min"></div>
+    <div data-catalog-filter="range" data-max="<?= $max ?>" data-min="<?= $min ?>"></div>
   </div>
 </fieldset>
