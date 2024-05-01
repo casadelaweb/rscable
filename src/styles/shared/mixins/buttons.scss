@@ -45,7 +45,7 @@
   column-gap: 4px;
   transition: background-color 0.33s, border-color 0.33s, color 0.33s;
   border-radius: UI.$brM;
-  @include mediaTabletL {
+  @include mediaLaptopM {
     column-gap: 8px;
   }
 }

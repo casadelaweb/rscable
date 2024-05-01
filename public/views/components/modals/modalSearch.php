@@ -18,7 +18,7 @@ global $fakeProducts
       <div class="modalSearchResults">
         <?php
         foreach ($fakeProducts as $product):
-          Render::component('productCard', $product);
+          Render::component('catalog/productCard', $product);
         endforeach; ?>
       </div>
     </div>
@@ -51,19 +51,19 @@ global $fakeProducts
       <div class="modalSearchQuickLinks">
         <div class="modalSearchQuickLinksTitle">Часто ищут</div>
         <div class="modalSearchQuickLinksList">
-          <a class="modalSearchQuickLink" href="/catalog/test/" title="Перейти в каталог">
+          <a class="modalSearchQuickLink" href="/catalog/" title="Перейти в каталог">
             <span>Кабели силовые</span>
             <span class="iconfont icon-search"></span>
           </a>
-          <a class="modalSearchQuickLink" href="/catalog/test/" title="Перейти в каталог">
+          <a class="modalSearchQuickLink" href="/catalog/" title="Перейти в каталог">
             <span>Кабели с изоляцией из ПВХ</span>
             <span class="iconfont icon-search"></span>
           </a>
-          <a class="modalSearchQuickLink" href="/catalog/test/" title="Перейти в каталог">
+          <a class="modalSearchQuickLink" href="/catalog/" title="Перейти в каталог">
             <span>Кабели универсальные</span>
             <span class="iconfont icon-search"></span>
           </a>
-          <a class="modalSearchQuickLink" href="/catalog/test/" title="Перейти в каталог">
+          <a class="modalSearchQuickLink" href="/catalog/" title="Перейти в каталог">
             <span>Кабели автомобильные</span>
             <span class="iconfont icon-search"></span>
           </a>

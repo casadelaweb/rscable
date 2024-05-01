@@ -15,7 +15,7 @@ global $fakeProducts
         <!--<div class="iconfont icon-spinner"></div>-->
       </div>
       <?php foreach ($fakeProducts as $product):
-        Render::component('productCard', $product);
+        Render::component('catalog/productCard', $product);
       endforeach; ?>
     </div>
     <div class="productsNote">

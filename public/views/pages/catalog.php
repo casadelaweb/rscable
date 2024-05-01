@@ -34,7 +34,7 @@ $suggestions = [
 ];
 ?>
 
-<?php Render::component('breadcrumbs') ?>
+<?php Render::component('sections/breadcrumbs') ?>
 
 <div class="catalog">
   <div class="catalogContainer">
@@ -130,7 +130,7 @@ $suggestions = [
         </div>
         <div class="catalogProducts">
           <?php foreach ($fakeProducts as $product):
-            Render::component('productCard', $product);
+            Render::component('catalog/productCard', $product);
           endforeach; ?>
         </div>
       </div>

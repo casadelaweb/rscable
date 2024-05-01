@@ -6,7 +6,7 @@ $productTitle = 'Название продукта';
 $productCode = 1234567890;
 ?>
 
-<?php Render::component('breadcrumbs') ?>
+<?php Render::component('sections/breadcrumbs') ?>
 
 <section class="product">
   <div class="productContainer">

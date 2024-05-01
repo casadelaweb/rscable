@@ -19,7 +19,7 @@ global $fakeProducts;
         <div class="swiper-wrapper">
           <?php foreach ($fakeProducts as $product): ?>
             <div class="swiper-slide">
-              <?php Render::component('productCard', $product) ?>
+              <?php Render::component('catalog/productCard', $product) ?>
             </div>
           <?php endforeach; ?>
         </div>

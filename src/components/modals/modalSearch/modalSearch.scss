@@ -116,6 +116,7 @@
 
   &Overlay {
     @include overlay;
+    z-index: 90;
   }
 
   &Container {
@@ -188,10 +189,14 @@
     column-gap: 8px;
     row-gap: 8px;
     @include mediaTabletM {
+      grid-template-columns: repeat(3, 1fr);
       column-gap: 12px;
       row-gap: 12px;
     }
     @include mediaTabletL {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include mediaLaptopS {
       grid-template-columns: repeat(3, 1fr);
     }
     @include mediaLaptopM {

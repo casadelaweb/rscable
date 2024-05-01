@@ -11,19 +11,23 @@
   &-cards {
     position: relative;
     z-index: 0;
+    margin-bottom: 40px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 8px;
-    row-gap: 8px;
-    margin-bottom: 40px;
-    @include mediaTabletM {
+    column-gap: 10px;
+    row-gap: 10px;
+    @include mediaMobileM {
+      column-gap: 12px;
+      row-gap: 12px;
+    }
+    @include mediaMobileL {
       column-gap: 16px;
       row-gap: 16px;
     }
-    @include mediaTabletL {
+    @include mediaTabletM {
       grid-template-columns: repeat(3, 1fr);
     }
-    @include mediaLaptopS {
+    @include mediaTabletL {
       grid-template-columns: repeat(4, 1fr);
     }
     @include mediaDesktop {

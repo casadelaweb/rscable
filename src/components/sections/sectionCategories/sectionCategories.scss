@@ -10,7 +10,25 @@
   @include sectionHeader;
 
   &Layout {
-    @include productsLayout;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    @include mediaMobileM {
+      column-gap: 12px;
+      row-gap: 12px;
+    }
+    @include mediaMobileL {
+      column-gap: 16px;
+      row-gap: 16px;
+    }
+    @include mediaTabletM {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include mediaDesktop {
+      column-gap: 20px;
+      row-gap: 20px;
+    }
   }
 
   &Card {

@@ -238,6 +238,8 @@
 
   &Cart {
     @include buttonMain;
+    padding: 3px 6px;
+    column-gap: 4px;
   }
 
   &Quantity {
@@ -250,11 +252,14 @@
     width: 100%;
     height: 32px;
     @include mediaTabletS {
-      width: 96px;
+      width: 92px;
       height: 40px;
     }
     @include mediaTabletM {
       margin: 0 0 auto;
+    }
+    @include mediaLaptopM {
+      width: 96px;
     }
 
     &Button, &Input {

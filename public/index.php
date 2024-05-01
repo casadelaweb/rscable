@@ -28,11 +28,11 @@ $isHomepage = $page->view == 'home'
   </head>
   <body>
     <div id="app">
-      <?php Render::component('header') ?>
+      <?php Render::component('sections/header') ?>
       <main class="main">
         <?php Render::page($page->view) ?>
       </main>
-      <?php Render::component('footer') ?>
+      <?php Render::component('sections/footer') ?>
       <div id="modals">
         <?php Render::component('modals/modalCookie') ?>
         <?php Render::component('modals/modalCatalog') ?>
