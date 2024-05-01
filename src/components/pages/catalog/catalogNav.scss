@@ -1,0 +1,85 @@
+@use 'src/styles/shared' as *;
+
+.catalog {
+  &Nav {
+    @include dropFlex;
+    @include textM;
+    @include flex(center, space-between);
+    column-gap: 16px;
+    @include mediaTabletM {
+      column-gap: 20px;
+    }
+    @include mediaTabletL {
+      //position: sticky;
+      //z-index: 120;
+      //top: calc(var(--headerHeight) + 20px);
+      //background: white;
+      //padding: 16px;
+      //border: 1px solid $colorGreyMild;
+      //border-radius: $brM;
+      //box-shadow: $bsM;
+    }
+  }
+
+  &SortButtons {
+    display: none;
+    @include mediaTabletL {
+      @include flex(center);
+      column-gap: 16px;
+    }
+
+    &Title {
+      @include textM;
+    }
+  }
+
+  &SortButton {
+    @include onHover {
+      color: $colorBlue;
+    }
+
+    &:active {
+      color: $colorBlueDarker;
+    }
+
+    .iconfont {
+      display: none;
+    }
+  }
+
+  &ViewButtons {
+    @include flex(center);
+    column-gap: 16px;
+    // margin-left: auto;
+  }
+
+  &ViewButton, &OpenAside {
+    @include flex(center, center);
+    font-size: 16px;
+    line-height: 1;
+    color: $colorGrey;
+    @include mediaMobileL {
+      font-size: 20px;
+    }
+
+    @include onHover {
+      color: $colorBlueLight
+    }
+
+    &:active {
+      color: $colorBlueDarker;
+    }
+
+    &._active {
+      color: $colorBlue;
+    }
+  }
+
+  &OpenAside {
+    margin-left: auto;
+    color: $colorDarkMild;
+    @include mediaTabletL {
+      display: none;
+    }
+  }
+}

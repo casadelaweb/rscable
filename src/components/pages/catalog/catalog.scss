@@ -1,9 +1,5 @@
 @use 'src/styles/shared' as *;
 
-.test {
-
-}
-
 .catalog {
   margin: 40px 0;
 
@@ -40,38 +36,6 @@
 
   }
 
-  &SortButtons {
-    display: none;
-    @include mediaTabletL {
-      @include flex(center);
-      column-gap: 16px;
-    }
-  }
-
-  &SortButton {
-    @include onHover {
-      color: $colorBlue;
-    }
-
-    &:active {
-      color: $colorBlueDarker;
-    }
-
-    .iconfont {
-      display: none;
-    }
-  }
-
-  &ViewButtons {
-    @include flex(center);
-    column-gap: 16px;
-    margin-left: auto;
-  }
-
-  &ViewButton {
-
-  }
-
   &Layout {
     @include dropFlex;
     @include mediaTabletL {
@@ -93,28 +57,15 @@
     }
   }
 
-  &Nav {
-    @include dropFlex;
-    @include textS;
-    @include flex(center, space-between);
-    column-gap: 16px;
-    @include mediaTabletM {
-      column-gap: 20px;
-    }
-    @include mediaTabletL {
-      //position: sticky;
-      //z-index: 120;
-      //top: calc(var(--headerHeight) + 20px);
-      //background: white;
-      //padding: 16px;
-      //border: 1px solid $colorGreyMild;
-      //border-radius: $brM;
-      //box-shadow: $bsM;
-    }
-  }
-
   &Products {
-    @include productsLayout;
+    &.grid {
+      @include productsLayout;
+    }
+
+    &.row {
+      @include flex($d: column);
+      row-gap: 20px;
+    }
   }
 }
 

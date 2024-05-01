@@ -52,27 +52,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      // background: rgba($colorGreyMild, 0.5);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.33s;
-      //font-size: 128px;
-      //color: $colorDarkMild;
-      //
-      //.iconfont {
-      //  @keyframes rotation {
-      //    0% {
-      //      transform: rotate(0deg);
-      //    }
-      //    100% {
-      //      transform: rotate(360deg);
-      //    }
-      //  }
-      //  animation-name: rotation;
-      //  animation-duration: 0.33s;
-      //  animation-iteration-count: infinite;
-      //  animation-timing-function: linear;
-      //}
     }
   }
 

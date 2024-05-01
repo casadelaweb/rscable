@@ -2,6 +2,7 @@ import * as noUiSlider from 'nouislider'
 import { API } from 'nouislider/dist/nouislider'
 // import { Select } from 'src/modules/select/select'
 // import { Details } from 'src/modules/details/details'
+import 'src/assets/img/catalog/banner.jpg'
 
 interface sliderElement extends HTMLElement {
   noUiSlider: API
@@ -60,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
         inputMax.value = parseInt(value).toLocaleString()
       }
 
-      spanMin.textContent = parseInt(values[0]).toLocaleString()
-      spanMax.textContent = parseInt(values[1]).toLocaleString()
+      spanMin.textContent = parseInt(values[0])?.toLocaleString()
+      spanMax.textContent = parseInt(values[1])?.toLocaleString()
     })
   }
 }, {

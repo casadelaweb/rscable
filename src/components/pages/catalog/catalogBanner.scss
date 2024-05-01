@@ -1,0 +1,61 @@
+@use 'src/styles/shared' as *;
+
+.catalogBanner {
+  @include dropFlex;
+  width: 100% !important;
+  position: relative;
+  z-index: 0;
+  // overflow: hidden;
+  box-shadow: $bsM;
+  border-radius: $brM;
+
+  &Body {
+    background: rgba($colorGreyMild, 0.8);
+    border: 1px solid $colorGreyMild;
+    border-radius: $brM;
+    padding: 8px;
+    backdrop-filter: blur(8px);
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    left: 8px;
+    width: calc(100% - 8px * 2);
+    @include mediaTabletM {
+      top: 50%;
+      left: 16px;
+      padding: 16px;
+      width: 360px;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &Title {
+    @include textM;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  &Description {
+    @include textS;
+    margin-bottom: 8px;
+  }
+
+  &Button {
+    @include buttonMain;
+    width: 160px;
+  }
+
+  &Img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: $brM;
+    @include mediaTabletM {
+      aspect-ratio: 10 / 2.5;
+    }
+
+    // filter: blur(2px);
+  }
+}

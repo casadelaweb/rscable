@@ -95,6 +95,19 @@
   }
 }
 
+@mixin textL {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+  @include mediaTabletM {
+    font-size: 16px;
+  }
+  @include mediaDesktop {
+    font-size: 18px;
+  }
+}
+
 @mixin textM {
   font-size: 13px;
   font-weight: 400;

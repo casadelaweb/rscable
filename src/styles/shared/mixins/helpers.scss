@@ -1,3 +1,5 @@
+@use 'src/styles/shared/variables/colors' as Colors;
+
 @mixin flex($a:'unset', $j:'unset', $d:'unset', $w:'unset') {
   display: flex;
   @if ($a != 'unset') {
@@ -51,7 +53,7 @@
   }
 }
 
-@mixin addBottomLineOnHover($bg:$colorDarkMild) {
+@mixin addBottomLineOnHover($bg: Colors.$colorDarkMild) {
   position: relative;
   z-index: 0;
 
@@ -82,8 +84,8 @@
       background-position-x: -200%;
     }
   }
-  background: $colorGreyMild;
-  background: linear-gradient(90deg, $colorGreyMild 10%, white 20%, $colorGreyMild 40%);
+  background: Colors.$colorGreyMild;
+  background: linear-gradient(90deg, Colors.$colorGreyMild 10%, white 20%, Colors.$colorGreyMild 40%);
   background-size: 200% 100%;
   animation: 1s shine linear infinite;
 }

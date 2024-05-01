@@ -94,7 +94,7 @@ $suggestions = [
       <div class="catalogMain">
         <div class="catalogNav">
           <div class="catalogSortButtons">
-            Сортировать по:
+            <span class="catalogSortButtonsTitle">Сортировать по:</span>
             <button class="catalogSortButton" type="button">
               Популярности
               <span class="iconfont icon-ascending"></span>
@@ -116,23 +116,30 @@ $suggestions = [
               <span class="iconfont icon-descending"></span>
             </button>
           </div>
-          <button type="button" data-modal-open="catalog-aside" class="test">
+          <button type="button" data-modal-open="catalog-aside" class="catalogOpenAside">
             <span class="iconfont icon-filters"></span>
           </button>
           <div class="catalogViewButtons">
-            <button type="button" class="catalogViewButton">
+            <button type="button" class="catalogViewButton" data-catalog-view="grid">
               <span class="iconfont icon-grid"></span>
             </button>
-            <button type="button" class="catalogViewButton">
+            <button type="button" class="catalogViewButton" data-catalog-view="row">
               <span class="iconfont icon-row"></span>
             </button>
           </div>
         </div>
-        <div class="catalogProducts">
+        <div class="catalogProducts" data-catalog="products">
+          <?php foreach ($fakeProducts as $product):
+            Render::component('catalog/productCard', $product);
+          endforeach; ?>
+
+          <?php Render::component('catalog/catalogBanner') ?>
+
           <?php foreach ($fakeProducts as $product):
             Render::component('catalog/productCard', $product);
           endforeach; ?>
         </div>
+        <?php Render::component('catalog/catalogPagination') ?>
       </div>
     </div>
   </div>

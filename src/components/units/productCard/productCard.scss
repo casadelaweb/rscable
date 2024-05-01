@@ -106,11 +106,15 @@
     column-gap: 4px;
     color: $colorDarkMild;
 
-    &-key {
+    &._extra {
+      display: none;
+    }
+
+    &Key {
       font-weight: 400;
     }
 
-    &-value {
+    &Value {
       font-weight: 500;
     }
   }
@@ -137,10 +141,14 @@
   &Title {
     @include textM;
     @include lineClamp(2);
-    //height: 40px;
-    //@include mediaLaptopS {
-    //  height: 48px;
-    //}
+    height: calc(13px * 1.25 * 2);
+    margin-bottom: 4px;
+    @include mediaLaptopM {
+      height: calc(14px * 1.25 * 2);
+    }
+    @include mediaDesktop {
+      height: calc(16px * 1.25 * 2);
+    }
   }
 
   &Delivery {
@@ -252,7 +260,7 @@
     width: 100%;
     height: 32px;
     @include mediaTabletS {
-      width: 92px;
+      width: 88px;
       height: 40px;
     }
     @include mediaTabletM {
@@ -288,15 +296,173 @@
       width: 34%;
     }
 
-    &-wrapper {
-      overflow: hidden;
-      flex: 0 0 auto;
-      width: calc(50% - 24px);
-      margin-right: 24px;
+    //&Wrapper {
+    //  overflow: hidden;
+    //  flex: 0 0 auto;
+    //  width: calc(50% - 24px);
+    //  margin-right: 24px;
+    //  @include mediaTabletM {
+    //    width: auto;
+    //    margin: 0 0 auto;
+    //  }
+    //}
+  }
+
+  &Bottom {
+    @include flex($d: column);
+    row-gap: 8px;
+    width: 100%;
+    flex-grow: 1;
+  }
+}
+
+.row .productCard {
+  @include flex(flex-start, flex-start, row);
+
+  &Title {
+    height: auto;
+    @include mediaTabletM {
+      @include textL;
+      font-weight: 500;
+    }
+  }
+
+  &Slider {
+    overflow: hidden;
+    height: 100%;
+    margin: 16px 0 0;
+    width: 100px;
+    @include mediaTabletS {
+      width: 200px;
+    }
+    @include mediaTabletM {
+      margin-top: 0;
+    }
+    @include mediaDesktop {
+      width: 240px;
+    }
+  }
+
+  &Title, &Parameters {
+    padding-right: 8px;
+  }
+
+  &Tags {
+    top: 8px;
+    left: 8px;
+    row-gap: 4px;
+    max-width: 100px;
+    @include mediaTabletS {
+      max-width: 200px;
+    }
+    @include mediaDesktop {
+      max-width: 240px;
+    }
+  }
+
+  &Buttons {
+    top: 8px;
+    right: 8px;
+  }
+
+  &Parameter {
+    @include textS;
+    line-height: 1.4;
+    //@include mediaTabletM {
+    //  @include textM;
+    //  line-height: 1.4;
+    //}
+
+    &._extra {
+      @include flex;
+    }
+  }
+
+  &Body {
+    min-height: 200px;
+    width: calc(100% - 100px);
+    @include mediaTabletS {
+      width: calc(100% - 200px);
+    }
+    @include mediaTabletM {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 16px;
+      padding-right: 32px;
+    }
+    @include mediaDesktop {
+      width: calc(100% - 240px);
+    }
+  }
+
+  &Bottom {
+    flex-grow: 1;
+    // width: fit-content;
+  }
+
+  &Delivery {
+    @include textS;
+  }
+
+  &Price {
+    @include textM;
+
+    &._current {
+      font-weight: 600;
       @include mediaTabletM {
-        width: auto;
-        margin: 0 0 auto;
+        @include textL;
+        font-weight: 500;
       }
     }
+
+    &._request {
+      @include textS;
+      font-weight: 500;
+      //@include mediaTabletM {
+      //  @include textM;
+      //}
+    }
+  }
+
+  &Footer {
+    @include mediaMobileS {
+      @include flex(center, space-between, row);
+      column-gap: 8px;
+    }
+    @include mediaTabletM {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
+  &Quantity, &Cart {
+    height: 32px;
+    @include mediaTabletL {
+      height: 40px;
+    }
+  }
+
+  &Quantity {
+    margin: 0;
+    @include mediaMobileS {
+      width: 88px;
+    }
+    @include mediaTabletM {
+      width: 120px;
+    }
+  }
+
+  &Cart {
+    width: auto;
+    flex-grow: 1;
+    @include mediaTabletM {
+      width: 200px;
+      flex-grow: 0;
+    }
+  }
+
+  .swiper-pagination {
+    padding: 3px 6px;
   }
 }

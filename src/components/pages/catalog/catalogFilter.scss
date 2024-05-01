@@ -6,12 +6,15 @@
   &Summary {
     @include flex(flex-start, flex-start, column);
     @include textM;
-    padding: 8px 16px;
-    // border-bottom: 1px solid $colorGreyMild;
+    padding: 8px 5px 8px 16px;
     cursor: pointer;
+    //transition: background 0.333s;
     @include mediaTabletL {
-      padding: 16px 0;
+      padding: 8px 0 8px 8px;
     }
+    //@include onHover {
+    //  background: $colorGreyLight;
+    //}
 
     &Content {
       @include textM;
@@ -35,7 +38,6 @@
 
   &Body {
     padding: 0 8px 16px;
-    // border-bottom: 1px solid $colorGreyMild;
     @include mediaTabletL {
       padding: 0 0 16px;
     }
