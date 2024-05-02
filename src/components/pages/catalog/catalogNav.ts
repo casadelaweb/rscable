@@ -8,8 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function applyCatalogView(view: string) {
-    const buttonsAll: Array<HTMLButtonElement> = Array.from(body.querySelectorAll('[data-catalog-view]'))
     const layout: HTMLElement = body.querySelector('[data-catalog=products]')
+
+    if (!layout) return
+
+    const buttonsAll: Array<HTMLButtonElement> = Array.from(body.querySelectorAll('[data-catalog-view]'))
     const products: Array<HTMLElement> = Array.from(layout?.querySelectorAll('.productCard')) ?? []
     buttonsAll.forEach((element) => element.classList.remove('_active'))
     body.querySelector(`[data-catalog-view=${ view }]`).classList.add('_active')

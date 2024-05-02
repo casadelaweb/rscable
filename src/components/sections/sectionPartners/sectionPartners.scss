@@ -96,14 +96,15 @@
 
     &-footer {
       @include flex(center);
-      margin-top: 40px;
+      margin: 40px auto 0;
+      width: fit-content;
     }
 
     &-pagination {
       $size: 12px;
       position: static;
       background: none;
-      width: 100%;
+      width: fit-content;
       margin: 0 auto;
       transform: none;
       border-radius: $size * 0.5;
