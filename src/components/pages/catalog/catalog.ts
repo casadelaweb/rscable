@@ -61,7 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         inputMax.value = parseInt(value).toLocaleString()
       }
-
+      setTimeout(() => {
+        inputMin.dispatchEvent(new Event('input', { bubbles: true, }))
+        inputMax.dispatchEvent(new Event('input', { bubbles: true, }))
+      }, 333)
       // spanMin.textContent = parseInt(values[0])?.toLocaleString()
       // spanMax.textContent = parseInt(values[1])?.toLocaleString()
     })

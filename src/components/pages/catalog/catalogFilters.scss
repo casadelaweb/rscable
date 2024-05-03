@@ -32,13 +32,13 @@
   &Buttons {
     @include flex(center);
     column-gap: 16px;
-    position: sticky;
-    z-index: 1;
-    bottom: 0;
+    //position: sticky;
+    //z-index: 1;
+    //bottom: 0;
     margin: 0;
     border-top: 1px solid $colorGreyMild;
     @include mediaTabletL {
-      margin-top: 40px;
+      // margin-top: 40px;
       border: 0;
     }
   }
@@ -56,7 +56,8 @@
     margin: 0;
     @include mediaTabletL {
       display: block;
-      margin: 40px 0 0;
+      padding-bottom: 20px;
+      margin: 20px 0 0;
     }
 
     &Title {
@@ -111,6 +112,52 @@
     &:hover,
     &._active {
       color: #505050;
+    }
+  }
+
+  &Tooltip {
+    position: fixed;
+    z-index: 150;
+    top: 50%;
+    left: 200px;
+    // transform: translate(0, -50%);
+    // padding: 16px;
+    // background: white;
+    // border: 1px solid $colorGreyMild;
+    display: none;
+    border-radius: $brM;
+    box-shadow: $bsM;
+    pointer-events: none;
+    opacity: 0;
+    transition: top 0.333s, left 0.333s, opacity 0.333s;
+    @include mediaOnlyBeforeLaptop {
+      display: none !important;
+    }
+
+    &._active {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 12px;
+      height: 12px;
+      background: $colorBlue;
+      border-radius: 2px;
+    }
+
+    &Button {
+      @include buttonPrimary;
+      @include textS;
+      background: $colorBlue;
+      padding: 20px 32px;
     }
   }
 }

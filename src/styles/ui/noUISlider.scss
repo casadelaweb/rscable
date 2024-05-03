@@ -2,10 +2,12 @@
 
 #app .noUi {
   &-horizontal {
-    width: calc(100% - 32px);
-    height: 4px;
-    margin: 0 auto 1em;
+    // width: calc(100% - 32px);
+    width: calc(100% - 8px);
+    height: 6px;
+    margin: 0 8px 16px auto;
     border: 0;
+    border-radius: 3px;
     background: Colors.$colorGreyMild;
   }
 
@@ -14,16 +16,21 @@
     box-shadow: none;
   }
 
+  &-connects {
+    border-radius: 0;
+  }
+
   &-connect {
     border: 0;
-    background: black;
+    border-radius: 0;
+    background: Colors.$colorDarkMild;
   }
 
   &-handle {
-    top: -8px;
+    top: -9px;
     right: -10px;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     cursor: grab;
     border: 1px solid black;
     border-radius: 50%;
@@ -34,7 +41,7 @@
     }
 
     &-lower {
-      right: 0
+      right: -20px;
     }
 
     &-upper {

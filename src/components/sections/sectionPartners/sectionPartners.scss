@@ -27,7 +27,7 @@
     border: 1px solid $colorGreyMild;
     padding: 16px;
     border-radius: $brM;
-    box-shadow: $bsM;
+    // box-shadow: $bsM;
 
     &Img {
       object-fit: contain;
@@ -48,7 +48,8 @@
   }
 
   .swiper {
-    overflow: unset;
+    // overflow: unset;
+    overflow: hidden;
 
     &-button {
       &-prev, &-next {

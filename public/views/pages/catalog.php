@@ -61,6 +61,24 @@ $suggestions = [
           </div>
           <div class="catalogFiltersBody">
             <?php Render::component('catalog/catalogFilter', [
+              'filterTitle' => 'Наличие',
+              'inputType' => 'checkbox',
+              'inputName' => 'stock',
+              'options' => [
+                'В наличии',
+                'Под заказ: сегодня',
+                'Под заказ: завтра',
+                'Под заказ: послезавтра',
+                'Под заказ: позднее',
+              ],
+            ]) ?>
+            <?php Render::component('catalog/catalogFilter', [
+              'filterTitle' => 'Форма кабеля',
+              'inputType' => 'radio',
+              'inputName' => 'cable_form',
+              'options' => ['Круглый', 'Плоский',],
+            ]) ?>
+            <?php Render::component('catalog/catalogFilter', [
               'filterTitle' => 'Холодостойкий',
               'inputType' => 'radio',
               'inputName' => 'is_cold_proof',
@@ -104,7 +122,7 @@ $suggestions = [
             ]) ?>
           </div>
           <div class="catalogFiltersButtons">
-            <button class="catalogFiltersSubmit" type="submit">
+            <button class="catalogFiltersSubmit" type="submit" id="catalog-filters-submit">
               Применить
             </button>
             <button class="catalogFiltersReset" type="reset">
@@ -118,6 +136,12 @@ $suggestions = [
               <span class="iconfont icon-bubble"></span>
               <span>Оставьте обратную связь</span>
             </button>
+          </div>
+
+          <div class="catalogFiltersTooltip">
+            <label for="catalog-filters-submit" class="catalogFiltersTooltipButton">
+              Применить
+            </label>
           </div>
         </form>
       </div>
