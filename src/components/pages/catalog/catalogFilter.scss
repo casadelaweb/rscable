@@ -8,13 +8,17 @@
     @include textM;
     padding: 16px 5px 16px 16px;
     cursor: pointer;
-    //transition: background 0.333s;
+    transition: background 0.333s;
     @include mediaTabletL {
       padding: 12px 0 12px 8px;
     }
-    //@include onHover {
-    //  background: $colorGreyLight;
-    //}
+    @include onHover {
+      background: $colorGreyLight;
+    }
+
+    &:active {
+      background: $colorGreyMild;
+    }
 
     &Content {
       @include textM;
@@ -37,9 +41,9 @@
   }
 
   &Body {
-    padding: 0 16px 16px;
+    padding: 8px 16px 16px;
     @include mediaTabletL {
-      padding: 0 16px 16px 8px;
+      padding: 8px 16px 16px 8px;
     }
   }
 
