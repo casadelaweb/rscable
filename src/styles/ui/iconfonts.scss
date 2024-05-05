@@ -8,7 +8,7 @@ $icon-location: unquote('"\\e906"');
 $icon-mail: unquote('"\\e909"');
 $icon-heart: unquote('"\\e907"');
 $icon-heart-fill: unquote('"\\e908"');
-$icon-start: unquote('"\\e90e"');
+$icon-star: unquote('"\\e90e"');
 $icon-clock: unquote('"\\e912"');
 $icon-logout: unquote('"\\e916"');
 $icon-bin: unquote('"\\e90b"');
@@ -150,9 +150,9 @@ $icon-mic: unquote('"\\e928"');
   }
 }
 
-.icon-start {
+.icon-star, .icon-star-full {
   &:before {
-    content: $icon-start;
+    content: $icon-star;
   }
 }
 

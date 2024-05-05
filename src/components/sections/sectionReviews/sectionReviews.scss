@@ -1,0 +1,10 @@
+@use 'src/styles/shared' as *;
+
+.sectionReviews {
+  @include sectionHeader;
+  margin: 60px 0;
+
+  &Container {
+    @include container;
+  }
+}

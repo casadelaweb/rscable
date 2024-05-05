@@ -1,0 +1,28 @@
+@use 'src/styles/shared' as  *;
+
+.productParams {
+  @include textM;
+  @include flex($d: column);
+  row-gap: 8px;
+  margin-bottom: 20px;
+}
+
+.productParam {
+  @include flex(center, space-between);
+
+  &Key {
+    display: inline-block;
+  }
+
+  &Divider {
+    display: inline-block;
+    margin: auto 3px 3px;
+    flex-grow: 1;
+    border-bottom: 1px dotted $colorGreyDarker;
+  }
+
+  &Value {
+    display: inline-block;
+    text-align: right;
+  }
+}

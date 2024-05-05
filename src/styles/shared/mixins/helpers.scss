@@ -103,3 +103,20 @@
   min-height: 0;
   flex: 0 0 auto;
 }
+
+@mixin textLineThrough($color) {
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 100%;
+    height: 2px;
+    background: $color;
+  }
+}

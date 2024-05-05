@@ -70,7 +70,6 @@
   }
 }
 
-
 @mixin buttonMinor {
   @include buttonTemplate;
   @include textS;
@@ -114,4 +113,29 @@
   @include buttonPrimary;
   width: 40px;
   height: 40px;
+}
+
+@mixin buttonNavigation {
+  @include dropFlex;
+  @include flex(center, center);
+  width: 40px;
+  height: 40px;
+  border: 1px solid Colors.$colorGreyDarker;
+  border-radius: 50%;
+  box-shadow: UI.$bsM;
+  background: white;
+  opacity: 1;
+  color: Colors.$colorDarkMild;
+  transition: background-color 0.33s, color 0.33s, transform 0.33s, opacity 0.33s;
+  @include mediaTabletS {
+    width: 48px;
+    height: 48px;
+  }
+  @include onHover {
+    background: Colors.$colorGreyMild;
+  }
+
+  &:active {
+    background: Colors.$colorGreyDarker;
+  }
 }

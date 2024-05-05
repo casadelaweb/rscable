@@ -1,17 +1,20 @@
 <?php namespace App;
 global $fakeProducts;
+/** @var string $sectionTitle */
+/** @var string $sectionButtonTitle */
+/** @var string $sectionButtonUrl */
 ?>
 
 <section class="sectionAdvisable">
   <div class="sectionAdvisableContainer">
     <div class="sectionAdvisableHeader">
       <h2 class="sectionAdvisableTitle">
-        <a href="/catalog/">
-          Популярные товары
+        <a href="<?= $sectionButtonUrl ?>">
+          <?= $sectionTitle ?>
         </a>
       </h2>
-      <a href="/catalog/" class="sectionAdvisableButton">
-        Перейти в каталог
+      <a href="<?= $sectionButtonUrl ?>" class="sectionAdvisableButton">
+        <?= $sectionButtonTitle ?>
       </a>
     </div>
     <div class="sectionAdvisableWrapper">

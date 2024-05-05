@@ -73,3 +73,16 @@ export function getOS(): iOSName {
   return os
 }
 
+export function createHash(): string {
+  let id = Date.now().toString(36)
+  id = id + Math.random().toString(36)
+  id = id.replace(/\./gmi, '')
+
+  const characters: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+  const charactersLength: number = characters.length
+  const randomChar: string = characters.charAt(Math.floor(Math.random() * charactersLength))
+  id = randomChar + id
+
+  return id
+}
+

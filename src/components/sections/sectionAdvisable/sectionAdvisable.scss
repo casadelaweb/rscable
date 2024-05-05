@@ -2,7 +2,7 @@
 
 .sectionAdvisable {
   @include sectionHeader;
-  margin: 40px 0;
+  margin: 60px 0;
   overflow: hidden;
 
   &Container {
@@ -25,31 +25,10 @@
 
   &Slider {
     &Prev, &Next {
-      @include dropFlex;
-      @include flex(center, center);
+      @include buttonNavigation;
       position: absolute;
       z-index: 10;
       top: 50%;
-      width: 40px;
-      height: 40px;
-      border: 1px solid $colorGreyDarker;
-      border-radius: 50%;
-      box-shadow: $bsM;
-      background: white;
-      opacity: 1;
-      color: $colorDarkMild;
-      transition: background-color 0.33s, color 0.33s, transform 0.33s, opacity 0.33s;
-      @include mediaTabletS {
-        width: 48px;
-        height: 48px;
-      }
-      @include onHover {
-        background: $colorGreyMild;
-      }
-
-      &:active {
-        background: $colorGreyDarker;
-      }
 
       &.swiper-button-disabled {
         opacity: 0;

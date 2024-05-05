@@ -4,13 +4,13 @@
 
 @mixin h1 {
   line-height: 1.1;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 600;
   @include mediaTabletM {
-    font-size: 40px;
+    font-size: 36px;
   }
   @include mediaLaptopM {
-    font-size: 48px;
+    font-size: 40px;
   }
 }
 
@@ -31,8 +31,11 @@
 
 @mixin h3 {
   line-height: 1.1;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
+  @include mediaMobileL {
+    font-size: 20px;
+  }
   @include mediaTabletM {
     font-size: 24px;
   }
@@ -108,6 +111,19 @@
   }
 }
 
+@mixin textXL {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+  @include mediaTabletM {
+    font-size: 18px;
+  }
+  @include mediaDesktop {
+    font-size: 20px;
+  }
+}
+
 @mixin textM {
   font-size: 13px;
   font-weight: 400;
@@ -166,6 +182,7 @@
   font-size: $fontSize;
   line-height: $lineHeight;
   white-space: normal;
+  letter-spacing: 0.02em;
 
   br {
     display: none;
@@ -198,7 +215,7 @@
         height: 0.5em;
         width: 0.5em;
         border-radius: 50%;
-        background: Colors.$colorBlue;
+        background: Colors.$colorDarkMild;
         transform: translate(0, -50%);
       }
     }
@@ -217,6 +234,7 @@
   }
 
   h1, h2, h3, h4, h5, h6, hr {
+    line-height: 1.25;
     font-weight: 600;
     margin: 1em 0 0.5em
   }
@@ -226,7 +244,7 @@
   }
 
   a {
-    color: Colors.$colorBlue;
+    color: Colors.$colorDarkMild;
 
     @include onHover {
       text-decoration: underline;

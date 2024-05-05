@@ -1,2 +1,5 @@
-$brM: 8px;
-$bsM: 4px 4px 16px 0 rgba(black, 0.05);
+@use 'src/styles/shared/variables/colors' as Colors;
+
+$brM: 4px;
+$bsM: 4px 4px 16px 0 rgba(Colors.$colorDarkMild, 0.05);
+$bsMild: 2px 2px 8px 0 Colors.$colorGreyMild;

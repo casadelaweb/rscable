@@ -1,0 +1,302 @@
+@use 'src/styles/shared' as *;
+
+.productHero {
+  margin: 20px 0 40px;
+
+  &Container {
+    @include container;
+    @include dropFlex;
+    @include flex($d: column);
+    column-gap: 20px;
+    row-gap: 20px;
+    @include mediaTabletL {
+      @include flex(flex-start, flex-start, row, wrap);
+    }
+
+    & > * {
+      @include dropFlex;
+    }
+  }
+
+  &Button {
+    &Cart {
+      @include buttonPrimary;
+    }
+
+    &Quick {
+      @include buttonMain;
+    }
+  }
+
+  &Col {
+    @include flex($d: column);
+    row-gap: 16px;
+    padding: 16px;
+    border: 1px solid $colorGreyMild;
+    border-radius: $brM;
+    box-shadow: $bsM;
+    order: 4;
+    @include mediaTabletL {
+      width: 33%;
+      order: unset;
+    }
+  }
+
+  &Prices {
+    @include flex(center, $w: wrap);
+    column-gap: 8px;
+
+    &Tax {
+      @include buttonMinor;
+    }
+  }
+
+  &Price {
+    &._prev {
+      @include textLineThrough($colorRed);
+      @include textXs;
+      font-weight: 500;
+      color: $colorRed;
+    }
+
+    &._current {
+      @include textXL;
+      font-weight: 600;
+    }
+  }
+
+  &Cart {
+    @include flex(center);
+    column-gap: 8px;
+
+    &Quantity {
+      @include dropFlex;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+      border-radius: $brM;
+      background: $colorGreyMild;
+      width: 88px;
+      height: 40px;
+
+      &Button, &Input {
+        @include dropFlex;
+        text-align: center;
+      }
+
+      &Button {
+        @include flex(center, center);
+        transition: background-color 0.33s;
+        @include onHover {
+          background: #e0e0e0;
+        }
+
+        &:active {
+          background: $colorGreyDarker;
+        }
+      }
+    }
+  }
+}
+
+.productHeader {
+  @include textM;
+  @include flex($d: column);
+  column-gap: 16px;
+  row-gap: 16px;
+  order: 4;
+  @include mediaTabletL {
+    @include flex(center, flex-start, row);
+    width: 100%;
+    order: unset;
+  }
+
+  &Code {
+    @include flex(center);
+    column-gap: 4px;
+  }
+
+  &Buttons {
+    @include flex(center);
+    column-gap: 16px;
+    @include mediaTabletL {
+      margin-left: auto;
+    }
+  }
+
+  &Reviews {
+    column-gap: 8px;
+
+    &, &Stars, &Top, &Bottom {
+      @include dropFlex;
+      @include flex(center);
+    }
+
+    &Stars {
+      position: relative;
+      z-index: 0;
+      width: fit-content;
+    }
+
+    &Top {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      color: $colorYellow;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    &Bottom {
+      color: $colorGreyMild;
+    }
+
+    &Button {
+      @include flex(center);
+      column-gap: 4px;
+    }
+
+    &Rating {
+      display: inline-block;
+      font-weight: 600;
+      border: 1px solid $colorYellow;
+      border-radius: 50%;
+      padding: 8px;
+    }
+
+    &Quantity {
+      display: inline-block;
+      border-bottom: 1px dashed $colorYellow;
+    }
+  }
+
+  &Buttons {
+    // margin-left: auto;
+  }
+}
+
+.productTitle {
+  @include h2;
+  order: 2;
+  @include mediaTabletL {
+    width: 100%;
+    order: unset;
+  }
+}
+
+.productSliders {
+  @include dropFlex;
+  @include flex($d: column);
+  column-gap: 8px;
+  row-gap: 8px;
+  width: 100%;
+  @include mediaTabletL {
+    @include flex($d: row);
+    width: 33%;
+  }
+
+  .swiper {
+    @include dropFlex;
+    overflow: hidden;
+
+    &-slide {
+      transition: border-color 0.333s, opacity 0.333s;
+      overflow: hidden;
+      border-radius: $brM;
+
+      picture {
+        display: contents;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    &-nav {
+      @include flex(center);
+      margin: 20px auto 0;
+      width: fit-content;
+      position: relative;
+      z-index: 2;
+
+      display: none;
+    }
+
+    &-pagination {
+      display: none;
+      @include mediaTabletL {
+        @include flex;
+      }
+    }
+
+    &-button-prev, &-button-next {
+      @include buttonNavigation;
+    }
+  }
+}
+
+.productSliderThumbs {
+  order: 2;
+  width: 100%;
+  @include mediaTabletL {
+    width: 80px;
+    order: unset;
+  }
+
+  .swiper {
+    &-slide {
+      @include flex(center, center);
+      //width: 80px;
+      //height: 80px;
+      border: 1px solid $colorGreyMild;
+      border-radius: $brM;
+      cursor: pointer;
+
+      &-thumb {
+        &-active {
+          border-color: $colorDarkMild;
+        }
+      }
+    }
+  }
+}
+
+.productSliderMain {
+  width: 100%;
+  order: 1;
+  @include mediaTabletL {
+    order: unset;
+  }
+
+  .swiper {
+    &-wrapper {
+      height: fit-content;
+    }
+  }
+}
+
+.productInfo {
+  @include dropFlex;
+  order: 3;
+  @include mediaTabletL {
+    order: unset;
+    width: 33%;
+  }
+
+  &Buttons {
+    @include flex(center);
+    column-gap: 16px;
+  }
+
+  &Button {
+    @include buttonMinor;
+    width: fit-content;
+  }
+}
+

@@ -70,7 +70,7 @@
     }
 
     &._hit {
-      background: #ee964b;
+      background: $colorYellow;
       color: white;
     }
   }
@@ -192,23 +192,10 @@
     width: fit-content;
 
     &._prev {
+      @include textLineThrough($colorRed);
       @include textXxs;
       font-weight: 400;
       color: $colorRed;
-      position: relative;
-      z-index: 0;
-
-      &::before {
-        content: ' ';
-        position: absolute;
-        z-index: 1;
-        top: 50%;
-        left: 0;
-        transform: translate(0, -50%);
-        width: 100%;
-        height: 2px;
-        background: lightcoral;
-      }
     }
 
     &._current {
@@ -295,17 +282,6 @@
     &Input {
       width: 34%;
     }
-
-    //&Wrapper {
-    //  overflow: hidden;
-    //  flex: 0 0 auto;
-    //  width: calc(50% - 24px);
-    //  margin-right: 24px;
-    //  @include mediaTabletM {
-    //    width: auto;
-    //    margin: 0 0 auto;
-    //  }
-    //}
   }
 
   &Bottom {
