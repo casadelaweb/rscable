@@ -1,4 +1,5 @@
 <?php namespace App; ?>
+
 <form class="formFeedback" data-form="form">
   <h2 class="formFeedbackTitle">
     Получить доступ к персональным ценам!

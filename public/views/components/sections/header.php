@@ -1,5 +1,6 @@
 <?php namespace App;
 global $cityCurrent;
+global $isAuth;
 ?>
 
 <header class="header">
@@ -38,9 +39,13 @@ global $cityCurrent;
         <span class="iconfont icon-email"></span>
         1820metrov@rscable.shop
       </a>
-      <a class="headerPersonal" href="#">
+      <a class="headerPersonal" href="/personal/">
         <span class="iconfont icon-person"></span>
-        Личный кабинет
+        <?php if ($isAuth): ?>
+          <span>Семенов Семен Семенович</span>
+        <?php else: ?>
+          <span>Личный кабинет</span>
+        <?php endif; ?>
       </a>
     </div>
     <div class="headerDesktopMiddle">
@@ -165,7 +170,7 @@ global $cityCurrent;
         <span class="iconfont icon-stats-bars"></span>
         <span class="headerButtonQuantity">0</span>
       </a>
-      <a class="headerButton" href="/personal/favorite/">
+      <a class="headerButton" href="/personal/fav/">
         <span class="iconfont icon-heart"></span>
         <span class="headerButtonQuantity">12</span>
       </a>

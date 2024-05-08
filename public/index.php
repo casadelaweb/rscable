@@ -5,6 +5,7 @@ require_once "app/Router.php";
 require_once "app/routes.php";
 require_once "app/pages.php";
 require_once "app/Render.php";
+require_once "app/globals.php";
 /** @var Page $page */
 $isHomepage = $page->view == 'home'
 // todo: подготовить контроллеры для тестирования форм
@@ -40,7 +41,7 @@ $isHomepage = $page->view == 'home'
         <?php Render::component('modals/modalRegion') ?>
         <?php Render::component('modals/modalFeedback') ?>
         <?php Render::component('modals/modalMenu') ?>
-        <div class="modal-overlay" data-modal-overlay="default"></div>
+        <!--<div class="modal-overlay" data-modal-overlay="default"></div>-->
       </div>
     </div>
     <script src="<?= getFilePathWithHash('/assets/js/main.js'); ?>"></script>
