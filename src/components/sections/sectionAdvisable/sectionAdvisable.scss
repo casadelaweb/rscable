@@ -57,98 +57,17 @@
   .productCard {
     height: 100%;
   }
-}
 
-.section {
-  overflow: hidden;
-  padding: 30px 0 60px;
-  @include mediaTabletM {
-    padding: 50px 0 80px
-  }
-  @include mediaLaptopS {
-    padding: 80px 0 110px;
-  }
-
-  &-container {
-    @include container;
-  }
-
-  &-header {
-    @include flex(center, space-between);
-    margin-bottom: 14px;
-    @include mediaLaptopS {
-      margin-bottom: 20px;
-    }
-  }
-
-  &-title, &-button {
-    font-size: 16px;
-    line-height: 54 / 18;
-    color: #80756e;
-
+  .swiper {
+    overflow: unset;
     @include mediaTabletM {
-      font-size: 18px;
-    }
-  }
-
-  &-button {
-    .icon-arrow-right {
-      font-size: 12px;
-    }
-  }
-
-  &-layout {
-    margin-bottom: 30px;
-    @include mediaTabletM {
-      margin-bottom: 50px;
-    }
-    @include mediaLaptopS {
-      margin-bottom: 80px;
-    }
-  }
-
-  &-product {
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-
-    &-favourite {
-      @include buttonPrimary;
-      position: absolute;
-      z-index: 1;
+      overflow: hidden;
     }
 
-    &-img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    &-slide {
+      @include dropFlex;
+      height: auto;
     }
-
-    &-title,
-    &-price,
-    &-colors {
-      display: none;
-    }
-  }
-}
-
-.swiper {
-  overflow: unset;
-  @include mediaTabletM {
-    overflow: hidden;
-  }
-
-  &-slide {
-    @include dropFlex;
-    height: auto;
-  }
-
-  &-button {
-    // @include swiperNavigationButtons;
   }
 }
 

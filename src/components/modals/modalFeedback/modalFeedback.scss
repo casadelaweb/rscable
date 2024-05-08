@@ -1,6 +1,7 @@
 @use 'src/styles/shared' as *;
 
 .modalFeedback {
+  @include scrollbar;
   position: fixed;
   z-index: 120;
   top: 50%;
@@ -11,6 +12,12 @@
   border-radius: $brM;
   opacity: 0;
   pointer-events: none;
+  width: calc(100% - 32px);
+  max-height: 90%;
+  max-width: 540px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
 
   &._active {
     opacity: 1;

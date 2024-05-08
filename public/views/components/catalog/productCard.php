@@ -28,7 +28,7 @@
       </div>
     <?php endif; ?>
   </div>
-  
+
   <div class="productCardButtons">
     <button class="productCardFav" type="button" title="Добавить в избранное"
             aria-label="Добавить в избранное">
@@ -43,7 +43,7 @@
       <span class="iconfont icon-eye"></span>
     </button>
     <button class="productCardBuy" type="button" title="Купить в один клик"
-            aria-label="Купить в один клик">
+            aria-label="Купить в один клик" data-modal-open="buy-quick">
       <span class="iconfont icon-credit-card"></span>
     </button>
   </div>

@@ -294,7 +294,7 @@ $productAsideParams = [
           <span>В корзину</span>
         </button>
       </div>
-      <button type="button" class="productHeroButtonQuick">
+      <button type="button" class="productHeroButtonQuick" data-modal-open="buy-quick">
         Купить в 1 клик
       </button>
       <a href="#delivery">

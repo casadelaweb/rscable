@@ -1,6 +1,8 @@
 @use 'src/styles/shared' as *;
 
 .formFeedback {
+  position: relative;
+  z-index: 0;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 16px;
@@ -9,18 +11,28 @@
   box-shadow: $bsM;
   border-radius: $brM;
 
+  &Loader {
+    @include loadingPlaceholder;
+  }
+
   &Title {
     @include h5;
   }
 
   &Field {
     position: relative;
+    z-index: 0;
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 8px;
 
     &Label {
       @include textS;
+
+      &Required {
+        color: $colorRed;
+        font-weight: 600;
+      }
     }
 
     &Input {
@@ -141,10 +153,10 @@
   }
 
   &Body {
-    //display: grid;
-    //grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: 1fr;
     //align-items: flex-end;
-    //column-gap: 16px;
-    //row-gap: 16px;
+    column-gap: 16px;
+    row-gap: 16px;
   }
 }

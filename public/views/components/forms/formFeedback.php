@@ -1,38 +1,46 @@
-<?php namespace App; ?>
+<?php namespace App;
+/** @var string $title */
+/** @var string $description */
+/** @var array $inputs */
+?>
 
 <form class="formFeedback" data-form="form">
+
+  <div class="formFeedbackLoader"></div>
+
   <h2 class="formFeedbackTitle">
-    Получить доступ к персональным ценам!
+    <?= $title ?>
   </h2>
   <div class="formFeedbackNote">
-    Оптовая компания "РОСКАБ" специализируется на поставках с минимальным заказом в 100 000
-    рублей.
+    <?= $description ?>
   </div>
   <div class="formFeedbackBody">
-    <label class="formFeedbackField" data-form="field">
-      <span class="formFeedbackFieldLabel">Контактное лицо:</span>
-      <input type="text" class="formFeedbackFieldInput" placeholder="Имя Фамилия"
-             data-validate="human_name" required>
-      <span class="formFeedbackFieldError" data-form="error">
-        Укажите корректные имя и фамилию
-      </span>
-    </label>
-    <label class="formFeedbackField" data-form="field">
-      <span class="formFeedbackFieldLabel">ИНН:</span>
-      <input type="text" class="formFeedbackFieldInput" placeholder="ИНН"
-             data-validate="inn" required>
-      <span class="formFeedbackFieldError" data-form="error">
-        ИНН должен содержать 10 или 12 арабских цифр
-      </span>
-    </label>
-    <label class="formFeedbackField" data-form="field">
-      <span class="formFeedbackFieldLabel">Телефон:</span>
-      <input data-mask="tel" data-validate="tel" type="text" class="formFeedbackFieldInput"
-             placeholder="+7-x-xxx-xx-xx" required>
-      <span class="formFeedbackFieldError" data-form="error">
-        Введите номер телефона в формате +7-x-xxx-xx-xx
-      </span>
-    </label>
+    <?php foreach ($inputs as $input) :
+      $label = $input['label'];
+      $isRequired = $input['isRequired'];
+      $validationSchemes = $input['validationSchemes'];
+      $placeholder = $input['placeholder'];
+      $errorText = $input['errorText'];
+      ?>
+      <label class="formFeedbackField" data-form="field">
+        <span class="formFeedbackFieldLabel">
+          <span><?= $label ?></span>
+          <?php if ($isRequired): ?>
+            <span class="formFeedbackFieldLabelRequired">*</span>
+          <?php endif; ?>
+          :
+        </span>
+        <input type="text"
+               data-form="field-input"
+               class="formFeedbackFieldInput"
+               placeholder="<?= $placeholder ?>"
+               data-validate="<?= $validationSchemes ?>"
+          <?= $isRequired ? 'required' : '' ?> >
+        <span class="formFeedbackFieldError" data-form="error">
+          <?= $errorText ?>
+        </span>
+      </label>
+    <?php endforeach; ?>
     <button class="formFeedbackSubmit" type="submit" data-form="submit">
       Отправить заявку
     </button>

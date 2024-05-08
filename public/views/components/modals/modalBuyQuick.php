@@ -1,6 +1,6 @@
 <?php namespace App; ?>
 
-<div class="modalFeedback" data-modal="feedback">
+<div class="modalFeedback" data-modal="buy-quick">
   <button class="modalFeedbackClose" type="button" data-modal-close>
     <span class="iconfont icon-close"></span>
   </button>
@@ -17,6 +17,13 @@
           'errorText' => 'Это обязательное поле',
         ],
         [
+          'label' => 'Телефон',
+          'isRequired' => true,
+          'validationSchemes' => 'tel',
+          'placeholder' => '+7-xxx-xxx-xx-xx',
+          'errorText' => 'Введите номер телефона в формате +7-xxx-xxx-xx-xx',
+        ],
+        [
           'label' => 'ИНН',
           'isRequired' => true,
           'validationSchemes' => 'inn',
@@ -24,14 +31,28 @@
           'errorText' => 'ИНН должен содержать 10 или 12 арабских цифр',
         ],
         [
-          'label' => 'Телефон',
-          'isRequired' => true,
-          'validationSchemes' => 'tel',
-          'placeholder' => '+7-xxx-xxx-xx-xx',
-          'errorText' => 'Введите номер телефона в формате +7-xxx-xxx-xx-xx',
+          'label' => 'Email',
+          'isRequired' => false,
+          'validationSchemes' => 'email',
+          'placeholder' => 'name@site.tu',
+          'errorText' => '',
+        ],
+        [
+          'label' => 'Интересующий товар',
+          'isRequired' => false,
+          'validationSchemes' => 'not_empty',
+          'placeholder' => '',
+          'errorText' => '',
+        ],
+        [
+          'label' => 'Комментарий',
+          'isRequired' => false,
+          'validationSchemes' => 'not_empty',
+          'placeholder' => '',
+          'errorText' => '',
         ],
       ],
     ]) ?>
   </div>
 </div>
-<div class="modalFeedbackOverlay" data-modal-overlay="feedback"></div>
+<div class="modalFeedbackOverlay" data-modal-overlay="buy-quick"></div>

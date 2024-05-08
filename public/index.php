@@ -40,6 +40,7 @@ $isHomepage = $page->view == 'home'
         <?php Render::component('modals/modalSearch') ?>
         <?php Render::component('modals/modalRegion') ?>
         <?php Render::component('modals/modalFeedback') ?>
+        <?php Render::component('modals/modalBuyQuick') ?>
         <?php Render::component('modals/modalMenu') ?>
         <!--<div class="modal-overlay" data-modal-overlay="default"></div>-->
       </div>
