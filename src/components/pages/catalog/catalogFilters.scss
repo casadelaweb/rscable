@@ -16,11 +16,16 @@
   }
 
   &Header {
-    @include flex(center, space-between);
     @include textS;
+    @include flex($d: column);
+    row-gap: 8px;
     margin: 0;
     @include mediaTabletL {
       display: none;
+    }
+
+    &Row {
+      @include flex(center, space-between);
     }
   }
 

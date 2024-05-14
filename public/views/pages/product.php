@@ -397,19 +397,100 @@ Render::component('product/productSection', [
   'certificates' => $certificates,
 ]) ?>
 
-<div class="sectionReviews" id="reviews">
-  <article class="productReview">
-    <h3 class="productReviewAuthor">
-      author
-    </h3>
-    <div class="productReviewPositives">
-      positives
+<?php $productReviews = [
+  [
+    'author' => 'Виктор Чепухло',
+    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
+    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
+    'rating' => 4.3,
+    'date' => '02.04.2023',
+  ],
+]; ?>
+
+<section class="productReviews" id="reviews">
+  <div class="productReviewsContainer">
+    <div class="productReviewsHeader">
+      <h2 class="productReviewsTitle">
+        Отзывы о товаре
+        <span><?= $productTitle ?></span>
+      </h2>
+      <button class="productReviewsButton" type="button">
+        <span class="iconfont icon-pencil"></span>
+        <span>Оставить отзыв</span>
+      </button>
     </div>
-    <div class="productReviewNegatives">
-      negatives
+    <div class="productReviewsLayout">
+      <div class="productReviewsAside">
+        <button class="productReviewsButton" type="button">
+          <span class="iconfont icon-pencil"></span>
+          <span>Оставить отзыв</span>
+        </button>
+      </div>
+      <div class="productReviewsBody">
+        <form class="productReviewsFilters">
+
+          <span>Сортировать по:</span>
+          <button type="button">
+            <span>По дате</span>
+            <span class="iconfont icon-sort-amount-asc"></span>
+          </button>
+          <button type="button">
+            <span>По оценке</span>
+            <span class="iconfont icon-sort-amount-asc"></span>
+          </button>
+          <label class="productReviewsFilter">
+            <input type="checkbox" class="productReviewsFilterInput">
+            <span class="productReviewsFilterLabel">С фото</span>
+          </label>
+        </form>
+        <div class="productReviewsList">
+          <!--<div class="productReviewsEmpty">
+            У этого товара нет отзывов. Поделитесь мнением об этом товаре - это поможет другим
+            пользователям определиться с выбором!
+          </div>-->
+          <?php foreach ($productReviews as $review) :
+            $author = $review['author'];
+            $date = $review['date'];
+            $positives = $review['positives'];
+            $negatives = $review['negatives'];
+            $rating = $review['rating']; ?>
+            <article class="productReview">
+              <div class="productReviewRating">
+                <span class="productReviewRatingRating">4.3</span>
+                <span class="productReviewRatingStars">
+                  <span class="productReviewRatingTop" style="width: calc(4.3 / 5 * 100%)">
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                  </span>
+                  <span class="productReviewRatingBottom">
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                    <span class="iconfont icon-star"></span>
+                  </span>
+                </span>
+              </div>
+              <h3 class="productReviewAuthor">
+                <?= $author ?>
+              </h3>
+              <div class="productReviewDate"><?= $date ?></div>
+              <div class="productReviewPositives">
+                <?= $positives ?>
+              </div>
+              <div class="productReviewNegatives">
+                <?= $negatives ?>
+              </div>
+            </article>
+          <?php endforeach; ?>
+        </div>
+      </div>
     </div>
-  </article>
-</div>
+  </div>
+</section>
 
 <?php Render::component('sections/sectionAdvisable', [
   'sectionTitle' => 'Вы недавно просматривали',

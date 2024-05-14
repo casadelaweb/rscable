@@ -15,8 +15,8 @@ export class Masks {
   constructor() {
     this.elements = []
     this.selectors = {
-      tel: '[data-mask=tel]',
-      email: '[data-mask=email]',
+      tel: '[data-validate=tel]',
+      email: '[data-validate=email]',
     }
     this.patterns = {
       tel: '+7 (000) 000-00-00',

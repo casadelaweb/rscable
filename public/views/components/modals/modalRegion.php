@@ -16,6 +16,9 @@ global $citiesPopular;
       </button>
       <input class="modalRegionFieldInput" type="text" placeholder="Введите название города"
              autocomplete="off">
+      <button class="modalRegionFieldReset" type="button">
+        <span class="iconfont icon-close"></span>
+      </button>
       <div class="modalRegionFieldResults">
         <?php foreach ($citiesAll as $city) : ?>
           <button class="modalRegionFieldResult" type="button">

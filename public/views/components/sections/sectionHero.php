@@ -42,7 +42,7 @@ $images = [
           [
             'label' => 'Контактное лицо',
             'isRequired' => true,
-            'validationSchemes' => 'numan_name',
+            'validationSchemes' => 'human_name',
             'placeholder' => 'Имя и Фамилия',
             'errorText' => 'Это обязательное поле',
           ],

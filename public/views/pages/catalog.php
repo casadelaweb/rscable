@@ -54,10 +54,20 @@ $suggestions = [
       <div class="catalogAside" data-modal="catalog-aside">
         <form class="catalogFilters" id="form-catalog-filters">
           <div class="catalogFiltersHeader">
-            <span>Фильтры</span>
-            <button type="button" data-modal-close class="catalogFiltersClose">
-              <span class="iconfont icon-close"></span>
-            </button>
+            <div class="catalogFiltersHeaderRow">
+              <span>Фильтры</span>
+              <button type="button" data-modal-close class="catalogFiltersClose">
+                <span class="iconfont icon-close"></span>
+              </button>
+            </div>
+            <div class="catalogFiltersHeaderRow">
+              <button type="button">
+                Раскрыть все
+              </button>
+              <button type="button">
+                Свернуть все
+              </button>
+            </div>
           </div>
           <div class="catalogFiltersBody">
             <?php Render::component('catalog/catalogFilter', [

@@ -21,7 +21,7 @@
 
   &Field {
     position: relative;
-    z-index: 0;
+    z-index: 1;
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 8px;
@@ -41,6 +41,9 @@
 
     &Error {
       @include textS;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+      color: white;
       position: absolute;
       z-index: 1;
       top: calc(100% + 8px);
@@ -48,13 +51,24 @@
       transform: translate(0, -20px);
       pointer-events: none;
       opacity: 0;
-      color: $colorRed;
-      font-weight: 500;
+      background: $colorRed;
       transition: opacity 0.33s, transform 0.33s;
-      background: white;
       border-radius: $brM;
       padding: 4px 8px;
       box-shadow: $bsM;
+
+      &::before {
+        $size: 8px;
+        content: ' ';
+        position: absolute;
+        z-index: -1;
+        top: $size * -0.5;
+        left: $size;
+        width: $size;
+        height: $size;
+        background: $colorRed;
+        transform: rotate(45deg);
+      }
 
       &._error {
         opacity: 1;

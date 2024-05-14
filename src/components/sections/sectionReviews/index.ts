@@ -1,1 +1,0 @@
-import './sectionReviews.scss'
