@@ -3,6 +3,7 @@ import { iEnvVariables, iMode } from './configurations/webpack/config.types'
 import path from 'path'
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import CssMinimizer from 'css-minimizer-webpack-plugin'
 import ruleScripts from './configurations/webpack/rules/scripts'
 import ruleFavicon from './configurations/webpack/rules/favicon'
 import ruleStyles from './configurations/webpack/rules/styles'
@@ -25,7 +26,14 @@ function config(env: iEnvVariables): Configuration {
     devtool: isDevelopmentMode ? 'source-map' : false,
     optimization: {
       minimize: isProductionMode,
-      minimizer: [
+      minimizer: isProductionMode ? [
+        new CssMinimizer(),
+        new EsbuildPlugin({
+          target: 'es2015',
+          css: false,
+          legalComments: 'none',
+        }),
+      ] : [
         new EsbuildPlugin({
           target: 'es2015',
           css: true,
