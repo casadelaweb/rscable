@@ -1,40 +1,13 @@
 @use 'src/styles/shared' as *;
 
+
 .catalog {
-  margin: 60px 0;
+  // margin: 40px 0;
 
   &Container {
     @include container;
   }
 
-  &Title {
-    @include h1;
-    margin-bottom: 20px;
-  }
-
-  &Suggestions {
-    @include flex(center);
-    column-gap: 8px;
-    row-gap: 8px;
-    overflow-y: auto;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    @include mediaTabletM {
-      @include flex(flex-start, $w: wrap);
-      column-gap: 12px;
-      row-gap: 12px;
-    }
-  }
-
-  &Suggestion {
-    @include buttonMinor;
-    @include dropFlex;
-    width: fit-content;
-  }
-
-  &Header {
-
-  }
 
   &Layout {
     @include dropFlex;

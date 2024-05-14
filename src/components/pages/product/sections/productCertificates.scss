@@ -1,7 +1,7 @@
 @use 'src/styles/shared' as *;
 
 .productCertificates {
-  margin: 60px 0;
+  margin: 40px 0;
 
   &Container {
     @include container;

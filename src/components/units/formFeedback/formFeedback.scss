@@ -26,6 +26,14 @@
     grid-template-columns: 1fr;
     row-gap: 8px;
 
+    &._error {
+      z-index: 2;
+    }
+
+    &._success {
+
+    }
+
     &Label {
       @include textS;
 

@@ -1,0 +1,100 @@
+@use 'src/styles/shared' as *;
+
+.catalogHero {
+  margin: 40px 0;
+
+  &Container {
+    @include container;
+  }
+
+
+  &Title {
+    @include h1;
+  }
+
+  &Header, &Categories, &Suggestions {
+    @include flex(center);
+    column-gap: 8px;
+    row-gap: 8px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    @include mediaMobileM {
+      column-gap: 12px;
+      row-gap: 12px;
+    }
+    @include mediaDesktop {
+      column-gap: 16px;
+      row-gap: 16px;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &Categories, &Suggestions {
+    overflow-x: auto;
+    padding-right: 8px;
+    @include mediaMobileM {
+      padding-right: 12px;
+    }
+    @include mediaTabletL {
+      overflow-x: hidden;
+      padding-right: 0;
+    }
+  }
+
+  &Quantity {
+    @include textS;
+    color: $colorGrey;
+  }
+
+  &Categories {
+    @include mediaTabletL {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include mediaLaptopS {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @include mediaDesktop {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &Category {
+    @include flex(center);
+    column-gap: 8px;
+    background: white;
+    border: 1px solid $colorGreyMild;
+    border-radius: $brM;
+    padding: 12px 16px;
+    @include mediaTabletL {
+
+    }
+
+    &Img {
+      &, img {
+        @include dropFlex;
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    &Title {
+      @include textS;
+    }
+  }
+
+  &Suggestions {
+    @include mediaTabletL {
+      @include flex(flex-start, $w: wrap);
+    }
+  }
+
+  &Suggestion {
+    @include buttonMinor;
+    @include dropFlex;
+    width: fit-content;
+  }
+}

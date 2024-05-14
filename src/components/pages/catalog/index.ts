@@ -9,5 +9,6 @@ import './catalogFilters.scss'
 import './catalogFilter.scss'
 import './catalogAside.scss'
 import './catalogNav.scss'
-import './catalogBanner.scss'
-import './catalogPagination.scss'
+
+import './units'
+import './sections'
