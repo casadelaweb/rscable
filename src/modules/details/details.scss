@@ -23,7 +23,7 @@
     line-height: 1;
     width: 32px;
     height: 32px;
-    transition: transform 0.33s, background-color 0.33s, color 0.33s;
+    transition: transform $trM, background-color $trM, color $trM;
     transform-origin: center;
     //border: 1px solid $colorGreyMild;
     border-radius: 50%;

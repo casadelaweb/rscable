@@ -10,7 +10,6 @@
       <h1 class="catalogHeroTitle"><?= $title ?></h1>
       <span class="catalogHeroQuantity">Всего: 4 567 товаров</span>
     </div>
-
     <div class="catalogHeroCategories">
       <?php foreach ($subcategories as $category):
         $title = $category['title'];
@@ -27,7 +26,6 @@
         </article>
       <?php endforeach; ?>
     </div>
-
     <div class="catalogHeroSuggestions">
       <?php foreach ($suggestions as $suggestion):
         $title = $suggestion['title'];

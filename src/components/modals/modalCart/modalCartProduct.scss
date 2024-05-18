@@ -1,0 +1,96 @@
+@use 'src/styles/shared' as *;
+
+.modalCartProduct {
+  @include textM;
+  @include dropFlex;
+  @include flex;
+  column-gap: 8px;
+  position: relative;
+  z-index: 1;
+  @include mediaDesktop {
+    column-gap: 16px;
+  }
+
+  &Img {
+    @include dropFlex;
+    @include flex(center, center);
+    width: 64px;
+    height: 64px;
+    border-radius: $brM;
+    @include mediaDesktop {
+      width: 80px;
+      height: 80px;
+    }
+
+    img {
+      display: block;
+      border-radius: $brM;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &Info {
+    max-width: 240px;
+    @include mediaLaptopM {
+      max-width: 280px;
+    }
+    @include mediaDesktop {
+      max-width: 320px;
+    }
+  }
+
+  &Title {
+    @include lineClamp(3);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+
+  &Quantity {
+    @include textS;
+    color: $colorGrey;
+  }
+
+  &Prices {
+    @include dropFlex;
+    // @include flex($d: column);
+    // row-gap: 4px;
+    text-align: right;
+  }
+
+  &Price {
+    // @include dropFlex;
+    @include textL;
+    font-weight: 600;
+    display: block;
+    width: fit-content;
+    margin-bottom: 4px;
+
+    &._prev {
+      @include textS;
+      @include textLineThrough($colorRed);
+      font-weight: 400;
+      color: $colorRed;
+    }
+
+    //&._current {
+    //  @include textL;
+    //}
+  }
+
+  &Remove {
+    @include dropFlex;
+    @include flex(center, center);
+    font-size: 16px;
+    width: fit-content;
+    height: fit-content;
+    color: $colorGreyDarker2;
+    margin: 0 0 auto auto;
+    @include onHover {
+      color: $colorRed;
+    }
+  }
+}

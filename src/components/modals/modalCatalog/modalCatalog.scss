@@ -8,13 +8,16 @@
   left: 0;
   height: calc(100% - var(--headerHeight));
   width: 100%;
-  max-height: 768px;
+  max-height: 540px;
   background: linear-gradient(90deg, $colorGreyMild 25%, white 25%);
-  transform: translate(0, -125%);
+  transform: translate(0, -100%);
   // opacity: 0;
-  transition: transform 0.33s, opacity 0.33s;
+  transition: transform $trM, opacity $trM;
   pointer-events: none;
   overflow-y: auto;
+  @include mediaDesktop {
+    max-height: 768px;
+  }
 
   &._active {
     // opacity: 1;
@@ -61,7 +64,7 @@
     column-gap: 8px;
     @include textS;
     font-weight: 500;
-    transition: background 0.33s, color 0.33s, box-shadow 0.33s;
+    transition: background $trM, color $trM, box-shadow $trM;
     padding: 12px 16px;
     border-radius: $brM 0 0 $brM;
     border-bottom: 1px solid white;
@@ -87,7 +90,7 @@
       opacity: 0;
       transform: translate(20px, 0);
       transform-origin: center;
-      transition: transform 0.33s, opacity 0.33s;
+      transition: transform $trM, opacity $trM;
       margin-left: auto;
     }
   }

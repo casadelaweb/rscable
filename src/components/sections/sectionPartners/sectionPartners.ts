@@ -1,6 +1,6 @@
 import Swiper from 'swiper'
 import { CSSSelector, SwiperOptions } from 'swiper/types'
-import { A11y, Navigation, Pagination } from 'swiper/modules'
+import { A11y, FreeMode, Navigation, Pagination } from 'swiper/modules'
 import { Fancybox } from '@fancyapps/ui'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       Navigation,
       A11y,
       Pagination,
+      FreeMode
     ],
     loop: false,
     speed: 333,
@@ -30,29 +31,19 @@ document.addEventListener('DOMContentLoaded', () => {
       el: '[data-section-partners=slider] .swiper-pagination',
       clickable: true,
     },
-    mousewheel: false,
+    freeMode: {
+      enabled: true,
+      momentum: true,
+      sticky: true,
+    },
     breakpoints: {
-      0: {
-        slidesPerView: 1.5,
-      },
-      375: {
-        slidesPerView: 1.75,
-      },
-      540: {
-        slidesPerView: 2.5,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      1024: {
-        slidesPerView: 4,
-      },
-      1366: {
-        slidesPerView: 4.5,
-      },
-      1920: {
-        slidesPerView: 5,
-      }
+      0: { slidesPerView: 1.5, },
+      375: { slidesPerView: 1.75, },
+      540: { slidesPerView: 2.5, },
+      768: { slidesPerView: 3, },
+      1024: { slidesPerView: 4, },
+      1366: { slidesPerView: 4.5, },
+      1920: { slidesPerView: 5, }
     }
   } as SwiperOptions)
 }, {

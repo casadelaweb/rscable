@@ -6,7 +6,7 @@
   z-index: 120;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   background: white;
   border: 1px solid $colorGreyMild;
   border-radius: $brM;
@@ -14,10 +14,10 @@
   pointer-events: none;
   width: calc(100% - 32px);
   max-height: 90%;
-  max-width: 540px;
+  max-width: 480px;
   overflow-y: auto;
   overflow-x: hidden;
-
+  transition: transform $trM, opacity $trM;
 
   &._active {
     opacity: 1;

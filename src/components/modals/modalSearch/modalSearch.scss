@@ -9,7 +9,7 @@
   overflow-y: auto;
   width: 320px;
   height: 100%;
-  transition: transform 0.33s;
+  transition: transform $trM;
   transform: translate(calc(-100% - 100px), 0);
   pointer-events: none;
   background: white;
@@ -102,7 +102,7 @@
   left: 0;
   overflow-y: auto;
   width: 100%;
-  transition: transform 0.33s;
+  transition: transform $trM;
   transform: translate(0, -125%);
   pointer-events: none;
   background: white;
@@ -277,7 +277,7 @@
     @include flex(center, space-between);
     padding: 8px 0;
     border-bottom: 1px solid $colorGreyMild;
-    transition: border-color 0.33s;
+    transition: border-color $trM;
 
     &:hover {
       border-color: $colorDarkMild;

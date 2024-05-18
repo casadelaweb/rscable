@@ -45,7 +45,7 @@
     &-button {
       @include flex(center, center);
       font-size: 13px;
-      transition: transform 0.5s;
+      transition: transform $trM;
       transform-origin: center;
 
       &._active {
@@ -63,7 +63,7 @@
     overflow-y: auto;
     min-width: 160px;
     padding: 16px 12px 12px;
-    transition: opacity 0.25s, transform 0.25s;
+    transition: opacity $trM, transform $trM;
     transform: translate(0, 40px);
     pointer-events: none;
     opacity: 0;
@@ -85,7 +85,7 @@
     white-space: nowrap;
     padding: 0.75em 1em;
     cursor: pointer;
-    transition: background 0.5s, color 0.5s;
+    transition: background $trM, color $trM;
     @include mediaLaptopS {
       font-size: 14px;
     }

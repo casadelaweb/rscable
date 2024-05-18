@@ -166,7 +166,7 @@ global $isAuth;
                placeholder="Категория, модель или артикул"
                type="text">
       </div>
-      <a class="headerButton" href="/personal/compare">
+      <a class="headerButton" href="/personal/compare/">
         <span class="iconfont icon-stats-bars"></span>
         <span class="headerButtonQuantity">0</span>
       </a>
@@ -174,7 +174,7 @@ global $isAuth;
         <span class="iconfont icon-heart"></span>
         <span class="headerButtonQuantity">12</span>
       </a>
-      <a class="headerButton" href="/personal/cart/">
+      <a class="headerButton" href="/personal/cart/" data-hover="cart">
         <span class="iconfont icon-cart"></span>
         <span class="headerButtonQuantity">9</span>
       </a>
@@ -191,6 +191,10 @@ global $isAuth;
     <button class="headerButton" data-modal-open="search" type="button">
       <span class="iconfont icon-search"></span>
     </button>
+    <a class="headerButton" href="/personal/compare/">
+      <span class="iconfont icon-stats-bars"></span>
+      <span class="headerButtonQuantity">0</span>
+    </a>
     <a class="headerButton" href="/personal/favorite/">
       <span class="iconfont icon-heart"></span>
       <span class="headerButtonQuantity">12</span>
@@ -199,7 +203,7 @@ global $isAuth;
       <span class="iconfont icon-cart"></span>
       <span class="headerButtonQuantity">9</span>
     </a>
-    <a class="headerPersonal" href="/personal/">
+    <a class="headerButton" href="/personal/">
       <span class="iconfont icon-person"></span>
     </a>
   </div>

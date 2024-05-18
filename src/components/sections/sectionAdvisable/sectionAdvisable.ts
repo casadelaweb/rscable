@@ -1,5 +1,5 @@
 import Swiper from 'swiper'
-import { Navigation, A11y } from 'swiper/modules'
+import { Navigation, A11y, FreeMode } from 'swiper/modules'
 import {
   accessibility as accessibilitySettings,
   navigation as navigationSettings
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       new Swiper(slider, {
         ...navigationSettings,
         ...accessibilitySettings,
-        modules: [Navigation, A11y,],
+        modules: [Navigation, A11y, FreeMode],
         speed: 333,
         grabCursor: true,
         slidesPerView: 1.33,
@@ -33,6 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
           enabled: true,
           prevEl: prev,
           nextEl: next,
+        },
+        freeMode: {
+          enabled: true,
+          momentum: true,
+          sticky: true,
         },
         breakpoints: {
           360: { slidesPerView: 1.5, },

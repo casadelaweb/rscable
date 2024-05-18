@@ -118,6 +118,7 @@
       </div>
       <div class="productCardPrices">
         <?php /** Значение цены 0 трактуется как Цена не указана. Можете изменить проверку на свое усмотрение, например обозначить отсутствие указанной цены как null. */
+
         /** Если цена не равна 0 и старая цена равна 0 выводим обычное отображение */
         if ($priceOld === 0 && $price !== 0) : ?>
           <div class="productCardPrice"> <?= $price ?> ₽</div>
@@ -147,7 +148,7 @@
           </div>
           <button class="productCardCart" type="button" title="Добавить в корзину"
                   aria-label="Добавить в корзину">
-            <span class="iconfont icon-suitcase"></span>
+            <span class="iconfont icon-cart"></span>
             <span>В корзину</span>
           </button>
         <?php else: ?>

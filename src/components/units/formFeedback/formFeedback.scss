@@ -60,7 +60,7 @@
       pointer-events: none;
       opacity: 0;
       background: $colorRed;
-      transition: opacity 0.33s, transform 0.33s;
+      transition: opacity $trM, transform $trM;
       border-radius: $brM;
       padding: 4px 8px;
       box-shadow: $bsM;
@@ -117,7 +117,7 @@
     background: rgba(black, 0.5);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.33s;
+    transition: opacity $trM;
 
     &._active {
       opacity: 1;

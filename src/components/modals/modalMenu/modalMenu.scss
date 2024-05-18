@@ -12,7 +12,7 @@
   background: white;
   transform: translate(-125%, 0);
   pointer-events: none;
-  transition: transform 0.33s;
+  transition: transform $trM;
   overflow-y: auto;
   padding-bottom: 80px;
   @include mediaMobileL {
@@ -171,7 +171,7 @@
       @include textMp;
       font-weight: 600;
       padding: 12px 16px;
-      transition: background 0.33s;
+      transition: background $trM;
       border-bottom: 1px solid $colorGreyLight;
 
       &:active {

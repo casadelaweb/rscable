@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 16px;
-  transition: transform 0.33s;
+  transition: transform $trM;
   pointer-events: none;
   background: $colorDarkMild;
   color: white;

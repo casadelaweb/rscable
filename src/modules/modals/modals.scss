@@ -1,7 +1,7 @@
 @use 'src/styles/shared' as *;
 
 :root {
-  --modal-transition: transform 0.33s, opacity 0.33s;
+  --modal-transition: transform $trM, opacity $trM;
 }
 
 .modal {

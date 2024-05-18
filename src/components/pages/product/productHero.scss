@@ -86,7 +86,7 @@
 
       &Button {
         @include flex(center, center);
-        transition: background-color 0.33s;
+        transition: background-color $trM;
         @include onHover {
           background: #e0e0e0;
         }

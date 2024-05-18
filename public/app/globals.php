@@ -1020,3 +1020,6 @@ $citiesAll = [
 $cityCurrent = 'Санкт-Петербург';
 
 $isAuth = Router::$params->get('auth') == 'true';
+$isCartEmpty = Router::$params->get('cart_empty') == 'true';
+
+$cartItemsQuantity = 3;

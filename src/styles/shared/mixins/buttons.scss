@@ -1,8 +1,7 @@
 @use 'src/styles/shared/mixins/media' as *;
 @use 'src/styles/shared/mixins/helpers' as *;
 @use 'src/styles/shared/mixins/typography' as *;
-@use 'src/styles/shared/variables/colors' as Colors;
-@use 'src/styles/shared/variables/ui' as UI;
+@use 'src/styles/shared/variables' as Vars;
 
 @mixin inputMain {
   @include dropFlex;
@@ -10,28 +9,28 @@
   line-height: 1;
   height: 40px;
   width: 100%;
-  transition: background-color 0.33s, border-color 0.33s, color 0.33s;
-  border-radius: UI.$brM;
-  border: 1px solid Colors.$colorGreyDarker;
+  transition: background-color Vars.$trM, border-color Vars.$trM, color Vars.$trM;
+  border-radius: Vars.$brM;
+  border: 1px solid Vars.$colorGreyDarker;
   padding: 6px 12px;
   @include mediaLaptopM {
     padding: 8px 16px;
   }
   @include onHover {
-    border-color: Colors.$colorGrey;
+    border-color: Vars.$colorGrey;
   }
   &:focus {
-    background: Colors.$colorGreyLight;
-    // border-color: Colors.$colorGreyDarker;
+    background: Vars.$colorGreyLight;
+    // border-color: Vars.$colorGreyDarker;
   }
 
   &._error {
-    color: Colors.$colorRed;
-    border-color: Colors.$colorRed;
+    color: Vars.$colorRed;
+    border-color: Vars.$colorRed;
   }
   &._success {
-    color: Colors.$colorGreen;
-    border-color: Colors.$colorGreen;
+    color: Vars.$colorGreen;
+    border-color: Vars.$colorGreen;
   }
 }
 
@@ -43,8 +42,8 @@
   line-height: 1;
   @include flex(center, center);
   column-gap: 4px;
-  transition: background-color 0.33s, border-color 0.33s, color 0.33s;
-  border-radius: UI.$brM;
+  transition: background-color Vars.$trM, border-color Vars.$trM, color Vars.$trM;
+  border-radius: Vars.$brM;
   @include mediaLaptopM {
     column-gap: 8px;
   }
@@ -55,11 +54,11 @@
   padding: 4px 12px;
   height: 40px;
   width: 100%;
-  border: 1px solid Colors.$colorDark;
+  border: 1px solid Vars.$colorDark;
   background-color: transparent;
   color: black;
   @include onHover {
-    background: Colors.$colorDark;
+    background: Vars.$colorDark;
     color: white;
   }
 
@@ -73,19 +72,16 @@
 @mixin buttonMinor {
   @include buttonTemplate;
   @include textS;
-  transition: background-color 0.33s, color 0.33s;
+  transition: background-color Vars.$trM, color Vars.$trM;
   color: black;
   padding: 3px 6px;
-  background: Colors.$colorGreyLight;
+  background: Vars.$colorGreyLight;
   border: 0;
-  // border: 1px solid Colors.$colorGrey;
   @include onHover {
-    background: Colors.$colorGreyMild;
-    // color: white;
+    background: Vars.$colorGreyMild;
   }
   &:active {
-    background: Colors.$colorGreyDarker;
-    // color: white;
+    background: Vars.$colorGreyDarker;
   }
   @include mediaDesktop {
     padding: 5px 10px;
@@ -94,17 +90,17 @@
 
 @mixin buttonPrimary {
   @include buttonMain;
-  border-color: Colors.$colorBlue;
-  background-color: Colors.$colorBlue;
+  border-color: Vars.$colorBlue;
+  background-color: Vars.$colorBlue;
   color: white;
   @include onHover {
-    background: Colors.$colorBlueLight;
-    border-color: Colors.$colorBlueLight;
+    background: Vars.$colorBlueLight;
+    border-color: Vars.$colorBlueLight;
     color: white;
   }
   &:active {
-    background: Colors.$colorBlueDarker;
-    border-color: Colors.$colorBlueDarker;
+    background: Vars.$colorBlueDarker;
+    border-color: Vars.$colorBlueDarker;
     color: white;
   }
 }
@@ -120,22 +116,37 @@
   @include flex(center, center);
   width: 40px;
   height: 40px;
-  border: 1px solid Colors.$colorGreyDarker;
+  border: 1px solid Vars.$colorGreyDarker;
   border-radius: 50%;
-  box-shadow: UI.$bsM;
+  box-shadow: Vars.$bsM;
   background: white;
   opacity: 1;
-  color: Colors.$colorDarkMild;
-  transition: background-color 0.33s, color 0.33s, transform 0.33s, opacity 0.33s;
+  color: Vars.$colorDarkMild;
+  transition: background-color Vars.$trM, color Vars.$trM, transform Vars.$trM, opacity Vars.$trM;
   @include mediaTabletS {
     width: 48px;
     height: 48px;
   }
   @include onHover {
-    background: Colors.$colorGreyMild;
+    background: Vars.$colorGreyMild;
   }
 
   &:active {
-    background: Colors.$colorGreyDarker;
+    background: Vars.$colorGreyDarker;
+  }
+}
+
+@mixin buttonPale {
+  @include buttonMain;
+  color: black;
+  background: Vars.$colorGreyLight;
+  border: 0;
+  @include onHover {
+    background: Vars.$colorGreyMild;
+    color: black;
+  }
+  &:active {
+    background: Vars.$colorGreyDarker;
+    color: black;
   }
 }

@@ -67,7 +67,7 @@
         color: $colorDarkMild;
         // border-radius: 50%;
         cursor: pointer;
-        transition: border-color 0.33s, background-color 0.33s, color 0.33s;
+        transition: border-color $trM, background-color $trM, color $trM;
         // box-shadow: $bsM;
         position: static;
 
