@@ -1,0 +1,9 @@
+@use 'sass:math' as Math;
+
+@function calculateCardWidth($cols:2, $gap:10px) {
+  $test: Math.div(100, $cols);
+  $test2: Math.ceil((100 - $test));
+  $coef: Math.div($test2, 100);
+
+  @return calc(100% / $cols - $gap * $coef);
+}

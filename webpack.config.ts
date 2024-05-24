@@ -1,7 +1,6 @@
 import type { Configuration } from 'node_modules/webpack'
 import { iEnvVariables, iMode } from './configurations/webpack/config.types'
 import path from 'path'
-import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CssMinimizer from 'css-minimizer-webpack-plugin'
 import ruleScripts from './configurations/webpack/rules/scripts'

@@ -3,6 +3,7 @@
 @use 'src/styles/shared/mixins/typography' as *;
 @use 'src/styles/shared/variables' as Vars;
 @use 'sass:math' as Math;
+@use 'src/styles/shared/functions' as Functions;
 
 @mixin container {
   margin: 0 auto;
@@ -129,33 +130,18 @@
   }
 
   & > .productCard {
-    $cols: 2;
-    $gap: 10px;
-    $coef: Math.ceil((100 - (100 / $cols))) / 100;
-    width: calc(100% / $cols - $gap * $coef);
+    width: Functions.calculateCardWidth(2, 10px);
     @include mediaMobileM {
-      $cols: 2;
-      $gap: 12px;
-      $coef: Math.ceil((100 - (100 / $cols))) / 100;
-      width: calc(100% / $cols - $gap * $coef);
+      width: Functions.calculateCardWidth(2, 12px);
     }
     @include mediaMobileL {
-      $cols: 2;
-      $gap: 16px;
-      $coef: Math.ceil((100 - (100 / $cols))) / 100;
-      width: calc(100% / $cols - $gap * $coef);
+      width: Functions.calculateCardWidth(2, 16px);
     }
     @include mediaTabletM {
-      $cols: 3;
-      $gap: 16px;
-      $coef: Math.ceil((100 - (100 / $cols))) / 100;
-      width: calc(100% / $cols - $gap * $coef);
+      width: Functions.calculateCardWidth(3, 16px);
     }
     @include mediaDesktop {
-      $cols: 4;
-      $gap: 20px;
-      $coef: Math.ceil((100 - (100 / $cols))) / 100;
-      width: calc(100% / $cols - $gap * $coef);
+      width: Functions.calculateCardWidth(4, 20px);
     }
   }
 }
