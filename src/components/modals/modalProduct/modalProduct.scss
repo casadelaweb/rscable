@@ -1,0 +1,81 @@
+@use 'src/styles/shared' as *;
+
+.modalProduct {
+  @include scrollbar;
+  position: fixed;
+  z-index: 120;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 1024px;
+  background: white;
+  transition: transform $trM;
+  transform: translate(125%, 0);
+  pointer-events: none;
+  overflow-y: auto;
+
+  &._active {
+    transform: translate(0, 0);
+    pointer-events: auto;
+  }
+
+  &Header {
+    //@include dropFlex;
+    @include flex(center);
+    column-gap: 16px;
+    padding: 32px 32px 16px;
+    border-bottom: 1px solid $colorGreyMild;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background: white;
+    box-shadow: $bsM;
+  }
+
+  &Title {
+    @include h4;
+    margin-right: auto;
+  }
+
+  &Body {
+    // overflow-y: auto;
+    // flex: 1 0 auto;
+    padding: 16px 32px;
+    border-bottom: 1px solid $colorGreyMild;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+  }
+
+  &Description {
+    @include textBody;
+  }
+
+  &Footer {
+    //@include dropFlex;
+    position: sticky;
+    z-index: 1;
+    bottom: 0;
+    background: white;
+  }
+
+  &Button {
+    @include buttonPale;
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+    border: 0 !important;
+  }
+
+  &Sliders {
+  }
+
+  &Main {
+    background: white;
+    padding: 20px;
+  }
+
+  &Overlay {
+    @include overlay;
+  }
+}

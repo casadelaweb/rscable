@@ -28,7 +28,6 @@
           <?php if ($isRequired): ?>
             <span class="formFeedbackFieldLabelRequired">*</span>
           <?php endif; ?>
-          :
         </span>
         <input type="text"
                data-form="field-input"
@@ -53,3 +52,7 @@
     </a>
   </label>
 </form>
+
+<script>
+
+</script>

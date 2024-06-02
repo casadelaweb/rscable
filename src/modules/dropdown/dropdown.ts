@@ -14,10 +14,20 @@ document.addEventListener('click', () => {
       })
       dropdownBody.classList.add('_active')
     })
+    dropdownHead.addEventListener('mouseleave', () => {
+      setTimeout(() => {
+        if (!dropdownBody.classList.contains('_hover')) {
+          dropdownBody.classList.remove('_active')
+        }
+      }, 100)
+    })
     dropdownBody.addEventListener('mouseleave', () => {
       dropdownBody.classList.remove('_active')
+      dropdownBody.classList.remove('_hover')
     })
     dropdownBody.addEventListener('mouseenter', () => {
+      dropdownBody.classList.add('_hover')
+
       dropdownBodyAll.forEach((item) => {
         if (item != dropdownBody) item.classList.remove('_active')
       })

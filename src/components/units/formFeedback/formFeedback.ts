@@ -30,17 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (target.closest('[data-form=submit]')) {
       const form: HTMLFormElement = target.closest('[data-form=form]')
-      if (validateForm(form)) {
-        event.preventDefault()
-      } else {
-        event.preventDefault()
-        loader.classList.add('_active')
+      const isValid = validateForm(form)
 
-        setTimeout(() => {
-          loader.classList.remove('_active')
-          response.classList.add('_active')
-          overlay.classList.add('_active')
-        }, 1500)
+      if (!isValid) {
+        event.preventDefault()
       }
     }
 

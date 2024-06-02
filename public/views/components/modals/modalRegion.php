@@ -88,7 +88,6 @@ global $citiesPopular;
     input.addEventListener('blur', handleBlur)
 
     document.addEventListener('click', (event) => {
-      console.log(event.target)
       /** если нажали на искомый город в списке */
       if (event.target.closest('.modalRegionFieldResult')) {
         const item = event.target.closest('.modalRegionFieldResult')

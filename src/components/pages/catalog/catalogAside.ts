@@ -4,12 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   new hcSticky('.catalogAside', {
     stickTo: '.catalogLayout',
     mobileFirst: true,
-    // onStart() {
-    //   console.log(this)
-    // },
-    // onResize() {
-    //   console.log(this)
-    // },
     responsive: {
       0: {
         disable: true,

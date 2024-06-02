@@ -39,11 +39,11 @@
       <span class="iconfont icon-stats-bars"></span>
     </button>
     <button class="productCardView" type="button" title="Быстрый просмотр"
-            aria-label="Быстрый просмотр">
+            aria-label="Быстрый просмотр" data-modal-open="product">
       <span class="iconfont icon-eye"></span>
     </button>
     <button class="productCardBuy" type="button" title="Купить в один клик"
-            aria-label="Купить в один клик" data-modal-open="buy-quick">
+            aria-label="Купить в один клик" data-modal-open="feedback">
       <span class="iconfont icon-credit-card"></span>
     </button>
   </div>

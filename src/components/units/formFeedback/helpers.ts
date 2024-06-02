@@ -59,5 +59,5 @@ export function validateForm(form: HTMLElement): boolean {
     if (validate(input) === false) errorsQuantity++
   })
 
-  return errorsQuantity > 0
+  return errorsQuantity === 0
 }

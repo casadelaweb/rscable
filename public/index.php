@@ -39,8 +39,8 @@ require_once "app/globals.php";
         <?php Render::component('modals/modalSearch') ?>
         <?php Render::component('modals/modalRegion') ?>
         <?php Render::component('modals/modalFeedback') ?>
-        <?php Render::component('modals/modalBuyQuick') ?>
         <?php Render::component('modals/modalMenu') ?>
+        <?php Render::component('modals/modalProduct') ?>
         <?php Render::component('modals/modalCart/modalCart') ?>
       </div>
     </div>
