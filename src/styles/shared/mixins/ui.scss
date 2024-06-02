@@ -1,7 +1,8 @@
-@use 'src/styles/shared/mixins/helpers' as *;
-@use 'src/styles/shared/mixins/media' as *;
-@use 'src/styles/shared/mixins/typography' as *;
+@use 'src/styles/shared/mixins/helpers' as Helpers;
+@use 'src/styles/shared/mixins/media' as Media;
+@use 'src/styles/shared/mixins/typography' as Typography;
 @use 'src/styles/shared/variables' as Vars;
+@use 'src/styles/shared/mixins/buttons' as Buttons;
 @use 'sass:math' as Math;
 @use 'src/styles/shared/functions' as Functions;
 
@@ -10,28 +11,28 @@
   max-width: 100%;
   padding-left: 14px;
   padding-right: 14px;
-  @include mediaMobileM {
+  @include Media.mediaMobileM {
     padding-left: 16px;
     padding-right: 16px;
   }
-  @include mediaMobileL {
+  @include Media.mediaMobileL {
     padding-left: 24px;
     padding-right: 24px;
   }
-  @include mediaTabletS {
+  @include Media.mediaTabletS {
     padding-left: 32px;
     padding-right: 32px;
   }
-  @include mediaTabletM {
+  @include Media.mediaTabletM {
     padding-left: 40px;
     padding-right: 40px;
   }
-  @include mediaLaptopM {
+  @include Media.mediaLaptopM {
     padding-left: 0;
     padding-right: 0;
     max-width: 1280px;
   }
-  @include mediaDesktop {
+  @include Media.mediaDesktop {
     // max-width: 1560px;
     max-width: 1600px;
   }
@@ -44,7 +45,7 @@
   $backgroundColor: white;
   $backgroundColorVertical: Vars.$colorGreyDarker;
 
-  @include hoverableDevice {
+  @include Helpers.hoverableDevice {
     &::-webkit-scrollbar {
       width: $width;
       height: $height;
@@ -94,61 +95,105 @@
 
 @mixin sectionStyles {
   margin: 40px 0;
-  @include mediaTabletM {
+  @include Media.mediaTabletM {
     margin: 40px 0 80px;
   }
 }
 
 @mixin sectionHeader {
   &-header, &Header {
-    @include flex(center, space-between);
+    @include Helpers.flex(center, space-between);
     column-gap: 16px;
     margin-bottom: 40px;
   }
 
   &-button, &Button {
-    @include textS;
-    @include addBottomLineOnHover($bg: Vars.$colorDarkMild);
+    @include Typography.textS;
+    @include Helpers.addBottomLineOnHover($bg: Vars.$colorDarkMild);
     color: Vars.$colorDarkMild;
     font-weight: 500;
   }
 
   &-title, &Title {
-    @include h3;
+    @include Typography.h3;
   }
 }
 
 @mixin productsLayout {
-  @include dropFlex;
-  @include flex($w: wrap);
+  @include Helpers.dropFlex;
+  @include Helpers.flex($w: wrap);
   column-gap: 10px;
   row-gap: 10px;
-  @include mediaMobileM {
+  @include Media.mediaMobileM {
     column-gap: 12px;
     row-gap: 12px;
   }
-  @include mediaMobileL {
+  @include Media.mediaMobileL {
     column-gap: 16px;
     row-gap: 16px;
   }
-  @include mediaDesktop {
+  @include Media.mediaDesktop {
     column-gap: 20px;
     row-gap: 20px;
   }
 
   & > .productCard {
     width: Functions.calculateCardWidth(2, 10px);
-    @include mediaMobileM {
+    @include Media.mediaMobileM {
       width: Functions.calculateCardWidth(2, 12px);
     }
-    @include mediaMobileL {
+    @include Media.mediaMobileL {
       width: Functions.calculateCardWidth(2, 16px);
     }
-    @include mediaTabletM {
+    @include Media.mediaTabletM {
       width: Functions.calculateCardWidth(3, 16px);
     }
-    @include mediaDesktop {
+    @include Media.mediaDesktop {
       width: Functions.calculateCardWidth(4, 20px);
+    }
+  }
+}
+
+@mixin fieldSearch {
+  @include Helpers.flex(center);
+  column-gap: 4px;
+  position: relative;
+  z-index: 0;
+
+  &Input {
+    @include Buttons.inputMain;
+    padding-left: 20px + 8px + 8px;
+    padding-right: 12px + 8px + 8px;
+  }
+
+  &Icon, &Clear {
+    @include Helpers.flex(center, center);
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    height: fit-content;
+    line-height: 1;
+    color: Vars.$colorDarkMild;
+    transform: translate(0, -50%);
+  }
+
+  &Icon {
+    font-size: 20px;
+    width: 20px + 8px + 8px;
+    left: 0;
+  }
+
+  &Clear {
+    right: 0;
+    font-size: 12px;
+    width: 12px + 8px + 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity Vars.$trM;
+
+    &._active {
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 }

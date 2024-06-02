@@ -285,27 +285,6 @@
   }
 
   &Field {
-    @include flex(center);
-    column-gap: 4px;
-    position: relative;
-    z-index: 0;
-
-    &Input {
-      @include inputMain;
-      padding-left: calc(20px + 8px + 8px) !important;
-    }
-
-    &Icon {
-      @include flex(center, center);
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      width: calc(20px + 8px + 8px);
-      height: 100%;
-      font-size: 20px;
-      line-height: 1;
-      color: $colorDarkMild;
-    }
+    @include fieldSearch;
   }
 }

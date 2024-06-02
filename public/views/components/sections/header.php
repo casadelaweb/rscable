@@ -158,13 +158,18 @@ global $isAuth;
       <a class="headerLink" href="#">
         Контакты
       </a>
-      <div class="headerSearch">
+      <div class="headerSearch" data-field="field">
         <div class="headerSearchIcon">
           <span class="iconfont icon-search"></span>
         </div>
-        <input class="headerSearchInput" data-modal-open="search" data-search-modal="input-desktop"
+        <input class="headerSearchInput"
+               data-modal-open="search"
                placeholder="Категория, модель или артикул"
+               data-field="input"
                type="text">
+        <button class="headerSearchClear" type="button" data-field="clear">
+          <span class="iconfont icon-close"></span>
+        </button>
       </div>
       <a class="headerButton" href="/personal/compare/">
         <span class="iconfont icon-stats-bars"></span>

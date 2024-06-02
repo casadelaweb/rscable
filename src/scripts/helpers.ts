@@ -86,3 +86,9 @@ export function createHash(): string {
   return id
 }
 
+export function addEventListeners(element: HTMLElement, events: Array<string>, callback: (event: Event) => any) {
+  events.forEach((eventName) => {
+    element.addEventListener(eventName, (event: Event) => callback(event))
+  })
+}
+
