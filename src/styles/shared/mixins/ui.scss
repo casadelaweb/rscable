@@ -92,6 +92,13 @@
   }
 }
 
+@mixin sectionStyles {
+  margin: 40px 0;
+  @include mediaTabletM {
+    margin: 40px 0 80px;
+  }
+}
+
 @mixin sectionHeader {
   &-header, &Header {
     @include flex(center, space-between);

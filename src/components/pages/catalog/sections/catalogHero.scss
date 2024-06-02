@@ -1,7 +1,7 @@
 @use 'src/styles/shared' as *;
 
 .catalogHero {
-  margin: 40px 0;
+  @include sectionStyles;
 
   &Container {
     @include container;

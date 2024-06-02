@@ -10,7 +10,6 @@ export class scrollController {
     this.header = null
     this.scrollBarWidth = null
     this.isLocked = false
-
   }
 
   public init(): void {

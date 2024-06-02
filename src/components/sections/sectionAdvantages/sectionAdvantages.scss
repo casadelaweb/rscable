@@ -1,7 +1,7 @@
 @use 'src/styles/shared' as *;
 
 .advantages {
-  margin: 40px 0;
+  @include sectionStyles;
   padding: 40px 0;
   background: linear-gradient(45deg, $colorGreyMild 0%, white 75%);
 

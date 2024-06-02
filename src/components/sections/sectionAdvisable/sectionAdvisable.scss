@@ -2,7 +2,7 @@
 
 .sectionAdvisable {
   @include sectionHeader;
-  margin: 40px 0;
+  @include sectionStyles;
   overflow: hidden;
 
   &Container {

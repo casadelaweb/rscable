@@ -69,6 +69,10 @@
     @include mediaMobileM {
       column-gap: 16px;
     }
+    @include mediaTabletS {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
     @include mediaLaptopS {
       display: none;
     }

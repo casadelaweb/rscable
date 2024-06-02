@@ -1,56 +1,7 @@
 <?php namespace App;
-global $cartItemsQuantity;
 global $isCartEmpty;
-$products = [
-  [
-    'title' => 'Кабель КШВЭББШВ-6 3х95+1х10+1х16, 1 кВ',
-    'url' => '/product/',
-    'quantity' => '3 шт.',
-    'imgUrl' => '/assets/img/cables/cable-1.png',
-    'price' => '14 320 ₽',
-    'priceOld' => '15 340 ₽',
-  ],
-  [
-    'title' => 'Еще один товар с несколько более длинным названием',
-    'url' => '/product/',
-    'quantity' => '254 шт.',
-    'imgUrl' => '/assets/img/cables/cable-2.png',
-    'price' => '1 250 ₽',
-    'priceOld' => null,
-  ],
-  [
-    'title' => 'Кабель КШВ 654ЭББШВ-6 3х95+1х10+1х16, 1 кВ',
-    'url' => '/product/',
-    'quantity' => '35 шт.',
-    'imgUrl' => '/assets/img/cables/cable-3.png',
-    'price' => '14 320 ₽',
-    'priceOld' => '15 340 ₽',
-  ],
-  [
-    'title' => 'Еще какой-то товар с удивительно длинным названием, содержащий длинные слова',
-    'url' => '/product/',
-    'quantity' => '1 шт.',
-    'imgUrl' => '/assets/img/cables/cable-4.png',
-    'price' => '630 ₽',
-    'priceOld' => null,
-  ],
-  [
-    'title' => 'Кабель КШВЭББШВ-6 3х95+1х10+1х16, 1 кВ',
-    'url' => '/product/',
-    'quantity' => '3 шт.',
-    'imgUrl' => '/assets/img/cables/cable-5.png',
-    'price' => '14 320 ₽',
-    'priceOld' => null,
-  ],
-  [
-    'title' => 'Еще один товар с несколько более длинным названием',
-    'url' => '/product/',
-    'quantity' => '254 шт.',
-    'imgUrl' => '/assets/img/cables/cable-6.png',
-    'price' => '1 250 ₽',
-    'priceOld' => null,
-  ],
-];
+global $cartProducts;
+global $cartProductsQuantity;
 ?>
 
 <form class="modalCart" data-modal="cart">
@@ -60,7 +11,7 @@ $products = [
         <?php if ($isCartEmpty) : ?>
           Корзина
         <?php else: ?>
-          В корзине 4 товара
+          В корзине <?= $cartProductsQuantity ?> товаров
         <?php endif; ?>
       </h2>
     </div>
@@ -87,7 +38,7 @@ $products = [
       </div>
 
     <?php else:
-      foreach ($products as $product):
+      foreach ($cartProducts as $product):
         Render::component('modals/modalCart/modalCartProduct', [
           'title' => $product['title'],
           'url' => $product['url'],

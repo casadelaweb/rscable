@@ -2,7 +2,7 @@
 
 .productReviews {
   @include sectionHeader;
-  margin: 40px 0;
+  @include sectionStyles;
 
   &Container {
     @include container;

@@ -5,7 +5,7 @@ export interface Options {
     buttonClose: string,
     header: string,
     modal: string,
-    overlay: string,
+    overlay: (modalName: string) => string,
   },
   transition: {
     duration: number,
@@ -14,18 +14,19 @@ export interface Options {
 }
 
 export interface Parameters {
-  counter: number,
-  all: HTMLElement[],
-  current: HTMLElement | false,
-  lastScrollVerticalPosition: number,
+  // counter: number,
+  // all: HTMLElement[],
+  // current: HTMLElement | false,
+  // lastScrollVerticalPosition: number,
+  current: HTMLElement | null
 }
 
 export interface Hooks {
-  open(): void
+  open(): void,
 
-  close(): void
+  close(): void,
 
-  beforeOpen(): void
+  beforeOpen(): void,
 
-  beforeClose(): void
+  beforeClose(): void,
 }

@@ -150,7 +150,7 @@ global $isAuth;
         <span class="iconfont icon-email"></span>
         <span>2650metrov@rscable.shop</span>
       </a>
-      <button class="modalMenuFeedback" data-modal-open="modal-feedback" type="button">
+      <button class="modalMenuFeedback" data-modal-open="feedback" type="button">
         Заказать звонок
       </button>
     </div>

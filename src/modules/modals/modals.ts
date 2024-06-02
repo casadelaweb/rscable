@@ -1,6 +1,7 @@
 import 'src/modules/modals/modals.scss'
 import { Hooks, Options, Parameters } from 'src/modules/modals/modals.types'
 import { throwEvent } from 'src/scripts/helpers'
+import { globalScrollController } from 'src/scripts/globalScrollController'
 
 class Modals {
   private static readonly events = {
@@ -12,17 +13,14 @@ class Modals {
   public parameters: Parameters
   public options: Options
   public overlay: HTMLElement
-  private readonly hooks: Hooks
-  private readonly onOpen: any
-  private readonly onClose: any
-  private readonly onBeforeOpen: any
-  private readonly onBeforeClose: any
+  private readonly onBeforeOpen: () => any
+  private readonly onOpen: () => any
+  private readonly onBeforeClose: () => any
+  private readonly onClose: () => any
   private readonly onClick: (event: MouseEvent) => any
   private readonly onKeyUp: (event: KeyboardEvent) => any
 
-  //private readonly onScroll: (event: Event) => any
-
-  constructor({ hooks, }) {
+  constructor() {
     this.options = {
       selectors: {
         modal: '[data-modal]',
@@ -30,7 +28,7 @@ class Modals {
         buttonClose: '[data-modal-close]',
         buttonToggle: '[data-modal-toggle]',
         header: 'header',
-        overlay: '[data-modal-overlay=default]',
+        overlay: (modalName: string) => `[data-modal-overlay=${ modalName }]`,
       },
       transition: {
         duration: 333,
@@ -39,116 +37,107 @@ class Modals {
         },
       },
     }
-    this.hooks = {
-      beforeOpen() {
-      },
-      open() {
-      },
-      beforeClose() {
-      },
-      close() {
-      },
-      ...hooks,
-    }
+    this.onBeforeOpen = function () {
+      const modalCurrent = this.parameters.current
+      if (modalCurrent) {
+        this.deactivateModal(modalCurrent)
+      }
+    }.bind(this)
+    this.onOpen = function () {
+      const modalCurrent = this.parameters.current
+      if (modalCurrent) {
+        globalScrollController.lock()
+      }
+    }.bind(this)
+    this.onBeforeClose = function () {
+      const modalCurrent = this.parameters.current
+      if (modalCurrent) {
+      }
+    }.bind(this)
+    this.onClose = function () {
+      setTimeout(() => {
+        const modalCurrent = this.parameters.current
+        if (modalCurrent) {
 
-    this.onOpen = this.hooks.open.bind(this)
-    this.onClose = this.hooks.close.bind(this)
-    this.onBeforeOpen = this.hooks.beforeOpen.bind(this)
-    this.onBeforeClose = this.hooks.beforeClose.bind(this)
+        } else {
+          globalScrollController.unlock()
+        }
+      }, this.options.transition.duration)
+    }.bind(this)
+
     this.onClick = this.handleClick.bind(this)
     this.onKeyUp = this.handleKeyUp.bind(this)
 
     this.parameters = {
-      counter: 0,
-      all: [],
-      current: false,
-      lastScrollVerticalPosition: 0,
+      current: null
     }
   }
 
   public update(): void {
     const { documentElement: html, } = document
     html.style.setProperty('--modal-transition', this.options.transition.style())
+    globalScrollController.init()
+
+    document.removeEventListener('click', this.onClick)
+    document.removeEventListener('keyup', this.onKeyUp)
+
+    document.addEventListener('click', this.onClick, { passive: true, })
+    document.addEventListener('keyup', this.onKeyUp, { passive: true, })
   }
 
   public activateModal(modal: HTMLElement, trigger?: any): void {
+    const modalName = this.getModalName(modal)
+    const modalOverlay = this.getModalOverlay(modalName)
+
     throwEvent(modal, Modals.events.beforeOpen, { trigger: trigger, })
     this.onBeforeOpen()
 
-    modal.classList.add('_active')
-
-    if (!this.parameters.all.includes(modal)) {
-      this.parameters.all.push(modal)
-      this.parameters.counter++
-    }
-
     this.parameters.current = modal
-    this.parameters.all.forEach((modal) => modal.classList.remove('_current'))
-    this.parameters.current.classList.add('_current')
+    modal.classList.add('_active')
+    modalOverlay.classList.add('_active')
+    this.parameters.current = modal
 
-    if (this.parameters.current === modal) {
-      const modalName = modal.getAttribute('data-modal')
-      const modalCustomOverlay: HTMLElement = document.body.querySelector(`[data-modal-overlay=${ modalName }]`)
-      if (modalCustomOverlay) {
-        modalCustomOverlay.classList.add('_active')
-      } else {
-        this.overlay?.classList.add('_active')
-      }
-    }
     this.onOpen()
-
     throwEvent(modal, Modals.events.open, { trigger: trigger, })
   }
 
   public deactivateModal(modal: HTMLElement, trigger?: any): void {
-    // если модальное окно не активно
-    // выходим из метода
-    if (!modal.classList.contains('_active')) return
+    const modalName = this.getModalName(modal)
+    const modalOverlay = this.getModalOverlay(modalName)
 
     throwEvent(modal, Modals.events.beforeClose, { trigger: trigger, })
     this.onBeforeClose()
 
     modal.classList.remove('_active')
+    modalOverlay.classList.remove('_active')
+    this.parameters.current = null
 
-    new Promise<void>((resolve) => {
-
-      setTimeout(() => {
-        this.parameters.all.forEach((modal) => modal.classList.remove('_current'))
-        this.parameters.all = this.parameters.all.slice(0, -1)
-        const lastModal = this.parameters.all[this.parameters.all.length - 1]
-        this.parameters.current = lastModal ? lastModal : false
-        if (this.parameters.current instanceof HTMLElement) {
-          this.parameters.current.classList.add('_current')
-        } else {
-          this.parameters.all.forEach((modal) => modal.classList.remove('_current'))
-        }
-        this.parameters.counter--
-        resolve()
-      }, this.options.transition.duration)
-
-    }).then(() => {
-      if (this.parameters.counter === 0) {
-
-        const modalName = modal.getAttribute('data-modal')
-        const modalCustomOverlay: HTMLElement = document.body.querySelector(`[data-modal-overlay=${ modalName }]`)
-        if (modalCustomOverlay) {
-          modalCustomOverlay.classList.remove('_active')
-        } else {
-          this.overlay?.classList.remove('_active')
-        }
-
-      }
-      this.onClose()
-      return throwEvent(modal, Modals.events.close, { trigger: trigger, })
-    })
+    this.onClose()
+    throwEvent(modal, Modals.events.close, { trigger: trigger, })
   }
 
   public toggleModal(modal: HTMLElement, trigger?: any): void {
-    if (this.parameters.counter > 0) {
-      this.deactivateModal(modal, trigger)
+    const modalCurrent = this.parameters.current
+
+    // если модальное окно уже открыто
+    if (modalCurrent && this.getModalName(modal) !== this.getModalName(modalCurrent)) {
+      this.deactivateModal(modalCurrent)
+      this.activateModal(modal)
+    } else if (modalCurrent && this.getModalName(modal) === this.getModalName(modalCurrent)) {
+      this.deactivateModal(modal)
     } else {
-      this.activateModal(modal, trigger)
+      this.activateModal(modal)
     }
+
+    // if (modalCurrent && this.getModalName(modalCurrent) === this.getModalName(modal)) {
+    //   this.deactivateModal(modalCurrent)
+    // }
+    //
+    // if (this.parameters.current) {
+    //   this.deactivateModal(modal, trigger)
+    // } else {
+    //   this.activateModal(modal, trigger)
+    // }
   }
 
   public init(): void {
@@ -161,20 +150,15 @@ class Modals {
     if (activeModals.length > 0) {
       activeModals.forEach((modal: HTMLElement) => this.activateModal(modal))
     }
-
-    this.overlay = body.querySelector(this.options.selectors.overlay)
-
-    this.listen()
   }
 
-  private listen(): void {
-    document.removeEventListener('click', this.onClick)
-    document.removeEventListener('keyup', this.onKeyUp)
-    //window.removeEventListener('scroll', this.onScroll)
+  private getModalOverlay(modalName: string): HTMLElement {
+    const selector = this.options.selectors.overlay(modalName)
+    return document.body.querySelector(selector)
+  }
 
-    document.addEventListener('click', this.onClick, { passive: true, })
-    document.addEventListener('keyup', this.onKeyUp, { passive: true, })
-    //window.addEventListener('scroll', this.onScroll, { passive: true, })
+  private getModalName(modal: HTMLElement): string {
+    return modal.getAttribute('data-modal').trim()
   }
 
   private handleClick(event: MouseEvent): void {
@@ -183,9 +167,9 @@ class Modals {
 
     const target = event.target as HTMLElement
     const conditions = {
-      buttonOpen: target.closest(selectors.buttonOpen),
-      buttonClose: target.closest(selectors.buttonClose),
-      buttonToggle: target.closest(selectors.buttonToggle),
+      buttonOpen: target.closest(selectors.buttonOpen) as HTMLElement,
+      buttonClose: target.closest(selectors.buttonClose) as HTMLElement,
+      buttonToggle: target.closest(selectors.buttonToggle) as HTMLElement,
     }
 
     if (conditions.buttonOpen) {
@@ -214,28 +198,31 @@ class Modals {
       if (modal) this.toggleModal(modal, button)
     }
 
-    if (target.closest('[data-modal-overlay]') && this.parameters.current) {
-      const isElement = this.parameters.current instanceof HTMLElement
-      if (isElement && this.parameters.current.matches(selectors.modal)) {
-        this.deactivateModal(this.parameters.current)
-      }
+    if (target.closest('[data-modal-overlay]')) {
+      const overlay: HTMLElement = target.closest('[data-modal-overlay]')
+      const modalName = overlay.getAttribute('data-modal-overlay').trim()
+      const modal: HTMLElement = body.querySelector(`[data-modal=${ modalName }]`)
+
+      this.deactivateModal(modal)
     }
+
+    // if (target.closest('[data-modal-overlay]') && this.parameters.current) {
+    //   const isElement = this.parameters.current instanceof HTMLElement
+    //   if (isElement && this.parameters.current.matches(selectors.modal)) {
+    //     this.deactivateModal(this.parameters.current)
+    //   }
+    // }
   }
 
   private handleKeyUp(event: KeyboardEvent): void {
-    if (event.code === 'Escape' &&
-      this.parameters.all.length > 0 &&
-      this.parameters.current instanceof HTMLElement
-    ) {
+    if (event.code === 'Escape' && this.parameters.current !== null) {
       const { body, } = document
-
       this.deactivateModal(this.parameters.current, {
         type: 'keyup',
         key: 'Escape',
         element: false,
         boundedWith: body.querySelector('[data-modal-open]'),
       })
-
     }
   }
 }

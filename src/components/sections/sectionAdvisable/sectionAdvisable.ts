@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
           360: { slidesPerView: 1.5, },
           375: { spaceBetween: 16, },
           400: { slidesPerView: 2, },
-          // 540: { slidesPerView: 2, },
           768: { slidesPerView: 3, },
           1024: { slidesPerView: 3, },
           1180: { slidesPerView: 4, },
@@ -52,29 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   }
-
-  // new Swiper('.slider-small', {
-  //   ...sharedSettings,
-  //   autoplay: { delay: 5000, },
-  //   breakpoints: {
-  //     768: {
-  //       slidesPerView: 3,
-  //       spaceBetween: 14,
-  //     },
-  //     1024: {
-  //       slidesPerView: 4,
-  //       spaceBetween: 14,
-  //     },
-  //     1280: {
-  //       slidesPerView: 5,
-  //       spaceBetween: 14,
-  //     },
-  //     1920: {
-  //       slidesPerView: 6,
-  //       spaceBetween: 14,
-  //     },
-  //   },
-  // })
 }, {
   passive: true,
   once: true,

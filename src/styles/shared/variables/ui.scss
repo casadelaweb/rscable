@@ -1,6 +1,6 @@
 @use 'src/styles/shared/variables/colors' as Colors;
 
 $brM: 6px;
-$bsM: 4px 4px 16px 0 rgba(Colors.$colorDarkMild, 0.05);
+$bsM: 4px 4px 12px 0 rgba(Colors.$colorDarkMild, 0.1);
 
-$trM: 0.33s;
+$trM: 0.333s;

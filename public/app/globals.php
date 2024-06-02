@@ -1022,4 +1022,55 @@ $cityCurrent = 'Санкт-Петербург';
 $isAuth = Router::$params->get('auth') == 'true';
 $isCartEmpty = Router::$params->get('cart_empty') == 'true';
 
-$cartItemsQuantity = 3;
+
+$cartProducts = [
+  [
+    'title' => 'Кабель КШВЭББШВ-6 3х95+1х10+1х16, 1 кВ',
+    'url' => '/product/',
+    'quantity' => '3 шт.',
+    'imgUrl' => '/assets/img/cables/cable-1.png',
+    'price' => '14 320 ₽',
+    'priceOld' => '15 340 ₽',
+  ],
+  [
+    'title' => 'Еще один товар с несколько более длинным названием',
+    'url' => '/product/',
+    'quantity' => '254 шт.',
+    'imgUrl' => '/assets/img/cables/cable-2.png',
+    'price' => '1 250 ₽',
+    'priceOld' => null,
+  ],
+  [
+    'title' => 'Кабель КШВ 654ЭББШВ-6 3х95+1х10+1х16, 1 кВ',
+    'url' => '/product/',
+    'quantity' => '35 шт.',
+    'imgUrl' => '/assets/img/cables/cable-3.png',
+    'price' => '14 320 ₽',
+    'priceOld' => '15 340 ₽',
+  ],
+  [
+    'title' => 'Еще какой-то товар с удивительно длинным названием, содержащий длинные слова',
+    'url' => '/product/',
+    'quantity' => '1 шт.',
+    'imgUrl' => '/assets/img/cables/cable-4.png',
+    'price' => '630 ₽',
+    'priceOld' => null,
+  ],
+  [
+    'title' => 'Кабель КШВЭББШВ-6 3х95+1х10+1х16, 1 кВ',
+    'url' => '/product/',
+    'quantity' => '3 шт.',
+    'imgUrl' => '/assets/img/cables/cable-5.png',
+    'price' => '14 320 ₽',
+    'priceOld' => null,
+  ],
+  [
+    'title' => 'Еще один товар с несколько более длинным названием',
+    'url' => '/product/',
+    'quantity' => '254 шт.',
+    'imgUrl' => '/assets/img/cables/cable-6.png',
+    'price' => '1 250 ₽',
+    'priceOld' => null,
+  ],
+];
+$cartProductsQuantity = count($cartProducts);

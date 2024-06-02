@@ -55,10 +55,26 @@ document.addEventListener('DOMContentLoaded', () => {
       target.closest('.headerLocationModalChoose')) {
       target.closest('.headerLocationModal').classList.remove('_active')
     }
+    //
+    // if (target.closest('.headerCatalog')) {
+    //   const button: HTMLElement = target.closest('.headerCatalog')
+    //   button.classList.toggle('_active')
+    // }
+  })
 
-    if (target.closest('.headerCatalog')) {
-      const button: HTMLElement = target.closest('.headerCatalog')
-      button.classList.toggle('_active')
+  document.addEventListener('modalOpen', (event) => {
+    const modal = event.target as HTMLElement
+    if (modal.matches('[data-modal=catalog]')) {
+      const button: HTMLElement = document.body.querySelector('.headerCatalog')
+      button?.classList.add('_active')
+    }
+  })
+
+  document.addEventListener('modalClose', (event) => {
+    const modal = event.target as HTMLElement
+    if (modal.matches('[data-modal=catalog]')) {
+      const button: HTMLElement = document.body.querySelector('.headerCatalog')
+      button?.classList.remove('_active')
     }
   })
 }, {
