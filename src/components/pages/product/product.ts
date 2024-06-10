@@ -12,7 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     watchSlidesProgress: true,
     breakpoints: {
       0: {
-        slidesPerView: 5,
+        slidesPerView: 'auto',
+        spaceBetween: 12,
+      },
+      375: {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
       },
       1024: {
         direction: 'vertical',

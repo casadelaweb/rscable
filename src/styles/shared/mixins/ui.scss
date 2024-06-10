@@ -86,7 +86,7 @@
   pointer-events: none;
   opacity: 0;
   background: rgba(black, 0.5);
-  backdrop-filter: blur(4px);
+  // backdrop-filter: blur(1px);
 
   &._active {
     pointer-events: auto;
@@ -195,6 +195,30 @@
     &._active {
       opacity: 1;
       pointer-events: auto;
+    }
+  }
+}
+
+@mixin thumbs {
+  @include Helpers.flex(center, center);
+  border: 1px solid Vars.$colorGreyMild;
+  border-radius: Vars.$brM;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  width: 48px;
+  height: 48px;
+  @include Media.mediaMobileM {
+    width: 56px;
+    height: 56px;
+  }
+  @include Media.mediaMobileL {
+    width: 64px;
+    height: 64px;
+  }
+
+  &-thumb {
+    &-active {
+      border-color: Vars.$colorDarkMild;
     }
   }
 }

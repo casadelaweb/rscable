@@ -40,6 +40,12 @@
   }
 }
 
+@mixin mediaOnlyTablets {
+  @media screen and (min-width: 540px) and (max-width: 1179px) {
+    @content
+  }
+}
+
 @mixin mediaOnlyBeforeLaptop {
   @media screen and (max-width: 1179px) {
     @content

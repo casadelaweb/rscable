@@ -24,7 +24,7 @@ function config(env: iEnvVariables): Configuration {
     target: 'browserslist',
     devtool: isDevelopmentMode ? 'source-map' : false,
     optimization: {
-      minimize: isProductionMode,
+      minimize: true,
       minimizer: isProductionMode ? [
         new CssMinimizer(),
         new EsbuildPlugin({
@@ -36,7 +36,6 @@ function config(env: iEnvVariables): Configuration {
         new EsbuildPlugin({
           target: 'es2015',
           css: true,
-          legalComments: 'none',
         }),
       ],
     },

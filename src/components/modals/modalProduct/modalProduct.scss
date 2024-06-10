@@ -1,54 +1,284 @@
 @use 'src/styles/shared' as *;
 
 .modalProduct {
+  $offsetMobile: 16px;
+  $offsetDesktop: 24px;
+
   @include scrollbar;
+  @include flex($d: column);
   position: fixed;
   z-index: 120;
   top: 0;
   right: 0;
   height: 100%;
-  width: 1024px;
   background: white;
-  transition: transform $trM;
+  transition: transform $trM, opacity $trM;
   transform: translate(125%, 0);
   pointer-events: none;
   overflow-y: auto;
+  width: 100%;
+  @include mediaOnlyTablets {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 720px;
+    max-width: 640px;
+    opacity: 0;
+  }
+  @include mediaLaptopS {
+    max-width: 720px;
+  }
+  @include mediaDesktop {
+    max-width: 800px;
+  }
 
   &._active {
     transform: translate(0, 0);
     pointer-events: auto;
+    @include mediaOnlyTablets {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
   }
 
   &Header {
-    //@include dropFlex;
     @include flex(center);
     column-gap: 16px;
-    padding: 32px 32px 16px;
+    padding: $offsetMobile;
     border-bottom: 1px solid $colorGreyMild;
     position: sticky;
     z-index: 1;
     top: 0;
     background: white;
     box-shadow: $bsM;
+    @include mediaDesktop {
+      padding: $offsetDesktop;
+    }
+  }
+
+  &Fav, &Compare, &Close {
+    @include textS;
+    @include flex(center);
+    column-gap: 4px;
+    @include onHover {
+      color: $colorBlue;
+    }
+  }
+
+  &Close {
+    margin-left: auto;
   }
 
   &Title {
-    @include h4;
+    @include h5;
+    line-height: 1.25;
     margin-right: auto;
   }
 
   &Body {
-    // overflow-y: auto;
-    // flex: 1 0 auto;
-    padding: 16px 32px;
+    flex: 1 0 auto;
+    padding: ($offsetMobile * 1.5) $offsetMobile;
     border-bottom: 1px solid $colorGreyMild;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     column-gap: 16px;
+    row-gap: 16px;
+    @include mediaDesktop {
+      padding: ($offsetDesktop * 1.5) $offsetDesktop;
+    }
+
+    &Row {
+      display: grid;
+      grid-template-columns: 1fr;
+      column-gap: 16px;
+      row-gap: 16px;
+      @include mediaTabletL {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
 
   &Description {
     @include textBody;
+    @include textM;
+  }
+
+  &Sliders {
+    @include dropFlex;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      border-radius: $brM;
+    }
+  }
+
+  &Slider {
+    margin-bottom: 16px;
+
+    .swiper-slide {
+      height: 140px;
+    }
+  }
+
+  &Thumbs {
+    .swiper-slide {
+      @include thumbs;
+    }
+  }
+
+  &Main {
+    @include dropFlex;
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  &Overlay {
+    @include overlay;
+  }
+
+  &Status {
+    @include flex(center);
+    column-gap: 16px;
+  }
+
+  &Action {
+    @include flex(center);
+    column-gap: 16px;
+  }
+
+  &Cart {
+    @include buttonMain;
+    column-gap: 4px;
+  }
+
+  &Quantity {
+    @include flex(center, space-between);
+    overflow: hidden;
+    flex: 0 0 auto;
+    margin: auto auto 0;
+    border-radius: $brM;
+    background: $colorGreyMild;
+    width: 140px;
+    height: 40px;
+    @include mediaTabletS {
+      height: 40px;
+    }
+
+    &Button, &Input {
+      font-size: 14px;
+      text-align: center;
+      flex: 0 0 auto;
+      height: 100%;
+      color: black;
+    }
+
+    &Button {
+      @include flex(center, center);
+      width: 33%;
+      padding: 0 10px;
+      transition: background-color $trM;
+      @include onHover {
+        background: #e0e0e0;
+      }
+
+      &:active {
+        background: $colorGreyDarker;
+      }
+    }
+
+    &Input {
+      width: 34%;
+    }
+  }
+
+  &Availability {
+    @include textL;
+    @include flex(center);
+    column-gap: 4px;
+
+    &._order {
+      color: $colorRed;
+    }
+
+    &._stock {
+      color: $colorGreen;
+    }
+
+    &Text {
+      ._order > & {
+        border-bottom: 1px dotted $colorRed;
+      }
+
+      ._stock > & {
+        border-bottom: 1px dotted $colorGreen;
+      }
+    }
+  }
+
+  &Code {
+    @include textM;
+    color: $colorDarkMild;
+    //margin: 8px 0;
+  }
+
+  &Prices {
+    @include flex(center);
+    column-gap: 16px;
+  }
+
+  &Price {
+    &, &._current {
+      @include h4;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1.25;
+    }
+
+    &._prev {
+      @include textLineThrough($colorRed);
+      @include textM;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      line-height: 1.25;
+      color: $colorRed;
+    }
+  }
+
+  &Buy {
+    @include buttonPrimary;
+    // margin: 16px 0;
+  }
+
+  &Params {
+    @include textM;
+    @include flex($d: column);
+    row-gap: 8px;
+  }
+
+  &Param {
+    @include flex(center, space-between);
+
+    &Key {
+      display: inline-block;
+    }
+
+    &Divider {
+      display: inline-block;
+      margin: auto 3px 3px;
+      flex-grow: 1;
+      border-bottom: 1px dotted $colorGreyDarker;
+    }
+
+    &Value {
+      display: inline-block;
+      text-align: right;
+    }
   }
 
   &Footer {
@@ -61,21 +291,16 @@
 
   &Button {
     @include buttonPale;
+    text-transform: uppercase;
     width: 100%;
     height: 100%;
-    padding: 32px;
+    // padding: ($offsetMobile * 1.5) $offsetMobile;
+    padding: $offsetMobile;
     border: 0 !important;
-  }
-
-  &Sliders {
-  }
-
-  &Main {
-    background: white;
-    padding: 20px;
-  }
-
-  &Overlay {
-    @include overlay;
+    border-radius: 0 !important;
+    @include mediaDesktop {
+      // padding: ($offsetDesktop * 1.5) $offsetDesktop;
+      padding: $offsetDesktop;
+    }
   }
 }

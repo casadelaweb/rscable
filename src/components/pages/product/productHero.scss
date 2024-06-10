@@ -251,18 +251,7 @@
 
   .swiper {
     &-slide {
-      @include flex(center, center);
-      //width: 80px;
-      //height: 80px;
-      border: 1px solid $colorGreyMild;
-      border-radius: $brM;
-      cursor: pointer;
-
-      &-thumb {
-        &-active {
-          border-color: $colorDarkMild;
-        }
-      }
+      @include thumbs;
     }
   }
 }

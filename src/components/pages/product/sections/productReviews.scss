@@ -3,6 +3,8 @@
 .productReviews {
   @include sectionHeader;
   @include sectionStyles;
+  max-width: 100%;
+  overflow: hidden;
 
   &Container {
     @include container;
