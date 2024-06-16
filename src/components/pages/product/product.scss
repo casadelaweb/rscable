@@ -9,10 +9,7 @@
     @include mediaTabletL {
       display: grid;
       grid-template-columns: 3fr 1fr;
-      column-gap: 20px;
-    }
-    @include mediaDesktop {
-      column-gap: 40px;
+      column-gap: 60px;
     }
   }
 

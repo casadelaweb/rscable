@@ -8,6 +8,13 @@ $description = '
         <p>Architecto blanditiis culpa cumque cupiditate dolore fugiat hic iste laudantium maxime, minus, nihil nostrum numquam praesentium provident quaerat quas repellat sapiente soluta, tempore tenetur! Ab accusamus alias aperiam, architecto commodi, consequatur, cum debitis dignissimos ducimus eaque enim ex facilis id
         laboriosam maiores minima nobis obcaecati perspiciatis praesentium provident quae qui
         quisquam quos repellat similique unde vitae voluptas! Deserunt, perspiciatis, quasi!</p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor fugiat necessitatibus quasi rem?</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione.</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto blanditiis consequuntur corporis cupiditate et explicabo fugit harum ipsa iste itaque libero minus molestiae numquam praesentium, sunt vero, voluptatibus voluptatum.</p>
 ';
 $images = [
   ['url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_1.jpg',],

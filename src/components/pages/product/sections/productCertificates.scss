@@ -33,9 +33,12 @@
       row-gap: 32px;
     }
     @include mediaLaptopS {
+      column-gap: 40px;
+      row-gap: 40px;
     }
     @include mediaDesktop {
-
+      column-gap: 48px;
+      row-gap: 48px;
     }
 
     a, img {

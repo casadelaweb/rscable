@@ -252,8 +252,12 @@
     margin: 1em 0 0.5em
   }
 
-  ul, ol, li, img, p, details, details[open] > summary, select {
-    margin: 0.5em 0;
+  ul, ol, p, details, select {
+    margin: 1em 0;
+  }
+
+  li, img, details[open] > summary {
+    margin: 0.33em 0;
   }
 
   a {

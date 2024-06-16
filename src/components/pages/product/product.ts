@@ -26,18 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   new Swiper('.productSliderMain', {
-    modules: [Pagination, Navigation, Thumbs,],
+    modules: [Thumbs,],
     loop: true,
     pagination: {
       enabled: true,
       el: '.swiper-pagination',
       clickable: true,
     },
-    navigation: {
-      enabled: true,
-      prevEl: '.swiper-button-prev',
-      nextEl: '.swiper-button-next',
-    },
+    // navigation: {
+    //   enabled: true,
+    //   prevEl: '.swiper-button-prev',
+    //   nextEl: '.swiper-button-next',
+    // },
     slidesPerView: 1,
     spaceBetween: 16,
     thumbs: {

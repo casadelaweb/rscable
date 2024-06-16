@@ -7,10 +7,14 @@ $productCode = 1234567890;
 $slidesMain = [
   ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/1200x800/72879266.jpg',],
   ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/1200x800/72879272.jpg',],
+  ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/1200x800/138587264.jpg',], ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/1200x800/72879266.jpg',],
+  ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/1200x800/72879272.jpg',],
   ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/1200x800/138587264.jpg',],
 ];
 $slidesThumbs = [
   ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/72879266.jpg',],
+  ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/72879272.jpg',],
+  ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/138587264.jpg',], ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/72879266.jpg',],
   ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/72879272.jpg',],
   ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/138587264.jpg',],
 ];
@@ -240,21 +244,15 @@ $productAsideParams = [
           <?php foreach ($slidesMain as $slide):
             $imgUrl = $slide['url']; ?>
             <div class="swiper-slide">
-              <picture>
-                <img src="<?= $imgUrl ?>" alt="img" loading="lazy">
-              </picture>
+              <a href="<?= $imgUrl ?>" data-fancybox="slider-main"
+                 data-caption="<?= $productTitle ?>">
+                <picture>
+                  <img src="<?= $imgUrl ?>" alt="img" loading="lazy">
+                </picture>
+              </a>
               <div class="swiper-lazy-preloader"></div>
             </div>
           <?php endforeach; ?>
-        </div>
-        <div class="swiper-nav">
-          <button class="swiper-button-prev" type="button">
-            <span class="iconfont icon-arrow-left"></span>
-          </button>
-          <div class="swiper-pagination"></div>
-          <button class="swiper-button-next" type="button">
-            <span class="iconfont icon-arrow-right"></span>
-          </button>
         </div>
       </div>
     </div>
@@ -273,7 +271,7 @@ $productAsideParams = [
         </a>
       </div>
     </div>
-    <div class="productHeroCol">
+    <div class="productActions">
       <div class="productHeroPrices">
         <div class="productHeroPrice _prev"> 1 440 ₽</div>
         <div class="productHeroPrice _current">1 280 ₽</div>
@@ -298,7 +296,12 @@ $productAsideParams = [
         Купить в 1 клик
       </button>
       <a href="#delivery">
-        Доступна доставка
+        <span class="iconfont icon-truck"></span>
+        <span>Доступна доставка</span>
+      </a>
+      <a href="#payment">
+        <span class="iconfont icon-credit-card"></span>
+        <span>Об оплате</span>
       </a>
     </div>
   </div>
