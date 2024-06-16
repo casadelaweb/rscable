@@ -11,7 +11,7 @@
   "author": "cdlw.ru",
   "license": "ISC",
   "devDependencies": {
-    "@swc/core": "1.5.25",
+    "@swc/core": "1.6.1",
     "@types/body-scroll-lock": "3.1.2",
     "@types/node": "20.14.2",
     "@types/webpack": "5.28.5",
@@ -23,12 +23,12 @@
     "postcss": "8.4.38",
     "postcss-loader": "8.1.1",
     "postcss-preset-env": "9.5.14",
-    "sass": "1.77.4",
+    "sass": "1.77.5",
     "sass-loader": "14.2.1",
     "swc-loader": "0.2.6",
     "ts-node": "10.9.2",
     "typescript": "5.4.5",
-    "webpack": "5.91.0",
+    "webpack": "5.92.0",
     "webpack-cli": "5.1.4"
   },
   "dependencies": {
@@ -38,7 +38,7 @@
     "flatpickr": "4.6.13",
     "hc-sticky": "2.2.7",
     "imask": "7.6.1",
-    "nouislider": "15.7.2",
+    "nouislider": "15.8.0",
     "restyle.css": "1.0.8",
     "swiper": "11.1.4",
     "vanilla-lazyload": "19.1.3"
