@@ -31,8 +31,11 @@
 
 @mixin h3 {
   line-height: 1.1;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
+  @include mediaMobileM {
+    font-size: 18px;
+  }
   @include mediaMobileL {
     font-size: 20px;
   }

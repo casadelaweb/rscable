@@ -405,8 +405,50 @@ Render::component('product/productSection', [
     'author' => 'Виктор Чепухло',
     'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
     'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
-    'rating' => 4.3,
+    'rating' => 5,
     'date' => '02.04.2023',
+    'duration' => 'Менее месяца',
+    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
+                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
+                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
+                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
+                laborum neque nulla quis temporibus!',
+  ], [
+    'author' => 'Кристофер Джонстонович',
+    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
+    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
+    'rating' => 5,
+    'date' => '05.02.2023',
+    'duration' => 'Менее месяца',
+    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
+                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
+                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
+                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
+                laborum neque nulla quis temporibus!',
+  ], [
+    'author' => 'Анна',
+    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
+    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
+    'rating' => 4,
+    'date' => '02.04.2023',
+    'duration' => 'Менее месяца',
+    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
+                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
+                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
+                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
+                laborum neque nulla quis temporibus!',
+  ], [
+    'author' => 'Константин Контантинов',
+    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
+    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
+    'rating' => 3,
+    'date' => '02.04.2023',
+    'duration' => 'Менее месяца',
+    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
+                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
+                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
+                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
+                laborum neque nulla quis temporibus!',
   ],
 ]; ?>
 
@@ -417,14 +459,106 @@ Render::component('product/productSection', [
         Отзывы о товаре
         <span><?= $productTitle ?></span>
       </h2>
-      <button class="productReviewsButton" type="button">
-        <span class="iconfont icon-pencil"></span>
-        <span>Оставить отзыв</span>
-      </button>
+      <!--      <button class="productReviewsButton" type="button" data-modal-open="review">-->
+      <!--        <span class="iconfont icon-pencil"></span>-->
+      <!--        <span>Оставить отзыв</span>-->
+      <!--      </button>-->
     </div>
     <div class="productReviewsLayout">
       <div class="productReviewsAside">
-        <button class="productReviewsButton" type="button">
+        <div class="productReviewsAsideTop">
+          <div class="productReviewsAsideAverage">
+            Средний рейтинг:
+            <span>4.3</span>
+          </div>
+          <div class="productReviewsAsideBased">
+            На основании
+            <span>154</span>
+            отзывов
+          </div>
+        </div>
+
+        <div class="productReviewsAsideList">
+          <div class="productReviewsAsideListItem">
+            <div class="productReviewsAsideRating">
+              <span class="productReviewsAsideRatingTop" style="width: calc(5 / 5 * 100%)">
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+              </span>
+              <span class="productReviewsAsideRatingBottom">
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+              </span>
+            </div>
+            <div> 60 отзывов</div>
+          </div>
+          <div class="productReviewsAsideListItem">
+            <div class="productReviewsAsideRating">
+              <span class="productReviewsAsideRatingTop" style="width: calc(4 / 5 * 100%)">
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+              </span>
+              <span class="productReviewsAsideRatingBottom">
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+              </span>
+            </div>
+            <div> 4 отзыва</div>
+          </div>
+          <div class="productReviewsAsideListItem">
+            <div class="productReviewsAsideRating">
+              <span class="productReviewsAsideRatingTop" style="width: calc(3 / 5 * 100%)">
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+              </span>
+              <span class="productReviewsAsideRatingBottom">
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+              </span>
+            </div>
+            <div> 40 отзывов</div>
+          </div>
+          <div class="productReviewsAsideListItem">
+            <div class="productReviewsAsideRating">
+              <span class="productReviewsAsideRatingTop" style="width: calc(2 / 5 * 100%)">
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+              </span>
+              <span class="productReviewsAsideRatingBottom">
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+                <span class="iconfont icon-star"></span>
+              </span>
+            </div>
+            <div> 2 отзыва</div>
+          </div>
+        </div>
+
+
+        <button class="productReviewsButton" type="button" data-modal-open="review">
           <span class="iconfont icon-pencil"></span>
           <span>Оставить отзыв</span>
         </button>
@@ -454,14 +588,19 @@ Render::component('product/productSection', [
           <?php foreach ($productReviews as $review) :
             $author = $review['author'];
             $date = $review['date'];
+            $duration = $review['duration'];
             $positives = $review['positives'];
             $negatives = $review['negatives'];
-            $rating = $review['rating']; ?>
+            $rating = $review['rating'];
+            $comment = $review['comment']; ?>
             <article class="productReview">
               <div class="productReviewRating">
-                <span class="productReviewRatingRating">4.3</span>
+                <!--<span class="productReviewRatingRating">
+                  <?= $rating ?>
+                </span>-->
                 <span class="productReviewRatingStars">
-                  <span class="productReviewRatingTop" style="width: calc(4.3 / 5 * 100%)">
+                  <span class="productReviewRatingTop"
+                        style="width: calc(<?= $rating ?> / 5 * 100%)">
                     <span class="iconfont icon-star"></span>
                     <span class="iconfont icon-star"></span>
                     <span class="iconfont icon-star"></span>
@@ -480,16 +619,38 @@ Render::component('product/productSection', [
               <h3 class="productReviewAuthor">
                 <?= $author ?>
               </h3>
-              <div class="productReviewDate"><?= $date ?></div>
+              <div class="productReviewSubtitle">
+                Срок использования:
+              </div>
+              <div class="productReviewDuration">
+                <?= $duration ?>
+              </div>
+              <div class="productReviewSubtitle">
+                Достоинства:
+              </div>
               <div class="productReviewPositives">
                 <?= $positives ?>
+              </div>
+              <div class="productReviewSubtitle">
+                Недостатки:
               </div>
               <div class="productReviewNegatives">
                 <?= $negatives ?>
               </div>
+              <div class="productReviewSubtitle">
+                Комментарий:
+              </div>
+              <div class="productReviewComment">
+                <?= $comment ?>
+              </div>
+
+              <div class="productReviewDate"><?= $date ?></div>
             </article>
           <?php endforeach; ?>
         </div>
+        <button class="productReviewsMore" type="button">
+          Загрузить еще
+        </button>
       </div>
     </div>
   </div>

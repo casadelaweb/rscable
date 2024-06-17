@@ -4,7 +4,7 @@
   @include sectionHeader;
   @include sectionStyles;
   max-width: 100%;
-  overflow: hidden;
+  // overflow: hidden;
 
   &Container {
     @include container;
@@ -17,9 +17,9 @@
   }
 
   &Button {
-    @include addBottomLineOnHover;
+    // @include addBottomLineOnHover;
     @include buttonPrimary;
-    width: fit-content;
+    //width: fit-content;
 
     &::before {
       content: none;
@@ -28,12 +28,85 @@
   }
 
   &Layout {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    column-gap: 20px;
+    @include mediaTabletL {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      column-gap: 20px;
+    }
+    @include mediaLaptopS {
+      column-gap: 60px;
+    }
   }
 
   &Aside {
+    margin-bottom: 40px;
+    @include mediaTabletL {
+      position: sticky;
+      z-index: 1;
+      top: calc(var(--headerHeight) + 20px);
+      height: fit-content;
+      margin-bottom: 0;
+    }
+
+    &Top {
+      @include flex($d: column);
+      row-gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    &Average {
+      @include textMp;
+      @include flex(center);
+      column-gap: 16px;
+
+      span {
+        @include h2;
+      }
+    }
+
+    &Based {
+      span {
+        display: inline-block;
+        border-bottom: 1px dashed $colorYellow;
+      }
+    }
+
+    &Rating {
+      position: relative;
+      z-index: 0;
+      width: fit-content;
+
+      &, &Top, &Bottom {
+        @include dropFlex;
+        @include flex(center);
+      }
+
+      &Top {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        color: $colorYellow;
+        max-width: 100%;
+        overflow: hidden;
+      }
+
+      &Bottom {
+        color: $colorGreyMild;
+      }
+    }
+
+    &List {
+      @include flex($d: column);
+      row-gap: 8px;
+      margin-bottom: 16px;
+
+      &Item {
+        @include textS;
+        @include flex(center);
+        column-gap: 16px;
+      }
+    }
   }
 
   &Filters {
@@ -53,34 +126,44 @@
     grid-template-columns: 1fr;
     row-gap: 16px;
   }
+
+  &More {
+    @include buttonMain;
+    max-width: 360px;
+    margin: 20px auto 0;
+  }
 }
 
 .productReview {
   @include textM;
+  @include flex($d: column);
+  row-gap: 8px;
   padding: 16px;
   background: white;
   border: 1px solid $colorGreyMild;
   border-radius: $brM;
-  // box-shadow: $bsM;
+  box-shadow: $bsM;
 
   &Author {
     @include textMp;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  &Subtitle {
+    @include h7;
     font-weight: 500;
+    letter-spacing: 0.02em;
   }
 
   &Date {
     @include textS;
     font-weight: 500;
-    color: $colorDarkMild;
+    color: $colorGreyDarker2;
   }
 
-  &Positives {
-  }
-
-  &Negatives {
-  }
-
-  &Comment {
+  &Positives, &Negatives, &Comment {
+    @include textS;
   }
 
   &Rating {
@@ -117,12 +200,28 @@
       column-gap: 4px;
     }
 
+    .icon-star {
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+      @include mediaDesktop {
+        width: 24px;
+        height: 24px;
+        font-size: 24px;
+      }
+    }
+
     &Rating {
-      display: inline-block;
+      @include dropFlex;
+      @include flex(center, center);
+      aspect-ratio: 1 / 1;
+      display: inline-flex;
       font-weight: 600;
       border: 1px solid $colorYellow;
       border-radius: 50%;
       padding: 8px;
+      width: 32px;
+      height: 32px;
     }
 
     &Quantity {
