@@ -3,14 +3,22 @@ export const regExps = {
   innSimple: /^\d{10}$|^\d{12}$/,
 }
 
-export function handleError(field: HTMLElement, input: HTMLInputElement, errorTooltip: HTMLElement, errorText?: string): void {
+export function handleError(field: HTMLElement, input: HTMLInputElement | HTMLTextAreaElement, errorTooltip: HTMLElement, errorText?: string): void {
   [field, input, errorTooltip].forEach((element) => {
     element.classList.remove('_success')
     element.classList.add('_error')
   })
 }
 
-export function handleSuccess(field: HTMLElement, input: HTMLInputElement, errorTooltip: HTMLElement, errorText?: string): void {
+export function updateCounter(input: HTMLInputElement | HTMLTextAreaElement) {
+  const field: HTMLElement = input.closest('[data-form=field]')
+  const counter: HTMLElement = field?.querySelector('[data-form=counter]')
+  const counterCurrent: HTMLElement = counter?.querySelector('[data-form=counter-current]')
+  // const counterMax: HTMLElement = counter?.querySelector('[data-form=counter-max]')
+  if (counterCurrent) counterCurrent.textContent = input.value.length.toLocaleString()
+}
+
+export function handleSuccess(field: HTMLElement, input: HTMLInputElement | HTMLTextAreaElement, errorTooltip: HTMLElement, errorText?: string): void {
   [field, input, errorTooltip].forEach((element) => {
     element.classList.add('_success')
     element.classList.remove('_error')
@@ -39,7 +47,16 @@ export function validate(input: HTMLInputElement): boolean {
   if (scheme.includes('inn')) {
     if (!regExps.innSimple.test(value)) errorQuantity++
   }
-  if (input instanceof HTMLInputElement && input.type === 'checkbox') {
+  if (scheme.includes('email')) {
+    if (!regExps.email.test(value)) errorQuantity++
+  }
+  if (scheme.includes('comment')) {
+    const max = parseInt(input.getAttribute('data-max'))
+    const min = parseInt(input.getAttribute('data-min'))
+
+    if (value.length > max || value.length < min) errorQuantity++
+  }
+  if (input instanceof HTMLInputElement && (input.type === 'checkbox' || input.type === 'radio')) {
     if (!input.checked) errorQuantity++
   }
 
