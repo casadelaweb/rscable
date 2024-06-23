@@ -581,72 +581,121 @@ Render::component('product/productSection', [
           </label>
         </form>
         <div class="productReviewsList">
-          <!--<div class="productReviewsEmpty">
-            У этого товара нет отзывов. Поделитесь мнением об этом товаре - это поможет другим
-            пользователям определиться с выбором!
-          </div>-->
-          <?php foreach ($productReviews as $review) :
-            $author = $review['author'];
-            $date = $review['date'];
-            $duration = $review['duration'];
-            $positives = $review['positives'];
-            $negatives = $review['negatives'];
-            $rating = $review['rating'];
-            $comment = $review['comment']; ?>
-            <article class="productReview">
-              <div class="productReviewRating">
-                <!--<span class="productReviewRatingRating">
+          <?php if (count($productReviews) > 0): ?>
+            <?php foreach ($productReviews as $review) :
+              $author = $review['author'];
+              $date = $review['date'];
+              $duration = $review['duration'];
+              $positives = $review['positives'];
+              $negatives = $review['negatives'];
+              $rating = $review['rating'];
+              $comment = $review['comment']; ?>
+              <article class="productReview">
+                <div class="productReviewRating">
+                  <!--<span class="productReviewRatingRating">
                   <?= $rating ?>
                 </span>-->
-                <span class="productReviewRatingStars">
-                  <span class="productReviewRatingTop"
-                        style="width: calc(<?= $rating ?> / 5 * 100%)">
-                    <span class="iconfont icon-star"></span>
-                    <span class="iconfont icon-star"></span>
-                    <span class="iconfont icon-star"></span>
-                    <span class="iconfont icon-star"></span>
-                    <span class="iconfont icon-star"></span>
+                  <span class="productReviewRatingStars">
+                    <span class="productReviewRatingTop"
+                          style="width: calc(<?= $rating ?> / 5 * 100%)">
+                      <span class="iconfont icon-star"></span>
+                      <span class="iconfont icon-star"></span>
+                      <span class="iconfont icon-star"></span>
+                      <span class="iconfont icon-star"></span>
+                      <span class="iconfont icon-star"></span>
+                    </span>
+                    <span class="productReviewRatingBottom">
+                      <span class="iconfont icon-star"></span>
+                      <span class="iconfont icon-star"></span>
+                      <span class="iconfont icon-star"></span>
+                      <span class="iconfont icon-star"></span>
+                      <span class="iconfont icon-star"></span>
+                    </span>
                   </span>
-                  <span class="productReviewRatingBottom">
-                    <span class="iconfont icon-star"></span>
-                    <span class="iconfont icon-star"></span>
-                    <span class="iconfont icon-star"></span>
-                    <span class="iconfont icon-star"></span>
-                    <span class="iconfont icon-star"></span>
-                  </span>
-                </span>
+                </div>
+                <h3 class="productReviewAuthor">
+                  <?= $author ?>
+                </h3>
+                <div class="productReviewSubtitle">
+                  Срок использования:
+                </div>
+                <div class="productReviewDuration">
+                  <?= $duration ?>
+                </div>
+                <div class="productReviewSubtitle">
+                  Достоинства:
+                </div>
+                <div class="productReviewPositives">
+                  <?= $positives ?>
+                </div>
+                <div class="productReviewSubtitle">
+                  Недостатки:
+                </div>
+                <div class="productReviewNegatives">
+                  <?= $negatives ?>
+                </div>
+                <div class="productReviewSubtitle">
+                  Комментарий:
+                </div>
+                <div class="productReviewComment">
+                  <?= $comment ?>
+                </div>
+                <div class="productReviewDate"><?= $date ?></div>
+              </article>
+              <div class="productReviewAnswers">
+                <div class="productReviewAnswersActions">
+                  <button type="button" class="productReviewAnswersToggle">
+                    <span class="_open">Показать ответы (3)</span>
+                    <span class="_close">Свернуть ответы (3)</span>
+                  </button>
+                  <button type="button" class="productReviewAnswersReply">
+                    Ответить
+                  </button>
+                </div>
+                <article class="productReviewAnswer">
+                  <div class="productReviewAnswerAuthor">Имя Фамилия</div>
+                  <div class="productReviewAnswerDate">11.05.24</div>
+                  <div class="productReviewAnswerBody">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores
+                    deleniti, dolorem, ex excepturi fuga fugit inventore labore minima nesciunt non,
+                    pariatur perferendis quis vitae.
+                  </div>
+                  <button type="button" class="productReviewAnswerReply">
+                    Ответить
+                  </button>
+                </article>
+                <article class="productReviewAnswer">
+                  <div class="productReviewAnswerAuthor">Имя Фамилия</div>
+                  <div class="productReviewAnswerDate">11.05.24</div>
+                  <div class="productReviewAnswerBody">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores
+                    deleniti, dolorem, ex excepturi fuga fugit inventore labore minima nesciunt non,
+                    pariatur perferendis quis vitae.
+                  </div>
+                  <button type="button" class="productReviewAnswerReply">
+                    Ответить
+                  </button>
+                </article>
+                <article class="productReviewAnswer">
+                  <div class="productReviewAnswerAuthor">Имя Фамилия</div>
+                  <div class="productReviewAnswerDate">11.05.24</div>
+                  <div class="productReviewAnswerBody">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores
+                    deleniti, dolorem, ex excepturi fuga fugit inventore labore minima nesciunt non,
+                    pariatur perferendis quis vitae.
+                  </div>
+                  <button type="button" class="productReviewAnswerReply">
+                    Ответить
+                  </button>
+                </article>
               </div>
-              <h3 class="productReviewAuthor">
-                <?= $author ?>
-              </h3>
-              <div class="productReviewSubtitle">
-                Срок использования:
-              </div>
-              <div class="productReviewDuration">
-                <?= $duration ?>
-              </div>
-              <div class="productReviewSubtitle">
-                Достоинства:
-              </div>
-              <div class="productReviewPositives">
-                <?= $positives ?>
-              </div>
-              <div class="productReviewSubtitle">
-                Недостатки:
-              </div>
-              <div class="productReviewNegatives">
-                <?= $negatives ?>
-              </div>
-              <div class="productReviewSubtitle">
-                Комментарий:
-              </div>
-              <div class="productReviewComment">
-                <?= $comment ?>
-              </div>
-
-              <div class="productReviewDate"><?= $date ?></div>
-            </article>
-          <?php endforeach; ?>
+            <?php endforeach; ?>
+          <?php else: ?>
+            <div class="productReviewsEmpty">
+              У этого товара нет отзывов. Поделитесь мнением об этом товаре - это поможет другим
+              пользователям определиться с выбором!
+            </div>
+          <?php endif; ?>
         </div>
         <button class="productReviewsMore" type="button">
           Загрузить еще

@@ -229,4 +229,91 @@
       border-bottom: 1px dashed $colorYellow;
     }
   }
+
+  &Answers {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    padding-left: 32px;
+    @include mediaLaptopS {
+      padding-left: 40px;
+    }
+    @include mediaDesktop {
+      padding-left: 64px;
+    }
+
+    &Actions {
+      @include textS;
+      @include flex(center);
+      column-gap: 16px;
+    }
+
+    &Toggle {
+      @include addBottomLineOnHover($colorDarkMild);
+      width: fit-content;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+
+      &._active {
+        ._open {
+          display: none;
+        }
+
+        ._close {
+          display: inline-block;
+        }
+      }
+
+      ._open {
+        display: inline-block;
+      }
+
+      ._close {
+        display: none;
+      }
+    }
+
+    &Reply {
+      @include addBottomLineOnHover($colorBlue);
+      width: fit-content;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: $colorBlue;
+    }
+  }
+
+  &Answer {
+    @include textXs;
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+    display: none;
+
+    &Reply {
+      @include addBottomLineOnHover($colorBlue);
+      @include textXs;
+      margin-left: auto;
+      width: fit-content;
+      color: $colorBlue;
+    }
+
+    &._active {
+      display: grid;
+    }
+
+    &Author {
+      color: $colorDarkMild;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    &Date {
+      color: $colorGrey;
+    }
+
+    &Body {
+      @include textBody;
+      @include textXs;
+      letter-spacing: 0.02em;
+    }
+  }
 }

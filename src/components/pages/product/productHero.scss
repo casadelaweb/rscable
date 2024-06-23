@@ -95,6 +95,9 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
       @include mediaTabletL {
         width: 88px;
       }
+      @include mediaDesktop {
+        width: 140px;
+      }
 
       &Button, &Input {
         @include dropFlex;
