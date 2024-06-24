@@ -1,23 +1,26 @@
-$icon-eye-hide: unquote('"\\e900"');
-$icon-grid: unquote('"\\e901"');
-$icon-row: unquote('"\\e902"');
-$icon-calendar: unquote('"\\e903"');
-$icon-download: unquote('"\\e904"');
-$icon-eye: unquote('"\\e905"');
-$icon-location: unquote('"\\e906"');
-$icon-mail: unquote('"\\e909"');
-$icon-heart: unquote('"\\e907"');
-$icon-heart-fill: unquote('"\\e908"');
-$icon-star: unquote('"\\e90e"');
-$icon-clock: unquote('"\\e912"');
+$icon-dislike: unquote('"\\e900"');
+$icon-like: unquote('"\\e901"');
+$icon-eye-hide: unquote('"\\e902"');
+$icon-grid: unquote('"\\e903"');
+$icon-row: unquote('"\\e904"');
+$icon-calendar: unquote('"\\e905"');
+$icon-download: unquote('"\\e906"');
+$icon-eye: unquote('"\\e907"');
+$icon-location: unquote('"\\e908"');
+$icon-heart: unquote('"\\e909"');
+$icon-heart-fill: unquote('"\\e90a"');
+$icon-mail: unquote('"\\e90b"');
+$icon-bin: unquote('"\\e90c"');
+$icon-calculator: unquote('"\\e90d"');
+$icon-cart: unquote('"\\e90e"');
+$icon-star: unquote('"\\e90f"');
+$icon-cart-filled: unquote('"\\e910"');
+$icon-catalog: unquote('"\\e911"');
+$icon-close: unquote('"\\e912"');
+$icon-clock: unquote('"\\e913"');
+$icon-warning: unquote('"\\e914"');
+$icon-vk: unquote('"\\e915"');
 $icon-logout: unquote('"\\e916"');
-$icon-bin: unquote('"\\e90b"');
-$icon-calculator: unquote('"\\e90c"');
-$icon-cart: unquote('"\\e90d"');
-$icon-cart-fill: unquote('"\\e90f"');
-$icon-catalog: unquote('"\\e910"');
-$icon-warning: unquote('"\\e913"');
-$icon-vk: unquote('"\\e914"');
 $icon-mute: unquote('"\\e917"');
 $icon-metro: unquote('"\\e918"');
 $icon-pencil: unquote('"\\e919"');
@@ -34,9 +37,10 @@ $icon-suitcase: unquote('"\\e924"');
 $icon-images: unquote('"\\e925"');
 $icon-bell: unquote('"\\e926"');
 $icon-camera: unquote('"\\e927"');
-$icon-folder: unquote('"\\e930"');
-$icon-tag: unquote('"\\e935"');
-$icon-tags: unquote('"\\e936"');
+$icon-mic: unquote('"\\e928"');
+$icon-folder-open: unquote('"\\e930"');
+$icon-price-tag: unquote('"\\e935"');
+$icon-price-tags: unquote('"\\e936"');
 $icon-credit-card: unquote('"\\e93f"');
 $icon-tel: unquote('"\\e942"');
 $icon-display: unquote('"\\e956"');
@@ -63,16 +67,14 @@ $icon-instagram: unquote('"\\ea92"');
 $icon-whatsapp: unquote('"\\ea93"');
 $icon-telegram: unquote('"\\ea95"');
 $icon-youtube: unquote('"\\ea9d"');
-$icon-close: unquote('"\\e911"');
-$icon-mic: unquote('"\\e928"');
 
 @font-face {
   font-family: 'iconfont';
-  src: url('src/assets/iconfonts/iconfont.eot?cy64q2');
-  src: url('src/assets/iconfonts/iconfont.eot?cy64q2#iefix') format('embedded-opentype'),
-  url('src/assets/iconfonts/iconfont.ttf?cy64q2') format('truetype'),
-  url('src/assets/iconfonts/iconfont.woff?cy64q2') format('woff'),
-  url('src/assets/iconfonts/iconfont.svg?cy64q2#iconfont') format('svg');
+  src: url('src/assets/iconfonts/iconfont.eot?s28a3v');
+  src: url('src/assets/iconfonts/iconfont.eot?s28a3v#iefix') format('embedded-opentype'),
+  url('src/assets/iconfonts/iconfont.ttf?s28a3v') format('truetype'),
+  url('src/assets/iconfonts/iconfont.woff?s28a3v') format('woff'),
+  url('src/assets/iconfonts/iconfont.svg?s28a3v#iconfont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -85,9 +87,21 @@ $icon-mic: unquote('"\\e928"');
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1 !important;
+  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dislike {
+  &:before {
+    content: $icon-dislike;
+  }
+}
+
+.icon-like {
+  &:before {
+    content: $icon-like;
+  }
 }
 
 .icon-eye-hide {
@@ -132,12 +146,6 @@ $icon-mic: unquote('"\\e928"');
   }
 }
 
-.icon-mail, .icon-email {
-  &:before {
-    content: $icon-mail;
-  }
-}
-
 .icon-heart {
   &:before {
     content: $icon-heart;
@@ -150,21 +158,9 @@ $icon-mic: unquote('"\\e928"');
   }
 }
 
-.icon-star, .icon-star-full {
+.icon-mail {
   &:before {
-    content: $icon-star;
-  }
-}
-
-.icon-clock {
-  &:before {
-    content: $icon-clock;
-  }
-}
-
-.icon-logout {
-  &:before {
-    content: $icon-logout;
+    content: $icon-mail;
   }
 }
 
@@ -186,15 +182,33 @@ $icon-mic: unquote('"\\e928"');
   }
 }
 
-.icon-cart-fill {
+.icon-star {
   &:before {
-    content: $icon-cart-fill;
+    content: $icon-star;
+  }
+}
+
+.icon-cart-filled {
+  &:before {
+    content: $icon-cart-filled;
   }
 }
 
 .icon-catalog {
   &:before {
     content: $icon-catalog;
+  }
+}
+
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+
+.icon-clock {
+  &:before {
+    content: $icon-clock;
   }
 }
 
@@ -207,6 +221,12 @@ $icon-mic: unquote('"\\e928"');
 .icon-vk {
   &:before {
     content: $icon-vk;
+  }
+}
+
+.icon-logout {
+  &:before {
+    content: $icon-logout;
   }
 }
 
@@ -306,21 +326,27 @@ $icon-mic: unquote('"\\e928"');
   }
 }
 
-.icon-folder {
+.icon-mic {
   &:before {
-    content: $icon-folder;
+    content: $icon-mic;
   }
 }
 
-.icon-tag {
+.icon-folder-open {
   &:before {
-    content: $icon-tag;
+    content: $icon-folder-open;
   }
 }
 
-.icon-tags {
+.icon-price-tag {
   &:before {
-    content: $icon-tags;
+    content: $icon-price-tag;
+  }
+}
+
+.icon-price-tags {
+  &:before {
+    content: $icon-price-tags;
   }
 }
 
@@ -477,18 +503,6 @@ $icon-mic: unquote('"\\e928"');
 .icon-youtube {
   &:before {
     content: $icon-youtube;
-  }
-}
-
-.icon-close {
-  &:before {
-    content: $icon-close;
-  }
-}
-
-.icon-mic {
-  &:before {
-    content: $icon-mic;
   }
 }
 

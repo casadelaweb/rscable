@@ -182,6 +182,19 @@
     }
   }
 
+  &Note {
+    @include textS;
+    color: $colorDarkMild;
+
+    a {
+      color: $colorBlue;
+      font-weight: 500;
+      @include onHover {
+        text-decoration: underline;
+      }
+    }
+  }
+
   &Submit {
     @include buttonMain;
   }

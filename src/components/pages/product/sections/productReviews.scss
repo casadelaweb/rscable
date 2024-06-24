@@ -152,7 +152,7 @@
 
   &Subtitle {
     @include h7;
-    font-weight: 500;
+    // font-weight: 600;
     letter-spacing: 0.02em;
   }
 
@@ -164,6 +164,41 @@
 
   &Positives, &Negatives, &Comment {
     @include textS;
+  }
+
+  &Footer {
+    @include flex(center, space-between);
+  }
+
+  &Actions {
+    @include flex(center);
+    column-gap: 16px;
+  }
+
+  &Like, &Dislike {
+    @include textXs;
+    @include flex(center, center);
+    column-gap: 2px;
+  }
+
+  &Like {
+    @include onHover {
+      color: $colorGreen;
+    }
+
+    &._active {
+      color: $colorGreen;
+    }
+  }
+
+  &Dislike {
+    @include onHover {
+      color: $colorRed;
+    }
+
+    &._active {
+      color: $colorRed;
+    }
   }
 
   &Rating {
@@ -230,10 +265,7 @@
     }
   }
 
-  &Answers {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 16px;
+  &Answers, &Actions {
     padding-left: 32px;
     @include mediaLaptopS {
       padding-left: 40px;
@@ -241,79 +273,271 @@
     @include mediaDesktop {
       padding-left: 64px;
     }
+  }
 
-    &Actions {
-      @include textS;
-      @include flex(center);
-      column-gap: 16px;
-    }
+  &Answers {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
 
-    &Toggle {
-      @include addBottomLineOnHover($colorDarkMild);
-      width: fit-content;
-      font-weight: 500;
-      letter-spacing: 0.02em;
+  &Actions {
+    @include textS;
+    @include flex(center);
+    column-gap: 16px;
+    margin: 16px 0 0;
+  }
 
-      &._active {
-        ._open {
-          display: none;
-        }
+  &Buttons {
+    @include textS;
+    @include flex(center);
+    column-gap: 16px;
+  }
 
-        ._close {
-          display: inline-block;
-        }
-      }
+  &Toggle {
+    @include addBottomLineOnHover($colorDarkMild);
+    width: fit-content;
+    font-weight: 500;
+    letter-spacing: 0.02em;
 
+    &._active {
       ._open {
-        display: inline-block;
+        display: none;
       }
 
       ._close {
+        display: inline-block;
+      }
+    }
+
+    ._open {
+      display: inline-block;
+    }
+
+    ._close {
+      display: none;
+    }
+  }
+
+  &Reply {
+    @include addBottomLineOnHover($colorBlue);
+    width: fit-content;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: $colorBlue;
+  }
+}
+
+.reviewAnswer {
+  @include textXs;
+  margin: 16px 0 0;
+  grid-template-columns: 1fr;
+  row-gap: 4px;
+  //background: white;
+  //padding: 16px;
+  //box-shadow: $bsM;
+  display: none;
+
+  &Reply {
+    @include addBottomLineOnHover($colorBlue);
+    @include textXs;
+    // margin-left: auto;
+    width: fit-content;
+    color: $colorBlue;
+  }
+
+  &._active {
+    display: grid;
+  }
+
+  &Author {
+    color: $colorDarkMild;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  &Date {
+    color: $colorGrey;
+  }
+
+  &Body {
+    @include textBody;
+    @include textXs;
+    letter-spacing: 0.02em;
+  }
+
+  &Footer {
+    @include flex(center, space-between);
+  }
+}
+
+.reviewReply {
+  position: relative;
+  z-index: 0;
+  // display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+  background: white;
+  box-shadow: $bsM;
+  border: 1px solid $colorGreyMild;
+  padding: 16px;
+  border-radius: $brM;
+  display: none;
+
+  &._active {
+    display: grid;
+    margin-top: 16px;
+  }
+
+  &Title {
+    @include textM;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding-right: 16px;
+  }
+
+  &Note {
+    @include textS;
+    color: $colorDarkMild;
+
+    a {
+      color: $colorBlue;
+      font-weight: 500;
+      @include onHover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &Field {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+
+    &Label {
+      @include textS;
+
+      &Required {
+        color: $colorRed;
+        font-weight: 600;
+      }
+    }
+
+    &Input {
+      @include inputMain;
+
+      &:is(textarea) {
+        height: 80px !important;
+      }
+
+      &[type=radio], &[type=checkbox] {
+        padding: 0 !important;
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+
+    &Error {
+      @include textS;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+      color: white;
+      position: absolute;
+      z-index: 1;
+      top: calc(100% + 8px);
+      left: 0;
+      transform: translate(0, -20px);
+      pointer-events: none;
+      opacity: 0;
+      background: $colorRed;
+      transition: opacity $trM, transform $trM;
+      border-radius: $brM;
+      padding: 4px 8px;
+      box-shadow: $bsM;
+
+      &::before {
+        $size: 8px;
+        content: ' ';
+        position: absolute;
+        z-index: -1;
+        top: $size * -0.5;
+        left: $size;
+        width: $size;
+        height: $size;
+        background: $colorRed;
+        transform: rotate(45deg);
+      }
+
+      &._error {
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      &._success {
         display: none;
       }
     }
 
-    &Reply {
-      @include addBottomLineOnHover($colorBlue);
+    &Counter {
+      @include textS;
       width: fit-content;
-      font-weight: 500;
       letter-spacing: 0.02em;
-      color: $colorBlue;
+      position: absolute;
+      z-index: 1;
+      right: 12px;
+      bottom: 6px;
+    }
+
+    &Rating {
+      @include flex(center);
+      column-gap: 4px;
+
+      .icon-star {
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        color: $colorGreyMild;
+
+        &._active {
+          color: $colorYellow;
+        }
+      }
     }
   }
 
-  &Answer {
-    @include textXs;
-    grid-template-columns: 1fr;
-    row-gap: 4px;
-    display: none;
+  &Row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 16px;
+  }
 
-    &Reply {
-      @include addBottomLineOnHover($colorBlue);
-      @include textXs;
-      margin-left: auto;
-      width: fit-content;
-      color: $colorBlue;
-    }
+  &Footer {
+    @include flex(center);
+    column-gap: 16px;
+  }
 
-    &._active {
-      display: grid;
-    }
+  &Submit {
+    @include buttonMain;
+    max-width: 320px;
+  }
 
-    &Author {
-      color: $colorDarkMild;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-    }
+  &Cancel {
+    @include buttonPale;
+    max-width: 320px;
+  }
 
-    &Date {
-      color: $colorGrey;
-    }
-
-    &Body {
-      @include textBody;
-      @include textXs;
-      letter-spacing: 0.02em;
-    }
+  &Close {
+    @include flex(center, center);
+    color: $colorGreyDarker2;
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    right: 16px;
   }
 }

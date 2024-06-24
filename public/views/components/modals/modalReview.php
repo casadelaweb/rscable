@@ -107,6 +107,13 @@
         Не менее 3 и не более 1024 символов
       </span>
     </label>
+    <label class="modalReviewNote">
+      <input type="checkbox" required>
+      Отправляя данную форму вы соглашаетесь с обработкой персональных данных и
+      <a href="/privacy-policy/">
+        политикой конфиденциальности
+      </a>
+    </label>
     <button class="modalReviewSubmit" type="submit" data-form="submit">
       Отправить
     </button>

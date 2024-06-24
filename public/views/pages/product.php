@@ -582,114 +582,32 @@ Render::component('product/productSection', [
         </form>
         <div class="productReviewsList">
           <?php if (count($productReviews) > 0): ?>
-            <?php foreach ($productReviews as $review) :
-              $author = $review['author'];
-              $date = $review['date'];
-              $duration = $review['duration'];
-              $positives = $review['positives'];
-              $negatives = $review['negatives'];
-              $rating = $review['rating'];
-              $comment = $review['comment']; ?>
-              <article class="productReview">
-                <div class="productReviewRating">
-                  <!--<span class="productReviewRatingRating">
-                  <?= $rating ?>
-                </span>-->
-                  <span class="productReviewRatingStars">
-                    <span class="productReviewRatingTop"
-                          style="width: calc(<?= $rating ?> / 5 * 100%)">
-                      <span class="iconfont icon-star"></span>
-                      <span class="iconfont icon-star"></span>
-                      <span class="iconfont icon-star"></span>
-                      <span class="iconfont icon-star"></span>
-                      <span class="iconfont icon-star"></span>
-                    </span>
-                    <span class="productReviewRatingBottom">
-                      <span class="iconfont icon-star"></span>
-                      <span class="iconfont icon-star"></span>
-                      <span class="iconfont icon-star"></span>
-                      <span class="iconfont icon-star"></span>
-                      <span class="iconfont icon-star"></span>
-                    </span>
-                  </span>
+
+            <?php foreach ($productReviews as $review) : ?>
+              <div class="productReviewsItem">
+                <?php /** Отзыв на продукт */
+                Render::component('product/productReview', [
+                  'author' => $review['author'],
+                  'date' => $review['date'],
+                  'duration' => $review['duration'],
+                  'positives' => $review['positives'],
+                  'negatives' => $review['negatives'],
+                  'rating' => $review['rating'],
+                  'comment' => $review['comment'],
+                ]);
+                ?>
+                <?php /** Форма ответа на отзыв или другой ответ */
+                Render::component('product/reviewReply', [
+                  'addressee' => $review['author'],
+                ]); ?>
+
+                <div class="productReviewAnswers">
+                  <?php /** Ответы на отзыв */
+                  Render::component('product/reviewAnswer'); ?>
                 </div>
-                <h3 class="productReviewAuthor">
-                  <?= $author ?>
-                </h3>
-                <div class="productReviewSubtitle">
-                  Срок использования:
-                </div>
-                <div class="productReviewDuration">
-                  <?= $duration ?>
-                </div>
-                <div class="productReviewSubtitle">
-                  Достоинства:
-                </div>
-                <div class="productReviewPositives">
-                  <?= $positives ?>
-                </div>
-                <div class="productReviewSubtitle">
-                  Недостатки:
-                </div>
-                <div class="productReviewNegatives">
-                  <?= $negatives ?>
-                </div>
-                <div class="productReviewSubtitle">
-                  Комментарий:
-                </div>
-                <div class="productReviewComment">
-                  <?= $comment ?>
-                </div>
-                <div class="productReviewDate"><?= $date ?></div>
-              </article>
-              <div class="productReviewAnswers">
-                <div class="productReviewAnswersActions">
-                  <button type="button" class="productReviewAnswersToggle">
-                    <span class="_open">Показать ответы (3)</span>
-                    <span class="_close">Свернуть ответы (3)</span>
-                  </button>
-                  <button type="button" class="productReviewAnswersReply">
-                    Ответить
-                  </button>
-                </div>
-                <article class="productReviewAnswer">
-                  <div class="productReviewAnswerAuthor">Имя Фамилия</div>
-                  <div class="productReviewAnswerDate">11.05.24</div>
-                  <div class="productReviewAnswerBody">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores
-                    deleniti, dolorem, ex excepturi fuga fugit inventore labore minima nesciunt non,
-                    pariatur perferendis quis vitae.
-                  </div>
-                  <button type="button" class="productReviewAnswerReply">
-                    Ответить
-                  </button>
-                </article>
-                <article class="productReviewAnswer">
-                  <div class="productReviewAnswerAuthor">Имя Фамилия</div>
-                  <div class="productReviewAnswerDate">11.05.24</div>
-                  <div class="productReviewAnswerBody">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores
-                    deleniti, dolorem, ex excepturi fuga fugit inventore labore minima nesciunt non,
-                    pariatur perferendis quis vitae.
-                  </div>
-                  <button type="button" class="productReviewAnswerReply">
-                    Ответить
-                  </button>
-                </article>
-                <article class="productReviewAnswer">
-                  <div class="productReviewAnswerAuthor">Имя Фамилия</div>
-                  <div class="productReviewAnswerDate">11.05.24</div>
-                  <div class="productReviewAnswerBody">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores
-                    deleniti, dolorem, ex excepturi fuga fugit inventore labore minima nesciunt non,
-                    pariatur perferendis quis vitae.
-                  </div>
-                  <button type="button" class="productReviewAnswerReply">
-                    Ответить
-                  </button>
-                </article>
               </div>
             <?php endforeach; ?>
+
           <?php else: ?>
             <div class="productReviewsEmpty">
               У этого товара нет отзывов. Поделитесь мнением об этом товаре - это поможет другим
@@ -704,7 +622,37 @@ Render::component('product/productSection', [
     </div>
   </div>
 </section>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body
+    body.addEventListener('click', (event) => {
+      const target = event.target
+      if (target.closest('.productReviewToggle')) {
+        const button = target.closest('.productReviewToggle')
+        const container = target.closest('.productReviewsItem')
+        const answersAll = Array.from(container.querySelectorAll('.reviewAnswer'))
+        answersAll.forEach((answer) => {
+          button.classList.toggle('_active')
+          answer.classList.toggle('_active')
+        })
+      }
+      if (target.closest('.reviewAnswerReply') || target.closest('.productReviewReply')) {
+        const container = target.closest('.productReviewsItem')
+        const form = container.querySelector('.reviewReply')
+        form.classList.add('_active')
+      }
+      if (target.closest('.reviewReplyCancel') || target.closest('.reviewReplyClose')) {
+        const container = target.closest('.productReviewsItem')
+        const form = container.querySelector('.reviewReply')
+        form.classList.remove('_active')
+      }
+    })
+  }, {
+    passive: true,
+    once: true
+  })
 
+</script>
 <?php Render::component('sections/sectionAdvisable', [
   'sectionTitle' => 'Вы недавно просматривали',
   'sectionButtonTitle' => 'Перейти в каталог',
