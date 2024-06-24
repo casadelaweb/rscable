@@ -417,6 +417,13 @@
   padding: 16px;
   border-radius: $brM;
   display: none;
+  margin-left: 32px;
+  @include mediaLaptopS {
+    margin-left: 40px;
+  }
+  @include mediaDesktop {
+    margin-left: 64px;
+  }
 
   &._active {
     display: grid;
