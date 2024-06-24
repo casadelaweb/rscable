@@ -566,18 +566,21 @@ Render::component('product/productSection', [
       <div class="productReviewsBody">
         <form class="productReviewsFilters">
           <span>Сортировать по:</span>
-          <button type="button">
+          <button type="button" class="productReviewsFilter">
             <span>По дате</span>
             <span class="iconfont icon-sort-amount-asc"></span>
+            <span class="iconfont icon-sort-amount-desc"></span>
           </button>
-          <button type="button">
+          <button type="button" class="productReviewsFilter">
             <span>По оценке</span>
             <span class="iconfont icon-sort-amount-asc"></span>
+            <span class="iconfont icon-sort-amount-desc"></span>
           </button>
-          <!--<label class="productReviewsFilter">
-            <input type="checkbox" class="productReviewsFilterInput">
-            <span class="productReviewsFilterLabel">С фото</span>
-          </label>-->
+          <button type="button" class="productReviewsFilter">
+            <span>По времени использования</span>
+            <span class="iconfont icon-sort-amount-asc"></span>
+            <span class="iconfont icon-sort-amount-desc"></span>
+          </button>
         </form>
         <div class="productReviewsList">
           <?php if (count($productReviews) > 0): ?>
@@ -645,6 +648,24 @@ Render::component('product/productSection', [
         const container = target.closest('.productReviewsItem')
         const form = container.querySelector('.reviewReply')
         form.classList.remove('_active')
+      }
+
+      if (target.closest('.productReviewsFilter')) {
+        const button = target.closest('.productReviewsFilter')
+        const buttons = body.querySelectorAll('.productReviewsFilter')
+
+        buttons.forEach((element) => element.classList.remove('_active'))
+        button.classList.add('_active')
+
+        if (button.classList.contains('_asc') && button.classList.contains('_active')) {
+          button.classList.remove('_asc')
+          button.classList.add('_desc')
+        } else if (button.classList.contains('_desc') && button.classList.contains('_active')) {
+          button.classList.remove('_desc')
+          button.classList.add('_asc')
+        } else {
+          button.classList.add('_asc')
+        }
       }
     })
   }, {

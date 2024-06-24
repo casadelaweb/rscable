@@ -110,15 +110,49 @@
   }
 
   &Filters {
-    @include textM;
-    @include flex(center);
+    @include textS;
+    @include flex(center, $w: wrap);
     column-gap: 16px;
+    row-gap: 16px;
     background: $colorGreyLight;
     border: 1px solid $colorGreyMild;
     border-radius: $brM;
     padding: 8px 16px;
     margin-bottom: 16px;
     box-shadow: $bsM;
+  }
+
+  &Filter {
+    .iconfont {
+      display: none;
+    }
+
+    &._active {
+      color: $colorBlue;
+      //.iconfont {
+      //  display: inline-block;
+      //}
+    }
+
+    &._asc._active {
+      .icon-sort-amount-asc {
+        display: inline-block;
+      }
+
+      .icon-sort-amount-desc {
+        display: none;
+      }
+    }
+
+    &._desc._active {
+      .icon-sort-amount-asc {
+        display: none
+      }
+
+      .icon-sort-amount-desc {
+        display: inline-block
+      }
+    }
   }
 
   &List {
@@ -428,6 +462,7 @@
       @include inputMain;
 
       &:is(textarea) {
+        line-height: 1.25;
         height: 80px !important;
       }
 

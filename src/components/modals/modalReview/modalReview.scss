@@ -105,6 +105,7 @@
       @include inputMain;
 
       &:is(textarea) {
+        line-height: 1.25;
         height: 80px !important;
       }
 
