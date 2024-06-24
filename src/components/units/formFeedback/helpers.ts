@@ -56,8 +56,15 @@ export function validate(input: HTMLInputElement): boolean {
 
     if (value.length > max || value.length < min) errorQuantity++
   }
-  if (input instanceof HTMLInputElement && (input.type === 'checkbox' || input.type === 'radio')) {
+  if (input instanceof HTMLInputElement && input.type === 'checkbox') {
     if (!input.checked) errorQuantity++
+  }
+  if (input instanceof HTMLInputElement && input.type === 'radio') {
+    const form: HTMLElement = input.closest('[data-form=form]')
+    const name: string = input.getAttribute('name')
+    const inputs: Array<HTMLElement> = Array.from(form.querySelectorAll(`[name=${ name }]`))
+    const isAtLeastOneChecked = inputs.some((element: HTMLInputElement) => element.checked)
+    if (!isAtLeastOneChecked) errorQuantity++
   }
 
   const isValid = errorQuantity === 0

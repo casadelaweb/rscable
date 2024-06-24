@@ -275,11 +275,11 @@
     }
   }
 
-  &Answers {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 16px;
-  }
+  //&Answers {
+  //  display: grid;
+  //  grid-template-columns: 1fr;
+  //  row-gap: 16px;
+  //}
 
   &Actions {
     @include textS;
@@ -509,9 +509,12 @@
 
   &Row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     column-gap: 16px;
     row-gap: 16px;
+    @include mediaTabletM {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &Footer {

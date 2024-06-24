@@ -565,7 +565,6 @@ Render::component('product/productSection', [
       </div>
       <div class="productReviewsBody">
         <form class="productReviewsFilters">
-
           <span>Сортировать по:</span>
           <button type="button">
             <span>По дате</span>
@@ -575,10 +574,10 @@ Render::component('product/productSection', [
             <span>По оценке</span>
             <span class="iconfont icon-sort-amount-asc"></span>
           </button>
-          <label class="productReviewsFilter">
+          <!--<label class="productReviewsFilter">
             <input type="checkbox" class="productReviewsFilterInput">
             <span class="productReviewsFilterLabel">С фото</span>
-          </label>
+          </label>-->
         </form>
         <div class="productReviewsList">
           <?php if (count($productReviews) > 0): ?>
@@ -622,6 +621,7 @@ Render::component('product/productSection', [
     </div>
   </div>
 </section>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const body = document.body

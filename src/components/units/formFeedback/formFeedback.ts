@@ -6,16 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
   inputs.forEach((input: HTMLInputElement) => {
     input.addEventListener('input', () => {
       validate(input)
-
       updateCounter(input)
     })
     input.addEventListener('focus', () => {
       const value: string | number = input.value.trim()
       // const field: HTMLElement = input.closest('[data-form=field]')
       // const errorTooltip: HTMLElement = field.querySelector('[data-form=error]')
-      if (value.length > 0) {
-        validate(input)
-      }
+      if (value.length > 0) validate(input)
       updateCounter(input)
     })
     input.addEventListener('blur', () => {
@@ -27,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  const loader: HTMLElement = body.querySelector('.formFeedbackLoader')
+  // const loader: HTMLElement = body.querySelector('.formFeedbackLoader')
   const response: HTMLElement = body.querySelector('.formFeedbackResponse')
   const overlay: HTMLElement = body.querySelector('.formFeedbackOverlay')
 

@@ -56,6 +56,31 @@
     </label>
     <label class="modalReviewField" data-form="field">
       <span class="modalReviewFieldLabel">
+        <span>Опыт использования</span>
+        <span class="modalReviewFieldLabelRequired">*</span>
+      </span>
+
+      <span class="modalReviewFieldDuration">
+        <label>
+          <input type="radio" name="duration" required data-validate="radio">
+          <span>Менее месяца</span>
+        </label>
+        <label>
+          <input type="radio" name="duration" required data-validate="radio">
+          <span>Несколько месяцев</span>
+        </label>
+        <label>
+          <input type="radio" name="duration" required data-validate="radio">
+          <span>Более года</span>
+        </label>
+      </span>
+
+      <span class="modalReviewFieldError" data-form="error">
+        Укажите время использования продукта
+      </span>
+    </label>
+    <label class="modalReviewField" data-form="field">
+      <span class="modalReviewFieldLabel">
         <span>Достоинства</span>
         <span class="modalReviewFieldLabelRequired">*</span>
       </span>

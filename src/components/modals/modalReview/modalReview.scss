@@ -12,7 +12,7 @@
   transition: transform $trM, opacity $trM;
   pointer-events: none;
   opacity: 1;
-  padding: 16px;
+  padding: 16px 16px 32px;
   background: white;
   box-shadow: $bsM;
   overflow-y: auto;
@@ -28,7 +28,7 @@
     max-width: 540px;
   }
   @include mediaTabletL {
-    padding: 20px;
+    padding: 20px 20px 40px;
     max-width: 640px;
     max-height: 640px;
   }
@@ -79,9 +79,11 @@
       width: 100%;
     }
 
-    & > *:nth-child(1), & > *:nth-child(2), & > *:nth-child(3), {
-      width: calc(33% - 8px / 2);
-    }
+    //& > *:nth-child(1), & > *:nth-child(2), & > *:nth-child(3), & > *:nth-child(4) {
+    //  @include mediaTabletM {
+    //    width: calc(50% - 8px / 2);
+    //  }
+    //}
   }
 
   &Field {
@@ -178,6 +180,18 @@
         &._active {
           color: $colorYellow;
         }
+      }
+    }
+
+    &Duration {
+      @include textS;
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 8px;
+
+      label {
+        @include flex(center);
+        column-gap: 8px;
       }
     }
   }
