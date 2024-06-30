@@ -333,6 +333,33 @@ $productReviews = [
       </div>
     </div>
     <div class="productActions">
+      <div class="productHeroTag">
+        <div class="productHeroTagIcon">
+          <span class="iconfont icon-bell"></span>
+        </div>
+        <div class="productHeroTagTitle">Товар участвует в акции</div>
+        <div class="productHeroTagText">
+          <span>
+            Вот здесь краткое описание акции, скидки или чего-нибудь еще.
+          </span>
+          <br>
+          <a href="#">Подробнее об акции</a>
+        </div>
+      </div>
+      <div class="productHeroStatus _stock">
+        <span class="iconfont icon-dot"></span>
+        <span class="productHeroStatusText">В наличии (1 433)</span>
+      </div>
+      <div class="productHeroRow">
+        <a href="#delivery" class="productHeroButton">
+          <span class="iconfont icon-truck"></span>
+          <span>Доступна доставка</span>
+        </a>
+        <a href="#payment" class="productHeroButton">
+          <span class="iconfont icon-credit-card"></span>
+          <span>Об оплате</span>
+        </a>
+      </div>
       <div class="productHeroPrices">
         <div class="productHeroPrice _prev"> 1 440 ₽</div>
         <div class="productHeroPrice _current">1 280 ₽</div>
@@ -361,14 +388,6 @@ $productReviews = [
       <button type="button" class="productHeroButtonQuick" data-modal-open="feedback">
         Купить в 1 клик
       </button>
-      <a href="#delivery">
-        <span class="iconfont icon-truck"></span>
-        <span>Доступна доставка</span>
-      </a>
-      <a href="#payment">
-        <span class="iconfont icon-credit-card"></span>
-        <span>Об оплате</span>
-      </a>
     </div>
   </div>
 </section>

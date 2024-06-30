@@ -44,6 +44,8 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
   }
 
   &Button {
+    @include textS;
+
     &Cart {
       @include buttonPrimary;
     }
@@ -121,6 +123,87 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
   &Note {
     @include textXxs;
     color: $colorDarkMild;
+  }
+
+  &Status {
+    @include textM;
+    @include flex(center);
+    column-gap: 4px;
+    color: $colorGreen;
+    // margin-bottom: 8px;
+    width: fit-content;
+
+    &._stock {
+
+    }
+
+    &._order {
+      color: $colorRed;
+    }
+
+    &Text {
+      border-bottom: 1px dotted;
+    }
+  }
+
+  &Tag {
+    @include flex(center, $w: wrap);
+    column-gap: 8px;
+    row-gap: 8px;
+    padding: 16px;
+    background: $colorGreen;
+    border-radius: $brM;
+    color: white;
+    @include mediaTabletL {
+      column-gap: 6px;
+      row-gap: 6px;
+      padding: 12px;
+    }
+    @include mediaLaptopM {
+      column-gap: 8px;
+      row-gap: 8px;
+      padding: 16px;
+    }
+
+    &Icon {
+      @include dropFlex;
+      @include flex(center, center);
+      background: white;
+      color: $colorGreen;
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 50%;
+      @include mediaLaptopS {
+
+      }
+      @include mediaDesktop {
+        padding: 8px;
+        font-size: 20px;
+      }
+    }
+
+    &Title {
+      @include textM;
+      font-weight: 600;
+    }
+
+    &Text {
+      @include textXs;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      width: 100%;
+
+      a, button {
+        display: inline-block;
+        text-decoration: underline;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &Row {
+    @include flex(center);
+    column-gap: 8px;
   }
 }
 
@@ -303,5 +386,11 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
   order: 4;
   @include mediaTabletL {
     order: unset;
+  }
+  @include mediaLaptopS {
+    row-gap: 12px;
+  }
+  @include mediaDesktop {
+    row-gap: 16px;
   }
 }

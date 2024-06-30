@@ -197,9 +197,9 @@
   @include mediaMobileL {
     font-size: 12px;
   }
-  @include mediaLaptopM {
-    font-size: 13px;
-  }
+  //@include mediaLaptopM {
+  //  font-size: 13px;
+  //}
 }
 
 @mixin textBody {

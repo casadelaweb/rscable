@@ -107,12 +107,12 @@
             Получайте информацию об акциях и обновлениях позиций каталога раньше всех
           </span>
           <input required type="text" class="footer-field-input" data-validate="email"
-                 placeholder="example@mysite.com">
+                 placeholder="example@mysite.com" data-form="form-input">
           <span class="footer-field-error" data-form="error">
             Введите вашу электронную почту в формате xxx@xxx.xx
           </span>
         </label>
-        <button class="footer-form-submit" type="submit">
+        <button class="footer-form-submit" type="submit" data-form="submit">
           <span class="iconfont icon-arrow-right"></span>
         </button>
       </div>
