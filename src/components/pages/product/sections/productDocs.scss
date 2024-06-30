@@ -14,6 +14,7 @@
 
   &Description {
     @include textBody;
+    @include textS;
     margin-bottom: 20px;
   }
 
