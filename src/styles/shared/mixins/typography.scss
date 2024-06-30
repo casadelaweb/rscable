@@ -127,6 +127,19 @@
   }
 }
 
+@mixin textXxl {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0;
+  @include mediaTabletM {
+    font-size: 20px;
+  }
+  @include mediaDesktop {
+    font-size: 24px;
+  }
+}
+
 @mixin textMp {
   font-size: 14px;
   font-weight: 400;
@@ -184,7 +197,7 @@
   @include mediaMobileL {
     font-size: 12px;
   }
-  @include mediaTabletS {
+  @include mediaLaptopM {
     font-size: 13px;
   }
 }
@@ -200,9 +213,9 @@
   white-space: normal;
   letter-spacing: 0.02em;
 
-  br {
-    display: none;
-  }
+  //br {
+  //  display: none;
+  //}
 
   p, h1, h2, h3, h4, h5, h6, ul, ol {
     &:first-child {

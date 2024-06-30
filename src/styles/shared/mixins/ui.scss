@@ -95,9 +95,9 @@
 }
 
 @mixin sectionStyles {
-  margin: 40px 0;
+  margin: 40px 0 48px;
   @include Media.mediaTabletM {
-    margin: 40px 0 80px;
+    margin: 48px 0 88px;
   }
 }
 

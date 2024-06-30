@@ -1,6 +1,6 @@
 @use 'src/styles/shared' as *;
 
-.productCertificates {
+.productDocs {
   @include sectionStyles;
 
   &Container {
@@ -10,6 +10,11 @@
   &Title {
     @include h3;
     margin-bottom: 1em;
+  }
+
+  &Description {
+    @include textBody;
+    margin-bottom: 20px;
   }
 
   &Layout {
@@ -59,5 +64,44 @@
       object-fit: contain;
       max-height: 140px;
     }
+  }
+}
+
+.productDoc {
+  background: white;
+  padding: 16px;
+  border: 1px solid $colorGreyMild;
+  border-radius: $brM;
+  transition: box-shadow $trM;
+
+  @include onHover {
+    box-shadow: $bsM;
+
+    .productDocIcon {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  &Img {
+    position: relative;
+    z-index: 0;
+  }
+
+  &Icon {
+    @include flex(center, center);
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: $colorBlue;
+    color: white;
+    opacity: 0;
+    transition: opacity $trM, transform $trM;
+    border-radius: $brM;
+    transform-origin: center;
+    transform: translate(-50%, -50%) scale(0);
   }
 }
