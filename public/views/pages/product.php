@@ -14,7 +14,8 @@ $slidesMain = [
 $slidesThumbs = [
   ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/72879266.jpg',],
   ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/72879272.jpg',],
-  ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/138587264.jpg',], ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/72879266.jpg',],
+  ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/138587264.jpg',],
+  ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/72879266.jpg',],
   ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/72879272.jpg',],
   ['url' => 'https://cdn.vseinstrumenti.ru/images/goods/elektrika-i-svet/kabel-i-provod/893119/68x60/138587264.jpg',],
 ];
@@ -79,7 +80,8 @@ $certificates = [
   [
     'title' => 'Сертификат дилера Конкорд',
     'imgUrl' => 'https://rscable.ru/upload/doc/sertifikat-dilera-ooo-konkord.jpeg',
-  ], [
+  ],
+  [
     'title' => 'Сертификат дилера LAPP',
     'imgUrl' => 'https://rscable.ru/upload/doc/sertifikat-distribyutera-ooo-lapp-russsiya.jpeg',
   ],
@@ -179,7 +181,66 @@ $productAsideParams = [
   ['key' => 'Вес', 'value' => '1.6 кг',],
   ['key' => 'Длина', 'value' => '155 мм',],
   ['key' => 'Ширина', 'value' => '155 мм',],
-  ['key' => 'Высота', 'value' => '60 мм',],]
+  ['key' => 'Высота', 'value' => '60 мм',],];
+$letters = [
+  ['title' => 'КБ МОТОР',
+    'imgUrl' => 'https://rscable.ru/upload/doc/rekomendatelnoe-pismo-fgup-tsenki-kb-motor.jpeg',
+  ],
+  ['title' => 'ПИК-индустрия',
+    'imgUrl' => 'https://rscable.ru/upload/doc/blagodarstvennoe-pismo-ot-pik-industriya.jpeg',
+  ],
+];
+$productReviews = [
+  [
+    'author' => 'Виктор Чепухло',
+    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
+    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
+    'rating' => 5,
+    'date' => '02.04.2023',
+    'duration' => 'Менее месяца',
+    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
+                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
+                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
+                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
+                laborum neque nulla quis temporibus!',
+  ], [
+    'author' => 'Кристофер Джонстонович',
+    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
+    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
+    'rating' => 5,
+    'date' => '05.02.2023',
+    'duration' => 'Менее месяца',
+    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
+                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
+                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
+                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
+                laborum neque nulla quis temporibus!',
+  ], [
+    'author' => 'Анна',
+    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
+    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
+    'rating' => 4,
+    'date' => '02.04.2023',
+    'duration' => 'Менее месяца',
+    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
+                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
+                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
+                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
+                laborum neque nulla quis temporibus!',
+  ], [
+    'author' => 'Константин Контантинов',
+    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
+    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
+    'rating' => 3,
+    'date' => '02.04.2023',
+    'duration' => 'Менее месяца',
+    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
+                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
+                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
+                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
+                laborum neque nulla quis temporibus!',
+  ],
+];
 ?>
 
 <?php Render::component('sections/breadcrumbs') ?>
@@ -292,6 +353,11 @@ $productAsideParams = [
           <span>В корзину</span>
         </button>
       </div>
+      <div class="productHeroNote">
+        <p> Цена на товар может формироваться от объема вашего заказа. Мы всегда стараемся
+          предоставить
+          нашим клиентам уникальные скидки и сроки поставки их заказа.</p>
+      </div>
       <button type="button" class="productHeroButtonQuick" data-modal-open="feedback">
         Купить в 1 клик
       </button>
@@ -306,7 +372,50 @@ $productAsideParams = [
     </div>
   </div>
 </section>
-
+<div class="productAdvantages">
+  <div class="productAdvantagesContainer">
+    <div class="productAdvantage">
+      <div class="productAdvantageImg">
+        <span class="iconfont icon-user-suit"></span>
+      </div>
+      <div class="productAdvantageBody">
+        Эксперты
+        <br>
+        в поставках кабеля
+      </div>
+    </div>
+    <div class="productAdvantage">
+      <div class="productAdvantageImg">
+        <span class="iconfont icon-gift"></span>
+      </div>
+      <div class="productAdvantageBody">
+        Бонусы за покупки
+        <br>
+        всем клиентам
+      </div>
+    </div>
+    <div class="productAdvantage">
+      <div class="productAdvantageImg">
+        <span class="iconfont icon-speed"></span>
+      </div>
+      <div class="productAdvantageBody">
+        Быстрая доставка
+        <br>
+        по России за 24 часа
+      </div>
+    </div>
+    <div class="productAdvantage">
+      <div class="productAdvantageImg">
+        <span class="iconfont icon-hammer"></span>
+      </div>
+      <div class="productAdvantageBody">
+        Гарантия качества
+        <br>
+        от производителей
+      </div>
+    </div>
+  </div>
+</div>
 <div class="productLayout productContainer">
   <div class="productMain">
     <?php /** Описание */
@@ -369,89 +478,47 @@ $productAsideParams = [
     </div>
   </div>
 </div>
-
+<!--Товары, которые могут понравится-->
 <?php Render::component('sections/sectionAdvisable', [
   'sectionTitle' => 'Вам может понравится',
   'sectionButtonTitle' => 'Перейти в каталог',
   'sectionButtonUrl' => '/catalog/',
 ]); ?>
-
-<?php /** Оплата */
-Render::component('product/productSection', [
+<!--Оплата-->
+<?php Render::component('product/productSection', [
   'id' => $sectionPayment['id'],
   'title' => $sectionPayment['title'],
   'body' => $sectionPayment['body'],
 ]) ?>
-
-<?php /** Доставка */
-Render::component('product/productSection', [
+<!-- Доставка -->
+<?php Render::component('product/productSection', [
   'id' => $sectionDelivery['id'],
   'title' => $sectionDelivery['title'],
   'body' => $sectionDelivery['body'],
 ]) ?>
-
+<!-- Похожие товары -->
 <?php Render::component('sections/sectionAdvisable', [
   'sectionTitle' => 'Похожие',
   'sectionButtonTitle' => 'Перейти в каталог',
   'sectionButtonUrl' => '/catalog/',
 ]); ?>
-
-<?php Render::component('product/productCertificates', [
-  'certificates' => $certificates,
+<!-- Сертификаты -->
+<?php Render::component('product/productDocs', [
+  'title' => 'Сертификаты',
+  'description' => 'Наши клиенты могут быть всегда уверены, что покупают продукцию у авторизованного продавца,
+      напрямую работающего с заводом-производителем. На всю продукцию распространяется гарантия
+      производителя, и она соответствует установленным для нее действующим требованиям, стандартам
+      качества и безопасности.',
+  'docs' => $certificates,
+]) ?>
+<!--- Благодарственные письма -->
+<?php Render::component('product/productDocs', [
+  'title' => 'Благодарственные письма',
+  'description' => 'Наша компания предлагает не только продукцию высочайшего качества, но и отличный сервис и логистику, что подтверждают многочисленные благодарности от наших клиентов.',
+  'docs' => $letters,
 ]) ?>
 
-<?php $productReviews = [
-  [
-    'author' => 'Виктор Чепухло',
-    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
-    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
-    'rating' => 5,
-    'date' => '02.04.2023',
-    'duration' => 'Менее месяца',
-    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
-                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
-                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
-                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
-                laborum neque nulla quis temporibus!',
-  ], [
-    'author' => 'Кристофер Джонстонович',
-    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
-    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
-    'rating' => 5,
-    'date' => '05.02.2023',
-    'duration' => 'Менее месяца',
-    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
-                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
-                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
-                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
-                laborum neque nulla quis temporibus!',
-  ], [
-    'author' => 'Анна',
-    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
-    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
-    'rating' => 4,
-    'date' => '02.04.2023',
-    'duration' => 'Менее месяца',
-    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
-                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
-                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
-                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
-                laborum neque nulla quis temporibus!',
-  ], [
-    'author' => 'Константин Контантинов',
-    'positives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores nisi nulla quibusdam. Debitis, doloremque, placeat!',
-    'negatives' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, pariatur.',
-    'rating' => 3,
-    'date' => '02.04.2023',
-    'duration' => 'Менее месяца',
-    'comment' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque dicta distinctio
-                dolor fuga fugit impedit incidunt inventore ipsa labore magnam maxime minus
-                molestias nesciunt nisi nostrum obcaecati odio odit optio placeat possimus, quasi
-                quisquam quos reprehenderit sequi similique suscipit totam vel vero voluptatum? Ex
-                laborum neque nulla quis temporibus!',
-  ],
-]; ?>
-
+<!-- Отзывы-->
 <section class="productReviews" id="reviews">
   <div class="productReviewsContainer">
     <div class="productReviewsHeader">
@@ -459,10 +526,6 @@ Render::component('product/productSection', [
         Отзывы о товаре
         <span><?= $productTitle ?></span>
       </h2>
-      <!--      <button class="productReviewsButton" type="button" data-modal-open="review">-->
-      <!--        <span class="iconfont icon-pencil"></span>-->
-      <!--        <span>Оставить отзыв</span>-->
-      <!--      </button>-->
     </div>
     <div class="productReviewsLayout">
       <div class="productReviewsAside">
@@ -624,12 +687,14 @@ Render::component('product/productSection', [
     </div>
   </div>
 </section>
-
 <script>
+  /** примеры */
   document.addEventListener('DOMContentLoaded', () => {
     const body = document.body
     body.addEventListener('click', (event) => {
       const target = event.target
+
+      /** показать или скрыть ответы на отзыв */
       if (target.closest('.productReviewToggle')) {
         const button = target.closest('.productReviewToggle')
         const container = target.closest('.productReviewsItem')
@@ -639,17 +704,19 @@ Render::component('product/productSection', [
           answer.classList.toggle('_active')
         })
       }
+      /** показать форму ответа на отзыв */
       if (target.closest('.reviewAnswerReply') || target.closest('.productReviewReply')) {
         const container = target.closest('.productReviewsItem')
         const form = container.querySelector('.reviewReply')
         form.classList.add('_active')
       }
+      /** скрыть форму ответа на отзыв*/
       if (target.closest('.reviewReplyCancel') || target.closest('.reviewReplyClose')) {
         const container = target.closest('.productReviewsItem')
         const form = container.querySelector('.reviewReply')
         form.classList.remove('_active')
       }
-
+      /** работаем с иконками в фильтрах /*/
       if (target.closest('.productReviewsFilter')) {
         const button = target.closest('.productReviewsFilter')
         const buttons = body.querySelectorAll('.productReviewsFilter')
@@ -674,6 +741,8 @@ Render::component('product/productSection', [
   })
 
 </script>
+
+<!-- Просмотренные товары -->
 <?php Render::component('sections/sectionAdvisable', [
   'sectionTitle' => 'Вы недавно просматривали',
   'sectionButtonTitle' => 'Перейти в каталог',

@@ -1,0 +1,50 @@
+@use 'src/styles/shared' as *;
+
+.productAdvantages {
+  padding: 20px 0;
+  margin: 20px 0;
+  background: $colorGreyDarker;
+  @include mediaTabletM {
+    padding: 40px 0;
+    margin: 40px 0;
+  }
+
+  &Container {
+    @include container;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 16px;
+    row-gap: 16px;
+    @include mediaTabletM {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mediaLaptopS {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.productAdvantage {
+  @include flex(center);
+  column-gap: 16px;
+  background: white;
+  border: 1px solid $colorGreyMild;
+  border-radius: $brM;
+  padding: 16px;
+  box-shadow: $bsM;
+
+  &Img {
+    @include flex(center, center);
+    color: $colorBlue;
+    font-size: 24px;
+    @include mediaDesktop {
+      font-size: 40px;
+    }
+  }
+
+  &Body {
+    @include textS;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+  }
+}

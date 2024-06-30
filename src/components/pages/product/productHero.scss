@@ -19,7 +19,7 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
       grid-template-areas:
     'title title title title title title title title'
     'header header header header header header header header'
-    'sliders sliders sliders info info info actions actions';
+    'sliders sliders sliders sliders info info actions actions';
 
       .productTitle {
         grid-area: title;
@@ -71,7 +71,7 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
     }
 
     &._current {
-      @include textXL;
+      @include textXxl;
       font-weight: 600;
     }
   }
@@ -116,6 +116,11 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
         }
       }
     }
+  }
+
+  &Note {
+    @include textXxs;
+    color: $colorDarkMild;
   }
 }
 

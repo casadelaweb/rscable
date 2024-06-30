@@ -1,4 +1,5 @@
 import './productReviews'
 import './productSection.scss'
-import './productCertificates.scss'
+import './productDocs.scss'
 import './productReviews.scss'
+import './productAdvantages.scss'
