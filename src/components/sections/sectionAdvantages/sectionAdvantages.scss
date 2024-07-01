@@ -57,7 +57,8 @@
     }
 
     &Title {
-      @include h2;
+      @include h5;
+      font-weight: 600;
       //font-size: 20px;
       //font-weight: 600;
       //max-width: calc(100% - 48px - 20px);
