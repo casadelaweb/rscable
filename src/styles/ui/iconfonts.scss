@@ -1,5 +1,8 @@
+$icon-return: unquote('"\\e92b"');
 $icon-speed: unquote('"\\e901"');
 $icon-medal: unquote('"\\e902"');
+$icon-handshake: unquote('"\\e92c"');
+$icon-hand-peace: unquote('"\\e92d"');
 $icon-gift: unquote('"\\e900"');
 $icon-dislike: unquote('"\\e903"');
 $icon-like: unquote('"\\e904"');
@@ -75,11 +78,11 @@ $icon-hammer: unquote('"\\e996"');
 
 @font-face {
   font-family: 'iconfont';
-  src: url('src/assets/iconfonts/iconfont.eot?2k8qsk');
-  src: url('src/assets/iconfonts/iconfont.eot?2k8qsk#iefix') format('embedded-opentype'),
-  url('src/assets/iconfonts/iconfont.ttf?2k8qsk') format('truetype'),
-  url('src/assets/iconfonts/iconfont.woff?2k8qsk') format('woff'),
-  url('src/assets/iconfonts/iconfont.svg?2k8qsk#iconfont') format('svg');
+  src: url('src/assets/iconfonts/iconfont.eot?a045be');
+  src: url('src/assets/iconfonts/iconfont.eot?a045be#iefix') format('embedded-opentype'),
+  url('src/assets/iconfonts/iconfont.ttf?a045be') format('truetype'),
+  url('src/assets/iconfonts/iconfont.woff?a045be') format('woff'),
+  url('src/assets/iconfonts/iconfont.svg?a045be#iconfont') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -97,6 +100,12 @@ $icon-hammer: unquote('"\\e996"');
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-return {
+  &:before {
+    content: $icon-return;
+  }
+}
+
 .icon-speed {
   &:before {
     content: $icon-speed;
@@ -106,6 +115,18 @@ $icon-hammer: unquote('"\\e996"');
 .icon-medal {
   &:before {
     content: $icon-medal;
+  }
+}
+
+.icon-handshake {
+  &:before {
+    content: $icon-handshake;
+  }
+}
+
+.icon-hand-peace {
+  &:before {
+    content: $icon-hand-peace;
   }
 }
 

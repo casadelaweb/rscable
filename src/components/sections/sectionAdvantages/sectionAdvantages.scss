@@ -1,21 +1,22 @@
 @use 'src/styles/shared' as *;
 
-.advantages {
+.sectionAdvantages {
   @include sectionStyles;
   padding: 40px 0;
   background: linear-gradient(45deg, $colorGreyMild 0%, white 75%);
 
-  &-container {
+  &Container {
     @include container;
   }
 
   @include sectionHeader;
 
-  &-cards {
+  &Cards {
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 32px;
     row-gap: 32px;
+    margin-bottom: 40px;
     @include mediaTabletM {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -24,14 +25,15 @@
     }
   }
 
-  &-card {
+  &Card {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     column-gap: 20px;
     row-gap: 20px;
 
-    &-img {
+    &Img {
+      @include flex(center, center);
       object-fit: contain;
       flex: 0 0 auto;
       width: 48px;
@@ -40,30 +42,102 @@
         width: 64px;
         height: 64px;
       }
-    }
 
-    &-title {
-      font-size: 20px;
-      font-weight: 600;
-      max-width: calc(100% - 48px - 20px);
-      @include mediaLaptopS {
-        max-width: calc(100% - 64px - 20px);
+      .iconfont {
+        background: white;
+        box-shadow: $bsM;
+        padding: 8px;
+        border-radius: 50%;
+        color: $colorBlue;
+        font-size: 24px;
+        @include mediaLaptopS {
+          font-size: 40px;
+        }
       }
     }
 
-    &-description {
+    &Title {
+      @include h2;
+      //font-size: 20px;
+      //font-weight: 600;
+      //max-width: calc(100% - 48px - 20px);
+      //@include mediaLaptopS {
+      //  max-width: calc(100% - 64px - 20px);
+      //}
+    }
+
+    &Description {
       width: 100%;
     }
   }
 
-  &-img {
-    margin-top: 40px;
-    object-fit: cover;
-    width: 100%;
-    border-radius: $brM;
+  &Banner {
+    position: relative;
+    z-index: 0;
+
+    &Container {
+      position: absolute;
+      z-index: 1;
+      top: 16px;
+      left: 16px;
+      padding: 16px;
+      max-width: calc(100% - 16px * 2);
+      max-height: calc(100% - 16px * 2);
+      background: rgba($colorGreyMild, 0.8);
+      border: 1px solid $colorGreyMild;
+      border-radius: $brM;
+      backdrop-filter: blur(8px);
+      @include mediaLaptopS {
+        top: 32px;
+        left: 32px;
+        padding: 32px;
+        max-width: calc(100% - 32px * 2);
+        max-height: calc(100% - 32px * 2);
+      }
+    }
+
+    &Title {
+      @include h4;
+      margin-bottom: 0.5em;
+      font-weight: 800;
+      // color: white;
+    }
+
+    &Body {
+      @include textBody;
+      @include h7;
+      font-weight: 500;
+
+      p {
+        margin: 0.33em 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      a, button {
+        text-decoration: none;
+        font-weight: 600;
+        @include addBottomLineOnHover($colorBlue);
+        color: $colorBlue;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &Img {
+      // margin-top: 40px;
+      object-fit: cover;
+      width: 100%;
+      border-radius: $brM;
+      min-height: 400px;
+    }
   }
 
-  &-note {
+  &Note {
     @include textM;
     text-align: center;
     margin-top: 40px;

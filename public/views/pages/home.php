@@ -40,4 +40,4 @@
 <?php Render::component('sections/sectionBrands') ?>
 <?php Render::component('sections/sectionPartners') ?>
 <?php Render::component('sections/sectionProducts') ?>
-<?php Render::component('sections/advantages') ?>
+<?php Render::component('sections/sectionAdvantages') ?>
