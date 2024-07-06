@@ -4,7 +4,7 @@ import { Select } from 'src/modules/select/select'
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body
 
-  new Details({
+  const details = new Details({
     preferButtonIfExist: true,
     selectors: {
       details: '.catalogFilter',
@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollbars: { vertical: 'has-verticalScrollbar', },
     },
     onlyUnderLaptop: true,
-  }).init()
+  })
+  details.init()
 
   const catalogSelects = new Select({
     selectors: {
@@ -42,6 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
       // const buttonReset: HTMLElement = target.closest('.catalogFiltersReset')
       catalogSelects.updateSelects()
     }
+    // if (target.closest('.catalogFiltersExpand')) {
+    //   details.openAll()
+    // }
+    // if (target.closest('.catalogFiltersCollapse')) {
+    //   details.collapseAll()
+    // }
   }, {
     passive: true,
   })

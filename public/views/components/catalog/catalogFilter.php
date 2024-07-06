@@ -5,7 +5,7 @@
 /** @var array $options */
 ?>
 
-<fieldset data-details="details" class="catalogFilter open" open>
+<fieldset data-details="details" class="catalogFilter open">
   <div data-details="summary" class="catalogFilterSummary">
     <div class="catalogFilterSummaryContent">
       <button type="button" data-details="button" class="catalogFilterButton">
@@ -19,7 +19,7 @@
         <span>Сбросить</span>
       </button>-->
     </div>
-    <div class="catalogFilterSelected"></div>
+    <!--<div class="catalogFilterSelected"></div>-->
   </div>
   <div data-details="body" class="catalogFilterBody">
     <?php foreach ($options as $option):

@@ -52,9 +52,9 @@ export class Select {
     if (!Array.isArray(this.elements)) return
 
     // небольшая задержка, чтобы компенсировать задержку после события reset
-    setTimeout(() => {
-      this.elements.forEach((element: iElement) => this.updateTextSelected(element.select))
-    }, 100)
+    // setTimeout(() => {
+    //   this.elements.forEach((element: iElement) => this.updateTextSelected(element.select))
+    // }, 100)
   }
 
   private deactivate(select: HTMLElement): void {
@@ -83,10 +83,10 @@ export class Select {
       button.classList.toggle('_active')
     }
 
-    if (target.closest(this.selectors.option)) {
-      const select: HTMLElement = target.closest(this.selectors.select)
-      this.updateTextSelected(select)
-    }
+    // if (target.closest(this.selectors.option)) {
+    //   const select: HTMLElement = target.closest(this.selectors.select)
+    //   //this.updateTextSelected(select)
+    // }
 
     if (!target.closest(this.selectors.select)) {
       if (this.parameters.current instanceof HTMLElement) this.deactivate(this.parameters.current)
@@ -109,7 +109,7 @@ export class Select {
     const selects: HTMLElement[] = Array.from(body.querySelectorAll(this.selectors.select))
 
     selects.forEach((select: HTMLElement) => {
-      this.updateTextSelected(select)
+      // this.updateTextSelected(select)
       const element: iElement = {
         select: select,
         current: select.querySelector(this.selectors.current),
@@ -123,31 +123,31 @@ export class Select {
     })
   }
 
-  private updateTextSelected(select: HTMLElement): void {
-    const options: HTMLElement[] = Array.from(select.querySelectorAll(this.selectors.option))
-    const optionsActive = options.filter((option: HTMLElement) => {
-      const input = option.querySelector('input')
-      return input && input.checked
-    })
-    const valueContainer: HTMLElement = select.querySelector(this.selectors.value)
-    let valueContent: string = ''
-
-    if (valueContainer.hasAttribute('data-select') && valueContainer.getAttribute('data-select').trim().toLowerCase() === 'no-overwrite') {
-      return
-    } else {
-      if (optionsActive.length > 0) {
-        optionsActive.forEach((option, index) => {
-          if (index + 1 === optionsActive.length) {
-            valueContent = valueContent + option.textContent
-          } else {
-            valueContent = valueContent + option.textContent + ', '
-          }
-        })
-
-        valueContent = valueContent.trim().replace(/\s+/gmi, ' ').replace(/\s+,\s+/gmi, ', ')
-      }
-      valueContainer.setAttribute('title', valueContent)
-      valueContainer.textContent = valueContent
-    }
-  }
+  // private updateTextSelected(select: HTMLElement): void {
+  //   const options: HTMLElement[] = Array.from(select.querySelectorAll(this.selectors.option))
+  //   const optionsActive = options.filter((option: HTMLElement) => {
+  //     const input = option.querySelector('input')
+  //     return input && input.checked
+  //   })
+  //   const valueContainer: HTMLElement = select.querySelector(this.selectors.value)
+  //   let valueContent: string = ''
+  //
+  //   if (valueContainer.hasAttribute('data-select') && valueContainer.getAttribute('data-select').trim().toLowerCase() === 'no-overwrite') {
+  //     return
+  //   } else {
+  //     if (optionsActive.length > 0) {
+  //       optionsActive.forEach((option, index) => {
+  //         if (index + 1 === optionsActive.length) {
+  //           valueContent = valueContent + option.textContent
+  //         } else {
+  //           valueContent = valueContent + option.textContent + ', '
+  //         }
+  //       })
+  //
+  //       valueContent = valueContent.trim().replace(/\s+/gmi, ' ').replace(/\s+,\s+/gmi, ', ')
+  //     }
+  //     valueContainer.setAttribute('title', valueContent)
+  //     valueContainer.textContent = valueContent
+  //   }
+  // }
 }

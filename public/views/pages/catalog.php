@@ -162,7 +162,14 @@ $subcategories = [
             'max' => 1000000,
           ]) ?>
         </div>
+
         <div class="catalogFiltersButtons">
+          <!--<button type="button" class="catalogFiltersExpand">
+            Развернуть все
+          </button>
+          <button type="button" class="catalogFiltersCollapse">
+            Свернуть все
+          </button>-->
           <button class="catalogFiltersSubmit" type="submit" id="catalog-filters-submit">
             Применить
           </button>

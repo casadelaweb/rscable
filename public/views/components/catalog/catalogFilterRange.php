@@ -4,7 +4,7 @@
 /** @var number $max */
 ?>
 
-<fieldset data-details="details" class="catalogFilter open" open>
+<fieldset data-details="details" class="catalogFilter open">
   <div data-details="summary" class="catalogFilterSummary">
     <div class="catalogFilterSummaryContent">
       <button type="button" data-details="button" class="catalogFilterButton">
@@ -14,7 +14,7 @@
         <?= $filterTitle ?>
       </span>
     </div>
-    <div class="catalogFilterSelected"></div>
+    <!--<div class="catalogFilterSelected"></div>-->
   </div>
   <div data-details="body" class="catalogFilterBody">
     <div class="catalogFilterRow">

@@ -56,6 +56,20 @@ export class Details {
     if (details.length > 0) this.elements = this.updateElementsData(details)
   }
 
+  public openAll() {
+    this.elements.forEach((element) => {
+      element.parameters.isOpen = element.details.classList.contains('open')
+      if (!element.parameters.isOpen) this.expand(element)
+    })
+  }
+
+  public collapseAll() {
+    this.elements.forEach((element) => {
+      element.parameters.isOpen = element.details.classList.contains('open')
+      if (element.parameters.isOpen) this.shrink(element)
+    })
+  }
+
   private calculateDuration(startHeight: number, endHeight: number): number {
     let duration = this.durationMin
 
@@ -191,7 +205,7 @@ export class Details {
         button: element.querySelector(this.selectors.button),
         content: element.querySelector(this.selectors.content),
         parameters: {
-          isOpen: element.hasAttribute('open'),
+          isOpen: element.hasAttribute('open') || element.classList.contains('open'),
           isClosing: false,
           isOpening: false,
         },

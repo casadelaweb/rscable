@@ -35,8 +35,10 @@
   }
 
   &Buttons {
-    @include flex(center);
-    column-gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8px;
+    row-gap: 8px;
     //position: sticky;
     //z-index: 1;
     //bottom: 0;
@@ -45,8 +47,15 @@
     padding-bottom: 16px;
     @include mediaTabletL {
       // margin-top: 40px;
+      column-gap: 16px;
+      // row-gap: 16px;
       border: 0;
     }
+  }
+
+  &Expand, &Collapse {
+    @include textXs;
+    color: $colorDarkMild;
   }
 
   &Submit {

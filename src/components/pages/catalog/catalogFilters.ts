@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
   hide()
 
   document.addEventListener('click', (event: MouseEvent) => {
-    const target = event.target as HTMLElement
+    //const target = event.target as HTMLElement
 
-    if (target.closest('.catalogFiltersReset')) {
-      const buttonReset: HTMLElement = target.closest('.catalogFiltersReset')
-    }
+    // if (target.closest('.catalogFiltersReset')) {
+    //   const buttonReset: HTMLElement = target.closest('.catalogFiltersReset')
+    // }
     hide()
   }, { passive: true, })
   window.addEventListener('scroll', hide, { passive: true, })
