@@ -170,17 +170,6 @@ $subcategories = [
             Сбросить
           </button>
         </div>
-        <!--
-        <div class="catalogFiltersFeedback">
-          <div class="catalogFiltersFeedbackTitle">Нет нужного фильтра?</div>
-          <button type="button" data-modal-open="catalogFilters-feedback"
-                  class="catalogFiltersFeedbackButton">
-            <span class="iconfont icon-bubble"></span>
-            <span>Оставьте обратную связь</span>
-          </button>
-        </div>
-        -->
-
         <div class="catalogFiltersTooltip">
           <label for="catalog-filters-submit" class="catalogFiltersTooltipButton">
             Применить

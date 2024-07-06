@@ -1,6 +1,3 @@
-import { Details } from 'src/modules/details/details'
-import { Select } from 'src/modules/select/select'
-
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body
 
@@ -34,7 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
   setLeft()
   hide()
 
-  document.addEventListener('click', hide, { passive: true, })
+  document.addEventListener('click', (event: MouseEvent) => {
+    const target = event.target as HTMLElement
+
+    if (target.closest('.catalogFiltersReset')) {
+      const buttonReset: HTMLElement = target.closest('.catalogFiltersReset')
+    }
+    hide()
+  }, { passive: true, })
   window.addEventListener('scroll', hide, { passive: true, })
   window.addEventListener('resize', () => {
     hide()

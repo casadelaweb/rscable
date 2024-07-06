@@ -1,7 +1,5 @@
 import * as noUiSlider from 'nouislider'
 import { API } from 'nouislider/dist/nouislider'
-// import { Select } from 'src/modules/select/select'
-// import { Details } from 'src/modules/details/details'
 import 'src/assets/img/catalog/banner.jpg'
 
 interface sliderElement extends HTMLElement {
@@ -12,6 +10,14 @@ function prepareValue(value: string): number {
   return parseInt(value.trim())
 }
 
+function getDefaultMin(slider: sliderElement): number {
+  return prepareValue(slider.getAttribute('data-min'))
+}
+
+function getDefaultMax(slider: sliderElement): number {
+  return prepareValue(slider.getAttribute('data-max'))
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const { body, } = document
 
@@ -19,12 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
   sliders.forEach((slider: sliderElement) => {
     const filter: HTMLElement = slider.closest('.catalogFilter')
 
-    const priceMin: number = prepareValue(slider.getAttribute('data-min'))
-    const priceMax: number = prepareValue(slider.getAttribute('data-max'))
+    // const priceMin: number = prepareValue(slider.getAttribute('data-min'))
+    // const priceMax: number = prepareValue(slider.getAttribute('data-max'))
     const inputMin: HTMLInputElement = filter.querySelector('[data-catalog-filter=input-min]')
     const inputMax: HTMLInputElement = filter.querySelector('[data-catalog-filter=input-max]')
-    // const spanMin: HTMLElement = filter.querySelector(slider.getAttribute('data-span-min'))
-    // const spanMax: HTMLElement = filter.querySelector(slider.getAttribute('data-span-max'))
 
     let typingTimerMin: ReturnType<typeof setTimeout>
     let typingTimerMax: ReturnType<typeof setTimeout>
@@ -47,12 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     noUiSlider.create(slider, {
-      start: [priceMin, priceMax,],
+      start: [getDefaultMin(slider), getDefaultMax(slider),],
       step: 1,
       connect: true,
       range: {
-        'min': priceMin,
-        'max': priceMax,
+        'min': getDefaultMin(slider),
+        'max': getDefaultMax(slider),
       },
     }).on('update', (values: string[], handle: 0 | 1) => {
       const value = values[handle]
@@ -68,6 +72,31 @@ document.addEventListener('DOMContentLoaded', () => {
       // spanMin.textContent = parseInt(values[0])?.toLocaleString()
       // spanMax.textContent = parseInt(values[1])?.toLocaleString()
     })
+  })
+
+  document.addEventListener('click', (event: MouseEvent) => {
+    const target = event.target as HTMLElement
+
+    if (target.closest('.catalogFiltersReset')) {
+      // const buttonReset: HTMLElement = target.closest('.catalogFiltersReset')
+      sliders.forEach((slider: sliderElement) => {
+        // console.log(slider.noUiSlider)
+        const filter: HTMLElement = slider.closest('.catalogFilter')
+        const inputMin: HTMLInputElement = filter.querySelector('[data-catalog-filter=input-min]')
+        const inputMax: HTMLInputElement = filter.querySelector('[data-catalog-filter=input-max]')
+        slider.noUiSlider.reset()
+        slider.noUiSlider.set([getDefaultMin(slider), getDefaultMax(slider)])
+        setTimeout(() => {
+          inputMin.value = getDefaultMin(slider).toLocaleString()
+          inputMax.value = getDefaultMax(slider).toLocaleString()
+        }, 100)
+
+        // inputMin.dispatchEvent(new Event('input', { bubbles: true, }))
+        // inputMax.dispatchEvent(new Event('input', { bubbles: true, }))
+      })
+    }
+  }, {
+    passive: true,
   })
 }, {
   passive: true,

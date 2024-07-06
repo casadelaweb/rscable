@@ -4,13 +4,15 @@
 /** @var number $max */
 ?>
 
-<fieldset data-details="details" class="catalogFilter">
+<fieldset data-details="details" class="catalogFilter open" open>
   <div data-details="summary" class="catalogFilterSummary">
     <div class="catalogFilterSummaryContent">
-      <span><?= $filterTitle ?></span>
       <button type="button" data-details="button" class="catalogFilterButton">
         <span class="iconfont icon-arrow-down"></span>
       </button>
+      <span class="catalogFilterTitle">
+        <?= $filterTitle ?>
+      </span>
     </div>
     <div class="catalogFilterSelected"></div>
   </div>

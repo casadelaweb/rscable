@@ -40,6 +40,19 @@
     @include textM;
   }
 
+  &Title {
+    display: inline-block;
+    margin-right: auto;
+  }
+
+  &Reset {
+    @include flex(center);
+    column-gap: 2px;
+    margin-left: auto;
+    color: $colorDarkMild;
+    font-size: 10px;
+  }
+
   &Body {
     padding: 8px 16px 16px;
     @include mediaTabletL {

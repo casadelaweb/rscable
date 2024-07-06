@@ -5,13 +5,19 @@
 /** @var array $options */
 ?>
 
-<fieldset data-details="details" class="catalogFilter">
+<fieldset data-details="details" class="catalogFilter open" open>
   <div data-details="summary" class="catalogFilterSummary">
     <div class="catalogFilterSummaryContent">
-      <span><?= $filterTitle ?></span>
       <button type="button" data-details="button" class="catalogFilterButton">
         <span class="iconfont icon-arrow-down"></span>
       </button>
+      <span class="catalogFilterTitle">
+        <?= $filterTitle ?>
+      </span>
+      <!--<button type="button" class="catalogFilterReset">
+        <span class="iconfont icon-close"></span>
+        <span>Сбросить</span>
+      </button>-->
     </div>
     <div class="catalogFilterSelected"></div>
   </div>

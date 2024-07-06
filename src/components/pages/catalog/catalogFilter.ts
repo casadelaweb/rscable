@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     onlyUnderLaptop: true,
   }).init()
+
   const catalogSelects = new Select({
     selectors: {
       select: '.catalogFilter',
@@ -33,6 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
       catalogSelects.updateSelects()
     })
   }
+
+  document.addEventListener('click', (event: MouseEvent) => {
+    const target = event.target as HTMLElement
+
+    if (target.closest('.catalogFiltersReset')) {
+      // const buttonReset: HTMLElement = target.closest('.catalogFiltersReset')
+      catalogSelects.updateSelects()
+    }
+  }, {
+    passive: true,
+  })
 }, {
   passive: true,
   once: true,
