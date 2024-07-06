@@ -86,6 +86,7 @@ export class Details {
   private expand(data: iElementData): void {
     data.parameters.isOpening = true
     data.details.classList.add('is-opening')
+    data.content.classList.add('is-opening')
 
     const startHeight: string = data.details.offsetHeight + 'px'
     const endHeight: string = data.summary.offsetHeight + data.content.offsetHeight + 'px'
@@ -139,6 +140,9 @@ export class Details {
     data.details.style.height = data.details.style.overflow = ''
     this.setupScrollbarStyles(data.details)
     this.updateDetailsStyles(data.details, open)
+    this.updateDetailsStyles(data.content, open)
+    data.content.classList.remove('is-closing')
+    data.content.classList.remove('is-opening')
     data.details.classList.remove('is-closing')
     data.details.classList.remove('is-opening')
   }
@@ -162,6 +166,7 @@ export class Details {
   private shrink(data: iElementData): void {
     data.parameters.isClosing = true
     data.details.classList.add('is-closing')
+    data.content.classList.add('is-closing')
 
     const startHeight: string = data.details.offsetHeight + 'px'
     const endHeight: string = data.summary.offsetHeight + 'px'
@@ -199,13 +204,17 @@ export class Details {
 
   private updateElementsData(elements: HTMLElement[]): iElementData[] {
     return elements.map((element: HTMLDetailsElement) => {
+      const isOpen = element.classList.contains('open') || element.hasAttribute('open')
+      const content: HTMLElement = element.querySelector(this.selectors.content)
+      if (isOpen) content.classList.add('open')
+
       return {
         details: element,
         summary: element.querySelector(this.selectors.summary),
         button: element.querySelector(this.selectors.button),
-        content: element.querySelector(this.selectors.content),
+        content,
         parameters: {
-          isOpen: element.hasAttribute('open') || element.classList.contains('open'),
+          isOpen,
           isClosing: false,
           isOpening: false,
         },

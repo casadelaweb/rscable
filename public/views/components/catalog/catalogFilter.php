@@ -1,5 +1,6 @@
 <?php namespace App;
 /** @var string $filterTitle */
+/** @var string $filterType */
 /** @var string $inputName */
 /** @var string $inputType */
 /** @var array $options */
@@ -21,7 +22,14 @@
     </div>
     <!--<div class="catalogFilterSelected"></div>-->
   </div>
-  <div data-details="body" class="catalogFilterBody">
+  <div data-details="body" class="catalogFilterBody <?= $filterType === 'grid' ? '_grid' : ''; ?>">
+    <?php if ($filterType === 'grid') : ?>
+      <label class="catalogFilterBodySearch">
+        <span class="catalogFilterBodySearchIcon iconfont icon-search"></span>
+        <input type="text" class="catalogFilterBodySearchInput" placeholder="<?= $filterTitle ?>">
+      </label>
+    <?php endif; ?>
+
     <?php foreach ($options as $option):
       $title = $option; ?>
       <label class="catalogFilterLabel">

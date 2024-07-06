@@ -91,20 +91,21 @@ $subcategories = [
               <span class="iconfont icon-close"></span>
             </button>
           </div>
-          <div class="catalogFiltersHeaderRow">
-            <button type="button">
-              Раскрыть все
-            </button>
-            <button type="button">
-              Свернуть все
-            </button>
-          </div>
+          <!--          <div class="catalogFiltersHeaderRow">-->
+          <!--            <button type="button">-->
+          <!--              Раскрыть все-->
+          <!--            </button>-->
+          <!--            <button type="button">-->
+          <!--              Свернуть все-->
+          <!--            </button>-->
+          <!--          </div>-->
         </div>
         <div class="catalogFiltersBody">
           <?php Render::component('catalog/catalogFilter', [
             'filterTitle' => 'Наличие',
             'inputType' => 'checkbox',
             'inputName' => 'stock',
+            'filterType' => 'flex',
             'options' => [
               'В наличии',
               'Под заказ: сегодня',
@@ -114,15 +115,50 @@ $subcategories = [
             ],
           ]) ?>
           <?php Render::component('catalog/catalogFilter', [
+            'filterTitle' => 'Бренд',
+            'filterType' => 'grid',
+            'inputType' => 'checkbox',
+            'inputName' => 'brand',
+            'options' => [
+              'Название бренда 1',
+              'Название бренда 2',
+              'Название бренда 3',
+              'Название бренда 4',
+              'Название бренда 5',
+              'Название бренда 6',
+              'Название бренда 7',
+              'Название бренда 8',
+              'Название бренда 9',
+              'Название бренда 10',
+              'Название бренда 11',
+              'Название бренда 12',
+              'Название бренда 13',
+              'Название бренда 14',
+              'Название бренда 15',
+              'Название бренда 16',
+              'Название бренда 17',
+              'Название бренда 18',
+              'Название бренда 19',
+              'Название бренда 20',
+              'Название бренда 21',
+              'Название бренда 22',
+              'Название бренда 23',
+              'Название бренда 24',
+              'Название бренда 25',
+            ],
+          ]) ?>
+          <?php Render::component('catalog/catalogFilter', [
             'filterTitle' => 'Форма кабеля',
             'inputType' => 'radio',
             'inputName' => 'cable_form',
+            'filterType' => 'flex',
             'options' => ['Круглый', 'Плоский',],
           ]) ?>
           <?php Render::component('catalog/catalogFilter', [
             'filterTitle' => 'Холодостойкий',
             'inputType' => 'radio',
             'inputName' => 'is_cold_proof',
+            'filterType' => 'flex',
             'options' => ['Да', 'Нет',],
           ]) ?>
           <?php Render::component('catalog/catalogFilterRange', [
@@ -134,6 +170,7 @@ $subcategories = [
             'filterTitle' => 'Материал оболочки',
             'inputType' => 'checkbox',
             'inputName' => 'material_outside',
+            'filterType' => 'flex',
             'options' => [
               'ПВХ',
               'ПВХ пластикат пониженной горючести',
@@ -154,6 +191,7 @@ $subcategories = [
             'filterTitle' => 'Огнестойкий',
             'inputType' => 'radio',
             'inputName' => 'is_fire_proof',
+            'filterType' => 'flex',
             'options' => ['Да', 'Нет',],
           ]) ?>
           <?php Render::component('catalog/catalogFilterRange', [
