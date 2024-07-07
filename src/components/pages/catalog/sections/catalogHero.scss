@@ -3,6 +3,7 @@
 .catalogHero {
   @include sectionStyles;
   overflow: hidden;
+  margin-bottom: 40px !important;
 
   &Container {
     @include container;
@@ -42,6 +43,13 @@
     }
   }
 
+  &Header {
+    @include mediaLaptopS {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+
   &Quantity {
     @include textS;
     color: $colorGrey;
@@ -50,11 +58,12 @@
   &Categories {
     overflow: unset;
     margin-bottom: 16px;
-    padding-top: 40px;
-    @include mediaTabletS {
-      padding-top: 48px;
-    }
+    //padding-top: 40px;
+    //@include mediaTabletS {
+    //  padding-top: 48px;
+    //}
     @include mediaLaptopS {
+      padding-top: 48px;
       overflow: hidden;
     }
     //overflow: hidden;
@@ -78,7 +87,10 @@
       position: absolute;
       z-index: 1;
       top: 0;
-      transform: translate(0, 50%);
+      transform: translate(0, -50%);
+      @include mediaLaptopS {
+        transform: translate(0, 50%);
+      }
     }
 
     .swiper-button-prev {
