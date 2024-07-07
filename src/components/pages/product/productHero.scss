@@ -311,7 +311,7 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
 
     &-slide {
       @include flex(center, center);
-      transition: border-color 0.333s, opacity 0.333s;
+      transition: border-color $trM, opacity $trM;
       overflow: hidden;
       border-radius: $brM;
 

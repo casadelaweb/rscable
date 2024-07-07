@@ -40,15 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = event.target as HTMLElement
 
     if (target.closest('.catalogFiltersReset')) {
-      // const buttonReset: HTMLElement = target.closest('.catalogFiltersReset')
       catalogSelects.updateSelects()
     }
-    // if (target.closest('.catalogFiltersExpand')) {
-    //   details.openAll()
-    // }
-    // if (target.closest('.catalogFiltersCollapse')) {
-    //   details.collapseAll()
-    // }
   }, {
     passive: true,
   })

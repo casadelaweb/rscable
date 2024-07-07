@@ -11,7 +11,7 @@
   overflow-y: auto;
   width: 320px;
   height: 100%;
-  transition: transform 0.333s;
+  transition: transform $trM;
   transform: translate(-100%, 0);
   pointer-events: none;
   background: white;

@@ -3,6 +3,7 @@
 .catalogFilters {
   flex-grow: 1;
   @include flex($d: column);
+  padding-right: 16px;
 
   &Header, &Buttons, &Feedback {
     padding: 16px;
@@ -144,7 +145,7 @@
     box-shadow: $bsM;
     pointer-events: none;
     opacity: 0;
-    transition: top 0.333s, left 0.333s, opacity 0.333s;
+    transition: top $trM, left $trM, opacity $trM;
     @include mediaOnlyBeforeLaptop {
       display: none !important;
     }

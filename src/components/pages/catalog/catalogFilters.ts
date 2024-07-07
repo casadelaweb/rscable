@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!form) return
 
-  const inputs = Array.from(form.querySelectorAll('input'))
+  const inputs = Array.from(form.querySelectorAll('.catalogFilterInput'))
   const tooltip: HTMLElement = body.querySelector('.catalogFiltersTooltip')
 
   function setLeft() {
@@ -31,12 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setLeft()
   hide()
 
-  document.addEventListener('click', (event: MouseEvent) => {
-    //const target = event.target as HTMLElement
-
-    // if (target.closest('.catalogFiltersReset')) {
-    //   const buttonReset: HTMLElement = target.closest('.catalogFiltersReset')
-    // }
+  document.addEventListener('click', () => {
     hide()
   }, { passive: true, })
   window.addEventListener('scroll', hide, { passive: true, })

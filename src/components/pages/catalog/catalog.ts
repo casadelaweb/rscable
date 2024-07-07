@@ -24,9 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const sliders = Array.from(body.querySelectorAll('[data-catalog-filter=range]'))
   sliders.forEach((slider: sliderElement) => {
     const filter: HTMLElement = slider.closest('.catalogFilter')
-
-    // const priceMin: number = prepareValue(slider.getAttribute('data-min'))
-    // const priceMax: number = prepareValue(slider.getAttribute('data-max'))
     const inputMin: HTMLInputElement = filter.querySelector('[data-catalog-filter=input-min]')
     const inputMax: HTMLInputElement = filter.querySelector('[data-catalog-filter=input-max]')
 
@@ -69,8 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         inputMin.dispatchEvent(new Event('input', { bubbles: true, }))
         inputMax.dispatchEvent(new Event('input', { bubbles: true, }))
       }, 333)
-      // spanMin.textContent = parseInt(values[0])?.toLocaleString()
-      // spanMax.textContent = parseInt(values[1])?.toLocaleString()
     })
   })
 
@@ -78,9 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const target = event.target as HTMLElement
 
     if (target.closest('.catalogFiltersReset')) {
-      // const buttonReset: HTMLElement = target.closest('.catalogFiltersReset')
       sliders.forEach((slider: sliderElement) => {
-        // console.log(slider.noUiSlider)
         const filter: HTMLElement = slider.closest('.catalogFilter')
         const inputMin: HTMLInputElement = filter.querySelector('[data-catalog-filter=input-min]')
         const inputMax: HTMLInputElement = filter.querySelector('[data-catalog-filter=input-max]')
@@ -90,9 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
           inputMin.value = getDefaultMin(slider).toLocaleString()
           inputMax.value = getDefaultMax(slider).toLocaleString()
         }, 100)
-
-        // inputMin.dispatchEvent(new Event('input', { bubbles: true, }))
-        // inputMax.dispatchEvent(new Event('input', { bubbles: true, }))
       })
     }
   }, {

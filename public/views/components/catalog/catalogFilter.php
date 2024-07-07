@@ -1,6 +1,7 @@
 <?php namespace App;
 /** @var string $filterTitle */
 /** @var string $filterType */
+/** @var bool $hasSearch */
 /** @var string $inputName */
 /** @var string $inputType */
 /** @var array $options */
@@ -23,10 +24,11 @@
     <!--<div class="catalogFilterSelected"></div>-->
   </div>
   <div data-details="body" class="catalogFilterBody <?= $filterType === 'grid' ? '_grid' : ''; ?>">
-    <?php if ($filterType === 'grid') : ?>
-      <label class="catalogFilterBodySearch">
-        <span class="catalogFilterBodySearchIcon iconfont icon-search"></span>
-        <input type="text" class="catalogFilterBodySearchInput" placeholder="<?= $filterTitle ?>">
+    <?php if ($hasSearch) : ?>
+      <label class="catalogFilterSearch">
+        <span class="catalogFilterSearchIcon iconfont icon-search"></span>
+        <input type="text" class="catalogFilterSearchInput" placeholder="<?= $filterTitle ?>"
+               autocomplete="off">
       </label>
     <?php endif; ?>
 
