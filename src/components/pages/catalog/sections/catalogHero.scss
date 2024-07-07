@@ -2,17 +2,17 @@
 
 .catalogHero {
   @include sectionStyles;
+  overflow: hidden;
 
   &Container {
     @include container;
   }
 
-
   &Title {
     @include h1;
   }
 
-  &Header, &Categories, &Suggestions {
+  &Header, &Suggestions {
     @include flex(center);
     column-gap: 8px;
     row-gap: 8px;
@@ -30,7 +30,7 @@
     }
   }
 
-  &Categories, &Suggestions {
+  &Suggestions {
     overflow-x: auto;
     padding-right: 8px;
     @include mediaMobileM {
@@ -48,15 +48,45 @@
   }
 
   &Categories {
-    @include mediaTabletL {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+    overflow: unset;
+    margin-bottom: 16px;
+    padding-top: 40px;
+    @include mediaTabletS {
+      padding-top: 48px;
     }
     @include mediaLaptopS {
-      grid-template-columns: repeat(5, 1fr);
+      overflow: hidden;
     }
-    @include mediaDesktop {
-      grid-template-columns: repeat(6, 1fr);
+    //overflow: hidden;
+    //@include mediaTabletL {
+    //  display: grid;
+    //  grid-template-columns: repeat(4, 1fr);
+    //}
+    //@include mediaLaptopS {
+    //  grid-template-columns: repeat(5, 1fr);
+    //}
+    //@include mediaDesktop {
+    //  grid-template-columns: repeat(6, 1fr);
+    //}
+
+    //.swiper-wrapper {
+    //
+    //}
+
+    .swiper-button-prev, .swiper-button-next {
+      @include buttonNavigation;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      transform: translate(0, 50%);
+    }
+
+    .swiper-button-prev {
+      left: 0;
+    }
+
+    .swiper-button-next {
+      right: 0;
     }
   }
 
