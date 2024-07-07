@@ -5,62 +5,92 @@
     @include dropFlex;
     @include textM;
     @include flex(center, space-between);
-    column-gap: 16px;
+    column-gap: 8px;
+    @include mediaMobileL {
+      column-gap: 16px;
+    }
     @include mediaTabletM {
       column-gap: 20px;
     }
-    @include mediaTabletL {
-      //position: sticky;
-      //z-index: 120;
-      //top: calc(var(--headerHeight) + 20px);
-      //background: white;
-      //padding: 16px;
-      //border: 1px solid $colorGreyMild;
-      //border-radius: $brM;
-      //box-shadow: $bsM;
-    }
   }
 
-  &SortButtons {
-    display: none;
-    @include mediaTabletL {
+  &Sort {
+    position: relative;
+    z-index: 4;
+
+    &Summary {
+      @include textXs;
       @include flex(center);
-      column-gap: 16px;
+      letter-spacing: -0.02em;
+      column-gap: 4px;
+      cursor: pointer;
+      @include mediaDesktop {
+        column-gap: 8px;
+      }
     }
 
-    &Title {
-      @include textM;
-    }
-  }
-
-  &SortButton {
-    @include onHover {
+    &Current {
       color: $colorBlue;
     }
 
-    &:active {
-      color: $colorBlueDarker;
+    &Button {
+      @include flex(center, center);
+      color: $colorDarkMild;
     }
 
-    .iconfont {
-      display: none;
+    //&Title {
+    //  // @include textS;
+    //}
+
+    &List {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 16px;
+      position: absolute;
+      z-index: 1;
+      top: calc(100% + 8px);
+      left: 0;
+      width: 100%;
+      background: white;
+      border: 1px solid $colorGreyMild;
+      border-radius: $brM;
+      box-shadow: $bsM;
+      padding: 16px;
+      transform: translate(0, 40px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $trM, transform $trM;
+
+      &._active {
+        transform: translate(0, 0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    &Item {
+      @include textXs;
+      @include flex(center);
+      column-gap: 8px;
     }
   }
 
   &ViewButtons {
     @include flex(center);
-    column-gap: 16px;
-    // margin-left: auto;
+    column-gap: 8px;
+    @include mediaMobileL {
+      column-gap: 16px;
+    }
   }
 
   &ViewButton, &OpenAside {
     @include flex(center, center);
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1;
     color: $colorGreyDarker;
-    //@include mediaMobileL {
-    //  font-size: 20px;
-    //}
+    @include mediaMobileM {
+      font-size: 20px;
+    }
 
     @include onHover {
       color: $colorBlueLight

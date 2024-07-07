@@ -40,6 +40,33 @@ document.addEventListener('DOMContentLoaded', () => {
     setLeft()
   }, { passive: true, })
 
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement
+
+    if (target.closest('.catalogSortSummary')) {
+      const sort: HTMLElement = target.closest('.catalogSort')
+      const list: HTMLElement = sort.querySelector('.catalogSortList')
+      list.classList.toggle('_active')
+    }
+    if (target.closest('.catalogSortItem')) {
+      const sort: HTMLElement = target.closest('.catalogSort')
+      const list: HTMLElement = sort.querySelector('.catalogSortList')
+      const current: HTMLElement = sort.querySelector('.catalogSortCurrent')
+      current.textContent = target.closest('.catalogSortItem').textContent.trim().toLowerCase()
+      setTimeout(() => {
+        list.classList.remove('_active')
+      }, 150)
+    }
+    if (!target.closest('.catalogSort')) {
+      const elements: Array<HTMLElement> = Array.from(document.body.querySelectorAll('.catalogSort'))
+      elements.forEach((sort) => {
+        const list: HTMLElement = sort.querySelector('.catalogSortList')
+        sort.classList.remove('_active')
+        list.classList.remove('_active')
+      })
+    }
+  })
+
 }, {
   passive: true,
   once: true,

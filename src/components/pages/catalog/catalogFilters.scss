@@ -4,6 +4,9 @@
   flex-grow: 1;
   @include flex($d: column);
   padding-right: 16px;
+  @include mediaTabletL {
+    padding-right: 0;
+  }
 
   &Header, &Buttons, &Feedback {
     padding: 16px;
@@ -40,16 +43,16 @@
     grid-template-columns: repeat(2, 1fr);
     column-gap: 8px;
     row-gap: 8px;
-    //position: sticky;
-    //z-index: 1;
-    //bottom: 0;
     margin: 0;
     border-top: 1px solid $colorGreyMild;
     padding-bottom: 16px;
+    position: sticky;
+    z-index: 10;
+    bottom: 0;
+    background: white;
     @include mediaTabletL {
-      // margin-top: 40px;
+      position: static;
       column-gap: 16px;
-      // row-gap: 16px;
       border: 0;
     }
   }

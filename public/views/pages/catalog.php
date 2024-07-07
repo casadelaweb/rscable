@@ -87,29 +87,36 @@ $subcategories = [
     </div>
     <div class="catalogMain">
       <div class="catalogNav">
-        <div class="catalogSortButtons">
-          <span class="catalogSortButtonsTitle">Сортировать по:</span>
-          <button class="catalogSortButton" type="button">
-            Популярности
-            <span class="iconfont icon-ascending"></span>
-            <span class="iconfont icon-descending"></span>
-          </button>
-          <button class="catalogSortButton" type="button">
-            Цене
-            <span class="iconfont icon-ascending"></span>
-            <span class="iconfont icon-descending"></span>
-          </button>
-          <button class="catalogSortButton" type="button">
-            Отзывам
-            <span class="iconfont icon-ascending"></span>
-            <span class="iconfont icon-descending"></span>
-          </button>
-          <button class="catalogSortButton" type="button">
-            Рейтингу
-            <span class="iconfont icon-ascending"></span>
-            <span class="iconfont icon-descending"></span>
-          </button>
-        </div>
+        <fieldset form="form-catalog-filters" class="catalogSort">
+          <div class="catalogSortSummary">
+            <div class="catalogSortTitle">Сортировать по:</div>
+            <div class="catalogSortCurrent">
+              по-умолчанию
+            </div>
+            <button class="catalogSortButton" type="button">
+              <span class="iconfont icon-arrow-down"></span>
+            </button>
+          </div>
+          <div class="catalogSortList">
+            <label class="catalogSortItem">
+              <input type="radio" name="sort">
+              <span>По-умолчанию</span>
+            </label>
+            <label class="catalogSortItem">
+              <input type="radio" name="sort">
+              <span>Сначала дешевле</span>
+            </label>
+            <label class="catalogSortItem">
+              <input type="radio" name="sort">
+              <span>Сначала дороже</span>
+            </label>
+            <label class="catalogSortItem">
+              <input type="radio" name="sort">
+              <span>Сначала популярные</span>
+            </label>
+          </div>
+        </fieldset>
+
         <button type="button" data-modal-open="catalog-aside" class="catalogOpenAside">
           <span class="iconfont icon-filters"></span>
         </button>
