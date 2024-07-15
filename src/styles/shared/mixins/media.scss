@@ -64,6 +64,12 @@
   }
 }
 
+@mixin mediaLaptopL {
+  @media screen and (min-width: 1600px) {
+    @content
+  }
+}
+
 @mixin mediaDesktop {
   @media screen and (min-width: 1920px) {
     @content

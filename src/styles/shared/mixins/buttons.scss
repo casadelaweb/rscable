@@ -51,6 +51,9 @@
 
 @mixin buttonMain {
   @include buttonTemplate;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   padding: 4px 12px;
   height: 40px;
   width: 100%;
@@ -58,20 +61,45 @@
   background-color: transparent;
   color: black;
   @include onHover {
-    background: Vars.$colorDark;
+    //background: Vars.$colorDark;
     color: white;
+    &::before {
+      transform: none;
+    }
   }
 
   &:active {
     background: black;
     border-color: black;
     color: white;
+
+    &::before {
+      background: black;
+      transform: none;
+    }
+  }
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: Vars.$colorDark;
+    transition: transform Vars.$trM, background-color Vars.$trM;
+    transform-origin: center;
+    transform: scaleX(0);
   }
 }
 
 @mixin buttonMinor {
   @include buttonTemplate;
   @include textS;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   transition: background-color Vars.$trM, color Vars.$trM;
   color: black;
   padding: 3px 6px;
@@ -79,12 +107,39 @@
   border: 0;
   @include onHover {
     background: Vars.$colorGreyMild;
+    &::before {
+      box-shadow: inset 0 0 0 40px Vars.$colorGreyMild;
+      background: none;
+      transform: none;
+    }
   }
   &:active {
     background: Vars.$colorGreyDarker;
+
+    &::before {
+      box-shadow: inset 0 0 0 40px Vars.$colorGreyDarker;
+      background: none;
+      transform: none;
+    }
   }
   @include mediaDesktop {
     padding: 5px 10px;
+  }
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: Vars.$colorDark;
+    transform-origin: center;
+    transition: Vars.$trM;
+    box-shadow: inset 0 0 0 1px Vars.$colorGreyMild;
+    background: none;
+    transform: none;
   }
 }
 
@@ -97,11 +152,34 @@
     background: Vars.$colorBlueLight;
     border-color: Vars.$colorBlueLight;
     color: white;
+    &::before {
+      left: 120%;
+      //transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
   }
   &:active {
     background: Vars.$colorBlueDarker;
     border-color: Vars.$colorBlueDarker;
     color: white;
+
+    &::before {
+      left: 120%;
+      //transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
+
+  &::before {
+    background: white;
+    content: ' ';
+    height: 155px;
+    left: -75px;
+    opacity: 0.2;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: left Vars.$trL cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: -1;
   }
 }
 
@@ -109,6 +187,11 @@
   @include buttonPrimary;
   width: 40px;
   height: 40px;
+
+  &::before {
+    content: none;
+    display: none;
+  }
 }
 
 @mixin buttonNavigation {
@@ -150,9 +233,28 @@
   @include onHover {
     background: Vars.$colorGreyMild;
     color: black;
+    &::before {
+      box-shadow: inset 0 0 0 40px Vars.$colorGreyMild;
+      background: none;
+      transform: none;
+    }
   }
+
   &:active {
     background: Vars.$colorGreyDarker;
     color: black;
+
+    &::before {
+      box-shadow: inset 0 0 0 40px Vars.$colorGreyDarker;
+      background: none;
+      transform: none;
+    }
+  }
+
+  &::before {
+    transition: Vars.$trM;
+    box-shadow: inset 0 0 0 1px Vars.$colorGreyMild;
+    background: none;
+    transform: none;
   }
 }
