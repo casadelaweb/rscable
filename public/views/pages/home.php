@@ -33,6 +33,7 @@
     ],
   ],
 ]); ?>
+<?php Render::component('sections/sectionNumbers'); ?>
 <?php Render::component('sections/sectionAdvisable', [
   'sectionTitle' => 'Вам может понравится',
   'sectionButtonTitle' => 'Перейти в каталог',
