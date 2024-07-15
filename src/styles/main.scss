@@ -37,4 +37,20 @@ a, button {
   padding-top: var(--headerHeight);
 }
 
+.my-atropos {
+  // width: 320px;
+  // height: 160px;
+  height: 50vh;
+}
+
+.atropos-shadow {
+  background: $colorGreyMild;
+}
+
+.atropos-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
 

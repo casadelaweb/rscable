@@ -1,0 +1,77 @@
+@use 'src/styles/shared' as *;
+
+.sectionNumbers {
+  // @include sectionStyles;
+  @include sectionHeader;
+  margin: 32px 0 64px;
+  padding: 24px 0 48px;
+  background: linear-gradient(60deg, $colorGreyMild, $colorGreenMild 75%);
+
+  &Container {
+    @include container;
+  }
+
+  &Layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 16px;
+    row-gap: 16px;
+    @include mediaTabletM {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mediaLaptopL {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &Item {
+    @include flex;
+    column-gap: 16px;
+    //display: grid;
+    //grid-template-columns: 1fr;
+    //row-gap: 8px;
+    padding: 16px;
+    background: white;
+    border: 1px solid $colorGreyMild;
+    border-radius: $brM;
+    box-shadow: $bsM;
+
+    &Icon {
+      @include dropFlex;
+      @include flex(center, center);
+      width: 64px;
+      height: 64px;
+      font-size: 32px;
+      background: white;
+      border-radius: 50%;
+      background: $colorDark;
+      box-shadow: $bsM;
+      color: white;
+      //background: $colorBlue;
+      //color: white;
+    }
+
+    //&Body {
+    //}
+
+    &Title {
+      @include textL;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      margin-bottom: 8px;
+
+      [data-counter] {
+        @include textXL;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        line-height: 1;
+      }
+    }
+
+    &Description {
+      @include textS;
+      letter-spacing: 0.02em;
+    }
+  }
+}

@@ -1,0 +1,186 @@
+@use 'src/styles/shared' as *;
+
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  //max-width: 800px;
+}
+
+.card {
+  position: relative;
+  left: 0;
+  width: 25%;
+  border-radius: 1rem;
+  height: 24rem;
+  overflow: hidden;
+  background: var(--background);
+  transition: 0.75s cubic-bezier(.1, .7, 0, 1);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.5);
+  flex: 0.25;
+
+  &:hover {
+    flex: 1;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+
+  img {
+    height: 24rem;
+  }
+}
+
+$index: 1vw;
+
+.items {
+  @include flex(center, center);
+  //gap: .4rem;
+  perspective: calc(#{$index} * 35);
+  margin: 0 auto;
+}
+
+.item {
+  background-color: #222222;
+  width: calc(#{$index} * 3);
+  height: calc(#{$index} * 12);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.75s cubic-bezier(.1, .7, 0, 1), filter 1.5s cubic-bezier(.1, .7, 0, 1), width 0.75s cubic-bezier(.1, .7, 0, 1);
+  will-change: transform, filter;
+  filter: grayscale(0) brightness(.5);
+}
+
+.item::before, .item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  right: calc(#{$index} * -1);
+}
+
+.item::after {
+  left: calc(#{$index} * -1);
+}
+
+.items .item:hover {
+  transform: translateZ(calc(#{$index} * 10));
+  filter: inherit;
+}
+
+/* Right */
+
+.items .item:hover + * {
+  transform: translateZ(calc(#{$index} * 8.5)) rotateY(35deg);
+  filter: inherit;
+  z-index: -1;
+}
+
+.items .item:hover + * + * {
+  transform: translateZ(calc(#{$index} * 5.6)) rotateY(40deg);
+  filter: inherit;
+  z-index: -2;
+}
+
+.items .item:hover + * + * + * {
+  transform: translateZ(calc(#{$index} * 2.4)) rotateY(30deg);
+  filter: inherit;
+  z-index: -3;
+}
+
+.items .item:hover + * + * + * + * {
+  transform: translateZ(calc(#{$index} * .6)) rotateY(14deg);
+  filter: inherit;
+  z-index: -4;
+}
+
+/* Left */
+
+.item:has(+ :hover) {
+  transform: translateZ(calc(#{$index} * 8.5)) rotateY(-35deg);
+  filter: inherit;
+}
+
+.item:has(+ * + :hover) {
+  transform: translateZ(calc(#{$index} * 5.6)) rotateY(-40deg);
+  filter: inherit;
+}
+
+.item:has(+ * + * + :hover) {
+  transform: translateZ(calc(#{$index} * 2.4)) rotateY(-30deg);
+  filter: inherit;
+}
+
+.item:has(+ * + * + * + :hover) {
+  transform: translateZ(calc(#{$index} * .6)) rotateY(-14deg);
+  filter: inherit;
+}
+
+.items .item:active, .items .item:focus {
+  width: 28vw;
+  transform: translateZ(calc(#{$index} * 10));
+  filter: inherit;
+  z-index: 100;
+  margin: 0 .45vw;
+}
+
+/*** */
+
+//.section {
+//  text-align: center;
+//  position: absolute;
+//  width: 100%;
+//  height: 100vh;
+//  letter-spacing: 4px;
+//  overflow: hidden;
+//  clip: rect(0, auto, auto, 0);
+//
+//  .fixed {
+//    overflow: hidden;
+//    position: fixed;
+//    top: 50%;
+//    left: 50%;
+//
+//  }
+//
+//  .white {
+//    color: #ffffff;
+//  }
+//}
+//
+//@for $i from 1 through 10 {
+//  .section:nth-child(#{$i}) {
+//    @if ($i==1) {
+//      background-color: #ffffff;
+//      color: #000000;
+//      top: 0;
+//    } @else if ($i==10) {
+//      background-color: #000000;
+//      color: #ffffff;
+//      top: (100vh * ($i - 1));
+//    } @else {
+//      box-shadow: inset 0 1px 80px rgba(0, 0, 0, 0.14);
+//      background-color: hsl(200deg * $i, 90%, 40%);
+//      color: #ffffff;
+//      top: (100vh * ($i - 1));
+//    }
+//    z-index: ($i);
+//
+//    .fixed {
+//      transform: translate(-50%, -50%);
+//    }
+//  }
+//}
+//
+//.oop {
+//  position: relative;
+//  z-index: auto;
+//  height: 10px;
+//  background: linear-gradient(141deg, #48ded4 0%, #a026bf 51%, #e82c75 75%);
+//}
+
+
+
+

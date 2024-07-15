@@ -1,5 +1,6 @@
 <?php namespace App; ?>
-<?php Render::component('sections/sectionHero') ?>
+<?php Render::component('sections/sectionHero'); ?>
+<?php Render::component('sections/sectionParallax'); ?>
 <?php Render::component('sections/sectionCategories', [
   'sectionTitle' => 'Категории',
   'sectionButtonTitle' => 'Перейти в каталог',
@@ -31,13 +32,13 @@
       'imgUrl' => '/assets/img/cables/cable-6.png',
     ],
   ],
-]) ?>
+]); ?>
 <?php Render::component('sections/sectionAdvisable', [
   'sectionTitle' => 'Вам может понравится',
   'sectionButtonTitle' => 'Перейти в каталог',
   'sectionButtonUrl' => '/catalog/',
 ]); ?>
-<?php Render::component('sections/sectionBrands') ?>
-<?php Render::component('sections/sectionPartners') ?>
-<?php Render::component('sections/sectionProducts') ?>
-<?php Render::component('sections/sectionAdvantages') ?>
+<?php Render::component('sections/sectionBrands'); ?>
+<?php Render::component('sections/sectionPartners'); ?>
+<?php Render::component('sections/sectionProducts'); ?>
+<?php Render::component('sections/sectionAdvantages'); ?>

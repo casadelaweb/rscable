@@ -33,8 +33,10 @@
   },
   "dependencies": {
     "@fancyapps/ui": "5.0.36",
+    "atropos": "^2.0.2",
     "axios": "1.7.2",
     "body-scroll-lock": "4.0.0-beta.0",
+    "countup.js": "^2.8.0",
     "flatpickr": "4.6.13",
     "hc-sticky": "2.2.7",
     "imask": "7.6.1",

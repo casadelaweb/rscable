@@ -21,10 +21,10 @@
     @include buttonPrimary;
     //width: fit-content;
 
-    &::before {
-      content: none;
-      display: none;
-    }
+    //&::before {
+    //  content: none;
+    //  display: none;
+    //}
   }
 
   &Layout {
