@@ -1,10 +1,10 @@
-@use 'src/styles/shared' as  *;
+@use "src/styles/shared" as  *;
 
 .productParams {
   @include textM;
   @include flex($d: column);
-  row-gap: 8px;
   margin-bottom: 20px;
+  row-gap: 8px;
 }
 
 .productParam {
@@ -16,8 +16,8 @@
 
   &Divider {
     display: inline-block;
-    margin: auto 3px 3px;
     flex-grow: 1;
+    margin: auto 3px 3px;
     border-bottom: 1px dotted $colorGreyDarker;
   }
 

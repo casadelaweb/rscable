@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .sectionBrands {
   margin: 80px 0;
@@ -20,16 +20,16 @@
       grid-template-rows: repeat(3, 1fr);
       grid-auto-flow: row;
       grid-template-areas:
-      'popular popular popular private private'
-      'popular popular popular private private'
-      'exclusive exclusive exclusive private private';
+      "popular popular popular private private"
+      "popular popular popular private private"
+      "exclusive exclusive exclusive private private";
       column-gap: 32px;
       row-gap: 32px;
     }
   }
 
   &Popular, &Exclusive, &Private {
-    @include dropFlex;
+    @include resetFlex;
 
     &Layout {
       display: grid;
@@ -94,7 +94,7 @@
 
   &Brand {
     @include flex(center, center);
-    @include dropFlex;
+    @include resetFlex;
     @include mediaOnlyMobile {
       width: 160px;
     }

@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .sectionAdvantages {
   @include sectionStyles;
@@ -14,10 +14,10 @@
 
   &Cards {
     display: grid;
+    margin-bottom: 40px;
     grid-template-columns: 1fr;
     column-gap: 32px;
     row-gap: 32px;
-    margin-bottom: 40px;
     @include mediaTabletM {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -35,22 +35,22 @@
 
     &Img {
       @include flex(center, center);
-      object-fit: contain;
       flex: 0 0 auto;
       width: 48px;
       height: 48px;
+      object-fit: contain;
       @include mediaLaptopS {
         width: 64px;
         height: 64px;
       }
 
       .iconfont {
+        font-size: 24px;
+        padding: 8px;
+        color: $colorPrimary;
+        border-radius: 50%;
         background: white;
         box-shadow: $bsM;
-        padding: 8px;
-        border-radius: 50%;
-        color: $colorBlue;
-        font-size: 24px;
         @include mediaLaptopS {
           font-size: 32px;
         }
@@ -82,26 +82,26 @@
       z-index: 1;
       top: 16px;
       left: 16px;
-      padding: 16px;
       max-width: calc(100% - 16px * 2);
       max-height: calc(100% - 16px * 2);
-      background: rgba($colorGreyMild, 0.8);
+      padding: 16px;
       border: 1px solid $colorGreyMild;
       border-radius: $brM;
+      background: rgba($colorGreyMild, 0.8);
       backdrop-filter: blur(8px);
       @include mediaLaptopS {
         top: 32px;
         left: 32px;
-        padding: 32px;
         max-width: calc(100% - 32px * 2);
         max-height: calc(100% - 32px * 2);
+        padding: 32px;
       }
     }
 
     &Title {
       @include h4;
-      margin-bottom: 0.5em;
       font-weight: 800;
+      margin-bottom: 0.5em;
       // color: white;
     }
 
@@ -119,10 +119,10 @@
       }
 
       a, button {
-        text-decoration: none;
         font-weight: 600;
-        @include addBottomLineOnHover($colorBlue);
-        color: $colorBlue;
+        text-decoration: none;
+        @include addBottomLineOnHover($colorPrimary);
+        color: $colorPrimary;
 
         &:hover {
           text-decoration: none;
@@ -132,21 +132,21 @@
 
     &Img {
       // margin-top: 40px;
-      object-fit: cover;
       width: 100%;
-      border-radius: $brM;
       min-height: 400px;
+      border-radius: $brM;
+      object-fit: cover;
     }
   }
 
   &Note {
     @include textM;
-    text-align: center;
     margin-top: 40px;
+    text-align: center;
 
     a, button {
-      @include addBottomLineOnHover($colorBlue);
-      color: $colorBlue
+      @include addBottomLineOnHover($colorPrimary);
+      color: $colorPrimary
     }
   }
 }

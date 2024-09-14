@@ -1,15 +1,15 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .catalogPagination {
   margin: 40px auto;
 
   &More {
     @include buttonMain;
+    position: relative;
+    z-index: 0;
     width: 100%;
     max-width: 240px;
     margin: 0 auto 20px;
-    position: relative;
-    z-index: 0;
 
     &Loading {
       @include loadingPlaceholder;
@@ -20,9 +20,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      opacity: 0;
-      pointer-events: none;
       transition: opacity $trM;
+      pointer-events: none;
+      opacity: 0;
     }
   }
 
@@ -40,14 +40,14 @@
   }
 
   &Item, &Prev, &Next, &Divider {
-    @include dropFlex;
+    @include resetFlex;
     @include textS;
     @include flex(center, center);
-    column-gap: 4px;
     width: 24px;
     height: 24px;
-    border-radius: 50%;
     color: $colorDarkMild;
+    border-radius: 50%;
+    column-gap: 4px;
     @include mediaMobileM {
       width: 32px;
       height: 32px;
@@ -59,16 +59,16 @@
   }
 
   &Item {
-    border: 1px solid $colorGreyMild;
     transition: color $trM, border-color $trM, background-color $trM;
+    border: 1px solid $colorGreyMild;
 
     @include onHover {
       border-color: $colorDarkMild;
     }
 
     &._active {
-      border-color: $colorBlue;
-      color: $colorBlue;
+      color: $colorPrimary;
+      border-color: $colorPrimary;
     }
   }
 
@@ -78,7 +78,7 @@
 
   &Prev, &Next {
     @include onHover {
-      color: $colorBlue;
+      color: $colorPrimary;
     }
   }
 

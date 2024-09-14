@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 $slideHeightTabletL: calc(64px * 4 + 16px * 3);
 $slideHeightDesktop: calc(64px * 5 + 16px * 4);
@@ -17,9 +17,9 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
       grid-auto-flow: row;
       grid-template-columns: repeat(8, 1fr);
       grid-template-areas:
-    'title title title title title title title title'
-    'header header header header header header header header'
-    'sliders sliders sliders sliders info info actions actions';
+    "title title title title title title title title"
+    "header header header header header header header header"
+    "sliders sliders sliders sliders info info actions actions";
 
       .productTitle {
         grid-area: title;
@@ -83,14 +83,14 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
     column-gap: 8px;
 
     &Quantity {
-      @include dropFlex;
+      @include resetFlex;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       overflow: hidden;
-      border-radius: $brM;
-      background: $colorGreyMild;
       width: 120px;
       height: 40px;
+      border-radius: $brM;
+      background: $colorGreyMild;
+      grid-template-columns: repeat(3, 1fr);
       @include mediaTabletS {
         width: 240px;
       }
@@ -102,7 +102,7 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
       }
 
       &Button, &Input {
-        @include dropFlex;
+        @include resetFlex;
         text-align: center;
       }
 
@@ -128,10 +128,10 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
   &Status {
     @include textM;
     @include flex(center);
-    column-gap: 4px;
+    width: fit-content;
     color: $colorGreen;
     // margin-bottom: 8px;
-    width: fit-content;
+    column-gap: 4px;
 
     &._stock {
 
@@ -148,37 +148,37 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
 
   &Tag {
     @include flex(center, $w: wrap);
+    padding: 16px;
+    color: white;
+    border-radius: $brM;
+    background: $colorGreen;
     column-gap: 8px;
     row-gap: 8px;
-    padding: 16px;
-    background: $colorGreen;
-    border-radius: $brM;
-    color: white;
     @include mediaTabletL {
+      padding: 12px;
       column-gap: 6px;
       row-gap: 6px;
-      padding: 12px;
     }
     @include mediaLaptopM {
+      padding: 16px;
       column-gap: 8px;
       row-gap: 8px;
-      padding: 16px;
     }
 
     &Icon {
-      @include dropFlex;
+      @include resetFlex;
       @include flex(center, center);
-      background: white;
-      color: $colorGreen;
-      padding: 8px;
       font-size: 16px;
+      padding: 8px;
+      color: $colorGreen;
       border-radius: 50%;
+      background: white;
       @include mediaLaptopS {
 
       }
       @include mediaDesktop {
-        padding: 8px;
         font-size: 20px;
+        padding: 8px;
       }
     }
 
@@ -190,13 +190,13 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
     &Text {
       @include textXs;
       font-weight: 500;
-      letter-spacing: 0.02em;
       width: 100%;
+      letter-spacing: 0.02em;
 
       a, button {
         display: inline-block;
-        text-decoration: underline;
         margin-top: 4px;
+        text-decoration: underline;
       }
     }
   }
@@ -210,13 +210,13 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
 .productHeader {
   @include textM;
   @include flex($d: column);
+  order: 4;
   column-gap: 16px;
   row-gap: 16px;
-  order: 4;
   @include mediaTabletL {
     @include flex(center, flex-start, row);
-    width: 100%;
     order: unset;
+    width: 100%;
   }
 
   &Code {
@@ -236,7 +236,7 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
     column-gap: 8px;
 
     &, &Stars, &Top, &Bottom {
-      @include dropFlex;
+      @include resetFlex;
       @include flex(center);
     }
 
@@ -249,11 +249,11 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
     &Top {
       position: absolute;
       z-index: 1;
+      overflow: hidden;
       width: 100%;
+      max-width: 100%;
       height: 100%;
       color: $colorYellow;
-      max-width: 100%;
-      overflow: hidden;
     }
 
     &Bottom {
@@ -266,11 +266,11 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
     }
 
     &Rating {
-      display: inline-block;
       font-weight: 600;
+      display: inline-block;
+      padding: 8px;
       border: 1px solid $colorYellow;
       border-radius: 50%;
-      padding: 8px;
     }
 
     &Quantity {
@@ -293,10 +293,10 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
 }
 
 .productSliders {
-  @include dropFlex;
+  @include resetFlex;
   @include flex($d: column);
-  row-gap: 8px;
   width: 100%;
+  row-gap: 8px;
   @include mediaTabletL {
     @include flex($d: row);
     max-height: $slideHeightTabletL;
@@ -306,13 +306,13 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
   }
 
   .swiper {
-    @include dropFlex;
+    @include resetFlex;
     overflow: hidden;
 
     &-slide {
       @include flex(center, center);
-      transition: border-color $trM, opacity $trM;
       overflow: hidden;
+      transition: border-color $trM, opacity $trM;
       border-radius: $brM;
 
       picture, a, button {
@@ -334,8 +334,8 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
   order: 2;
   width: 100%;
   @include mediaTabletL {
-    width: 80px;
     order: unset;
+    width: 80px;
   }
 
   .swiper {
@@ -346,12 +346,12 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
 }
 
 .productSliderMain {
+  order: 1;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
   border: 1px solid $colorGreyMild;
   border-radius: $brM;
-  height: 100%;
-  width: 100%;
-  max-height: 100%;
-  order: 1;
   @include mediaTabletL {
     order: unset;
     width: calc(100% - 80px);
@@ -363,7 +363,7 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
 }
 
 .productInfo {
-  @include dropFlex;
+  @include resetFlex;
   order: 3;
   @include mediaTabletL {
     order: unset;
@@ -382,8 +382,8 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
 
 .productActions {
   @include flex($d: column);
-  row-gap: 16px;
   order: 4;
+  row-gap: 16px;
   @include mediaTabletL {
     order: unset;
   }

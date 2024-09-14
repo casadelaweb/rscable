@@ -1,6 +1,5 @@
 <?php namespace App; ?>
 <?php Render::component('sections/sectionHero'); ?>
-<?php Render::component('sections/sectionParallax'); ?>
 <?php Render::component('sections/sectionCategories', [
   'sectionTitle' => 'Категории',
   'sectionButtonTitle' => 'Перейти в каталог',

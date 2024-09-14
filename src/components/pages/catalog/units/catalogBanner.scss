@@ -1,30 +1,30 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .catalogBanner {
-  @include dropFlex;
-  width: 100% !important;
+  @include resetFlex;
   position: relative;
   z-index: 0;
+  width: 100% !important;
   // overflow: hidden;
-  box-shadow: $bsM;
   border-radius: $brM;
+  box-shadow: $bsM;
 
   &Body {
-    background: rgba($colorGreyMild, 0.8);
-    border: 1px solid $colorGreyMild;
-    border-radius: $brM;
-    padding: 8px;
-    backdrop-filter: blur(8px);
     position: absolute;
     z-index: 1;
     top: 16px;
     left: 8px;
     width: calc(100% - 8px * 2);
+    padding: 8px;
+    border: 1px solid $colorGreyMild;
+    border-radius: $brM;
+    background: rgba($colorGreyMild, 0.8);
+    backdrop-filter: blur(8px);
     @include mediaTabletM {
       top: 50%;
       left: 16px;
-      padding: 16px;
       width: 360px;
+      padding: 16px;
       transform: translate(0, -50%);
     }
   }
@@ -48,10 +48,10 @@
   &Img {
     display: block;
     width: 100%;
+    border-radius: $brM;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     object-position: center;
-    border-radius: $brM;
     @include mediaTabletM {
       aspect-ratio: 10 / 2.5;
     }

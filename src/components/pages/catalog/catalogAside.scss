@@ -1,7 +1,7 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .catalogAside {
-  @include dropFlex;
+  @include resetFlex;
   @include scrollbar;
   @include flex($d: column);
   position: fixed;
@@ -17,15 +17,15 @@
   background: white;
   @include mediaTabletL {
     @include flex($d: column);
-    overflow: unset;
-    width: auto;
-    transform: none;
-    pointer-events: auto;
     position: static;
     z-index: 1;
     top: calc(var(--headerHeight) + 20px);
     left: 0;
+    overflow: unset;
+    width: auto;
     height: fit-content;
+    transform: none;
+    pointer-events: auto;
   }
 
   &._active {

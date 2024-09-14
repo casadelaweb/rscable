@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 
 .catalog {
@@ -10,7 +10,7 @@
 
 
   &Layout {
-    @include dropFlex;
+    @include resetFlex;
     @include mediaTabletL {
       display: grid;
       grid-template-columns: 1fr 3fr;
@@ -22,7 +22,7 @@
   }
 
   &Main {
-    @include dropFlex;
+    @include resetFlex;
     @include flex($d: column);
     row-gap: 16px;
     @include mediaTabletM {

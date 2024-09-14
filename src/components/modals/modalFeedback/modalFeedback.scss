@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .modalFeedback {
   @include scrollbar;
@@ -6,31 +6,31 @@
   z-index: 120;
   top: 50%;
   left: 50%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: calc(100% - 32px);
+  max-width: 480px;
+  max-height: 90%;
+  transition: transform $trM, opacity $trM;
   transform: translate(-50%, 0);
-  background: white;
+  pointer-events: none;
+  opacity: 0;
   border: 1px solid $colorGreyMild;
   border-radius: $brM;
-  opacity: 0;
-  pointer-events: none;
-  width: calc(100% - 32px);
-  max-height: 90%;
-  max-width: 480px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  transition: transform $trM, opacity $trM;
+  background: white;
 
   &._active {
-    opacity: 1;
-    pointer-events: auto;
     transform: translate(-50%, -50%);
+    pointer-events: auto;
+    opacity: 1;
   }
 
   &Close {
+    font-size: 16px;
     position: absolute;
     z-index: 1;
     top: 16px;
     right: 16px;
-    font-size: 16px;
     color: $colorGrey;
   }
 

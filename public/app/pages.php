@@ -24,9 +24,24 @@ $product = new Page([
   'view' => 'product',
   'parent' => $catalog,
 ]);
-
+$test = new Page([
+  'title' => 'Страница тестовая',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/test/',
+  'view' => 'test',
+  'parent' => $home,
+]);
+$cart = new Page([
+  'title' => 'Корзина',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/cart/',
+  'view' => 'cart',
+  'parent' => $home,
+]);
 $pages = [
-  $home, $catalog, $product,
+  $home, $catalog, $product, $test, $cart,
 ];
 
 $pageNotFound = new Page([

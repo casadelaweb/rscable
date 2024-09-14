@@ -1,12 +1,12 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .productAdvantages {
-  padding: 20px 0;
   margin: 20px 0;
+  padding: 20px 0;
   background: $colorGreyDarker;
   @include mediaTabletM {
-    padding: 40px 0;
     margin: 40px 0;
+    padding: 40px 0;
   }
 
   &Container {
@@ -26,17 +26,17 @@
 
 .productAdvantage {
   @include flex(center);
-  column-gap: 16px;
-  background: white;
+  padding: 16px;
   border: 1px solid $colorGreyMild;
   border-radius: $brM;
-  padding: 16px;
+  background: white;
   box-shadow: $bsM;
+  column-gap: 16px;
 
   &Img {
     @include flex(center, center);
-    color: $colorBlue;
     font-size: 24px;
+    color: $colorPrimary;
     @include mediaDesktop {
       font-size: 40px;
     }
@@ -44,7 +44,7 @@
 
   &Body {
     @include textS;
-    letter-spacing: 0.02em;
     font-weight: 500;
+    letter-spacing: 0.02em;
   }
 }

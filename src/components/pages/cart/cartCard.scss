@@ -1,0 +1,312 @@
+@use "src/styles/shared" as *;
+
+.cartCard {
+  // @include flex($w: wrap);
+  @include textM;
+  position: relative;
+  z-index: 0;
+  display: grid;
+  padding: 56px 16px 16px;
+  border: 1px solid $colorGreyMild;
+  border-radius: $brM;
+  box-shadow: $bsM;
+  grid-template-columns: 1fr;
+  column-gap: 8px;
+  row-gap: 8px;
+  @include mediaTabletL {
+    display: grid;
+    padding: 16px;
+    grid-template-columns: 20px 96px 1fr 120px 32px;
+    column-gap: 16px;
+  }
+  @include mediaLaptopS {
+    grid-template-columns: 20px 96px 1fr 140px 32px * 2;
+    column-gap: 24px;
+  }
+  @include mediaDesktop {
+    grid-template-columns: 20px 96px 1fr 140px 36px * 2;
+    column-gap: 32px;
+  }
+
+  &Checkbox {
+    $size: 20px;
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    left: 16px;
+    display: inline-block;
+    overflow: hidden;
+    width: $size;
+    height: $size;
+    margin: 0;
+    border: 1px solid $colorPrimary;
+    border-radius: $brM * 0.5;
+    background: white;
+    appearance: none;
+    @include mediaTabletL {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    &::before {
+      @include flex(center, center);
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "\2714";
+      transition: opacity $trM;
+      transform: none;
+      opacity: 0;
+      color: white;
+      border: 0;
+      border-radius: 0;
+      background: $colorPrimary;
+    }
+
+    &:checked {
+      background: $colorPrimary;
+
+      &::before {
+        top: 0;
+        left: 0;
+        transform: none;
+        opacity: 1;
+      }
+    }
+  }
+
+  &Picture {
+    @include resetFlex;
+    @include flex(center, center);
+    width: 100%;
+    height: 96px;
+    //margin-bottom: 8px;
+    @include mediaMobileL {
+      height: 104px;
+    }
+    // display: block;
+    @include mediaTabletL {
+      width: 96px;
+      height: 96px;
+    }
+  }
+
+  &Body {
+    @include resetFlex;
+    width: 100%;
+    //flex: 1 0 auto;
+    //margin-bottom: 8px;
+    //@include mediaTabletL {
+    //  margin: 0;
+    //}
+  }
+
+  &Prices, &Actions {
+    @include resetFlex;
+    // display: inline-block;
+  }
+
+  &Footer {
+    display: grid;
+    grid-template-columns: 1fr 88px;
+    column-gap: 8px;
+    row-gap: 8px;
+    @include mediaMobileM {
+      grid-template-columns: 1fr 96px;
+      column-gap: 16px;
+    }
+    @include mediaMobileL {
+      grid-template-columns: 1fr 120px;
+    }
+    @include mediaTabletL {
+      grid-template-columns: 1fr;
+      row-gap: 16px;
+    }
+  }
+
+  // &Prices {
+  // flex: 1 0 auto;
+  //width: calc(100% - 8px - 96px);
+  //@include mediaMobileM {
+  //  width: calc(100% - 8px - 104px);
+  //}
+  //@include mediaMobileL {
+  //  width: calc(100% - 8px - 120px);
+  //}
+  //@include mediaTabletL {
+  //  width: auto;
+  //  margin: 0;
+  //}
+  // }
+
+  &Counter {
+    .cartCardNote {
+      text-align: center;
+    }
+  }
+
+  //&Actions {
+  //  width: 96px;
+  //  margin-left: auto;
+  //  @include mediaMobileM {
+  //    width: 104px
+  //  }
+  //  @include mediaMobileL {
+  //    width: 120px;
+  //  }
+  //  @include mediaTabletL {
+  //    @include flex($d: column);
+  //    width: auto;
+  //    margin: 0;
+  //    // row-gap: 20px;
+  //  }
+  //
+  //  .cartCardNote {
+  //    text-align: center;
+  //  }
+  //}
+
+  &Img {
+    @include resetFlex;
+    width: 100%;
+    height: 100%;
+    border-radius: $brM;
+    object-fit: contain;
+  }
+
+  &Title {
+    @include textM;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: $colorDark;
+    //@include mediaTabletL {
+    //margin-bottom: 12px;
+    //}
+  }
+
+  &Note {
+    @include textXs;
+    font-weight: 500;
+    //text-align: center;
+    color: $colorDarkMild;
+  }
+
+  &Price {
+    @include textL;
+    line-height: 1;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 8px;
+    color: $colorDark;
+
+    &._prev {
+      @include textM;
+      @include textLineThrough($colorRed);
+      color: $colorRed;
+    }
+
+    &._current {
+      font-weight: 700;
+    }
+  }
+
+  &Buttons {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    right: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+    @include mediaTabletL {
+      position: static;
+      @include flex($d: column);
+      // grid-template-columns: 1fr;
+      row-gap: 16px;
+      //order: -1;
+      //width: fit-content;
+      //margin: 0 0 16px auto;
+    }
+    //@include mediaLaptopS {
+    //  margin-bottom: 24px;
+    //}
+    //@include mediaDesktop {
+    //  margin-bottom: 32px;
+    //}
+  }
+
+  &Fav, &Remove {
+    @include buttonSquare;
+    font-size: 12px;
+    //border-radius: $brM * 2;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    color: $colorDarkMild;
+    border: 0;
+    background: $colorGreyMild;
+    //@include mediaTabletL {
+    // position: static;
+    //}
+    @include mediaTabletL {
+      margin-left: auto;
+    }
+    @include mediaDesktop {
+      font-size: 16px;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  &Fav {
+  }
+
+  &Remove {
+    @include mediaTabletL {
+      order: -1;
+    }
+  }
+
+  &Quantity {
+    @include resetFlex;
+    @include flex(center, space-between);
+    overflow: hidden;
+    width: 100%;
+    height: 32px;
+    border-radius: $brM;
+    background: $colorGreyMild;
+    @include mediaMobileM {
+      height: 40px;
+    }
+
+    &Button, &Input {
+      font-size: 14px;
+      flex: 0 0 auto;
+      height: 100%;
+      text-align: center;
+      color: black;
+    }
+
+    &Button {
+      @include flex(center, center);
+      width: 33%;
+      padding: 0 10px;
+      transition: background-color $trM;
+      @include onHover {
+        background: #e0e0e0;
+      }
+
+      &:active {
+        background: $colorGreyDarker;
+      }
+    }
+
+    &Input {
+      width: 34%;
+    }
+  }
+}

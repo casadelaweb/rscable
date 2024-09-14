@@ -1,0 +1,11 @@
+import 'src/assets/img/banners/cables-1.png'
+import 'src/assets/img/banners/cables-2.png'
+import 'src/assets/img/banners/cables-3.png'
+import 'src/assets/img/banners/cables-4.png'
+import 'src/assets/img/banners/cables-5.png'
+import 'src/assets/img/banners/cables-6.jpg'
+
+import './cable-1.jpeg'
+import './cable-2.jpeg'
+import './cable-3.jpeg'
+import './cable-4.jpeg'

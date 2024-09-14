@@ -1,0 +1,248 @@
+@use "src/styles/shared" as *;
+
+//html,
+//body {
+//  touch-action: none;
+//}
+
+//body {
+//  perspective: 1000px;
+//transform-style: preserve-3d;
+//}
+
+.test {
+  touch-action: none;
+  perspective: 1000px;
+}
+
+#drag-container, #spin-container {
+  //touch-action: none;
+  position: relative;
+  display: flex;
+  margin: auto;
+  transform: rotateX(-10deg);
+  transform-style: preserve-3d;
+}
+
+#drag-container img, #drag-container video {
+  font-size: 50px;
+  line-height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-shadow: 0 0 8px white;
+  transform-style: preserve-3d;
+}
+
+#drag-container img:hover, #drag-container video:hover {
+  box-shadow: 0 0 15px #fffd;
+}
+
+#drag-container p {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(90deg);
+  color: white;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes spinRevert {
+  from {
+    transform: rotateY(360deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+/** */
+
+.card {
+  position: absolute;
+  transition: transform 800ms cubic-bezier(1, -0.41, 0, 1.28);
+  background-color: rgba(white, 0.05);
+  background-position: center;
+  background-size: cover;
+
+  &-groups,
+  &-group,
+  & {
+    aspect-ratio: 4 / 5;
+  }
+
+  &-swiper {
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+
+.card-groups,
+.card-group,
+.big-card {
+  width: 30vmin;
+}
+
+.card-group {
+  position: absolute;
+  transition: transform 400ms ease;
+}
+
+.card-group[data-status="unknown"] {
+  transition: none;
+  transform: scale(0);
+}
+
+.card-group[data-status="active"] {
+  transition-delay: 300ms;
+}
+
+.card-group[data-status="after"] {
+  transform: translateX(50%) scale(0);
+}
+
+.card-group[data-status="before"] {
+  transform: translateX(-50%) scale(0);
+}
+
+.card-group[data-status="becoming-active-from-after"] {
+  transition: none;
+  transform: translateX(50%) scale(0);
+}
+
+.card-group[data-status="becoming-active-from-before"] {
+  transition: none;
+  transform: translateX(-50%) scale(0);
+}
+
+.big-card {
+  border-radius: 1vmin;
+}
+
+.little-card {
+  top: 50%;
+  left: 50%;
+  width: 12vmin;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 2vmin;
+  box-shadow: -1vmin 1vmin 2vmin rgba(0, 0, 0, 0.25);
+}
+
+.big-card:nth-child(2) {
+  transform: translateX(-10%) rotate(-1deg);
+  background-image: url("./cable-5.png");
+}
+
+.big-card:nth-child(4) {
+  transform: rotate(2deg);
+  background-image: url("./cable-2.jpeg");
+}
+
+.big-card:nth-child(6) {
+  transform: translateX(-6%) rotate(-3deg);
+  background-image: url("./cable-7.png");
+}
+
+.big-card:nth-child(8) {
+  transform: translate(10%, 3%) rotate(5deg);
+  background-image: url("./cable-6.png");
+}
+
+.card-group[data-index="1"] > .big-card:nth-child(6) {
+  background-image: url("./cable-5.png");
+}
+
+.card-group[data-index="1"] > .big-card:nth-child(8) {
+  background-image: url("./cable-6.png");
+}
+
+.card-group[data-index="2"] > .big-card:nth-child(4) {
+  background-image: url("./cable-1.jpeg");
+}
+
+.card-group[data-index="2"] > .big-card:nth-child(8) {
+  background-image: url("./cable-2.jpeg");
+}
+
+.little {
+  &-card {
+    // aspect-ratio: 16 / 9;
+
+    &:nth-child(1) {
+      background-image: url("./cable-5.png");
+    }
+
+    &:nth-child(3) {
+      background-image: url("./cable-6.png");
+    }
+
+    &:nth-child(5) {
+      background-image: url("./cable-7.png");
+    }
+
+    &:nth-child(7) {
+      background-image: url("./cable-8.png");
+    }
+  }
+}
+
+.card-group:hover > .card {
+  box-shadow: -2vmin 2vmin 3vmin rgba(white, 0.4);
+}
+
+.card-group:hover > .big-card:nth-child(2) {
+  transform: translate(-75%, 16%) rotate(-24deg);
+}
+
+.card-group:hover > .big-card:nth-child(4) {
+  transform: translate(-25%, 8%) rotate(-8deg);
+}
+
+.card-group:hover > .big-card:nth-child(6) {
+  transform: translate(25%, 8%) rotate(8deg);
+}
+
+.card-group:hover > .big-card:nth-child(8) {
+  transform: translate(75%, 16%) rotate(24deg);
+}
+
+.card-group:hover > .little-card:nth-child(1) {
+  transform: translate(200%, -160%) rotate(-15deg);
+}
+
+.card-group:hover > .little-card:nth-child(3) {
+  transform: translate(160%, 170%) rotate(15deg);
+}
+
+.card-group:hover > .little-card:nth-child(5) {
+  transform: translate(-200%, -170%) rotate(15deg);
+}
+
+.card-group:hover > .little-card:nth-child(7) {
+  transform: translate(-280%, 140%) rotate(-15deg);
+}
+
+.mySwiper {
+  .swiper-slide {
+    height: 400px;
+    background: white;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

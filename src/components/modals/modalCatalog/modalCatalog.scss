@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .modalCatalog {
   @include scrollbar;
@@ -6,15 +6,15 @@
   z-index: 95;
   top: var(--headerHeight);
   left: 0;
-  height: calc(100% - var(--headerHeight));
-  width: 100%;
-  max-height: 540px;
-  background: linear-gradient(90deg, $colorGreyMild 25%, white 25%);
-  transform: translate(0, -125%);
-  // opacity: 0;
-  transition: transform $trM, opacity $trM;
-  pointer-events: none;
   overflow-y: auto;
+  width: 100%;
+  height: calc(100% - var(--headerHeight));
+  max-height: 540px;
+  transition: transform $trM, opacity $trM;
+  // opacity: 0;
+  transform: translate(0, -125%);
+  pointer-events: none;
+  background: linear-gradient(90deg, $colorGreyMild 25%, white 25%);
   @include mediaDesktop {
     max-height: 768px;
   }
@@ -33,65 +33,65 @@
   &Container {
     @include container;
     display: grid;
+    height: 100%;
     grid-template-columns: 1fr 3fr;
     column-gap: 16px;
-    height: 100%;
   }
 
   &Aside {
+    height: 100%;
     padding: 16px 0;
     background: $colorGreyMild;
-    height: 100%;
   }
 
   &Body {
+    height: 100%;
     padding: 32px 0;
     background: white;
-    height: 100%;
 
     a {
       display: inline-block;
       width: fit-content;
 
       @include onHover {
-        color: $colorBlue;
+        color: $colorPrimary;
       }
     }
   }
 
   &Category {
     @include flex(center);
-    column-gap: 8px;
-    @include textS;
     font-weight: 500;
-    transition: background $trM, color $trM, box-shadow $trM;
+    @include textS;
     padding: 12px 16px;
-    border-radius: $brM 0 0 $brM;
+    transition: background $trM, color $trM, box-shadow $trM;
     border-bottom: 1px solid white;
+    border-radius: $brM 0 0 $brM;
+    column-gap: 8px;
 
     &:last-child {
       border-bottom: 0;
     }
 
     &._active {
+      color: $colorPrimary;
       background: white;
-      color: $colorBlue;
       box-shadow: $bsM;
 
       .iconfont {
-        opacity: 1;
         transform: translate(0, 0);
+        opacity: 1;
       }
     }
 
     .iconfont {
       @include textS;
       display: inline-block;
-      opacity: 0;
+      margin-left: auto;
+      transition: transform $trM, opacity $trM;
       transform: translate(20px, 0);
       transform-origin: center;
-      transition: transform $trM, opacity $trM;
-      margin-left: auto;
+      opacity: 0;
     }
   }
 

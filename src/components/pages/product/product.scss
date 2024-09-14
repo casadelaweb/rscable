@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .product {
   &Container {
@@ -47,11 +47,11 @@
     &Brand {
       @extend .productAsideCol !optional;
       @include flex($d: column);
-      row-gap: 4px;
       padding: 16px;
       border: 1px solid $colorGreyMild;
       border-radius: $brM;
       box-shadow: $bsM;
+      row-gap: 4px;
 
       &Logo {
       }
@@ -59,27 +59,27 @@
       &Title {
         @extend .productAsideColTitle !optional;
         font-weight: 600;
-        letter-spacing: 0.02em;
         margin-bottom: 8px;
+        letter-spacing: 0.02em;
       }
 
       &Button {
         @include buttonMinor;
+        line-height: 1 !important;
         max-width: 240px;
         margin-top: 8px;
-        line-height: 1 !important;
       }
     }
 
     &Download {
       @include flex(center);
-      column-gap: 8px;
+      line-height: 1 !important;
       width: fit-content;
       margin-bottom: 16px;
-      line-height: 1 !important;
+      column-gap: 8px;
 
       .iconfont {
-        color: $colorBlue;
+        color: $colorPrimary;
       }
 
       &._all {

@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .catalogFilter {
   border-bottom: 1px solid $colorGreyMild;
@@ -31,8 +31,8 @@
     @include lineClamp(1);
     font-weight: 500;
     line-height: 1;
-    color: $colorBlue;
     width: 100%;
+    color: $colorPrimary;
   }
 
   &Button {
@@ -46,10 +46,10 @@
 
   &Reset {
     @include flex(center);
-    column-gap: 2px;
+    font-size: 10px;
     margin-left: auto;
     color: $colorDarkMild;
-    font-size: 10px;
+    column-gap: 2px;
   }
 
   &Body {
@@ -61,10 +61,10 @@
     column-gap: 8px;
     row-gap: 8px;
     @include mediaLaptopS {
+      max-height: 360px;
+      padding: 8px 16px 16px 8px;
       column-gap: 12px;
       row-gap: 12px;
-      padding: 8px 16px 16px 8px;
-      max-height: 360px;
     }
 
     &._grid {
@@ -72,11 +72,12 @@
       flex-wrap: wrap;
 
       & > * {
+        width: calc(50% - 8px * 0.5);
+
         &.catalogFilterSearch {
           width: 100%;
         }
 
-        width: calc(50% - 8px * 0.5);
         @include mediaTabletL {
           width: calc(50% - 12px * 0.5);
         }
@@ -93,32 +94,32 @@
     position: sticky;
     z-index: 2;
     top: -8px;
-    background: white;
-    transition: top $trM;
     height: 32px;
+    transition: top $trM;
+    background: white;
     @include mediaDesktop {
       height: 40px;
     }
 
     &Icon {
-      @include dropFlex;
+      @include resetFlex;
+      font-size: 14px;
       position: absolute;
       z-index: 1;
       top: 50%;
       left: 8px;
       width: 14px;
       height: 14px;
-      font-size: 14px;
       transform: translateY(-50%);
     }
 
     &Input {
       @include inputMain;
       @include textXs;
-      box-shadow: $bsM;
-      padding-left: 14px + 8px + 8px !important;
       width: 100%;
       height: 100% !important;
+      padding-left: 14px + 8px + 8px !important;
+      box-shadow: $bsM;
     }
   }
 
@@ -133,9 +134,9 @@
 
   &Row {
     display: grid;
+    margin-bottom: 16px;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
-    margin-bottom: 16px;
   }
 
   &Input {
@@ -148,44 +149,43 @@
     }
 
     &[type=radio] {
-      border-color: $colorGrey;
       width: $size;
       height: $size;
+      border-color: $colorGrey;
 
       &::before {
         background: $colorGrey;
       }
     }
 
-    &[type='checkbox'] {
-      appearance: none;
+    &[type=checkbox] {
       position: relative;
       z-index: 0;
+      overflow: hidden;
       width: $size;
       height: $size;
+      margin: 0;
       border: 1px solid $colorGrey;
       border-radius: $brM * 0.5;
       background: white;
-      margin: 0;
-      overflow: hidden;
+      appearance: none;
 
       &::before {
+        @include flex(center, center);
         position: absolute;
         z-index: 1;
-        background: $colorGrey;
-        opacity: 0;
-        transition: opacity $trM;
-        content: '\2714';
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        color: white;
-        @include flex(center, center);
+        content: "\2714";
+        transition: opacity $trM;
         transform: none;
+        opacity: 0;
+        color: white;
         border: 0;
         border-radius: 0;
-        //border-radius: $brM * 0.5;
+        background: $colorGrey;
       }
 
       &:checked {

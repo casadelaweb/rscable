@@ -3,6 +3,10 @@ import { CSSSelector, SwiperOptions } from 'swiper/types'
 import { A11y, Thumbs } from 'swiper/modules'
 
 document.addEventListener('DOMContentLoaded', () => {
+  //const elSliderThumbs: HTMLElement = document.body.querySelector('.modalProductThumbs')
+  //const elSliderMain: HTMLElement = document.body.querySelector('.modalProductSlider')
+
+  //if (elSliderThumbs && elSliderMain) {
   const thumbs = new Swiper('.modalProductThumbs', {
     modules: [A11y,],
     speed: 333,
@@ -52,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nextSlideMessage: 'Следующий слайд',
     },
   } as SwiperOptions)
+  //}
 }, {
   passive: true,
   once: true,

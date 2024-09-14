@@ -1,8 +1,8 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .catalog {
   &Nav {
-    @include dropFlex;
+    @include resetFlex;
     @include textM;
     @include flex(center, space-between);
     column-gap: 8px;
@@ -21,16 +21,16 @@
     &Summary {
       @include textXs;
       @include flex(center);
+      cursor: pointer;
       letter-spacing: -0.02em;
       column-gap: 4px;
-      cursor: pointer;
       @include mediaDesktop {
         column-gap: 8px;
       }
     }
 
     &Current {
-      color: $colorBlue;
+      color: $colorPrimary;
     }
 
     &Button {
@@ -43,28 +43,28 @@
     //}
 
     &List {
-      display: grid;
-      grid-template-columns: 1fr;
-      row-gap: 16px;
       position: absolute;
       z-index: 1;
       top: calc(100% + 8px);
       left: 0;
+      display: grid;
       width: 100%;
-      background: white;
+      padding: 16px;
+      transition: opacity $trM, transform $trM;
+      transform: translate(0, 40px);
+      pointer-events: none;
+      opacity: 0;
       border: 1px solid $colorGreyMild;
       border-radius: $brM;
+      background: white;
       box-shadow: $bsM;
-      padding: 16px;
-      transform: translate(0, 40px);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity $trM, transform $trM;
+      grid-template-columns: 1fr;
+      row-gap: 16px;
 
       &._active {
         transform: translate(0, 0);
-        opacity: 1;
         pointer-events: auto;
+        opacity: 1;
       }
     }
 
@@ -93,15 +93,15 @@
     }
 
     @include onHover {
-      color: $colorBlueLight
+      color: $colorPrimaryLight
     }
 
     &:active {
-      color: $colorBlueDarker;
+      color: $colorPrimaryDarker;
     }
 
     &._active {
-      color: $colorBlue;
+      color: $colorPrimary;
     }
   }
 

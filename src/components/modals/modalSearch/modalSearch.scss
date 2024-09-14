@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .search {
   @include scrollbar;
@@ -9,6 +9,7 @@
   overflow-y: auto;
   width: 320px;
   height: 100%;
+  max-height: 540px;
   transition: transform $trM;
   transform: translate(calc(-100% - 100px), 0);
   pointer-events: none;
@@ -29,7 +30,6 @@
     height: auto;
     box-shadow: 12px 12px 24px 0 $colorGreyLight;
   }
-  max-height: 540px;
 
   &._active {
     transform: translate3d(0, 0, 0);
@@ -102,12 +102,12 @@
   left: 0;
   overflow-y: auto;
   width: 100%;
+  max-height: 540px;
+  padding-bottom: 80px;
   transition: transform $trM;
   transform: translate(0, -125%);
   pointer-events: none;
   background: white;
-  max-height: 540px;
-  padding-bottom: 80px;
 
   &._active {
     transform: translate3d(0, 0, 0);
@@ -133,7 +133,7 @@
   }
 
   &Main {
-    @include dropFlex;
+    @include resetFlex;
     position: relative;
     z-index: 0;
 
@@ -145,20 +145,20 @@
       left: 0;
       width: 100%;
       height: 100%;
-      opacity: 0;
       pointer-events: none;
+      opacity: 0;
 
       &._active {
-        opacity: 1;
         pointer-events: auto;
+        opacity: 1;
       }
     }
   }
 
   &Header, &Hints {
+    min-height: 80px;
     padding-top: 20px;
     padding-bottom: 20px;
-    min-height: 80px;
   }
 
   &Header {
@@ -212,9 +212,9 @@
 
   &Mobile {
     @include flex($d: column);
+    padding-top: 20px;
     column-gap: 8px;
     row-gap: 8px;
-    padding-top: 20px;
     @include mediaLaptopS {
       display: none;
     }
@@ -229,15 +229,15 @@
   }
 
   &Aside {
-    @include dropFlex;
-    order: -1;
+    @include resetFlex;
     font-size: 14px;
+    order: -1;
     @include mediaLaptopS {
       position: sticky;
       z-index: 1;
-      height: fit-content;
       top: 0;
       order: 0;
+      height: fit-content;
     }
     @include mediaDesktop {
       font-size: 16px;
@@ -245,11 +245,11 @@
   }
 
   &Hints {
-    @include dropFlex;
+    @include resetFlex;
     @include flex($w: wrap);
+    border-bottom: $colorGreyMild;
     column-gap: 8px;
     row-gap: 8px;
-    border-bottom: $colorGreyMild;
   }
 
   &Hint {
@@ -258,7 +258,7 @@
   }
 
   &QuickLinks {
-    @include dropFlex;
+    @include resetFlex;
 
     &List {
       //display: grid;
@@ -267,17 +267,17 @@
     }
 
     &Title {
-      color: $colorDarkMild;
-      letter-spacing: 0.02em;
       margin-bottom: 16px;
+      letter-spacing: 0.02em;
+      color: $colorDarkMild;
     }
   }
 
   &QuickLink {
     @include flex(center, space-between);
     padding: 8px 0;
-    border-bottom: 1px solid $colorGreyMild;
     transition: border-color $trM;
+    border-bottom: 1px solid $colorGreyMild;
 
     &:hover {
       border-color: $colorDarkMild;

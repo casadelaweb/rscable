@@ -1,8 +1,8 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .sectionHero {
-  margin: 20px 0 80px;
   overflow: hidden;
+  margin: 20px 0 80px;
 
   &Container {
     @include container;
@@ -23,10 +23,10 @@
     height: auto;
 
     &Img {
-      object-fit: cover;
-      height: 100%;
       width: 100%;
+      height: 100%;
       border-radius: $brM;
+      object-fit: cover;
     }
   }
 
@@ -43,8 +43,8 @@
         row-gap: 16px;
 
         @include mediaTabletM {
-          grid-template-columns: repeat(3, 1fr);
           align-items: flex-end;
+          grid-template-columns: repeat(3, 1fr);
         }
 
         @include mediaLaptopM {
@@ -63,13 +63,13 @@
         width: $size;
         height: $size;
         border: 2px solid white;
-        background: none;
         border-radius: 50%;
+        background: none;
 
         &-active {
           width: $size * 2.5;
-          background: white;
           border-radius: $size;
+          background: white;
         }
       }
     }

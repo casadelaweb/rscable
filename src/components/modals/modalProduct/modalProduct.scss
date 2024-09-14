@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .modalProduct {
   $offsetMobile: 16px;
@@ -10,19 +10,19 @@
   z-index: 120;
   top: 0;
   right: 0;
+  overflow-y: auto;
+  width: 100%;
   height: 100%;
-  background: white;
   transition: transform $trM, opacity $trM;
   transform: translate(125%, 0);
   pointer-events: none;
-  overflow-y: auto;
-  width: 100%;
+  background: white;
   @include mediaOnlyTablets {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 720px;
     max-width: 640px;
+    max-height: 720px;
+    transform: translate(-50%, -50%);
     opacity: 0;
   }
   @include mediaLaptopS {
@@ -43,14 +43,14 @@
 
   &Header {
     @include flex(center);
-    column-gap: 16px;
-    padding: $offsetMobile;
-    border-bottom: 1px solid $colorGreyMild;
     position: sticky;
     z-index: 1;
     top: 0;
+    padding: $offsetMobile;
+    border-bottom: 1px solid $colorGreyMild;
     background: white;
     box-shadow: $bsM;
+    column-gap: 16px;
     @include mediaDesktop {
       padding: $offsetDesktop;
     }
@@ -61,7 +61,7 @@
     @include flex(center);
     column-gap: 4px;
     @include onHover {
-      color: $colorBlue;
+      color: $colorPrimary;
     }
   }
 
@@ -76,10 +76,10 @@
   }
 
   &Body {
+    display: grid;
     flex: 1 0 auto;
     padding: ($offsetMobile * 1.5) $offsetMobile;
     border-bottom: 1px solid $colorGreyMild;
-    display: grid;
     grid-template-columns: 1fr;
     column-gap: 16px;
     row-gap: 16px;
@@ -104,15 +104,15 @@
   }
 
   &Sliders {
-    @include dropFlex;
+    @include resetFlex;
 
     img {
+      display: block;
       width: 100%;
       height: 100%;
-      display: block;
+      border-radius: $brM;
       object-fit: contain;
       object-position: center;
-      border-radius: $brM;
     }
   }
 
@@ -131,9 +131,9 @@
   }
 
   &Main {
-    @include dropFlex;
-    background: white;
+    @include resetFlex;
     display: grid;
+    background: white;
     grid-template-columns: 1fr;
     row-gap: 16px;
   }
@@ -161,20 +161,20 @@
     @include flex(center, space-between);
     overflow: hidden;
     flex: 0 0 auto;
+    width: 140px;
+    height: 40px;
     margin: auto auto 0;
     border-radius: $brM;
     background: $colorGreyMild;
-    width: 140px;
-    height: 40px;
     @include mediaTabletS {
       height: 40px;
     }
 
     &Button, &Input {
       font-size: 14px;
-      text-align: center;
       flex: 0 0 auto;
       height: 100%;
+      text-align: center;
       color: black;
     }
 
@@ -236,16 +236,16 @@
     &, &._current {
       @include h4;
       font-weight: 600;
-      letter-spacing: 0.02em;
       line-height: 1.25;
+      letter-spacing: 0.02em;
     }
 
     &._prev {
       @include textLineThrough($colorRed);
       @include textM;
       font-weight: 500;
-      letter-spacing: 0.02em;
       line-height: 1.25;
+      letter-spacing: 0.02em;
       color: $colorRed;
     }
   }
@@ -270,8 +270,8 @@
 
     &Divider {
       display: inline-block;
-      margin: auto 3px 3px;
       flex-grow: 1;
+      margin: auto 3px 3px;
       border-bottom: 1px dotted $colorGreyDarker;
     }
 
@@ -282,7 +282,7 @@
   }
 
   &Footer {
-    //@include dropFlex;
+    //@include resetFlex;
     position: sticky;
     z-index: 1;
     bottom: 0;
@@ -291,11 +291,11 @@
 
   &Button {
     @include buttonPale;
-    text-transform: uppercase;
     width: 100%;
     height: 100%;
-    // padding: ($offsetMobile * 1.5) $offsetMobile;
     padding: $offsetMobile;
+    // padding: ($offsetMobile * 1.5) $offsetMobile;
+    text-transform: uppercase;
     border: 0 !important;
     border-radius: 0 !important;
     @include mediaDesktop {

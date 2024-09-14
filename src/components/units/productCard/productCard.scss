@@ -1,17 +1,17 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .productCard {
-  @include dropFlex;
+  @include resetFlex;
   @include flex($d: column);
-  overflow: hidden;
   position: relative;
   z-index: 0;
-  border-radius: $brM;
+  overflow: hidden;
   border: 1px solid $colorGreyMild;
+  border-radius: $brM;
   box-shadow: $bsM;
 
   &Body {
-    @include dropFlex;
+    @include resetFlex;
     @include flex($d: column);
     flex-grow: 1;
     padding: 8px;
@@ -32,56 +32,56 @@
   }
 
   &Buttons {
+    right: 12px;
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 8px;
-    right: 12px;
   }
 
   &Tags {
     @include flex($w: wrap);
-    row-gap: 8px;
-    column-gap: 8px;
     left: 12px;
     max-width: calc(100% - 12px - 20px - 8px);
+    row-gap: 8px;
+    column-gap: 8px;
   }
 
   &Tag {
     @include textS;
     @include flex(center);
-    column-gap: 4px;
     font-weight: 500;
     padding: 2px 8px;
     border-radius: $brM;
+    column-gap: 4px;
 
     &._stock {
-      background: $colorGreen;
       color: white;
+      background: $colorGreen;
     }
 
     &._order {
-      background: $colorDark;
       color: white;
+      background: $colorDark;
     }
 
     &._recommended {
-      background: $colorPurple;
       color: white;
+      background: $colorPurple;
     }
 
     &._hit {
-      background: $colorYellow;
       color: white;
+      background: $colorYellow;
     }
   }
 
   &Status {
     @include textS;
     @include flex(center);
-    column-gap: 8px;
-    color: $colorGreen;
-    margin-bottom: 8px;
     width: fit-content;
+    margin-bottom: 8px;
+    color: $colorGreen;
+    column-gap: 8px;
 
     &._stock {
 
@@ -103,8 +103,8 @@
   &Parameter {
     @include textS;
     @include flex(center);
-    column-gap: 4px;
     color: $colorDarkMild;
+    column-gap: 4px;
 
     &._extra {
       display: none;
@@ -120,7 +120,7 @@
   }
 
   &Slider {
-    @include dropFlex;
+    @include resetFlex;
 
     a {
       display: flex;
@@ -130,11 +130,11 @@
   }
 
   &Img {
-    @include dropFlex;
+    @include resetFlex;
     display: block;
+    width: 100%;
     min-height: 140px;
     aspect-ratio: 16 / 9;
-    width: 100%;
     object-fit: contain;
   }
 
@@ -156,10 +156,10 @@
     color: $colorDarkMild;
 
     .iconfont {
-      display: inline-block;
-      color: $colorDarkMild;
       font-size: 16px;
+      display: inline-block;
       margin-right: 4px;
+      color: $colorDarkMild;
       @include mediaMobileL {
         font-size: 20px;
       }
@@ -178,10 +178,10 @@
       @include textXxs;
       line-height: 1;
       display: inline-block;
-      padding: 3px 6px;
-      background: $colorGreyMild;
-      border-radius: $brM;
       width: fit-content;
+      padding: 3px 6px;
+      border-radius: $brM;
+      background: $colorGreyMild;
     }
   }
 
@@ -204,14 +204,14 @@
 
   &Fav, &Compare, &View, &Buy {
     @include flex(center, center);
+    font-size: 16px;
     flex: 0 0 auto;
     width: 24px;
+    height: 24px;
+    color: black;
+    border-radius: 50%;
     background: white;
     box-shadow: 2px 2px 4px 0 rgba(black, 0.15);
-    color: black;
-    height: 24px;
-    border-radius: 50%;
-    font-size: 16px;
   }
 
   &Compare {
@@ -223,9 +223,9 @@
   &Footer {
     @include flex($d: column);
     width: 100%;
+    margin: auto 0 0 0;
     column-gap: 8px;
     row-gap: 8px;
-    margin: auto 0 0 0;
     @include mediaTabletS {
       @include flex($a: center, $d: row);
     }
@@ -241,11 +241,11 @@
     @include flex(center, space-between);
     overflow: hidden;
     flex: 0 0 auto;
+    width: 100%;
+    height: 32px;
     margin: auto auto 0;
     border-radius: $brM;
     background: $colorGreyMild;
-    width: 100%;
-    height: 32px;
     @include mediaTabletS {
       width: 88px;
       height: 40px;
@@ -259,9 +259,9 @@
 
     &Button, &Input {
       font-size: 14px;
-      text-align: center;
       flex: 0 0 auto;
       height: 100%;
+      text-align: center;
       color: black;
     }
 
@@ -286,9 +286,9 @@
 
   &Bottom {
     @include flex($d: column);
-    row-gap: 8px;
-    width: 100%;
     flex-grow: 1;
+    width: 100%;
+    row-gap: 8px;
   }
 }
 
@@ -305,9 +305,9 @@
 
   &Slider {
     overflow: hidden;
+    width: 100px;
     height: 100%;
     margin: 16px 0 0;
-    width: 100px;
     @include mediaTabletS {
       width: 200px;
     }
@@ -326,8 +326,8 @@
   &Tags {
     top: 8px;
     left: 8px;
-    row-gap: 4px;
     max-width: 100px;
+    row-gap: 4px;
     @include mediaTabletS {
       max-width: 200px;
     }
@@ -355,16 +355,16 @@
   }
 
   &Body {
-    min-height: 200px;
     width: calc(100% - 100px);
+    min-height: 200px;
     @include mediaTabletS {
       width: calc(100% - 200px);
     }
     @include mediaTabletM {
       display: grid;
+      padding-right: 32px;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 16px;
-      padding-right: 32px;
     }
     @include mediaDesktop {
       width: calc(100% - 240px);
@@ -406,8 +406,8 @@
       column-gap: 8px;
     }
     @include mediaTabletM {
-      flex-direction: column;
       align-items: flex-start;
+      flex-direction: column;
       justify-content: flex-start;
     }
   }
@@ -430,11 +430,11 @@
   }
 
   &Cart {
-    width: auto;
     flex-grow: 1;
+    width: auto;
     @include mediaTabletM {
-      width: 200px;
       flex-grow: 0;
+      width: 200px;
     }
   }
 

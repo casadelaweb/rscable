@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .products {
   @include sectionHeader;
@@ -11,8 +11,8 @@
   &-cards {
     position: relative;
     z-index: 0;
-    margin-bottom: 40px;
     display: grid;
+    margin-bottom: 40px;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 10px;
     row-gap: 10px;
@@ -38,8 +38,8 @@
 
     &._loading {
       .products-cards-loader {
-        opacity: 1;
         pointer-events: auto;
+        opacity: 1;
       }
     }
 
@@ -52,26 +52,26 @@
       left: 0;
       width: 100%;
       height: 100%;
-      opacity: 0;
-      pointer-events: none;
       transition: opacity $trM;
+      pointer-events: none;
+      opacity: 0;
     }
   }
 
   &Note {
     @include textM;
+    display: none;
     margin-bottom: 40px;
     text-align: center;
-    display: none;
 
     &._active {
       display: block;
     }
 
     a, button {
-      @include addBottomLineOnHover($colorBlue);
+      @include addBottomLineOnHover($colorPrimary);
       letter-spacing: 0.02em;
-      color: $colorBlue;
+      color: $colorPrimary;
     }
   }
 

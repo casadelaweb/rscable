@@ -1,0 +1,28 @@
+@use "src/styles/shared" as *;
+
+.cartEmpty {
+  @include flex(center, center, column);
+  row-gap: 16px;
+
+  &Title {
+    @include textXL;
+    font-weight: 600;
+  }
+
+  &Icon {
+    @include resetFlex;
+    font-size: 80px;
+    width: 80px;
+    height: 80px;
+    color: $colorGreyDarker;
+  }
+
+  &Note {
+    @include textM;
+
+    a {
+      @include addBottomLineOnHover($colorPrimary);
+      color: $colorPrimary;
+    }
+  }
+}

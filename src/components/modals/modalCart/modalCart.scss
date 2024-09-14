@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .modalCart {
   @include scrollbar;
@@ -6,18 +6,18 @@
   z-index: 102;
   top: calc(var(--headerHeight) + 16px);
   right: 40px;
+  display: none;
+  overflow-y: auto;
   width: 540px;
   max-height: 540px;
-  background: white;
-  border: 1px solid $colorGreyMild;
-  border-radius: $brM;
-  box-shadow: $bsM;
-  overflow-y: auto;
+  transition: opacity $trM, transform $trM;
+  transform: translate(0, 40px);
   pointer-events: none;
   opacity: 0;
-  transform: translate(0, 40px);
-  transition: opacity $trM, transform $trM;
-  display: none;
+  border: 1px solid $colorGreyMild;
+  border-radius: $brM;
+  background: white;
+  box-shadow: $bsM;
   @include mediaLaptopS {
     display: block;
   }
@@ -26,32 +26,32 @@
   }
 
   &._active {
+    transform: translate(0, 0);
     pointer-events: auto;
     opacity: 1;
-    transform: translate(0, 0);
   }
 
   &Overlay {
     @include overlay;
-    background: rgba($colorDark, 0.5);
     z-index: 101;
+    background: rgba($colorDark, 0.5);
     //opacity: 1;
     //transform: none;
   }
 
   &Header, &Body, &Footer {
-    background: white;
     padding: 16px;
     border-top: 1px solid $colorGreyMild;
+    background: white;
   }
 
   &Header {
     @include textMp;
     @include flex($d: column);
-    row-gap: 8px;
-    border-top: 0;
-    letter-spacing: 0.02em;
     padding-right: 40px;
+    letter-spacing: 0.02em;
+    border-top: 0;
+    row-gap: 8px;
   }
 
   &Row {
@@ -66,16 +66,16 @@
   &Clear {
     @include textXs;
     @include flex(center, center);
-    column-gap: 4px;
     color: $colorGreyDarker2;
+    column-gap: 4px;
   }
 
   &Close {
+    font-size: 16px;
     position: absolute;
     z-index: 2;
     top: 8px;
     right: 8px;
-    font-size: 16px;
   }
 
   &Title {
@@ -100,8 +100,8 @@
 
     .icon-cart {
       font-size: 80px;
-      color: $colorGreyDarker2;
       margin-bottom: 16px;
+      color: $colorGreyDarker2;
     }
 
     h2, h3 {
@@ -114,17 +114,17 @@
     }
 
     a, button {
-      @include addBottomLineOnHover($colorBlue);
-      color: $colorBlue;
+      @include addBottomLineOnHover($colorPrimary);
+      color: $colorPrimary;
     }
   }
 
   &Footer {
     @include flex(center);
-    column-gap: 16px;
     position: sticky;
     z-index: 1;
     bottom: 0;
+    column-gap: 16px;
   }
 
   &Catalog {

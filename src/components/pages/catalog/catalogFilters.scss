@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .catalogFilters {
   flex-grow: 1;
@@ -9,21 +9,21 @@
   }
 
   &Header, &Buttons, &Feedback {
+    margin-bottom: 16px;
     padding: 16px;
     border-bottom: 1px solid $colorGreyMild;
-    margin-bottom: 16px;
     @include mediaTabletL {
+      margin: 0;
       padding: 0;
       border-bottom: 0;
-      margin: 0;
     }
   }
 
   &Header {
     @include textS;
     @include flex($d: column);
-    row-gap: 8px;
     margin: 0;
+    row-gap: 8px;
     @include mediaTabletL {
       display: none;
     }
@@ -39,21 +39,21 @@
   }
 
   &Buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 8px;
-    row-gap: 8px;
-    margin: 0;
-    border-top: 1px solid $colorGreyMild;
-    padding-bottom: 16px;
     position: sticky;
     z-index: 10;
     bottom: 0;
+    display: grid;
+    margin: 0;
+    padding-bottom: 16px;
+    border-top: 1px solid $colorGreyMild;
     background: white;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8px;
+    row-gap: 8px;
     @include mediaTabletL {
       position: static;
-      column-gap: 16px;
       border: 0;
+      column-gap: 16px;
     }
   }
 
@@ -75,25 +75,25 @@
     margin: 0;
     @include mediaTabletL {
       display: block;
-      padding-bottom: 20px;
       margin: 20px 0 0;
+      padding-bottom: 20px;
     }
 
     &Title {
       @include textXs;
-      color: $colorDark;
       font-weight: 600;
       margin-bottom: 8px;
+      color: $colorDark;
     }
 
     &Button {
       @include textXs;
       @include flex(center);
-      column-gap: 8px;
-      color: $colorDarkMild;
       font-weight: 500;
+      color: $colorDarkMild;
+      column-gap: 8px;
       @include onHover {
-        color: $colorBlue;
+        color: $colorPrimary;
       }
     }
   }
@@ -144,39 +144,39 @@
     // background: white;
     // border: 1px solid $colorGreyMild;
     display: none;
-    border-radius: $brM;
-    box-shadow: $bsM;
+    transition: top $trM, left $trM, opacity $trM;
     pointer-events: none;
     opacity: 0;
-    transition: top $trM, left $trM, opacity $trM;
+    border-radius: $brM;
+    box-shadow: $bsM;
     @include mediaOnlyBeforeLaptop {
       display: none !important;
     }
 
     &._active {
       display: block;
-      opacity: 1;
       pointer-events: auto;
+      opacity: 1;
     }
 
     &::before {
-      content: ' ';
       position: absolute;
       z-index: 1;
       top: 50%;
       left: 0;
-      transform: translate(-50%, -50%) rotate(45deg);
       width: 12px;
       height: 12px;
-      background: $colorBlue;
+      content: " ";
+      transform: translate(-50%, -50%) rotate(45deg);
       border-radius: 2px;
+      background: $colorPrimary;
     }
 
     &Button {
       @include buttonPrimary;
       @include textS;
-      background: $colorBlue;
       padding: 20px 32px;
+      background: $colorPrimary;
     }
   }
 }

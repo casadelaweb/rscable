@@ -758,7 +758,6 @@ $productReviews = [
     passive: true,
     once: true
   })
-
 </script>
 
 <!-- Просмотренные товары -->

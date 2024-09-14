@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 
 .sectionPartners {
@@ -24,16 +24,16 @@
   &Slide {
     @include flex($d: column);
     height: auto;
-    border: 1px solid $colorGreyMild;
     padding: 16px;
+    border: 1px solid $colorGreyMild;
     border-radius: $brM;
     // box-shadow: $bsM;
 
     &Img {
-      object-fit: contain;
       width: 100%;
       height: 120px;
       margin-bottom: 10px;
+      object-fit: contain;
       @include mediaLaptopM {
         height: 180px;
       }
@@ -58,26 +58,26 @@
         //z-index: 2;
         //top: 100%;
         //transform: translate(0, -50%);
+        position: static;
         flex: 0 0 auto;
         width: 54px;
         height: 36px;
-        background: white;
-        border: 1px solid $colorDarkMild;
-        border-radius: $brM;
-        color: $colorDarkMild;
-        // border-radius: 50%;
         cursor: pointer;
         transition: border-color $trM, background-color $trM, color $trM;
+        color: $colorDarkMild;
+        // border-radius: 50%;
+        border: 1px solid $colorDarkMild;
+        border-radius: $brM;
         // box-shadow: $bsM;
-        position: static;
+        background: white;
 
         @include onHover {
           border-color: $colorDarkMild;
         }
 
         &:active {
-          background: $colorDarkMild;
           color: white;
+          background: $colorDarkMild;
         }
 
         &-disabled {
@@ -97,32 +97,32 @@
 
     &-footer {
       @include flex(center);
-      margin: 40px auto 0;
       width: fit-content;
+      margin: 40px auto 0;
     }
 
     &-pagination {
       $size: 12px;
       position: static;
-      background: none;
       width: fit-content;
       margin: 0 auto;
       transform: none;
       border-radius: $size * 0.5;
+      background: none;
 
       &-bullet {
-        background: none;
-        border: 2px solid $colorDarkMild;
         width: $size;
         height: $size;
-        border-radius: 50%;
         margin: 0;
+        border: 2px solid $colorDarkMild;
+        border-radius: 50%;
+        background: none;
 
         &-active {
-          background: $colorDarkMild;
           width: $size * 2.5;
           height: $size;
           border-radius: $size;
+          background: $colorDarkMild;
         }
       }
     }

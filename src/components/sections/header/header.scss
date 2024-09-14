@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .header {
   position: fixed;
@@ -6,9 +6,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: white;
   color: black;
   border-bottom: 1px solid $colorGreyMild;
+  background: white;
   box-shadow: $bsM;
 
   &Desktop {
@@ -63,9 +63,9 @@
   &Mobile {
     @include container;
     @include flex(center, space-between);
-    column-gap: 12px;
     padding-top: 16px;
     padding-bottom: 16px;
+    column-gap: 12px;
     @include mediaMobileM {
       column-gap: 16px;
     }
@@ -80,11 +80,11 @@
 
   &Location {
     @include flex(center);
-    column-gap: 4px;
-    border-bottom: 1px dotted;
-    color: $colorBlue;
     position: relative;
     z-index: 1;
+    color: $colorPrimary;
+    border-bottom: 1px dotted;
+    column-gap: 4px;
 
     // display: none !important;
 
@@ -94,38 +94,38 @@
       top: calc(100% + 16px);
       left: 16px;
       padding: 16px;
-      border: 1px solid $colorGreyMild;
-      border-radius: $brM;
-      box-shadow: $bsM;
-      background: white;
+      transition: opacity $trM, transform $trM;
+      transform: translate(-100%, 0);
       pointer-events: none;
       opacity: 0;
-      transform: translate(-100%, 0);
-      transition: opacity $trM, transform $trM;
+      border: 1px solid $colorGreyMild;
+      border-radius: $brM;
+      background: white;
+      box-shadow: $bsM;
       @include mediaDesktop {
         padding: 24px;
       }
 
       &._active {
-        opacity: 1;
-        pointer-events: auto;
         transform: translate(0, 0);
+        pointer-events: auto;
+        opacity: 1;
       }
 
       &Close {
+        font-size: 14px;
         position: absolute;
         z-index: 2;
         top: 12px;
         right: 12px;
         color: $colorGreyDarker;
-        font-size: 14px;
       }
 
       &Title {
         @include textM;
-        color: $colorGrey;
-        text-align: center;
         margin-bottom: 16px;
+        text-align: center;
+        color: $colorGrey;
       }
 
       &Buttons {
@@ -155,11 +155,11 @@
     display: inline-block;
 
     @include onHover {
-      color: $colorBlueLight
+      color: $colorPrimaryLight
     }
 
     &:active {
-      color: $colorBlueDarker;
+      color: $colorPrimaryDarker;
     }
   }
 
@@ -171,10 +171,10 @@
     }
 
     &Img {
-      object-fit: contain;
-      object-position: left center;
       width: 120px;
       height: 24px;
+      object-fit: contain;
+      object-position: left center;
       @include mediaLaptopS {
         width: 160px;
         height: 32px;
@@ -190,11 +190,11 @@
   &Catalog {
     @include buttonPrimary;
     @include textM;
-    column-gap: 8px;
     font-weight: 500;
+    width: 120px;
     letter-spacing: 0.02em;
     // text-transform: uppercase;
-    width: 120px;
+    column-gap: 8px;
     @include mediaDesktop {
       width: 140px;
     }
@@ -219,11 +219,11 @@
   }
 
   &Button {
-    @include dropFlex;
+    @include resetFlex;
     @include flex(center, center);
+    font-size: 16px;
     position: relative;
     z-index: 0;
-    font-size: 16px;
     color: $colorDarkMild;
     @include mediaMobileM {
       font-size: 20px;
@@ -237,18 +237,18 @@
 
     &Quantity {
       @include flex(center, center);
+      font-size: 12px;
+      font-weight: 600;
       position: absolute;
       z-index: 1;
       top: 0;
       right: 0;
-      background: $colorBlue;
-      color: white;
-      border-radius: 50%;
       width: 20px;
       height: 20px;
-      font-size: 12px;
-      font-weight: 600;
       transform: translate(50%, -50%);
+      color: white;
+      border-radius: 50%;
+      background: $colorPrimary;
     }
   }
 
@@ -263,24 +263,24 @@
   &Personal {
     @include textS;
     @include flex(center);
-    column-gap: 4px;
-    width: fit-content;
     flex: 0 0 auto;
+    width: fit-content;
+    column-gap: 4px;
 
     @include onHover {
-      color: $colorBlueLight;
+      color: $colorPrimaryLight;
     }
 
     &:active {
-      color: $colorBlueDarker;
+      color: $colorPrimaryDarker;
     }
   }
 
   &Feedback {
     font-size: 12px !important;
     letter-spacing: 0.02em;
-    color: $colorBlue;
     text-transform: uppercase;
+    color: $colorPrimary;
   }
 }
 

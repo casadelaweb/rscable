@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .sectionAdvisable {
   @include sectionHeader;
@@ -59,7 +59,7 @@
     }
 
     &-slide {
-      @include dropFlex;
+      @include resetFlex;
       height: auto;
     }
   }

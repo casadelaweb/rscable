@@ -1,0 +1,55 @@
+@use "src/styles/shared" as *;
+
+.cartCheckout {
+  position: sticky;
+  z-index: 1;
+  top: calc(var(--headerHeight) + 16px);
+  height: fit-content;
+  padding: 16px;
+  border: 1px solid $colorGreyMild;
+  border-radius: $brM;
+  background: $colorGreyLightest;
+  box-shadow: $bsM;
+
+  &Header {
+    @include textS;
+    font-weight: 500;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    color: $colorDarkMild;
+    border-bottom: 1px solid white;
+  }
+
+  &Order {
+    @include buttonPrimary;
+    @include textL;
+    font-weight: 500;
+    min-height: 56px;
+    margin-bottom: 16px;
+    letter-spacing: 0.03em;
+    border-radius: $brM * 2;
+  }
+
+  &Buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+
+  &Quick {
+    @include buttonMain;
+    // background: white;
+  }
+
+  &Summary {
+    @include textMp;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+
+  &Total {
+    font-size: 24px;
+    font-weight: 600;
+  }
+}

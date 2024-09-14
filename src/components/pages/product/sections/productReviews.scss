@@ -1,4 +1,4 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .productReviews {
   @include sectionHeader;
@@ -50,8 +50,8 @@
 
     &Top {
       @include flex($d: column);
-      row-gap: 8px;
       margin-bottom: 16px;
+      row-gap: 8px;
     }
 
     &Average {
@@ -77,18 +77,18 @@
       width: fit-content;
 
       &, &Top, &Bottom {
-        @include dropFlex;
+        @include resetFlex;
         @include flex(center);
       }
 
       &Top {
         position: absolute;
         z-index: 1;
+        overflow: hidden;
         width: 100%;
+        max-width: 100%;
         height: 100%;
         color: $colorYellow;
-        max-width: 100%;
-        overflow: hidden;
       }
 
       &Bottom {
@@ -98,8 +98,8 @@
 
     &List {
       @include flex($d: column);
-      row-gap: 8px;
       margin-bottom: 16px;
+      row-gap: 8px;
 
       &Item {
         @include textS;
@@ -112,14 +112,14 @@
   &Filters {
     @include textS;
     @include flex(center, $w: wrap);
-    column-gap: 16px;
-    row-gap: 16px;
-    background: $colorGreyLight;
+    margin-bottom: 16px;
+    padding: 8px 16px;
     border: 1px solid $colorGreyMild;
     border-radius: $brM;
-    padding: 8px 16px;
-    margin-bottom: 16px;
+    background: $colorGreyLight;
     box-shadow: $bsM;
+    column-gap: 16px;
+    row-gap: 16px;
   }
 
   &Filter {
@@ -128,7 +128,7 @@
     }
 
     &._active {
-      color: $colorBlue;
+      color: $colorPrimary;
       //.iconfont {
       //  display: inline-block;
       //}
@@ -171,12 +171,12 @@
 .productReview {
   @include textM;
   @include flex($d: column);
-  row-gap: 8px;
   padding: 16px;
-  background: white;
   border: 1px solid $colorGreyMild;
   border-radius: $brM;
+  background: white;
   box-shadow: $bsM;
+  row-gap: 8px;
 
   &Author {
     @include textMp;
@@ -240,7 +240,7 @@
     column-gap: 8px;
 
     &, &Stars, &Top, &Bottom {
-      @include dropFlex;
+      @include resetFlex;
       @include flex(center);
     }
 
@@ -253,11 +253,11 @@
     &Top {
       position: absolute;
       z-index: 1;
+      overflow: hidden;
       width: 100%;
+      max-width: 100%;
       height: 100%;
       color: $colorYellow;
-      max-width: 100%;
-      overflow: hidden;
     }
 
     &Bottom {
@@ -270,27 +270,27 @@
     }
 
     .icon-star {
+      font-size: 20px;
       width: 20px;
       height: 20px;
-      font-size: 20px;
       @include mediaDesktop {
+        font-size: 24px;
         width: 24px;
         height: 24px;
-        font-size: 24px;
       }
     }
 
     &Rating {
-      @include dropFlex;
+      @include resetFlex;
       @include flex(center, center);
-      aspect-ratio: 1 / 1;
-      display: inline-flex;
       font-weight: 600;
-      border: 1px solid $colorYellow;
-      border-radius: 50%;
-      padding: 8px;
+      display: inline-flex;
       width: 32px;
       height: 32px;
+      padding: 8px;
+      border: 1px solid $colorYellow;
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
     }
 
     &Quantity {
@@ -318,8 +318,8 @@
   &Actions {
     @include textS;
     @include flex(center);
-    column-gap: 16px;
     margin: 16px 0 0;
+    column-gap: 16px;
   }
 
   &Buttons {
@@ -330,8 +330,8 @@
 
   &Toggle {
     @include addBottomLineOnHover($colorDarkMild);
-    width: fit-content;
     font-weight: 500;
+    width: fit-content;
     letter-spacing: 0.02em;
 
     &._active {
@@ -354,30 +354,30 @@
   }
 
   &Reply {
-    @include addBottomLineOnHover($colorBlue);
-    width: fit-content;
+    @include addBottomLineOnHover($colorPrimary);
     font-weight: 500;
+    width: fit-content;
     letter-spacing: 0.02em;
-    color: $colorBlue;
+    color: $colorPrimary;
   }
 }
 
 .reviewAnswer {
   @include textXs;
+  display: none;
   margin: 16px 0 0;
   grid-template-columns: 1fr;
-  row-gap: 4px;
   //background: white;
   //padding: 16px;
   //box-shadow: $bsM;
-  display: none;
+  row-gap: 4px;
 
   &Reply {
-    @include addBottomLineOnHover($colorBlue);
+    @include addBottomLineOnHover($colorPrimary);
     @include textXs;
     // margin-left: auto;
     width: fit-content;
-    color: $colorBlue;
+    color: $colorPrimary;
   }
 
   &._active {
@@ -385,9 +385,9 @@
   }
 
   &Author {
-    color: $colorDarkMild;
     font-weight: 700;
     letter-spacing: 0.02em;
+    color: $colorDarkMild;
   }
 
   &Date {
@@ -409,15 +409,15 @@
   position: relative;
   z-index: 0;
   // display: grid;
-  grid-template-columns: 1fr;
-  row-gap: 16px;
-  background: white;
-  box-shadow: $bsM;
-  border: 1px solid $colorGreyMild;
-  padding: 16px;
-  border-radius: $brM;
   display: none;
   margin-left: 32px;
+  padding: 16px;
+  border: 1px solid $colorGreyMild;
+  border-radius: $brM;
+  background: white;
+  box-shadow: $bsM;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
   @include mediaLaptopS {
     margin-left: 40px;
   }
@@ -433,8 +433,8 @@
   &Title {
     @include textM;
     font-weight: 500;
-    letter-spacing: 0.02em;
     padding-right: 16px;
+    letter-spacing: 0.02em;
   }
 
   &Note {
@@ -442,8 +442,8 @@
     color: $colorDarkMild;
 
     a {
-      color: $colorBlue;
       font-weight: 500;
+      color: $colorPrimary;
       @include onHover {
         text-decoration: underline;
       }
@@ -460,8 +460,8 @@
       @include textS;
 
       &Required {
-        color: $colorRed;
         font-weight: 600;
+        color: $colorRed;
       }
     }
 
@@ -474,47 +474,47 @@
       }
 
       &[type=radio], &[type=checkbox] {
-        padding: 0 !important;
         width: 20px !important;
         height: 20px !important;
+        padding: 0 !important;
       }
     }
 
     &Error {
       @include textS;
-      letter-spacing: 0.02em;
       font-weight: 500;
-      color: white;
       position: absolute;
       z-index: 1;
       top: calc(100% + 8px);
       left: 0;
+      padding: 4px 8px;
+      transition: opacity $trM, transform $trM;
       transform: translate(0, -20px);
+      letter-spacing: 0.02em;
       pointer-events: none;
       opacity: 0;
-      background: $colorRed;
-      transition: opacity $trM, transform $trM;
+      color: white;
       border-radius: $brM;
-      padding: 4px 8px;
+      background: $colorRed;
       box-shadow: $bsM;
 
       &::before {
         $size: 8px;
-        content: ' ';
         position: absolute;
         z-index: -1;
         top: $size * -0.5;
         left: $size;
         width: $size;
         height: $size;
-        background: $colorRed;
+        content: " ";
         transform: rotate(45deg);
+        background: $colorRed;
       }
 
       &._error {
-        opacity: 1;
-        pointer-events: auto;
         transform: none;
+        pointer-events: auto;
+        opacity: 1;
       }
 
       &._success {
@@ -524,12 +524,12 @@
 
     &Counter {
       @include textS;
-      width: fit-content;
-      letter-spacing: 0.02em;
       position: absolute;
       z-index: 1;
       right: 12px;
       bottom: 6px;
+      width: fit-content;
+      letter-spacing: 0.02em;
     }
 
     &Rating {
@@ -537,9 +537,9 @@
       column-gap: 4px;
 
       .icon-star {
+        font-size: 20px;
         width: 20px;
         height: 20px;
-        font-size: 20px;
         color: $colorGreyMild;
 
         &._active {
@@ -576,13 +576,13 @@
 
   &Close {
     @include flex(center, center);
-    color: $colorGreyDarker2;
     font-size: 14px;
-    width: 14px;
-    height: 14px;
     position: absolute;
     z-index: 1;
     top: 16px;
     right: 16px;
+    width: 14px;
+    height: 14px;
+    color: $colorGreyDarker2;
   }
 }
