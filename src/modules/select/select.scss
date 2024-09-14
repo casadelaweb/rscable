@@ -1,13 +1,13 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 .select {
   font-size: 13px;
-  letter-spacing: 0.02em;
   position: relative;
   z-index: 2;
   display: inline-block;
   width: fit-content;
   margin-right: 1.5em;
+  letter-spacing: 0.02em;
   @include mediaTabletS {
     font-size: 15px;
   }
@@ -25,9 +25,9 @@
 
   &-prices {
     display: grid;
+    margin-bottom: 1em;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 16px;
-    margin-bottom: 1em;
   }
 
   &-current {
@@ -82,10 +82,10 @@
     @include flex(center);
     font-size: 13px;
 
-    white-space: nowrap;
     padding: 0.75em 1em;
     cursor: pointer;
     transition: background $trM, color $trM;
+    white-space: nowrap;
     @include mediaLaptopS {
       font-size: 14px;
     }
@@ -102,6 +102,6 @@
     height: 44px;;
     margin: 20px auto 0;
     color: white;
-    background: $colorBlue;
+    background: $colorPrimary;
   }
 }

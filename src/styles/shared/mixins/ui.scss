@@ -1,10 +1,10 @@
-@use 'src/styles/shared/mixins/helpers' as Helpers;
-@use 'src/styles/shared/mixins/media' as Media;
-@use 'src/styles/shared/mixins/typography' as Typography;
-@use 'src/styles/shared/variables' as Vars;
-@use 'src/styles/shared/mixins/buttons' as Buttons;
-@use 'sass:math' as Math;
-@use 'src/styles/shared/functions' as Functions;
+@use "src/styles/shared/mixins/helpers" as Helpers;
+@use "src/styles/shared/mixins/media" as Media;
+@use "src/styles/shared/mixins/typography" as Typography;
+@use "src/styles/shared/variables" as Vars;
+@use "src/styles/shared/mixins/buttons" as Buttons;
+@use "sass:math" as Math;
+@use "src/styles/shared/functions" as Functions;
 
 @mixin container {
   margin: 0 auto;
@@ -38,7 +38,7 @@
   }
 }
 
-@mixin scrollbar($orientation:'vertical') {
+@mixin scrollbar($orientation:"vertical") {
   $width: 10px;
   $height: 5px;
   $thumbColor: Vars.$colorGreyDarker;
@@ -50,7 +50,7 @@
       width: $width;
       height: $height;
     }
-    @if ($orientation == 'vertical') {
+    @if ($orientation == "vertical") {
       &::-webkit-scrollbar-track {
         background: $backgroundColor;
       }
@@ -58,7 +58,7 @@
         background: $thumbColor;
         border: ($width * 0.3) solid $backgroundColor;
       }
-    } @else if ($orientation == 'horizontal') {
+    } @else if ($orientation == "horizontal") {
       //overflow-x: auto;
       //overflow-y: hidden;
       //margin-right: -10px;
@@ -121,7 +121,7 @@
 }
 
 @mixin productsLayout {
-  @include Helpers.dropFlex;
+  @include Helpers.resetFlex;
   @include Helpers.flex($w: wrap);
   column-gap: 10px;
   row-gap: 10px;

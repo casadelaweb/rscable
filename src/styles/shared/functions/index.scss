@@ -1,4 +1,4 @@
-@use 'sass:math' as Math;
+@use "sass:math" as Math;
 
 @function calculateCardWidth($cols:2, $gap:10px) {
   $test: Math.div(100, $cols);

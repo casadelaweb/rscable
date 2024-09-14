@@ -1,5 +1,5 @@
-@use 'src/styles/shared' as *;
-@import 'src/styles/ui';
+@use "src/styles/shared" as *;
+@import "src/styles/ui";
 
 :root {
   --headerHeight: 100px;
@@ -11,8 +11,8 @@
   flex: 0 0 auto;
   width: 6px;
   height: 6px;
-  background: currentColor;
   border-radius: 50%;
+  background: currentColor;
 }
 
 html {

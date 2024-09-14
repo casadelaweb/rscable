@@ -1,10 +1,10 @@
-@use 'src/styles/shared/mixins/media' as *;
-@use 'src/styles/shared/mixins/helpers' as *;
-@use 'src/styles/shared/mixins/typography' as *;
-@use 'src/styles/shared/variables' as Vars;
+@use "src/styles/shared/mixins/media" as *;
+@use "src/styles/shared/mixins/helpers" as *;
+@use "src/styles/shared/mixins/typography" as *;
+@use "src/styles/shared/variables" as Vars;
 
 @mixin inputMain {
-  @include dropFlex;
+  @include resetFlex;
   @include textM;
   line-height: 1;
   height: 40px;
@@ -35,7 +35,7 @@
 }
 
 @mixin buttonTemplate {
-  // @include dropFlex;
+  // @include resetFlex;
   @include textM;
   text-align: center;
   font-weight: 500;
@@ -80,7 +80,7 @@
   }
 
   &::before {
-    content: ' ';
+    content: " ";
     position: absolute;
     z-index: -1;
     top: 0;
@@ -127,7 +127,7 @@
   }
 
   &::before {
-    content: ' ';
+    content: " ";
     position: absolute;
     z-index: -1;
     top: 0;
@@ -145,12 +145,12 @@
 
 @mixin buttonPrimary {
   @include buttonMain;
-  border-color: Vars.$colorBlue;
-  background-color: Vars.$colorBlue;
+  border-color: Vars.$colorPrimary;
+  background-color: Vars.$colorPrimary;
   color: white;
   @include onHover {
-    background: Vars.$colorBlueLight;
-    border-color: Vars.$colorBlueLight;
+    background: Vars.$colorPrimaryLight;
+    border-color: Vars.$colorPrimaryLight;
     color: white;
     &::before {
       left: 120%;
@@ -158,8 +158,8 @@
     }
   }
   &:active {
-    background: Vars.$colorBlueDarker;
-    border-color: Vars.$colorBlueDarker;
+    background: Vars.$colorPrimaryDarker;
+    border-color: Vars.$colorPrimaryDarker;
     color: white;
 
     &::before {
@@ -170,7 +170,7 @@
 
   &::before {
     background: white;
-    content: ' ';
+    content: " ";
     height: 155px;
     left: -75px;
     opacity: 0.2;
@@ -195,7 +195,7 @@
 }
 
 @mixin buttonNavigation {
-  @include dropFlex;
+  @include resetFlex;
   @include flex(center, center);
   width: 40px;
   height: 40px;

@@ -1,17 +1,17 @@
-@use 'src/styles/shared/variables' as Vars;
+@use "src/styles/shared/variables" as Vars;
 
-@mixin flex($a:'unset', $j:'unset', $d:'unset', $w:'unset') {
+@mixin flex($a:"unset", $j:"unset", $d:"unset", $w:"unset") {
   display: flex;
-  @if ($a != 'unset') {
+  @if ($a != "unset") {
     align-items: $a;
   }
-  @if ($j != 'unset') {
+  @if ($j != "unset") {
     justify-content: $j;
   }
-  @if ($d != 'unset') {
+  @if ($d != "unset") {
     flex-direction: $d;
   }
-  @if ($w!='unset') {
+  @if ($w!="unset") {
     flex-wrap: $w;
   }
 }
@@ -34,7 +34,7 @@
   z-index: 0;
 
   &::before {
-    content: ' ';
+    content: " ";
     position: absolute;
     z-index: 1;
     top: 50%;
@@ -64,7 +64,7 @@
   }
 
   &::before {
-    content: ' ';
+    content: " ";
     position: absolute;
     z-index: 1;
     top: calc(100% + 2px);
@@ -98,7 +98,7 @@
   }
 }
 
-@mixin dropFlex {
+@mixin resetFlex {
   min-width: 0;
   min-height: 0;
   flex: 0 0 auto;
@@ -109,7 +109,7 @@
   z-index: 0;
 
   &::before {
-    content: ' ';
+    content: " ";
     position: absolute;
     z-index: 1;
     top: 50%;

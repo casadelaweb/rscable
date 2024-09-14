@@ -1,6 +1,6 @@
-@use 'src/styles/shared/mixins/media' as *;
-@use 'src/styles/shared/mixins/helpers' as *;
-@use 'src/styles/shared/variables/colors' as Colors;
+@use "src/styles/shared/mixins/media" as *;
+@use "src/styles/shared/mixins/helpers" as *;
+@use "src/styles/shared/variables/colors" as Colors;
 
 @mixin h1 {
   line-height: 1.1;
@@ -235,8 +235,8 @@
       z-index: 0;
 
       &::before {
-        @include dropFlex;
-        content: ' ';
+        @include resetFlex;
+        content: " ";
         position: absolute;
         z-index: 0;
         top: $fontSize * $lineHeight * 0.5;

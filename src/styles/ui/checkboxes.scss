@@ -1,24 +1,24 @@
-@use 'src/styles/shared' as *;
+@use "src/styles/shared" as *;
 
 $size: 16px;
 
-[type='checkbox'], [type='radio'] {
-  @include dropFlex;
-  appearance: none;
+[type=checkbox], [type=radio] {
+  @include resetFlex;
   position: relative;
   z-index: 0;
   width: $size;
   height: $size;
-  border: 1px solid $colorBlue;
+  border: 1px solid $colorPrimary;
   background: white;
+  appearance: none;
 
   &::before {
-    content: ' ';
     position: absolute;
     z-index: 1;
-    background: $colorBlue;
-    opacity: 0;
+    content: " ";
     transition: opacity $trM;
+    opacity: 0;
+    background: $colorPrimary;
   }
 
   &:checked {
@@ -28,59 +28,59 @@ $size: 16px;
   }
 }
 
-[type='checkbox'] {
+[type=checkbox] {
   &::before {
-    content: '\2714';
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    content: "\2714";
     color: white;
     @include flex(center, center);
   }
 }
 
-[type='radio'] {
+[type=radio] {
   border-radius: 50%;
 
   &::before {
-    border-radius: 50%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 66.6667%;
     height: 66.6667%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
   }
 }
 
-[type='checkbox'] {
-  background: $colorGreyDarker;
-  appearance: none;
+[type=checkbox] {
   position: relative;
   z-index: 0;
   width: $size * 2;
   height: $size;
-  border-radius: $size;
-  border: 0;
   transition: background-color $trM;
+  border: 0;
+  border-radius: $size;
+  background: $colorGreyDarker;
+  appearance: none;
 
   &::before {
-    content: ' ';
     position: absolute;
     z-index: 1;
     top: 50%;
     left: $size * 0.2;
-    transform: translateY(-50%);
     width: $size * 0.8;
     height: $size * 0.8;
+    content: " ";
+    transition: left $trM;
+    transform: translateY(-50%);
+    opacity: 1;
     border-radius: 50%;
     background: white;
-    opacity: 1;
-    transition: left $trM;
   }
 
   &:checked {
-    background: $colorBlue;
+    background: $colorPrimary;
 
     &::before {
       left: calc(100% - $size * 0.8 - $size * 0.2);
