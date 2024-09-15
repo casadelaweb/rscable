@@ -14,7 +14,7 @@
 
   <div class="modalCartProductInfo">
     <h3 class="modalCartProductTitle">
-      <a href="<?= $url ?>>"> <?= $title ?> </a>
+      <a href="<?= $url ?>"> <?= $title ?> </a>
     </h3>
     <span class="modalCartProductQuantity">
       <?= $quantity ?>

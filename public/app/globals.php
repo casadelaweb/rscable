@@ -466,7 +466,7 @@ $fakeProducts = [
     'priceOld' => '6 400',
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_1.jpg',
+        'url' => '/assets/img/cables/cable-1.png',
         'alt' => 'img description',
       ],
     ],
@@ -491,19 +491,19 @@ $fakeProducts = [
     'priceOld' => 0,
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_3.jpg',
+        'url' => '/assets/img/cables/cable-3.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_2.jpg',
+        'url' => '/assets/img/cables/cable-2.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_4.jpg',
+        'url' => '/assets/img/cables/cable-4.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_1.jpg',
+        'url' => '/assets/img/cables/cable-1.png',
         'alt' => 'img description',
       ],
     ],
@@ -528,11 +528,11 @@ $fakeProducts = [
     'priceOld' => 0,
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_3.jpg',
+        'url' => '/assets/img/cables/cable-3.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_2.jpg',
+        'url' => '/assets/img/cables/cable-2.png',
         'alt' => 'img description',
       ],
     ],
@@ -557,11 +557,11 @@ $fakeProducts = [
     'priceOld' => '133 000',
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_4.jpg',
+        'url' => '/assets/img/cables/cable-4.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_2.jpg',
+        'url' => '/assets/img/cables/cable-2.png',
         'alt' => 'img description',
       ],
     ],
@@ -579,11 +579,11 @@ $fakeProducts = [
     'priceOld' => '133 000',
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_3.jpg',
+        'url' => '/assets/img/cables/cable-3.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_2.jpg',
+        'url' => '/assets/img/cables/cable-2.png',
         'alt' => 'img description',
       ],
     ],
@@ -608,7 +608,7 @@ $fakeProducts = [
     'priceOld' => 0,
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_1.jpg',
+        'url' => '/assets/img/cables/cable-1.png',
         'alt' => 'img description',
       ],
     ],
@@ -633,7 +633,7 @@ $fakeProducts = [
     'priceOld' => '6 400',
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_1.jpg',
+        'url' => '/assets/img/cables/cable-1.png',
         'alt' => 'img description',
       ],
     ],
@@ -651,19 +651,19 @@ $fakeProducts = [
     'priceOld' => '6 400',
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_1.jpg',
+        'url' => '/assets/img/cables/cable-1.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_2.jpg',
+        'url' => '/assets/img/cables/cable-2.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_1.jpg',
+        'url' => '/assets/img/cables/cable-1.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_2.jpg',
+        'url' => '/assets/img/cables/cable-2.png',
         'alt' => 'img description',
       ],
     ],
@@ -688,11 +688,11 @@ $fakeProducts = [
     'priceOld' => '62 400',
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_1.jpg',
+        'url' => '/assets/img/cables/cable-1.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_2.jpg',
+        'url' => '/assets/img/cables/cable-2.png',
         'alt' => 'img description',
       ],
     ],
@@ -717,19 +717,19 @@ $fakeProducts = [
     'priceOld' => 0,
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_3.jpg',
+        'url' => '/assets/img/cables/cable-3.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_2.jpg',
+        'url' => '/assets/img/cables/cable-2.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_4.jpg',
+        'url' => '/assets/img/cables/cable-4.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_1.jpg',
+        'url' => '/assets/img/cables/cable-1.png',
         'alt' => 'img description',
       ],
     ],
@@ -754,11 +754,11 @@ $fakeProducts = [
     'priceOld' => 0,
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_3.jpg',
+        'url' => '/assets/img/cables/cable-3.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_2.jpg',
+        'url' => '/assets/img/cables/cable-2.png',
         'alt' => 'img description',
       ],
     ],
@@ -783,11 +783,11 @@ $fakeProducts = [
     'priceOld' => '133 000',
     'images' => [
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_4.jpg',
+        'url' => '/assets/img/cables/cable-4.png',
         'alt' => 'img description',
       ],
       [
-        'url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_2.jpg',
+        'url' => '/assets/img/cables/cable-2.png',
         'alt' => 'img description',
       ],
     ],

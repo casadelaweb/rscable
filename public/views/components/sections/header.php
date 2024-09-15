@@ -179,7 +179,7 @@ global $isAuth;
         <span class="iconfont icon-heart"></span>
         <span class="headerButtonQuantity">12</span>
       </a>
-      <a class="headerButton" href="/personal/cart/" data-hover="cart">
+      <a class="headerButton" href="/cart/" data-hover="cart">
         <span class="iconfont icon-cart"></span>
         <span class="headerButtonQuantity">9</span>
       </a>
@@ -204,7 +204,7 @@ global $isAuth;
       <span class="iconfont icon-heart"></span>
       <span class="headerButtonQuantity">12</span>
     </a>
-    <a class="headerButton" href="/personal/cart/">
+    <a class="headerButton" href="/cart/">
       <span class="iconfont icon-cart"></span>
       <span class="headerButtonQuantity">9</span>
     </a>

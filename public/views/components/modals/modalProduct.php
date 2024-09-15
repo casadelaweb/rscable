@@ -17,10 +17,12 @@ $description = '
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto blanditiis consequuntur corporis cupiditate et explicabo fugit harum ipsa iste itaque libero minus molestiae numquam praesentium, sunt vero, voluptatibus voluptatum.</p>
 ';
 $images = [
-  ['url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_1.jpg',],
-  ['url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_2.jpg',],
-  ['url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_3.jpg',],
-  ['url' => 'https://cable.ru/images/resize/catalog/cable/800_vbbshv_cores_4.jpg',],
+  ['url' => '/assets/img/cables/cable-1.png',],
+  ['url' => '/assets/img/cables/cable-2.png',],
+  ['url' => '/assets/img/cables/cable-3.png',],
+  ['url' => '/assets/img/cables/cable-4.png',],
+  ['url' => '/assets/img/cables/cable-5.png',],
+  ['url' => '/assets/img/cables/cable-6.png',],
 ];
 ?>
 

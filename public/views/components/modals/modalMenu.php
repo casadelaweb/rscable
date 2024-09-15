@@ -124,7 +124,7 @@ global $isAuth;
       </button>
     </div>
     <div class="details-body" data-details="body">
-      <a class="details-link" href="/personal/cart/">Корзина</a>
+      <a class="details-link" href="/cart/">Корзина</a>
       <a class="details-link" href="/personal/fav/">Избранное</a>
       <a class="details-link" href="/personal/compare">Товары в сравнении</a>
       <a class="details-link" href="/">Выйти</a>
