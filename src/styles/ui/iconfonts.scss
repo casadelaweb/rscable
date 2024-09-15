@@ -1,9 +1,6 @@
-$icon-return: unquote("\"\\e92b\"");
+$icon-gift: unquote("\"\\e900\"");
 $icon-speed: unquote("\"\\e901\"");
 $icon-medal: unquote("\"\\e902\"");
-$icon-handshake: unquote("\"\\e92c\"");
-$icon-hand-peace: unquote("\"\\e92d\"");
-$icon-gift: unquote("\"\\e900\"");
 $icon-dislike: unquote("\"\\e903\"");
 $icon-like: unquote("\"\\e904\"");
 $icon-eye-hide: unquote("\"\\e905\"");
@@ -25,25 +22,28 @@ $icon-catalog: unquote("\"\\e914\"");
 $icon-close: unquote("\"\\e915\"");
 $icon-clock: unquote("\"\\e916\"");
 $icon-warning: unquote("\"\\e917\"");
-$icon-vk: unquote("\"\\e918\"");
-$icon-logout: unquote("\"\\e919\"");
-$icon-mute: unquote("\"\\e91a\"");
-$icon-metro: unquote("\"\\e91b\"");
-$icon-pencil: unquote("\"\\e91c\"");
-$icon-arrow-down: unquote("\"\\e91d\"");
-$icon-arrow-left: unquote("\"\\e91e\"");
-$icon-arrow-right: unquote("\"\\e91f\"");
-$icon-arrow-up: unquote("\"\\e920\"");
-$icon-filters: unquote("\"\\e921\"");
-$icon-image: unquote("\"\\e922\"");
-$icon-menu: unquote("\"\\e923\"");
-$icon-person: unquote("\"\\e924\"");
-$icon-search: unquote("\"\\e925\"");
-$icon-suitcase: unquote("\"\\e926\"");
-$icon-images: unquote("\"\\e927\"");
-$icon-bell: unquote("\"\\e928\"");
-$icon-camera: unquote("\"\\e929\"");
-$icon-mic: unquote("\"\\e92a\"");
+$icon-vk: unquote("\"\\e919\"");
+$icon-logout: unquote("\"\\e91a\"");
+$icon-mute: unquote("\"\\e91b\"");
+$icon-metro: unquote("\"\\e91c\"");
+$icon-pencil: unquote("\"\\e91d\"");
+$icon-arrow-down: unquote("\"\\e91e\"");
+$icon-arrow-left: unquote("\"\\e91f\"");
+$icon-arrow-right: unquote("\"\\e920\"");
+$icon-arrow-up: unquote("\"\\e921\"");
+$icon-filters: unquote("\"\\e922\"");
+$icon-image: unquote("\"\\e923\"");
+$icon-menu: unquote("\"\\e924\"");
+$icon-person: unquote("\"\\e925\"");
+$icon-search: unquote("\"\\e926\"");
+$icon-suitcase: unquote("\"\\e927\"");
+$icon-images: unquote("\"\\e928\"");
+$icon-bell: unquote("\"\\e929\"");
+$icon-camera: unquote("\"\\e92a\"");
+$icon-mic: unquote("\"\\e92b\"");
+$icon-return: unquote("\"\\e92c\"");
+$icon-handshake: unquote("\"\\e92d\"");
+$icon-hand-peace-o: unquote("\"\\e92e\"");
 $icon-folder-open: unquote("\"\\e930\"");
 $icon-price-tag: unquote("\"\\e935\"");
 $icon-price-tags: unquote("\"\\e936\"");
@@ -53,10 +53,12 @@ $icon-display: unquote("\"\\e956\"");
 $icon-laptop: unquote("\"\\e957\"");
 $icon-mobile: unquote("\"\\e959\"");
 $icon-bubble: unquote("\"\\e96b\"");
+$icon-user-suit: unquote("\"\\e976\"");
 $icon-spinner: unquote("\"\\e97b\"");
 $icon-zoom-in: unquote("\"\\e987\"");
 $icon-zoom-out: unquote("\"\\e988\"");
 $icon-cog: unquote("\"\\e994\"");
+$icon-hammer: unquote("\"\\e996\"");
 $icon-stats-bars: unquote("\"\\e99c\"");
 $icon-briefcase: unquote("\"\\e9ae\"");
 $icon-airplane: unquote("\"\\e9af\"");
@@ -73,16 +75,17 @@ $icon-instagram: unquote("\"\\ea92\"");
 $icon-whatsapp: unquote("\"\\ea93\"");
 $icon-telegram: unquote("\"\\ea95\"");
 $icon-youtube: unquote("\"\\ea9d\"");
-$icon-user-suit: unquote("\"\\e976\"");
-$icon-hammer: unquote("\"\\e996\"");
+$icon-trash: unquote("\"\\e918\"");
+$icon-printer: unquote("\"\\e954\"");
+$icon-share: unquote("\"\\ea82\"");
 
 @font-face {
   font-family: "iconfont";
-  src: url("src/assets/iconfonts/iconfont.eot?a045be");
-  src: url("src/assets/iconfonts/iconfont.eot?a045be#iefix") format("embedded-opentype"),
-  url("src/assets/iconfonts/iconfont.ttf?a045be") format("truetype"),
-  url("src/assets/iconfonts/iconfont.woff?a045be") format("woff"),
-  url("src/assets/iconfonts/iconfont.svg?a045be#iconfont") format("svg");
+  src: url("src/assets/iconfonts/iconfont.eot?gkuno2");
+  src: url("src/assets/iconfonts/iconfont.eot?gkuno2#iefix") format("embedded-opentype"),
+  url("src/assets/iconfonts/iconfont.ttf?gkuno2") format("truetype"),
+  url("src/assets/iconfonts/iconfont.woff?gkuno2") format("woff"),
+  url("src/assets/iconfonts/iconfont.svg?gkuno2#iconfont") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -100,9 +103,9 @@ $icon-hammer: unquote("\"\\e996\"");
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-return {
+.icon-gift {
   &:before {
-    content: $icon-return;
+    content: $icon-gift;
   }
 }
 
@@ -115,24 +118,6 @@ $icon-hammer: unquote("\"\\e996\"");
 .icon-medal {
   &:before {
     content: $icon-medal;
-  }
-}
-
-.icon-handshake {
-  &:before {
-    content: $icon-handshake;
-  }
-}
-
-.icon-hand-peace {
-  &:before {
-    content: $icon-hand-peace;
-  }
-}
-
-.icon-gift {
-  &:before {
-    content: $icon-gift;
   }
 }
 
@@ -376,6 +361,24 @@ $icon-hammer: unquote("\"\\e996\"");
   }
 }
 
+.icon-return {
+  &:before {
+    content: $icon-return;
+  }
+}
+
+.icon-handshake {
+  &:before {
+    content: $icon-handshake;
+  }
+}
+
+.icon-hand-peace-o {
+  &:before {
+    content: $icon-hand-peace-o;
+  }
+}
+
 .icon-folder-open {
   &:before {
     content: $icon-folder-open;
@@ -430,6 +433,12 @@ $icon-hammer: unquote("\"\\e996\"");
   }
 }
 
+.icon-user-suit {
+  &:before {
+    content: $icon-user-suit;
+  }
+}
+
 .icon-spinner {
   &:before {
     content: $icon-spinner;
@@ -451,6 +460,12 @@ $icon-hammer: unquote("\"\\e996\"");
 .icon-cog {
   &:before {
     content: $icon-cog;
+  }
+}
+
+.icon-hammer {
+  &:before {
+    content: $icon-hammer;
   }
 }
 
@@ -550,15 +565,21 @@ $icon-hammer: unquote("\"\\e996\"");
   }
 }
 
-.icon-user-suit {
+.icon-trash {
   &:before {
-    content: $icon-user-suit;
+    content: $icon-trash;
   }
 }
 
-.icon-hammer {
+.icon-printer {
   &:before {
-    content: $icon-hammer;
+    content: $icon-printer;
+  }
+}
+
+.icon-share {
+  &:before {
+    content: $icon-share;
   }
 }
 
