@@ -1,7 +1,6 @@
 <?php namespace App;
 global $isCartEmpty;
 global $cartProducts;
-global $cartProductsQuantity;
 ?>
 
 <?php Render::component('sections/breadcrumbs') ?>
@@ -28,7 +27,6 @@ global $cartProductsQuantity;
         Внимание! Оптовая компания РОСКАБ работает только с юридическими лицами и ИП. Минимальная
         сумма заказа от 100 000 ₽.
       </div>
-
       <div class="cartLayout">
         <div>
           <div class="cartNav">
@@ -36,21 +34,21 @@ global $cartProductsQuantity;
               <input type="checkbox" class="cartNavCheckbox">
               <span>Выбрать все</span>
             </label>
-            <button type="button">
+            <button type="button" class="cartNavDownload">
               <span class="iconfont icon-download"></span>
-              <span>Скачать файлом</span>
+              <span class="_text">Скачать файлом</span>
             </button>
-            <button type="button">
+            <button type="button" class="cartNavShare" data-modal-open="share-cart">
               <span class="iconfont icon-share"></span>
-              <span>Поделиться ссылкой</span>
+              <span class="_text">Поделиться корзиной</span>
             </button>
-            <button type="button">
-              <span class="iconfont icon-print"></span>
-              <span>Версия для печати</span>
+            <button type="button" class="cartNavPrint">
+              <span class="iconfont icon-printer"></span>
+              <span class="_text">Версия для печати</span>
             </button>
-            <label>
-              <span class="iconfont icon-close"></span>
-              <span>Удалить все</span>
+            <label class="cartNavDelete">
+              <span class="iconfont icon-trash"></span>
+              <span class="_text">Удалить все</span>
             </label>
           </div>
           <div class="cartCards">
@@ -102,18 +100,14 @@ global $cartProductsQuantity;
                     </div>
                   </div>
                 </div>
-
-                <!--<div class="cartCardActions">-->
-
                 <div class="cartCardButtons">
                   <button type="button" class="cartCardFav">
                     <span class="iconfont icon-heart-fill"></span>
                   </button>
                   <button class="cartCardRemove">
-                    <span class="iconfont icon-close"></span>
+                    <span class="iconfont icon-trash"></span>
                   </button>
                 </div>
-                <!--</div>-->
               </article>
             <?php endforeach; ?>
           </div>
@@ -138,3 +132,31 @@ global $cartProductsQuantity;
     <?php endif; ?>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const body = document.body
+
+      body.addEventListener('click', (event) => {
+        const target = event.target
+
+        if (target.closest('.cartNavSelect')) {
+          const label = target.closest('.cartNavSelect')
+          const input = label.querySelector('input[type=checkbox]')
+          const isChecked = input.checked
+
+          if (isChecked) {
+            body.querySelectorAll('.cartCardCheckbox').forEach((input) => input.checked = true)
+          } else {
+            body.querySelectorAll('.cartCardCheckbox').forEach((input) => input.checked = false)
+          }
+        }
+      }, {
+        passive: true,
+      })
+    },
+    {
+      passive: true,
+      once: true,
+    })
+</script>

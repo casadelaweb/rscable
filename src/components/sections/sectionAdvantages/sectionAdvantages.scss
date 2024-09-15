@@ -4,7 +4,7 @@
   @include sectionStyles;
   padding: 40px 0;
   //background: linear-gradient(45deg, $colorGreyMild 0%, white 75%);
-  background: linear-gradient(60deg, $colorGreyMild, $colorGreenMild 75%);
+  background: linear-gradient(30deg, $colorGreyMild, $colorGreyLightest 75%);
 
   &Container {
     @include container;

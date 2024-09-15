@@ -1,0 +1,100 @@
+@use "src/styles/shared" as *;
+
+.cartNav {
+  @include flex(center);
+  position: sticky;
+  z-index: 2;
+  top: calc(var(--headerHeight) + 16px);
+  height: fit-content;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  color: white;
+  border-radius: $brL;
+  background: $colorDarkMild;
+  box-shadow: $bsM;
+  column-gap: 16px;
+  @include mediaMobileS {
+    column-gap: 20px;
+  }
+
+  &Select, &Share, &Download, &Print, &Delete {
+    @include textS;
+    @include flex(center);
+    font-weight: 500;
+    width: fit-content;
+    column-gap: 4px;
+    @include mediaLaptopM {
+      column-gap: 6px;
+    }
+
+    .iconfont {
+      font-size: 14px;
+      @include mediaMobileS {
+        font-size: 18px;
+      }
+      @include mediaLaptopS {
+        font-size: 14px;
+      }
+      @include mediaLaptopL {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &Share, &Download, &Print, &Delete {
+    ._text {
+      display: none;
+      @include mediaLaptopS {
+        display: inline-block;
+      }
+    }
+  }
+
+  &Select {
+    margin-right: auto;
+  }
+
+  &Checkbox {
+    $size: 20px;
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    overflow: hidden;
+    width: $size;
+    height: $size;
+    margin: 0;
+    border: 1px solid white;
+    border-radius: $brM * 0.5;
+    background: white;
+    appearance: none;
+
+    &::before {
+      @include flex(center, center);
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "\2714";
+      transition: opacity $trM;
+      transform: none;
+      opacity: 0;
+      color: black;
+      border: 0;
+      border-radius: 0;
+      background: white;
+    }
+
+    &:checked {
+      background: white;
+
+      &::before {
+        top: 0;
+        left: 0;
+        transform: none;
+        opacity: 1;
+      }
+    }
+  }
+}

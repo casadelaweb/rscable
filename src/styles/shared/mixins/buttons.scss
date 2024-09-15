@@ -61,7 +61,6 @@
   background-color: transparent;
   color: black;
   @include onHover {
-    //background: Vars.$colorDark;
     color: white;
     &::before {
       transform: none;
@@ -154,7 +153,6 @@
     color: white;
     &::before {
       left: 120%;
-      //transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
     }
   }
   &:active {
@@ -164,7 +162,6 @@
 
     &::before {
       left: 120%;
-      //transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
     }
   }
 

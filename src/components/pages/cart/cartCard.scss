@@ -82,13 +82,13 @@
   &Picture {
     @include resetFlex;
     @include flex(center, center);
-    width: 100%;
+    width: 96px;
     height: 96px;
-    //margin-bottom: 8px;
+    margin: 0 auto;
     @include mediaMobileL {
+      width: 104px;
       height: 104px;
     }
-    // display: block;
     @include mediaTabletL {
       width: 96px;
       height: 96px;
@@ -98,16 +98,10 @@
   &Body {
     @include resetFlex;
     width: 100%;
-    //flex: 1 0 auto;
-    //margin-bottom: 8px;
-    //@include mediaTabletL {
-    //  margin: 0;
-    //}
   }
 
   &Prices, &Actions {
     @include resetFlex;
-    // display: inline-block;
   }
 
   &Footer {
@@ -128,47 +122,11 @@
     }
   }
 
-  // &Prices {
-  // flex: 1 0 auto;
-  //width: calc(100% - 8px - 96px);
-  //@include mediaMobileM {
-  //  width: calc(100% - 8px - 104px);
-  //}
-  //@include mediaMobileL {
-  //  width: calc(100% - 8px - 120px);
-  //}
-  //@include mediaTabletL {
-  //  width: auto;
-  //  margin: 0;
-  //}
-  // }
-
   &Counter {
     .cartCardNote {
       text-align: center;
     }
   }
-
-  //&Actions {
-  //  width: 96px;
-  //  margin-left: auto;
-  //  @include mediaMobileM {
-  //    width: 104px
-  //  }
-  //  @include mediaMobileL {
-  //    width: 120px;
-  //  }
-  //  @include mediaTabletL {
-  //    @include flex($d: column);
-  //    width: auto;
-  //    margin: 0;
-  //    // row-gap: 20px;
-  //  }
-  //
-  //  .cartCardNote {
-  //    text-align: center;
-  //  }
-  //}
 
   &Img {
     @include resetFlex;
@@ -242,7 +200,7 @@
   &Fav, &Remove {
     @include buttonSquare;
     font-size: 12px;
-    //border-radius: $brM * 2;
+    //border-radius: $brL;
     width: 32px;
     height: 32px;
     padding: 0;

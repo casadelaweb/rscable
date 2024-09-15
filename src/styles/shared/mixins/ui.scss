@@ -38,7 +38,7 @@
   }
 }
 
-@mixin scrollbar($orientation:"vertical") {
+@mixin scrollbar {
   $width: 10px;
   $height: 5px;
   $thumbColor: Vars.$colorGreyDarker;
@@ -50,27 +50,12 @@
       width: $width;
       height: $height;
     }
-    @if ($orientation == "vertical") {
-      &::-webkit-scrollbar-track {
-        background: $backgroundColor;
-      }
-      &::-webkit-scrollbar-thumb {
-        background: $thumbColor;
-        border: ($width * 0.3) solid $backgroundColor;
-      }
-    } @else if ($orientation == "horizontal") {
-      //overflow-x: auto;
-      //overflow-y: hidden;
-      //margin-right: -10px;
-      //padding-bottom: 10px;
-
-      &::-webkit-scrollbar-track {
-        background: $backgroundColorVertical;
-      }
-      &::-webkit-scrollbar-thumb {
-        background: $thumbColor;
-        border: 0;
-      }
+    &::-webkit-scrollbar-track {
+      background: $backgroundColor;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $thumbColor;
+      border: ($width * 0.3) solid $backgroundColor;
     }
   }
 }

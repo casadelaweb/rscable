@@ -35,7 +35,7 @@
     @include flex($d: column);
     overflow: hidden;
     padding: 10px 0 0 10px;
-    border-radius: $brM;
+    border-radius: $brL;
     background: $colorGreyMild;
     @include mediaMobileM {
       padding: 16px 0 0 16px;
