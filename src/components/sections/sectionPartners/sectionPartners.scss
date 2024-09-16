@@ -2,6 +2,7 @@
 
 
 .sectionPartners {
+  @include sectionHeader;
   overflow: hidden;
   margin: 80px 0;
   padding: 0 0 40px;
@@ -10,11 +11,18 @@
     @include container;
   }
 
-  @include sectionHeader;
-
   &Button {
     @include buttonMain;
     width: fit-content;
+    @include onHover {
+      color: white;
+      background: $colorDark;
+    }
+
+    &:active {
+      color: white;
+      background: $colorDark;
+    }
 
     &::before {
       display: none;
