@@ -44,6 +44,7 @@ require_once "app/globals.php";
         <?php Render::component('modals/modalCart/modalCart') ?>
         <?php Render::component('modals/modalReview') ?>
         <?php Render::component('modals/modalShareCart') ?>
+        <?php Render::component('modals/modalDeleteCart') ?>
       </div>
     </div>
     <script src="<?= getFilePathWithHash('/assets/js/main.js'); ?>"></script>

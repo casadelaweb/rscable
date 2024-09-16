@@ -1,0 +1,86 @@
+@use "src/styles/shared" as *;
+
+.modalDeleteCart {
+  position: fixed;
+  z-index: 120;
+  top: 0;
+  left: 0;
+  max-width: 290px;
+  height: 100%;
+  padding: 16px;
+  transition: opacity $trM, transform $trM;
+  transform: translate(-100%, 0);
+  pointer-events: none;
+  background: white;
+  @include mediaMobileM {
+    max-width: 320px;
+  }
+  @include mediaTabletM {
+    top: 50%;
+    left: 50%;
+    max-width: 540px;
+    height: fit-content;
+    transform: translate(-50%, 100%);
+    text-align: center;
+    opacity: 0;
+    border-radius: $brL;
+  }
+
+  &._active {
+    transform: translate(0, 0);
+    pointer-events: auto;
+    @include mediaTabletM {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+  }
+
+  &Close {
+    font-size: 16px;
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &Container {
+    @include flex(center, center, column);
+    row-gap: 16px;
+  }
+
+  &Overlay {
+    @include overlay;
+  }
+
+  &Title {
+    @include textXL;
+    font-weight: 600;
+    width: 100%;
+    padding-bottom: 16px;
+    border-bottom: 2px solid $colorGreyMild;
+  }
+
+  &Note {
+    @include textS;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: $colorDarkMild;
+  }
+
+  &Buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+
+  &Confirm {
+    @include buttonPrimary;
+  }
+
+  &Deny {
+    @include buttonMain;
+  }
+}

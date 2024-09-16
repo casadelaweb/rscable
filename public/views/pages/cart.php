@@ -5,6 +5,7 @@ global $cartProducts;
 
 <?php Render::component('sections/breadcrumbs') ?>
 
+<!-- Корзина -->
 <section class="cart">
   <div class="cartContainer">
     <div class="cartHeader">
@@ -28,7 +29,7 @@ global $cartProducts;
         сумма заказа от 100 000 ₽.
       </div>
       <div class="cartLayout">
-        <div>
+        <div class="cartBody">
           <div class="cartNav">
             <label class="cartNavSelect">
               <input type="checkbox" class="cartNavCheckbox">
@@ -46,10 +47,10 @@ global $cartProducts;
               <span class="iconfont icon-printer"></span>
               <span class="_text">Версия для печати</span>
             </button>
-            <label class="cartNavDelete">
+            <button type="button" class="cartNavDelete" data-modal-open="delete-cart">
               <span class="iconfont icon-trash"></span>
               <span class="_text">Удалить все</span>
-            </label>
+            </button>
           </div>
           <div class="cartCards">
             <?php foreach ($cartProducts as $card):
@@ -132,7 +133,6 @@ global $cartProducts;
     <?php endif; ?>
   </div>
 </section>
-
 <script>
   document.addEventListener('DOMContentLoaded', () => {
       const body = document.body
@@ -160,3 +160,20 @@ global $cartProducts;
       once: true,
     })
 </script>
+
+<!-- Ранее просмотренные товары -->
+<?php Render::component('sections/sectionAdvisable', [
+  'sectionTitle' => 'Вы смотрели',
+  'sectionButtonTitle' => 'Перейти в каталог',
+  'sectionButtonUrl' => '/catalog/',
+]); ?>
+
+<!-- С этими товарами также покупают -->
+<?php
+if (!$isCartEmpty) {
+  Render::component('sections/sectionAdvisable', [
+    'sectionTitle' => 'Рекомендуем',
+    'sectionButtonTitle' => 'Перейти в каталог',
+    'sectionButtonUrl' => '/catalog/',
+  ]);
+} ?>

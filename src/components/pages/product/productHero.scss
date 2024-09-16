@@ -13,9 +13,9 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
     row-gap: 20px;
     @include mediaTabletL {
       display: grid;
+      grid-template-columns: repeat(8, 1fr);
       grid-auto-rows: auto;
       grid-auto-flow: row;
-      grid-template-columns: repeat(8, 1fr);
       grid-template-areas:
     "title title title title title title title title"
     "header header header header header header header header"
@@ -191,7 +191,7 @@ $slideHeightDesktop: calc(64px * 5 + 16px * 4);
       @include textXs;
       font-weight: 500;
       width: 100%;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
 
       a, button {
         display: inline-block;

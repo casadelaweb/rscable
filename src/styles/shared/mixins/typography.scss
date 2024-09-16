@@ -31,8 +31,11 @@
 
 @mixin h3 {
   line-height: 1.1;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
+  @include mediaMobileS {
+    font-size: 16px;
+  }
   @include mediaMobileM {
     font-size: 18px;
   }
@@ -211,7 +214,7 @@
   font-size: $fontSize;
   line-height: $lineHeight;
   white-space: normal;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 
   //br {
   //  display: none;

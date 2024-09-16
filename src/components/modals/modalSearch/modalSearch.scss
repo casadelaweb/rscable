@@ -204,9 +204,9 @@
       row-gap: 16px;
     }
     @include mediaDesktop {
+      grid-template-columns: repeat(4, 1fr);
       column-gap: 20px;
       row-gap: 20px;
-      grid-template-columns: repeat(4, 1fr);
     }
   }
 
@@ -268,7 +268,7 @@
 
     &Title {
       margin-bottom: 16px;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       color: $colorDarkMild;
     }
   }

@@ -70,7 +70,7 @@
 
     a, button {
       @include addBottomLineOnHover($colorPrimary);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       color: $colorPrimary;
     }
   }

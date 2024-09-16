@@ -16,6 +16,7 @@
   }
 
   &Button {
+    @include resetFlex;
   }
 
   &Wrapper {

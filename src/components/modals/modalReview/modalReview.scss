@@ -126,7 +126,7 @@
       padding: 4px 8px;
       transition: opacity $trM, transform $trM;
       transform: translate(0, -20px);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       pointer-events: none;
       opacity: 0;
       color: white;
@@ -165,7 +165,7 @@
       right: 12px;
       bottom: 6px;
       width: fit-content;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
     }
 
     &Rating {

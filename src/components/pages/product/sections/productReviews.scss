@@ -181,13 +181,13 @@
   &Author {
     @include textMp;
     font-weight: 600;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
   }
 
   &Subtitle {
     @include h7;
     // font-weight: 600;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
   }
 
   &Date {
@@ -332,7 +332,7 @@
     @include addBottomLineOnHover($colorDarkMild);
     font-weight: 500;
     width: fit-content;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
 
     &._active {
       ._open {
@@ -357,7 +357,7 @@
     @include addBottomLineOnHover($colorPrimary);
     font-weight: 500;
     width: fit-content;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
     color: $colorPrimary;
   }
 }
@@ -386,7 +386,7 @@
 
   &Author {
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
     color: $colorDarkMild;
   }
 
@@ -397,7 +397,7 @@
   &Body {
     @include textBody;
     @include textXs;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
   }
 
   &Footer {
@@ -434,7 +434,7 @@
     @include textM;
     font-weight: 500;
     padding-right: 16px;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
   }
 
   &Note {
@@ -490,7 +490,7 @@
       padding: 4px 8px;
       transition: opacity $trM, transform $trM;
       transform: translate(0, -20px);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       pointer-events: none;
       opacity: 0;
       color: white;
@@ -529,7 +529,7 @@
       right: 12px;
       bottom: 6px;
       width: fit-content;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
     }
 
     &Rating {

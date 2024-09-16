@@ -192,7 +192,7 @@
     @include textM;
     font-weight: 500;
     width: 120px;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
     // text-transform: uppercase;
     column-gap: 8px;
     @include mediaDesktop {
@@ -278,7 +278,7 @@
 
   &Feedback {
     font-size: 12px !important;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
     color: $colorPrimary;
   }
