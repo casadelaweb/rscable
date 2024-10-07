@@ -40,8 +40,16 @@ $cart = new Page([
   'view' => 'cart',
   'parent' => $home,
 ]);
+$order = new Page([
+  'title' => 'Оформление заказа',
+  'metaDescription' => 'Заполните описание мета',
+  'metaKeywords' => 'Заполните ключевые поля мета',
+  'url' => '/order/',
+  'view' => 'order',
+  'parent' => $home,
+]);
 $pages = [
-  $home, $catalog, $product, $test, $cart,
+  $home, $catalog, $product, $test, $cart, $order,
 ];
 
 $pageNotFound = new Page([

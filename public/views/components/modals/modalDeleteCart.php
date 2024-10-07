@@ -11,7 +11,7 @@
     </div>
     <div class="modalDeleteCartButtons">
       <a href="/cart/?cart_empty=true" class="modalDeleteCartConfirm">
-        Очистить корзину
+        Удалить выбранные
       </a>
       <button type="button" data-modal-close class="modalDeleteCartDeny">
         Не очищать

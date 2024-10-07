@@ -32,9 +32,14 @@ global $cartProducts;
         <div class="cartBody">
           <div class="cartNav">
             <label class="cartNavSelect">
-              <input type="checkbox" class="cartNavCheckbox">
+              <input type="checkbox" class="cartNavSelectCheckbox">
               <span>Выбрать все</span>
             </label>
+            <button type="button" class="cartNavDelete" data-modal-open="delete-cart" disabled>
+              <span class="iconfont icon-trash"></span>
+              <span class="_text">Удалить выбранные</span>
+            </button>
+
             <button type="button" class="cartNavDownload">
               <span class="iconfont icon-download"></span>
               <span class="_text">Скачать файлом</span>
@@ -46,10 +51,6 @@ global $cartProducts;
             <button type="button" class="cartNavPrint">
               <span class="iconfont icon-printer"></span>
               <span class="_text">Версия для печати</span>
-            </button>
-            <button type="button" class="cartNavDelete" data-modal-open="delete-cart">
-              <span class="iconfont icon-trash"></span>
-              <span class="_text">Удалить все</span>
             </button>
           </div>
           <div class="cartCards">
@@ -115,18 +116,31 @@ global $cartProducts;
         </div>
         <div class="cartCheckout">
           <div class="cartCheckoutHeader">
-            <button type="button" class="cartCheckoutOrder">
-              Оформить заказ
-            </button>
-            Доступные способы и время доставки можно выбрать при оформлении заказа
+            <a href="/order/" class="cartCheckoutOrder">
+              Перейти к оформлению
+            </a>
+            <span>
+              Доступные способы и время доставки можно выбрать при оформлении заказа
+            </span>
           </div>
-          <button type="button" class="cartCheckoutQuick" data-modal-open="feedback">
-            Быстрый заказ
-          </button>
-
-          <div class="cartCheckoutSummary">
-            Всего:
-            <span class="cartCheckoutTotal">1 250 000 ₽</span>
+          <div class="cartCheckoutBody">
+            <div class="cartCheckoutRow">
+              <span class="cartCheckoutTitle">
+                Ваша корзина
+              </span>
+              <span class="cartCheckoutQuantity">
+                6 позиций
+              </span>
+            </div>
+          </div>
+          <div class="cartCheckoutFooter">
+            <div class="cartCheckoutRow">
+              <span class="cartCheckoutTitle">Всего:</span>
+              <span class="cartCheckoutTotal">1 250 000 ₽</span>
+            </div>
+            <button type="button" class="cartCheckoutQuick" data-modal-open="feedback">
+              Оформить быстрый заказ
+            </button>
           </div>
         </div>
       </div>
@@ -137,19 +151,34 @@ global $cartProducts;
   document.addEventListener('DOMContentLoaded', () => {
       const body = document.body
 
+      function toggle() {
+        const inputSelectAll = document.body.querySelector('.cartNavSelectCheckbox')
+        const buttonDelete = document.body.querySelector('.cartNavDelete')
+        const inputs = Array.from(document.body.querySelectorAll('.cartCardCheckbox'))
+        const inputsChecked = inputs.filter((input) => input.checked === true)
+        buttonDelete.disabled = inputsChecked.length <= 0
+        inputSelectAll.checked = inputsChecked.length === inputs.length
+      }
+
       body.addEventListener('click', (event) => {
         const target = event.target
 
-        if (target.closest('.cartNavSelect')) {
-          const label = target.closest('.cartNavSelect')
-          const input = label.querySelector('input[type=checkbox]')
+        if (target.closest('.cartNavSelectCheckbox')) {
+          const input = target.closest('.cartNavSelectCheckbox')
           const isChecked = input.checked
+          const inputs = Array.from(body.querySelectorAll('.cartCardCheckbox'))
 
           if (isChecked) {
-            body.querySelectorAll('.cartCardCheckbox').forEach((input) => input.checked = true)
+            inputs.forEach((input) => input.checked = true)
           } else {
-            body.querySelectorAll('.cartCardCheckbox').forEach((input) => input.checked = false)
+            inputs.forEach((input) => input.checked = false)
           }
+
+          toggle()
+        }
+
+        if (target.closest('.cartCardCheckbox')) {
+          toggle()
         }
       }, {
         passive: true,

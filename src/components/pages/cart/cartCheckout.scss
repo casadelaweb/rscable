@@ -4,22 +4,50 @@
   position: sticky;
   z-index: 1;
   top: calc(var(--headerHeight) + 16px);
+  display: grid;
   height: fit-content;
   padding: 16px;
-  //color: white;
   border: 1px solid $colorGreyMild;
   border-radius: $brL;
-  background: $colorGreyLightest;
-  //background: $colorDarkMild;
+  background: white;
   box-shadow: $bsM;
+  //background: $colorGreyLightest;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+
+  &Header, &Body {
+    // margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $colorGreyDarker;
+  }
 
   &Header {
     @include textS;
     font-weight: 500;
-    margin-bottom: 16px;
-    padding-bottom: 16px;
     color: $colorDarkMild;
-    border-bottom: 1px solid white;
+  }
+
+  &Body {
+  }
+
+  &Footer {
+    @include flex($d: column);
+    row-gap: 16px;
+  }
+
+  &Row {
+    @include flex(center, space-between);
+  }
+
+  &Title {
+    @include h6;
+    font-weight: 600;
+  }
+
+  &Quantity {
+    @include textXxs;
+    font-weight: 500;
+    color: $colorDarkMild;
   }
 
   &Order {
@@ -29,7 +57,9 @@
     min-height: 56px;
     margin-bottom: 16px;
     letter-spacing: 0.03em;
+    border: 0;
     border-radius: $brL;
+    background: $colorGreen;
   }
 
   &Buttons {
@@ -39,11 +69,6 @@
     row-gap: 16px;
   }
 
-  &Quick {
-    @include buttonMain;
-    //background: white;
-  }
-
   &Summary {
     @include textMp;
     font-weight: 500;
@@ -51,7 +76,15 @@
   }
 
   &Total {
-    font-size: 24px;
-    font-weight: 600;
+    @include h3;
+    font-weight: 700;
+  }
+
+  &Quick {
+    // @include buttonMain;
+    @include textS;
+    font-weight: 500;
+    margin-left: auto;
+    color: $colorPrimary;
   }
 }
