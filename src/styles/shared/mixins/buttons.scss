@@ -32,6 +32,11 @@
     color: Vars.$colorGreen;
     border-color: Vars.$colorGreen;
   }
+
+  &:is(textarea) {
+    min-height: 120px;
+    height: auto;
+  }
 }
 
 @mixin buttonTemplate {

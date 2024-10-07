@@ -1,0 +1,84 @@
+@use "src/styles/shared" as *;
+
+.order {
+  @include sectionStyles;
+  @include sectionHeader;
+
+  &Container {
+    @include container;
+  }
+
+  &Header {
+  }
+
+  &Title {
+  }
+
+  &Note {
+    @include textMp;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+    color: $colorDark;
+    @include mediaLaptopM {
+      margin-bottom: 32px;
+    }
+  }
+
+  &Layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    @include mediaTabletM {
+      grid-template-columns:3fr 1fr;
+    }
+    @include mediaDesktop {
+      column-gap: 40px;
+      row-gap: 40px;
+    }
+  }
+
+  &Body {
+    display: grid;
+    grid-template-columns:1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    @include mediaDesktop {
+      column-gap: 40px;
+      row-gap: 40px;
+    }
+  }
+
+  &Accept {
+    @include textS;
+    font-weight: 500;
+    margin: 0 auto;
+    text-align: center;
+    color: $colorGrey;
+    @include mediaTabletM {
+      @include flex(center);
+    }
+
+    &Input {
+      margin-right: 8px;
+    }
+
+    a {
+      color: $colorPrimary;
+    }
+  }
+
+  &Submit {
+    @include buttonPrimary;
+    font-weight: 500;
+    max-width: 320px;
+    min-height: 56px;
+    margin: 0 auto;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: $brL;
+    background: $colorGreen;
+  }
+}

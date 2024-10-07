@@ -1,0 +1,191 @@
+@use "src/styles/shared" as *;
+
+.orderCards {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  @include mediaTabletM {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mediaDesktop {
+    column-gap: 40px;
+    row-gap: 40px;
+  }
+}
+
+.orderCard {
+  @include resetFlex;
+  @include flex($d: column);
+  padding: 16px;
+  border: 1px solid $colorGreyMild;
+  border-radius: $brL;
+  background: white;
+  box-shadow: $bsM;
+  column-gap: 16px;
+  row-gap: 16px;
+
+  &Title {
+    @include textL;
+    font-weight: 600;
+    color: $colorDarkMild;
+
+    .iconfont {
+      font-size: 20px;
+      margin-right: 4px;
+      color: $colorPrimary;
+    }
+  }
+
+  &Label {
+    @include flex($w: wrap);
+    column-gap: 8px;
+    row-gap: 8px;
+  }
+
+  &Input {
+    @include resetFlex;
+    width: 20px;
+    height: 20px;
+  }
+
+  &Legend {
+    @include textS;
+    font-weight: 500;
+  }
+
+  &Description {
+    @include textS;
+    font-weight: 500;
+    width: 100%;
+    color: $colorDarkMild;
+  }
+}
+
+.orderClient {
+  @extend .orderCard;
+
+  &Header {
+
+  }
+
+  &Title {
+    @extend .orderCardTitle;
+  }
+
+  &Fields {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+
+    &Note {
+      @include textS;
+      font-weight: 500;
+    }
+  }
+
+  &Field {
+    &Label {
+      @include textS;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 8px;
+      color: $colorDarkMild;
+    }
+
+    &Input {
+      @include inputMain;
+    }
+  }
+}
+
+.orderProducts {
+  @extend .orderCard;
+
+  &Header {
+  }
+
+  &Title {
+    @extend .orderCardTitle;
+  }
+
+  &List {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  &Caption {
+    @include textS;
+    font-weight: 500;
+    display: none;
+    color: $colorGrey;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    column-gap: 8px;
+    row-gap: 8px;
+    @include mediaTabletM {
+      display: grid;
+    }
+
+    &Col {
+    }
+  }
+}
+
+.orderProduct {
+  @include textS;
+  display: grid;
+  padding-top: 16px;
+  //padding: 12px;
+  border-top: 1px solid $colorGreyMild;
+  background: white;
+  grid-template-columns:1fr;
+  column-gap: 8px;
+  row-gap: 8px;
+  //@include mediaTabletS {
+  //  padding: 16px;
+  //}
+  @include mediaTabletM {
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+  }
+
+  a, img {
+    @include resetFlex;
+  }
+
+  &Img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &Body {
+    column-gap: 8px;
+    @include mediaTabletM {
+      @include flex;
+    }
+  }
+
+  &Title {
+    font-weight: 500;
+  }
+
+  &Label {
+    font-weight: 400;
+    display: inline-block;
+    margin-right: 4px;
+    color: $colorDarkMild;
+    @include mediaTabletM {
+      display: none;
+    }
+  }
+
+  &Price, &Sum {
+    @include textM;
+    font-weight: 600;
+  }
+
+  &Quantity {
+  }
+}

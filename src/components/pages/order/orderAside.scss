@@ -1,0 +1,80 @@
+@use "src/styles/shared" as *;
+
+.orderAside {
+  display: grid;
+  order: -1;
+  padding: 16px;
+  border: 1px solid $colorGreyMild;
+  border-radius: $brL;
+  background: white;
+  box-shadow: $bsM;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+  @include mediaTabletM {
+    position: sticky;
+    z-index: 1;
+    top: calc(var(--headerHeight) + 16px);
+    order: unset;
+    height: fit-content;
+  }
+
+  &Header, &Body {
+    padding-bottom: 16px;
+    border-bottom: 1px solid $colorGreyDarker;
+  }
+
+  &Header {
+    @include flex(center, space-between);
+  }
+
+  &Title {
+    @include textL;
+    font-weight: 600;
+  }
+
+  &Change {
+    @include textS;
+    font-weight: 500;
+    margin-left: auto;
+    color: $colorPrimary;
+  }
+
+  &Row {
+    margin-bottom: 8px;
+  }
+
+  &Row, &Total {
+    @include flex(center, space-between);
+    @include textM;
+  }
+
+  //&Key {
+  //  font-weight: 500;
+  //}
+
+  &Value {
+    font-weight: 600;
+  }
+
+  &Total {
+    @include textL;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid $colorGreyDarker;
+
+    .orderAsideKey, .orderAsideValue {
+      font-weight: 700;
+    }
+  }
+
+  &Submit {
+    @include buttonPrimary;
+    font-weight: 500;
+    min-height: 56px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border: 0;
+    border-radius: $brL;
+    background: $colorGreen;
+  }
+}

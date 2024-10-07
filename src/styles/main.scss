@@ -6,6 +6,10 @@
   --scrollbarWidth: 17px;
 }
 
+._required {
+  color: $colorRed;
+}
+
 .icon-dot {
   @include flex(center, center);
   flex: 0 0 auto;
